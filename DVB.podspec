@@ -20,7 +20,7 @@ This is an unofficial Swift package, giving you a few options to query Dresden's
   s.social_media_url = 'https://twitter.com/kiliankoe'
 
   s.ios.deployment_target = '8.0'
-  spec.osx.deployment_target = '10.11'
+  s.osx.deployment_target = '10.11'
 
   s.source_files = 'DVB/Classes/**/*'
 end
