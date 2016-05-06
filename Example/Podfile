@@ -1,0 +1,12 @@
+use_frameworks!
+
+target 'DVB_Example', :exclusive => true do
+  pod 'DVB', :path => '../'
+end
+
+target 'DVB_Tests', :exclusive => true do
+  pod 'DVB', :path => '../'
+
+  pod 'Quick', '~> 0.8'
+  pod 'Nimble', '~> 3.0'
+end
