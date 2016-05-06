@@ -1,15 +1,15 @@
 {
   "name": "DVB",
   "version": "0.1.0",
-  "summary": "A short description of DVB.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/DVB",
+  "summary": "Query Dresden's public transport system for current bus- and tramstop data in Swift.",
+  "description": "This is an unofficial Swift package, giving you a few options to query Dresden's public transport system for current bus- and tramstop data.",
+  "homepage": "https://github.com/kiliankoe/DVB",
   "license": "MIT",
   "authors": {
     "Kilian Koeltzsch": "me@kilian.io"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/DVB.git",
+    "git": "https://github.com/kiliankoe/DVB.git",
     "tag": "0.1.0"
   },
   "platforms": {
