@@ -120,12 +120,6 @@ enum DVBError: ErrorType {
     case JSON
 }
 
-public struct Connection {
-    let line: String
-    let direction: String
-    let minutesUntil: Int
-}
-
 enum Result<T, E: ErrorType> {
     case Success(value: T)
     case Failure(error: E)
