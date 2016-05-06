@@ -1,0 +1,704 @@
+<!--
+This document intends to include all stops used by the DVB as of December 2015.
+It was created by manually combining multiple DVB documents and improved by using a reverse engineered autocompletion API.
+It is preformatted as PropertyList and can easily be handled as XML.
+Consider this document as public domain, mentioning my name in your project would make me happy though.
+Created by Richard Neitzke.
+-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>Altenberger Straße</string>
+	<string>Rochwitz Bühlauer Straße</string>
+	<string>Am Grunde</string>
+	<string>Kaditz Am Vorwerksfeld</string>
+	<string>Am Mühlgraben</string>
+	<string>Gompitzer Höhe</string>
+	<string>Gottfried-Keller-Straße</string>
+	<string>Hülße-Gymnasium</string>
+	<string>Industriegebiet Nord</string>
+	<string>Hellerau Kiefernweg</string>
+	<string>Pillnitz Leonardo-da-Vinci-Straße</string>
+	<string>Striesen Ludwig-Hartmann-Straße</string>
+	<string>Mohorner Straße</string>
+	<string>Niederwaldplatz</string>
+	<string>Plauen Nöthnitzer Straße</string>
+	<string>Mockritz Otto-Pilz-Straße</string>
+	<string>Riegelplatz</string>
+	<string>Saarstraße</string>
+	<string>Schillerplatz</string>
+	<string>Tharandter Straße</string>
+	<string>Südstraße</string>
+	<string>Tschaikowskiplatz</string>
+	<string>Bühlau Ullersdorfer Platz</string>
+	<string>Aachener Straße</string>
+	<string>Abzweig nach Reick</string>
+	<string>Achtbeeteweg</string>
+	<string>Adalbert-Stifter-Weg</string>
+	<string>Agentur für Arbeit</string>
+	<string>Ahlbecker Straße</string>
+	<string>Alaunplatz</string>
+	<string>Albert-Wolf-Platz</string>
+	<string>Alberthafen</string>
+	<string>Albertplatz</string>
+	<string>Alexander-Puschkin-Platz</string>
+	<string>Alfred-Althus-Straße</string>
+	<string>Alfred-Thiele-Straße</string>
+	<string>Altburgstädtel</string>
+	<string>Altcotta</string>
+	<string>Altdobritz</string>
+	<string>Altenberger Platz</string>
+	<string>Alter Postweg</string>
+	<string>Alter Schlachthof</string>
+	<string>Altfranken</string>
+	<string>Altkaditz</string>
+	<string>Altkaitz</string>
+	<string>Altleuben</string>
+	<string>Altleubnitz</string>
+	<string>Altlockwitz</string>
+	<string>Altmarkt</string>
+	<string>Altmockritz</string>
+	<string>Altnaußlitz</string>
+	<string>Altnossener Straße</string>
+	<string>Altomsewitz</string>
+	<string>Altpieschen</string>
+	<string>Altreick</string>
+	<string>Altserkowitz</string>
+	<string>Alttolkewitz</string>
+	<string>Alttrachau</string>
+	<string>Altwachwitz</string>
+	<string>Altwilschdorf</string>
+	<string>Am Altfrankener Park</string>
+	<string>Am Anger</string>
+	<string>Am Brüchigt</string>
+	<string>Am Dathepark</string>
+	<string>Am Festspielhaus</string>
+	<string>Am Galgenberg</string>
+	<string>Am Hellerhof</string>
+	<string>Am Hellerrand</string>
+	<string>Am Lehmberg</string>
+	<string>Am Olter</string>
+	<string>Am Schöpsdamm</string>
+	<string>Am Querfeld</string>
+	<string>Am Steinacker</string>
+	<string>Am Steinigt</string>
+	<string>Am Steinkreuz</string>
+	<string>Am Trachauer Bahnhof</string>
+	<string>Am Urnenfeld</string>
+	<string>Am Waldrand</string>
+	<string>Am Weiher</string>
+	<string>Am Weißen Adler</string>
+	<string>Am Weißiger Bach</string>
+	<string>Am Wiesenrand</string>
+	<string>Am Windberg</string>
+	<string>Am Zwingerteich</string>
+	<string>Amalie-Dietrich-Platz</string>
+	<string>Amselgrund</string>
+	<string>Amselsteg</string>
+	<string>An der Flutrinne</string>
+	<string>An der Obstplantage</string>
+	<string>An der Post</string>
+	<string>An der Rennbahn</string>
+	<string>An der Triebe</string>
+	<string>Angelikastraße</string>
+	<string>An den Winkelwiesen (Stauseebad)</string>
+	<string>Anton-/Leipziger Straße</string>
+	<string>Arkonastraße</string>
+	<string>Arno-Holz-Allee</string>
+	<string>Arno-Schellenberg-Straße</string>
+	<string>Arthur-Weineck-Straße</string>
+	<string>Auerstraße</string>
+	<string>Auf der Höhe</string>
+	<string>Augsburger Straße</string>
+	<string>Babisnauer Straße</string>
+	<string>Augsburger Straße</string>
+	<string>Autobahnmeisterei</string>
+	<string>Bahnhof Grenzstraße</string>
+	<string>Bahnhof</string>
+	<string>Bahnhof Klotzsche</string>
+	<string>Bahnhof Mitte</string>
+	<string>S-Bahnhof Niedersedlitz</string>
+	<string>Bahnhof</string>
+	<string>Bahnhof Reick</string>
+	<string>Bahnhof</string>
+	<string>Bannewitzer Straße</string>
+	<string>Bärensteiner Straße</string>
+	<string>Bärwalder Straße</string>
+	<string>Baumwiese</string>
+	<string>Bautzner Straße / Rothenburger Straße</string>
+	<string>Bebelplatz</string>
+	<string>Bamberger Straße</string>
+	<string>Beckerstraße</string>
+	<string>Bedrich-Smetana-Straße</string>
+	<string>Bergfelderweg</string>
+	<string>Bergblick</string>
+	<string>Berggartenstraße</string>
+	<string>Berggießhübler Straße</string>
+	<string>Bergmannstraße</string>
+	<string>Bernhardstraße</string>
+	<string>Berthold-Haupt-Straße</string>
+	<string>Betriebshof Gorbitz</string>
+	<string>Betriebshof Trachenberge</string>
+	<string>Betriebshof Waltherstraße</string>
+	<string>Birkenhainer Straße</string>
+	<string>Bischofsplatz</string>
+	<string>Beerenhut</string>
+	<string>Bischofsweg</string>
+	<string>Blasewitzer Straße / Fetscherstraße</string>
+	<string>Bodemerweg</string>
+	<string>Böhmertstraße</string>
+	<string>Bonhoefferplatz</string>
+	<string>Bönischplatz</string>
+	<string>Bonnewitz Dorfplatz</string>
+	<string>Bonnewitzer Straße</string>
+	<string>Borsbergblick</string>
+	<string>Borsbergstraße</string>
+	<string>Borstraße</string>
+	<string>Borthen</string>
+	<string>Boxdorfer Straße</string>
+	<string>Breitscheidstraße</string>
+	<string>Bremer Straße</string>
+	<string>Brunnenweg</string>
+	<string>Buchenstraße</string>
+	<string>Budapester Straße</string>
+	<string>Bünaustraße</string>
+	<string>Bunsenstraße</string>
+	<string>Burgenlandstraße</string>
+	<string>Burgker Straße</string>
+	<string>Burgkstraße</string>
+	<string>Cäcilienstraße</string>
+	<string>Calberlastraße</string>
+	<string>Cämmerswalder Straße</string>
+	<string>Campingplatz Mockritz</string>
+	<string>Carolaplatz</string>
+	<string>Caspar-David-Friedrich-Straße</string>
+	<string>Bürgerstraße</string>
+	<string>Chemnitzer Straße</string>
+	<string>Clausen-Dahl-Straße</string>
+	<string>Chamissostraße</string>
+	<string>Comeniusplatz</string>
+	<string>Clara-Viebig-Straße</string>
+	<string>Conertplatz</string>
+	<string>Corinthstraße</string>
+	<string>Clara-Zetkin-Straße</string>
+	<string>Coschützer Straße</string>
+	<string>Cossebauder Straße (Haltepunkt Cotta)</string>
+	<string>Zentrum/ Börse</string>
+	<string>Cottaer Straße</string>
+	<string>Coventrystraße</string>
+	<string>Cunewalder Straße</string>
+	<string>Cunnersdorfer Str</string>
+	<string>Diakonissenkrankenhaus</string>
+	<string>Dohnaer Straße</string>
+	<string>Dammweg</string>
+	<string>Deutsches Hygiene-Museum</string>
+	<string>Dölzschen</string>
+	<string>Dölzschener Straße</string>
+	<string>Dora-Stock-Straße</string>
+	<string>Dorfhainer Straße</string>
+	<string>Dorfplatz Oberpoyritz</string>
+	<string>Dorfplatz Pesterwitz</string>
+	<string>Dornblüthstraße</string>
+	<string>Dörnichtweg</string>
+	<string>Dorothea-Erxleben-Straße</string>
+	<string>Dr.-Külz-Straße</string>
+	<string>Droste-Hülshoff-Straße</string>
+	<string>Dürerstraße</string>
+	<string>Eduard-Bilz-Straße</string>
+	<string>Eichbergstraße</string>
+	<string>Einkaufszentrum Seidnitz</string>
+	<string>Eisenbahnbrücke</string>
+	<string>ElbePark</string>
+	<string>Dahlienweg</string>
+	<string>Elbschlösser</string>
+	<string>Elisabethstraße</string>
+	<string>Elsterweg</string>
+	<string>Enno-Heidebroek-Straße</string>
+	<string>Erich-Kästner-Straße</string>
+	<string>Erna-Berger-Straße</string>
+	<string>Ernst-Toller-Straße</string>
+	<string>Ernst-Wagner-Straße</string>
+	<string>Eschebachstraße</string>
+	<string>Eugen-Bracht-Straße</string>
+	<string>Fabricestraße</string>
+	<string>Fährstelle Pillnitz</string>
+	<string>Fehrmannweg</string>
+	<string>Fernsehturm</string>
+	<string>Fernsehturm</string>
+	<string>Festspielhaus Hellerau</string>
+	<string>Flügelweg</string>
+	<string>Flughafen</string>
+	<string>Fetscherplatz</string>
+	<string>Feuerwehr</string>
+	<string>Flughafen West</string>
+	<string>Fichtestraße</string>
+	<string>Flughafenstraße</string>
+	<string>Flugzeugwerke</string>
+	<string>Fontane-Center</string>
+	<string>Försterlingstraße</string>
+	<string>Forststraße</string>
+	<string>Frankenbergstraße</string>
+	<string>Fraunhofer-Institutszentrum</string>
+	<string>Freibad Wostra</string>
+	<string>Freiheit</string>
+	<string>Friedhof Leuben</string>
+	<string>Fritz-Meinhardt-Straße</string>
+	<string>Fritz-Schulze-Straße</string>
+	<string>Fuchsberg</string>
+	<string>Fürstenhainer Straße</string>
+	<string>Fußweg nach Borthen</string>
+	<string>Busbahnhof Deuben</string>
+	<string>Fußweg nach Sobrigau</string>
+	<string>Gabelsbergerstraße</string>
+	<string>Gamigstraße</string>
+	<string>Gasanstaltstraße</string>
+	<string>Gasthof</string>
+	<string>Geblerstraße</string>
+	<string>Gerichtsstraße</string>
+	<string>Gerokstraße</string>
+	<string>Gewerbegebiet Kaditz</string>
+	<string>Gohlis</string>
+	<string>Gerhart-Hauptmann-Straße</string>
+	<string>Georg-Palitzsch-Straße</string>
+	<string>Zum Windkanal</string>
+	<string>Zur Elbinsel</string>
+	<string>Zschonergrundmühle</string>
+	<string>Zum Heiderand</string>
+	<string>Zur Neuen Brücke</string>
+	<string>Zur Steinhöhe</string>
+	<string>Zweibrüderweg</string>
+	<string>Zwickauer Straße</string>
+	<string>Zwinglistraße</string>
+	<string>Gohliser Weg</string>
+	<string>Gondelweg</string>
+	<string>Gombsen</string>
+	<string>Gombsener Straße</string>
+	<string>Zachengrundring</string>
+	<string>Dorfstraße</string>
+	<string>Göppersdorfer Weg</string>
+	<string>Gorbitzer Straße</string>
+	<string>Gottleubaer Straße</string>
+	<string>Gradsteg</string>
+	<string>Grenzstraße</string>
+	<string>Grillparzerstraße</string>
+	<string>Großenhainer Platz</string>
+	<string>Großer Garten</string>
+	<string>Großglocknerstraße</string>
+	<string>Gret-Palucca-Straße</string>
+	<string>Grunaer Weg</string>
+	<string>Grundstraße</string>
+	<string>Grüner Weg</string>
+	<string>Guerickestraße</string>
+	<string>Gustav-Freytag-Straße</string>
+	<string>Gustavheim</string>
+	<string>Gutenbergstraße</string>
+	<string>Heinrich-Tessenow-Weg</string>
+	<string>Haltepunkt</string>
+	<string>Haltepunkt Pieschen</string>
+	<string>Haltepunkt Plauen</string>
+	<string>Haltepunkt Strehlen</string>
+	<string>Haltepunkt Trachau</string>
+	<string>Haltepunkt Dobritz</string>
+	<string>Haltepunkt Bad</string>
+	<string>Hamburger Straße</string>
+	<string>Hänichenweg</string>
+	<string>Hans-Dankner-Straße</string>
+	<string>Hans-Oster-Straße</string>
+	<string>Hauptbahnhof</string>
+	<string>Hauptbahnhof Nord</string>
+	<string>Hebbelplatz</string>
+	<string>Haußmannplatz</string>
+	<string>Heckenweg</string>
+	<string>Heeresbäckerei</string>
+	<string>Hegereiterstraße</string>
+	<string>Heidefriedhof</string>
+	<string>Heidestraße</string>
+	<string>Heinrich-Schütz-Straße</string>
+	<string>Heinrich-Zille-Straße</string>
+	<string>Helena-Rott-Straße</string>
+	<string>Hellerberge</string>
+	<string>Hellerhofstraße</string>
+	<string>Hellersiedlung</string>
+	<string>Helmholtzstraße</string>
+	<string>Hepkeplatz</string>
+	<string>Hepkestraße</string>
+	<string>Hermann-Seidel-Straße</string>
+	<string>Hermann-Michel-Straße</string>
+	<string>Hermann-Seidel-Straße</string>
+	<string>Hirtenstraße</string>
+	<string>Höckendorfer Weg</string>
+	<string>Hornweg</string>
+	<string>Hospiz</string>
+	<string>Hubertusplatz</string>
+	<string>Hüblerplatz</string>
+	<string>Hüfnerweg</string>
+	<string>Hugo-Bürkner-Straße</string>
+	<string>Hugo-Junkers-Ring</string>
+	<string>Hülßestraße</string>
+	<string>Hummelmühle</string>
+	<string>Hutbergschule</string>
+	<string>Hutbergstraße</string>
+	<string>Ikarusweg</string>
+	<string>Industriegelände</string>
+	<string>Industriepark Klotzsche</string>
+	<string>Infineon Nord</string>
+	<string>Jacob-Winter-Platz</string>
+	<string>Jacobistraße</string>
+	<string>Johannes-Brahms-Straße</string>
+	<string>Infineon Süd</string>
+	<string>Innsbrucker Straße</string>
+	<string>Johannisbergstraße</string>
+	<string>Johannisfriedhof</string>
+	<string>Johannstadt</string>
+	<string>Jägerpark Heideblick</string>
+	<string>Josef-Herrmann-Straße</string>
+	<string>Josephinenstraße</string>
+	<string>Julius-Otto-Straße</string>
+	<string>Julius-Vahlteich-Straße</string>
+	<string>Junghansstraße</string>
+	<string>Jüngststraße</string>
+	<string>Kadenstraße</string>
+	<string>Kaditzer Straße</string>
+	<string>Kaitzer Straße</string>
+	<string>Kapellenweg</string>
+	<string>Karcherallee</string>
+	<string>Karl-Laux-Straße</string>
+	<string>Karl-Marx-Straße</string>
+	<string>Karlshagener Weg</string>
+	<string>Kasseler Straße</string>
+	<string>Kastanienstraße</string>
+	<string>Käthe-Kollwitz-Ufer</string>
+	<string>Kaufland</string>
+	<string>Kauschaer Straße</string>
+	<string>Kelterei</string>
+	<string>Käthe-Kollwitz-Platz</string>
+	<string>Käthe-Kollwitz-Straße</string>
+	<string>Keppgrundstraße</string>
+	<string>Keulenbergstraße</string>
+	<string>Kipsdorfer Straße</string>
+	<string>Kirschenstraße</string>
+	<string>Kleestraße</string>
+	<string>Kleinnaundorfer Straße</string>
+	<string>Fährstelle Kleinzschachwitz</string>
+	<string>Kleinzschachwitz Freystraße</string>
+	<string>Klinikum Kreischa</string>
+	<string>Klosterteichplatz</string>
+	<string>Knappestraße</string>
+	<string>Köhlerstraße</string>
+	<string>Kohlsdorfer Landstraße</string>
+	<string>Klotzsche Infineon</string>
+	<string>Kölner Straße</string>
+	<string>Koloniestraße</string>
+	<string>Koblenzer Straße</string>
+	<string>Kolpingstraße</string>
+	<string>Kongresszentrum / Haus der Presse</string>
+	<string>Königsheimplatz</string>
+	<string>Kopernikusstraße</string>
+	<string>Körnerplatz</string>
+	<string>Kotteweg</string>
+	<string>Kotzschweg</string>
+	<string>Krankenhaus Friedrichstadt (Sportpark Ostra)</string>
+	<string>Krankenhaus Neustadt</string>
+	<string>Krankenhaus Sankt Joseph-Stift</string>
+	<string>Krebser Straße</string>
+	<string>Krebser Straße Nord</string>
+	<string>Kretschmerstraße</string>
+	<string>Künstlerhaus</string>
+	<string>Kurhausstraße</string>
+	<string>Kurt-Tucholsky-Straße</string>
+	<string>Kurzer Schritt</string>
+	<string>Laibacher Straße</string>
+	<string>Landesdirektion Sachsen</string>
+	<string>Lassallestraße</string>
+	<string>Laubegast Kronstädter Platz</string>
+	<string>Lauterbacher Straße</string>
+	<string>Leiblstraße</string>
+	<string>Lene-Glatzer-Straße</string>
+	<string>Lennéplatz</string>
+	<string>Lengefelder Straße</string>
+	<string>Leubener Straße</string>
+	<string>Leubnitzer Höhe</string>
+	<string>Leutewitz</string>
+	<string>Liebenauer Straße</string>
+	<string>Liebstädter Straße</string>
+	<string>Lipsiusstraße</string>
+	<string>Liststraße</string>
+	<string>Löbtau Ebertplatz</string>
+	<string>Lockwitz</string>
+	<string>Lohmener Straße</string>
+	<string>Lößnitzstraße</string>
+	<string>Lise-Meitner-Straße</string>
+	<string>Lößnitzweg</string>
+	<string>Louisenstraße</string>
+	<string>Ludwig-Renn-Allee</string>
+	<string>Lohrmannstraße</string>
+	<string>Ludwigstraße</string>
+	<string>Luga</string>
+	<string>Malerstraße</string>
+	<string>Malterstraße</string>
+	<string>Manitiusstraße</string>
+	<string>Mansfelder Straße</string>
+	<string>Marie-Wittich-Straße</string>
+	<string>Marienallee</string>
+	<string>Marienberger Straße</string>
+	<string>Markusfriedhof</string>
+	<string>Martin-Opitz-Straße</string>
+	<string>Mathias-Oeder-Straße</string>
+	<string>Maxim-Gorki-Straße</string>
+	<string>Mengsstraße</string>
+	<string>Merbitzer Straße</string>
+	<string>Messe Dresden</string>
+	<string>Messe Gleisschleife</string>
+	<string>Messering (Halle 1)</string>
+	<string>Meußlitzer Straße</string>
+	<string>Mickten</string>
+	<string>Merianplatz</string>
+	<string>Mittelweg</string>
+	<string>Mockethaler Straße</string>
+	<string>Mockritz</string>
+	<string>Mockritzer Straße</string>
+	<string>Moosleite</string>
+	<string>Mordgrundbrücke</string>
+	<string>Moritzburger Straße</string>
+	<string>Moritzburger Weg</string>
+	<string>Mosenstraße</string>
+	<string>Mügelner Straße</string>
+	<string>Mühlenstraße</string>
+	<string>Mommsenstraße</string>
+	<string>Münchner Platz</string>
+	<string>Nätherstraße</string>
+	<string>Neubühlauer Straße</string>
+	<string>Neugombsen</string>
+	<string>Neuländer Straße</string>
+	<string>Neumarkt</string>
+	<string>Neunimptscher Straße</string>
+	<string>Neubertstraße</string>
+	<string>Münzteichweg</string>
+	<string>Neuostra</string>
+	<string>Neustädter Markt</string>
+	<string>Nickerner Weg</string>
+	<string>Niedersedlitzer Platz</string>
+	<string>Niedersedlitzer Straße</string>
+	<string>Niederseidewitzer Weg</string>
+	<string>Nizzastraße</string>
+	<string>Nordstraße</string>
+	<string>Nürnberger Platz</string>
+	<string>Oberauer Straße</string>
+	<string>Obere Straße</string>
+	<string>Ockerwitzer Straße</string>
+	<string>Oederaner Straße</string>
+	<string>Oehmestraße</string>
+	<string>Ockerwitzer Straße</string>
+	<string>Otto-Dix-Ring</string>
+	<string>Overbeckstraße</string>
+	<string>Palaisplatz</string>
+	<string>Omsewitz</string>
+	<string>Pappritz</string>
+	<string>Pennrich Gleisschleife</string>
+	<string>Pennricher Straße</string>
+	<string>Permoserstraße</string>
+	<string>Pestalozziplatz</string>
+	<string>Pfeifferhannsstraße</string>
+	<string>Pesterwitz</string>
+	<string>Pferderennbahn</string>
+	<string>Obergohlis</string>
+	<string>Pfotenhauerstraße</string>
+	<string>Pillnitzer Platz</string>
+	<string>Pirnaischer Platz</string>
+	<string>Platanenstraße</string>
+	<string>Plattleite</string>
+	<string>Platz des Friedens</string>
+	<string>Rathaus Plauen</string>
+	<string>Plauenscher Ring</string>
+	<string>Podemusstraße</string>
+	<string>Pohlandplatz</string>
+	<string>Postplatz</string>
+	<string>Prager Straße</string>
+	<string>Prellerstraße</string>
+	<string>Prof-Billroth-Straße</string>
+	<string>Prohlis Einkaufszentrum</string>
+	<string>Prohlis Gleisschleife</string>
+	<string>Putbuser Weg</string>
+	<string>Putjatinplatz</string>
+	<string>Querallee</string>
+	<string>Prof.-Ricker-Straße</string>
+	<string>Querweg</string>
+	<string>Räcknitzhöhe</string>
+	<string>Radeberger Straße</string>
+	<string>Radeberger Straße Süd</string>
+	<string>West (Flemmingstraße)</string>
+	<string>Radebeuler Straße</string>
+	<string>Rähnitzer Allee</string>
+	<string>Quohrener Straße</string>
+	<string>Rankestraße</string>
+	<string>Rathaus Coswig</string>
+	<string>Rathaus Klotzsche</string>
+	<string>Rathaus Leuben</string>
+	<string>Rathaus Pieschen</string>
+	<string>Rathaus Pillnitz</string>
+	<string>Rathausstraße</string>
+	<string>Reichenbachstraße</string>
+	<string>Reichenhaller Straße</string>
+	<string>Reichsstraße</string>
+	<string>Reineckeweg</string>
+	<string>Reisstraße</string>
+	<string>Rauensteinstraße</string>
+	<string>Rennplatzstraße</string>
+	<string>Reitbahnstraße</string>
+	<string>Rethelstraße</string>
+	<string>Rißweg</string>
+	<string>Robert-Sterl-Straße</string>
+	<string>Rohrbahn</string>
+	<string>BHG</string>
+	<string>Rosa-Luxemburg-Platz</string>
+	<string>Rosenstraße</string>
+	<string>Rossendorfer Straße</string>
+	<string>Rottwerndorfer Straße</string>
+	<string>Rubensweg</string>
+	<string>Rüdesheimer Straße</string>
+	<string>Rudolf-Leonhard-Straße</string>
+	<string>Rudolf-Walther-Straße</string>
+	<string>Rudolf-Walther-Straße</string>
+	<string>S-Bahnhof Weintraube</string>
+	<string>Saalhausener Straße</string>
+	<string>Sachsenallee</string>
+	<string>Salzstraße (Bus)</string>
+	<string>Sagarder Weg</string>
+	<string>Sankt-Pauli-Friedhof</string>
+	<string>Saßnitzer Straße</string>
+	<string>Saxoniastraße</string>
+	<string>Schachtstraße</string>
+	<string>Schäferstraße</string>
+	<string>Schanzenstraße</string>
+	<string>Scharfenberger Straße</string>
+	<string>Scharfensteinstraße</string>
+	<string>Schaufußstraße</string>
+	<string>Schiffswerft Laubegast</string>
+	<string>Schillerstraße</string>
+	<string>Schillingstraße</string>
+	<string>Schlehenstraße</string>
+	<string>Schloss Wackerbarth</string>
+	<string>Schlüterstraße</string>
+	<string>Schneebergstraße</string>
+	<string>Schönaer Straße</string>
+	<string>Schunckstraße</string>
+	<string>Schurichtstraße</string>
+	<string>Obere Station Schwebebahn</string>
+	<string>Schweizer Straße</string>
+	<string>Schwimmhalle Klotzsche</string>
+	<string>Sechserhaus</string>
+	<string>Seewiesenweg</string>
+	<string>Seidnitzer Weg</string>
+	<string>Semmelweisstraße</string>
+	<string>Sobrigauer Weg</string>
+	<string>Sörnewitzer Straße</string>
+	<string>Sosaer Straße</string>
+	<string>Spenerstraße</string>
+	<string>Spitzhausstraße</string>
+	<string>Spitzwegstraße</string>
+	<string>Staats- und Universitätsbibliothek</string>
+	<string>St.-Benno-Gymnasium</string>
+	<string>Stadtgutstraße</string>
+	<string>Staffelsteinstraße</string>
+	<string>Steglichstraße</string>
+	<string>Steinbacher Weg</string>
+	<string>Stephanstraße</string>
+	<string>Stralsunder Straße</string>
+	<string>Straßburger Platz (Gläserne Manufaktur)</string>
+	<string>Straße des 17. Juni</string>
+	<string>Strehlener Platz</string>
+	<string>Striesener Straße</string>
+	<string>Struppener Straße</string>
+	<string>Südhöhe</string>
+	<string>Südstraße</string>
+	<string>Südvorstadt</string>
+	<string>Synagoge</string>
+	<string>Tannenstraße (Goethe-Institut)</string>
+	<string>Tännichtstraße</string>
+	<string>Tatzberg</string>
+	<string>Taubenberg</string>
+	<string>Technische Universität (Fr.-Foerster-Platz)</string>
+	<string>Thäterstraße</string>
+	<string>Theaterplatz</string>
+	<string>Theilestraße</string>
+	<string>Thomas-Mann-Straße</string>
+	<string>Tiefer Grund</string>
+	<string>Tiergartenstraße</string>
+	<string>Tolkewitz Urnenhain</string>
+	<string>Tornaer Straße</string>
+	<string>Trachauer Straße</string>
+	<string>Justizvollzugsanstalt</string>
+	<string>Trachenberger Platz</string>
+	<string>Trattendorfer Straße</string>
+	<string>Trinitatisplatz</string>
+	<string>Tronitzer Straße</string>
+	<string>Uhlandstraße</string>
+	<string>Universitätsklinikum</string>
+	<string>Urnenstraße</string>
+	<string>Van-Gogh-Straße</string>
+	<string>Troppauer Straße</string>
+	<string>Veilchenstraße</string>
+	<string>Vollmarstraße</string>
+	<string>Vorwerkstraße</string>
+	<string>Wächterstraße</string>
+	<string>Wägnerstraße</string>
+	<string>Waldschlößchen</string>
+	<string>Waldschlößchenstraße</string>
+	<string>Waldteichstraße</string>
+	<string>Walpurgisstraße</string>
+	<string>Waltherstraße</string>
+	<string>Wasaplatz</string>
+	<string>Wasserwerk Tolkewitz</string>
+	<string>Washingtonstraße</string>
+	<string>Wasastraße</string>
+	<string>Weberplatz</string>
+	<string>Weidentalstraße</string>
+	<string>Abzweig Weinböhla</string>
+	<string>Weißdornstraße</string>
+	<string>Weißeritzstraße</string>
+	<string>Einkaufszentrum</string>
+	<string>Schule</string>
+	<string>Werftstraße</string>
+	<string>Westendstraße</string>
+	<string>Wernerstraße</string>
+	<string>Wieckestraße</string>
+	<string>Wilder Mann</string>
+	<string>Wilder-Mann-Straße</string>
+	<string>Wilhelm-Busch-Straße</string>
+	<string>Wilhelm-Busch-Straße Ost</string>
+	<string>Wilhelminenstraße</string>
+	<string>Wilischstraße</string>
+	<string>Wilschdorf Industriegebiet</string>
+	<string>Wilschdorfer Landstraße</string>
+	<string>Windbergallee</string>
+	<string>Windmühlenweg</string>
+	<string>Winterbergstraße</string>
+	<string>Wittenberger Straße</string>
+	<string>Wölfnitz</string>
+	<string>Wölfnitzer Ring</string>
+	<string>Wostra</string>
+	<string>Würzburger Straße</string>
+	<string>Wurzener Straße</string>
+	<string>Zachengrundring</string>
+	<string>Zeithainer Straße</string>
+	<string>Zellescher Weg</string>
+	<string>Zillerstraße</string>
+	<string>Zinnowitzer Straße</string>
+	<string>Zinzendorfstraße</string>
+	<string>Zoo</string>
+	<string>Zschertnitz Münzmeisterstr.</string>
+	<string>Zschertnitzer Straße</string>
+	<string>Burgk Zschiedge</string>
+	<string>Zschierener Straße</string>
+	<string>Zschonergrundstraße</string>
+	<string>Friedensstraße</string>
+	<string>Flensburger Straße</string>
+	<string>Zum Hutbergblick</string>
+	<string>Haltepunkt Freiberger Straße</string>
+	<string>Ockerwitz</string>
+	<string>Oschatzer Straße</string>
+	<string>Regensburger Straße</string>
+</array>
+</plist>

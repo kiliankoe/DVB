@@ -168,6 +168,7 @@
 		30B16739831A57E59BFE39E8BF50128C /* NSBundle+CurrentTestBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSBundle+CurrentTestBundle.swift"; path = "Sources/Quick/NSBundle+CurrentTestBundle.swift"; sourceTree = "<group>"; };
 		354B5315AD30C24D1172D4F1524B068D /* Functional.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Functional.swift; path = Sources/Nimble/Utils/Functional.swift; sourceTree = "<group>"; };
 		3956F4D61CDD5E9200864D61 /* TransportMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransportMode.swift; path = DataTypes/TransportMode.swift; sourceTree = "<group>"; };
+		3956F4D91CDD643800864D61 /* DVBStops.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = DVBStops.plist; path = Assets/DVBStops.plist; sourceTree = "<group>"; };
 		3967E353C11023B5BFA469EDF600CA68 /* Nimble.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Nimble.modulemap; sourceTree = "<group>"; };
 		3973F89F7C13EAD4855CFC68BCC8511E /* QuickSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpec.h; path = Sources/Quick/QuickSpec.h; sourceTree = "<group>"; };
 		39E369511CDD38BE008EB5DA /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Connection.swift; path = DataTypes/Connection.swift; sourceTree = "<group>"; };
@@ -351,6 +352,14 @@
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/DVB";
+			sourceTree = "<group>";
+		};
+		3956F4D81CDD640E00864D61 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3956F4D91CDD643800864D61 /* DVBStops.plist */,
+			);
+			name = Assets;
 			sourceTree = "<group>";
 		};
 		39E369531CDD3CA8008EB5DA /* DataTypes */ = {
@@ -594,6 +603,7 @@
 		E1D378C37976CF4529B121915B984797 /* DVB */ = {
 			isa = PBXGroup;
 			children = (
+				3956F4D81CDD640E00864D61 /* Assets */,
 				042787480CCF37C9FB5BE9D609CCA740 /* Classes */,
 			);
 			path = DVB;
