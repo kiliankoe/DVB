@@ -26,7 +26,7 @@ This is an unofficial Swift package, giving you a few options to query Dresden's
   s.license          = 'MIT'
   s.author           = { "Kilian Koeltzsch" => "me@kilian.io" }
   s.source           = { :git => "https://github.com/kiliankoe/DVB.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://twitter.com/kiliankoe'
 
   s.ios.deployment_target = '8.0'
 
