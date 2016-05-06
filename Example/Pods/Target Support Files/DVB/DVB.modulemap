@@ -1,0 +1,6 @@
+framework module DVB {
+  umbrella header "DVB-umbrella.h"
+
+  export *
+  module * { export * }
+}
