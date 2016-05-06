@@ -8,11 +8,11 @@
 
 import Foundation
 
-/// DVB offers static functions to interact with all the different endpoints
+/// DVB offers static functions to interact with all the different endpoints.
 public class DVB {
 
     /**
-     List all connections from a given stop
+     List all connections from a given stop.
 
      - parameter stop:       name of the stop
      - parameter city:       optional city, defaults to Dresden
@@ -21,7 +21,7 @@ public class DVB {
      - parameter offset:     optional offset for the time until a connection arrives
      - parameter completion: handler provided with list of connections, may be empty if error occurs
 
-     - warning: Even when a `limit` is supplied, you're not guaranteed to receive that many results
+     - warning: Even when a `limit` is supplied, you're not guaranteed to receive that many results.
      */
     public static func monitor(stop: String, city: String? = nil, line: String? = nil, limit: Int? = nil, offset: Int? = nil, completion: ([Connection]) -> Void) {
         let hst = stop
@@ -62,7 +62,7 @@ public class DVB {
     }
 
     /**
-     Send a GET request
+     Send a GET request.
 
      - parameter request:    the request to be sent
      - parameter completion: handler provided with a result

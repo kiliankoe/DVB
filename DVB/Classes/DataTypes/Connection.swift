@@ -34,6 +34,12 @@ public struct Connection {
     public var leavingDate: NSDate {
         return NSDate().dateByAddingTimeInterval(Double(minutesUntil) * 60)
     }
+
+    public init(line: String, direction: String, minutesUntil: Int) {
+        self.line = line
+        self.direction = direction
+        self.minutesUntil = minutesUntil
+    }
 }
 
 extension Connection: CustomStringConvertible {
