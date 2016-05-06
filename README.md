@@ -1,6 +1,6 @@
 # DVB
 
-[![CI Status](http://img.shields.io/travis/Kilian Koeltzsch/DVB.svg?style=flat)](https://travis-ci.org/kiliankoe/DVB)
+[![CI Status](http://img.shields.io/travis/kiliankoe/DVB.svg?style=flat)](https://travis-ci.org/kiliankoe/DVB)
 [![Version](https://img.shields.io/cocoapods/v/DVB.svg?style=flat)](http://cocoapods.org/pods/DVB)
 [![License](https://img.shields.io/cocoapods/l/DVB.svg?style=flat)](http://cocoapods.org/pods/DVB)
 [![Platform](https://img.shields.io/cocoapods/p/DVB.svg?style=flat)](http://cocoapods.org/pods/DVB)
