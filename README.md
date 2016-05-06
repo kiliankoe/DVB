@@ -27,7 +27,8 @@ DVB should also be compatible with Carthage out of the box :)
 
 ## Quick Start
 
-Be sure to check the docs for more detailed information on how to use this library, but here are some quick examples for getting started right away.
+Be sure to check the [docs](http://cocoadocs.org/docsets/DVB) for more detailed information on how to use this library, but here are some quick 
+examples for getting started right away.
 
 ### Monitor a single stop
 
