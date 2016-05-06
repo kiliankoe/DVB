@@ -48,11 +48,15 @@ A correct Info.plist will have to include the following XML, unless of course yo
 DVB is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-```ruby
+```
 pod "DVB"
 ```
 
-DVB should also be compatible with Carthage out of the box :)
+Or via Carthage, whatever you prefer. Just add the following to your Cartfile:
+
+```
+github "kiliankoe/DVB"
+```
 
 ## Quick Start
 
