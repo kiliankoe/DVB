@@ -19,16 +19,18 @@ public class DVB {
      - parameter line:       optional filter for returning only connections of a specific line
      - parameter limit:      optional maximum amount of results, defaults to as many as possible
      - parameter offset:     optional offset for the time until a connection arrives
+     - parameter mode:       optional list of modes of transport, defaults to 'normal' things like buses and trams
      - parameter completion: handler provided with list of connections, may be empty if error occurs
 
      - warning: Even when a `limit` is supplied, you're not guaranteed to receive that many results.
      */
-    public static func monitor(stop: String, city: String? = nil, line: String? = nil, limit: Int? = nil, offset: Int? = nil, completion: ([Connection]) -> Void) {
+    public static func monitor(stop: String, city: String? = nil, line: String? = nil, limit: Int? = nil, offset: Int? = nil, mode: [TransportMode]? = nil, completion: ([Connection]) -> Void) {
         let hst = stop
         let vz = offset ?? 0
         let ort = city ?? ""
         let lim = 0
-        let request = NSMutableURLRequest(URL: URL.VVO.Monitor(hst: hst, vz: vz, ort: ort, lim: lim).create())
+        let vm = mode ?? []
+        let request = NSMutableURLRequest(URL: URL.VVO.Monitor(hst: hst, vz: vz, ort: ort, lim: lim, vm: vm).create())
 
         get(request) { (result) in
             switch result {

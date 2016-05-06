@@ -8,6 +8,12 @@
 
 import Foundation
 
+/**
+ Result enum type used internally
+
+ - Success: Success
+ - Failure: Failure
+ */
 enum Result<T, E: ErrorType> {
     case Success(value: T)
     case Failure(error: E)
