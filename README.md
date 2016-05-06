@@ -14,6 +14,35 @@ the respective links :)
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+## Caveat
+
+This library will try to access data provided by HTTP-only endpoints. Doing so will require you to add certain App Transport Security Exceptions
+to your app's Info.plist.
+These include the following:
+
+ - widgets.vvo-online.de
+ - efa.vvo-online.de
+
+A correct Info.plist will have to include the following XML.
+
+```xml
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSExceptionDomains</key>
+    <dict>
+        <key>vvo-online.de</key>
+        <dict>
+            <!--Include to allow subdomains-->
+            <key>NSIncludesSubdomains</key>
+            <true/>
+            <!--Include to allow HTTP requests-->
+            <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+            <true/>
+        </dict>
+    </dict>
+</dict>
+```
+
 ## Installation
 
 DVB is available through [CocoaPods](http://cocoapods.org). To install
