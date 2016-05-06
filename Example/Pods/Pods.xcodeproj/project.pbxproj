@@ -28,6 +28,8 @@
 		317FD9643A0E9027BC7D7B4F561876C6 /* DVB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8143E493E6A31386BAE2574FEE1184A9 /* DVB-dummy.m */; };
 		38F5CE4B4C59A81734A93E32D35B696E /* FailureMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A562213D0385708961C195D0CF8C45E /* FailureMessage.swift */; };
 		39E369521CDD38BE008EB5DA /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E369511CDD38BE008EB5DA /* Connection.swift */; };
+		39E369551CDD417F008EB5DA /* DVBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E369541CDD417F008EB5DA /* DVBError.swift */; };
+		39E369571CDD4192008EB5DA /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E369561CDD4192008EB5DA /* Result.swift */; };
 		3A642694ACAB4F27FB8CD29B574A945C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E351727CD07BB90B2A3CAE2C2433F6C5 /* Foundation.framework */; };
 		3D1BB98DEA422D8F173613EC715488B9 /* PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BF65FFEC8A084057E63EDF139D2BD1 /* PostNotification.swift */; };
 		415F29FE4E9D970954C46CD3CF4AE345 /* SatisfyAnyOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8C873CB5F43A0FA130C9B9FF74B6B0 /* SatisfyAnyOf.swift */; };
@@ -167,6 +169,8 @@
 		3967E353C11023B5BFA469EDF600CA68 /* Nimble.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Nimble.modulemap; sourceTree = "<group>"; };
 		3973F89F7C13EAD4855CFC68BCC8511E /* QuickSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpec.h; path = Sources/Quick/QuickSpec.h; sourceTree = "<group>"; };
 		39E369511CDD38BE008EB5DA /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Connection.swift; path = DataTypes/Connection.swift; sourceTree = "<group>"; };
+		39E369541CDD417F008EB5DA /* DVBError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DVBError.swift; path = DataTypes/DVBError.swift; sourceTree = "<group>"; };
+		39E369561CDD4192008EB5DA /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = DataTypes/Result.swift; sourceTree = "<group>"; };
 		3C336FE9BB62AC04677F3DBFE6F6B6A6 /* Pods-DVB_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DVB_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		3DF1A6A09F31564DDB5769E5567558BD /* HaveCount.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HaveCount.swift; path = Sources/Nimble/Matchers/HaveCount.swift; sourceTree = "<group>"; };
 		3F8F619D92D71FED493B6ABC720242E0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -351,6 +355,8 @@
 			isa = PBXGroup;
 			children = (
 				39E369511CDD38BE008EB5DA /* Connection.swift */,
+				39E369541CDD417F008EB5DA /* DVBError.swift */,
+				39E369561CDD4192008EB5DA /* Result.swift */,
 			);
 			name = DataTypes;
 			sourceTree = "<group>";
@@ -871,6 +877,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E369571CDD4192008EB5DA /* Result.swift in Sources */,
+				39E369551CDD417F008EB5DA /* DVBError.swift in Sources */,
 				317FD9643A0E9027BC7D7B4F561876C6 /* DVB-dummy.m in Sources */,
 				39E369521CDD38BE008EB5DA /* Connection.swift in Sources */,
 				468FBE220FAFDF016D2378551BE83EF3 /* DVB.swift in Sources */,
