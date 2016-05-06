@@ -23,7 +23,7 @@ These include the following:
  - widgets.vvo-online.de
  - efa.vvo-online.de
 
-A correct Info.plist will have to include the following XML.
+A correct Info.plist will have to include the following XML, unless of course you've already got `NSAllowArbitraryLoads` in there...
 
 ```xml
 <key>NSAppTransportSecurity</key>
