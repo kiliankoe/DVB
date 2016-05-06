@@ -82,9 +82,8 @@ public class DVB {
         request.HTTPMethod = method
 
         let session = NSURLSession(configuration: .defaultSessionConfiguration())
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         session.dataTaskWithRequest(request) { (data, response, error) in
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+
             guard let data = data else {
                 completion(.Failure(error: .Request))
                 return
