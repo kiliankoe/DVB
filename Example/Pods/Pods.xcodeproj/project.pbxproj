@@ -28,6 +28,7 @@
 		317FD9643A0E9027BC7D7B4F561876C6 /* DVB-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8143E493E6A31386BAE2574FEE1184A9 /* DVB-dummy.m */; };
 		38F5CE4B4C59A81734A93E32D35B696E /* FailureMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A562213D0385708961C195D0CF8C45E /* FailureMessage.swift */; };
 		3956F4D71CDD5E9200864D61 /* TransportMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3956F4D61CDD5E9200864D61 /* TransportMode.swift */; };
+		3956F4DB1CDD658300864D61 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3956F4DA1CDD658300864D61 /* Network.swift */; };
 		39E369521CDD38BE008EB5DA /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E369511CDD38BE008EB5DA /* Connection.swift */; };
 		39E369551CDD417F008EB5DA /* DVBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E369541CDD417F008EB5DA /* DVBError.swift */; };
 		39E369571CDD4192008EB5DA /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E369561CDD4192008EB5DA /* Result.swift */; };
@@ -169,6 +170,7 @@
 		354B5315AD30C24D1172D4F1524B068D /* Functional.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Functional.swift; path = Sources/Nimble/Utils/Functional.swift; sourceTree = "<group>"; };
 		3956F4D61CDD5E9200864D61 /* TransportMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransportMode.swift; path = DataTypes/TransportMode.swift; sourceTree = "<group>"; };
 		3956F4D91CDD643800864D61 /* DVBStops.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = DVBStops.plist; path = Assets/DVBStops.plist; sourceTree = "<group>"; };
+		3956F4DA1CDD658300864D61 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		3967E353C11023B5BFA469EDF600CA68 /* Nimble.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Nimble.modulemap; sourceTree = "<group>"; };
 		3973F89F7C13EAD4855CFC68BCC8511E /* QuickSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpec.h; path = Sources/Quick/QuickSpec.h; sourceTree = "<group>"; };
 		39E369511CDD38BE008EB5DA /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Connection.swift; path = DataTypes/Connection.swift; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 			children = (
 				39E369531CDD3CA8008EB5DA /* DataTypes */,
 				0FB0DB9D6728747163BF90F26E767092 /* DVB.swift */,
+				3956F4DA1CDD658300864D61 /* Network.swift */,
 				2AD82C8A679F7568B521E0D68D742ACD /* URL.swift */,
 			);
 			path = Classes;
@@ -892,6 +895,7 @@
 			files = (
 				39E369571CDD4192008EB5DA /* Result.swift in Sources */,
 				39E369551CDD417F008EB5DA /* DVBError.swift in Sources */,
+				3956F4DB1CDD658300864D61 /* Network.swift in Sources */,
 				317FD9643A0E9027BC7D7B4F561876C6 /* DVB-dummy.m in Sources */,
 				3956F4D71CDD5E9200864D61 /* TransportMode.swift in Sources */,
 				39E369521CDD38BE008EB5DA /* Connection.swift in Sources */,

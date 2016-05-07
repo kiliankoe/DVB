@@ -66,7 +66,7 @@ examples for getting started right away.
 ### Monitor a single stop
 
 Monitor a single stop to see every bus or tram leaving this stop. You can also optionally add parameters for a given time offset, filtering for a
-specific line or limiting the amount of results.
+specific line, providing a list of allowed transport modes (see [TransportMode](https://github.com/kiliankoe/DVB/blob/master/DVB/Classes/DataTypes/TransportMode.swift)) or limiting the amount of results.
 
 ```swift
 DVB.monitor("Pirnaischer Platz") { (connections) in
