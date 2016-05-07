@@ -59,6 +59,12 @@ class MonitorTests: QuickSpec {
                     }
                 })
             }
+
+            it("shouldn't fail on high limit") {
+                DVB.monitor("Postplatz", limit: 500, completion: { (connections) in
+                    expect(true) == true
+                })
+            }
         }
     }
 }

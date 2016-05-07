@@ -54,7 +54,10 @@ public class DVB {
                 }
 
                 // Return only given limit amount if limit is set
-                if let limit = limit {
+                if var limit = limit {
+                    if limit > connections.count {
+                        limit = connections.count
+                    }
                     connections = Array(connections[0 ..< limit])
                 }
 
