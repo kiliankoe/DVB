@@ -57,6 +57,8 @@ public class DVB {
                 if var limit = limit {
                     if limit > connections.count {
                         limit = connections.count
+                    } else if limit < 0 {
+                        limit = 0
                     }
                     connections = Array(connections[0 ..< limit])
                 }

@@ -65,6 +65,12 @@ class MonitorTests: QuickSpec {
                     expect(true) == true
                 })
             }
+
+            it("shouldn't fail on a negative limit") {
+                DVB.monitor("Postplatz", limit: -1, completion: { (connections) in
+                    expect(true) == true
+                })
+            }
         }
     }
 }
