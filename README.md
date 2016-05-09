@@ -74,6 +74,26 @@ DVB.monitor("Pirnaischer Platz") { (departures) in
 }
 ```
 
+### Find a specific stop
+
+Say you're looking for "Zellescher Weg". You can use the following to find a selection of stops.
+
+```swift
+DVB.find("Zellesch") { (stops) in
+    // do something with the list of stops
+}
+```
+
+### List current route changes
+
+The DVB publishes current route changes in the entire city. Look them up like this.
+
+```swift
+DVB.routeChanges { (updated, routeChanges) in
+    // do something with the date last updated and list of route changes
+}
+```
+
 More is still to come ;)
 
 ## Author
