@@ -17,7 +17,7 @@ import Foundation
  */
 enum URL {
     enum VVO {
-        case Monitor(hst: String, vz: Int, ort: String, lim: Int, vm: [TransportMode])
+        case Monitor(hst: String, vz: Int, ort: String, lim: Int, vm: [TransportMode.Monitor])
         case Haltestelle(hst: String, ort: String)
         case Verkehrsmittel
 

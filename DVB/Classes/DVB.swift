@@ -24,7 +24,7 @@ public class DVB {
 
      - warning: Even when a `limit` is supplied, you're not guaranteed to receive that many results.
      */
-    public static func monitor(stop: String, city: String? = nil, line: [String]? = nil, limit: Int? = nil, offset: Int? = nil, mode: [TransportMode]? = nil, completion: ([Departure]) -> Void) {
+    public static func monitor(stop: String, city: String? = nil, line: [String]? = nil, limit: Int? = nil, offset: Int? = nil, mode: [TransportMode.Monitor]? = nil, completion: ([Departure]) -> Void) {
         let hst = stop
         let vz = offset ?? 0
         let ort = city ?? ""
