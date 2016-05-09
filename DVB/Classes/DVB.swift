@@ -106,6 +106,11 @@ public class DVB {
         }
     }
 
+    /**
+     List current route changes in the network.
+
+     - parameter completion: handler provided with a date object when the data was last updated and a list of changes.
+     */
     public static func routeChanges(completion: (updated: NSDate?, routeChanges: [RouteChange]) -> Void) {
 
         let request = NSMutableURLRequest(URL: URL.DVB.Routechanges.create())
