@@ -16,7 +16,7 @@ public class DVB {
 
      - parameter stop:       name of the stop
      - parameter city:       optional city, defaults to Dresden
-     - parameter line:       optional filter for returning only departures of a specific line
+     - parameter line:       optional filter for returning only departures of a specific line or list of lines
      - parameter limit:      optional maximum amount of results, defaults to as many as possible
      - parameter offset:     optional offset for the time until a departure arrives
      - parameter mode:       optional list of modes of transport, defaults to 'normal' things like buses and trams
@@ -24,7 +24,7 @@ public class DVB {
 
      - warning: Even when a `limit` is supplied, you're not guaranteed to receive that many results.
      */
-    public static func monitor(stop: String, city: String? = nil, line: String? = nil, limit: Int? = nil, offset: Int? = nil, mode: [TransportMode]? = nil, completion: ([Departure]) -> Void) {
+    public static func monitor(stop: String, city: String? = nil, line: [String]? = nil, limit: Int? = nil, offset: Int? = nil, mode: [TransportMode]? = nil, completion: ([Departure]) -> Void) {
         let hst = stop
         let vz = offset ?? 0
         let ort = city ?? ""
@@ -35,7 +35,7 @@ public class DVB {
         get(request) { (result) in
             switch result {
             case .Failure(let error):
-                print(error)
+                print("DVB failed with error: \(error)")
                 completion([])
             case .Success(let value):
                 guard let departureList = value as? [[String]] else {
@@ -48,9 +48,9 @@ public class DVB {
                     Departure(line: $0[0], direction: $0[1], minutesUntil: Int($0[2]) ?? 0)
                 }
 
-                // Filter out wrong lines if line filter is set
+                // Filter out non-requested lines if line filter is set
                 if let line = line {
-                    departures = departures.filter { return $0.line == line }
+                    departures = departures.filter { return line.contains($0.line) }
                 }
 
                 // Return only given limit amount if limit is set

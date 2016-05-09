@@ -21,7 +21,7 @@ class ViewController: UITableViewController {
     func refresh() {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 
-        DVB.monitor("Helmholtzstraße", limit: 10, line: "85") { (departures) in
+        DVB.monitor("Helmholtzstraße", limit: 10, line: ["85"]) { (departures) in
             self.departures = departures
             dispatch_async(dispatch_get_main_queue(), {
                 [unowned self] in

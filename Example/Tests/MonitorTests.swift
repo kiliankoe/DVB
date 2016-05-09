@@ -53,7 +53,7 @@ class MonitorTests: QuickSpec {
             }
 
             it("should only return requested lines") {
-                DVB.monitor("Pirnaischer Platz", line: "3", completion: { (departures) in
+                DVB.monitor("Pirnaischer Platz", line: ["3"], completion: { (departures) in
                     for dep in departures {
                         expect(dep.line) == "3"
                     }
