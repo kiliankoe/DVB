@@ -17,16 +17,28 @@ public struct Departure {
     public let line: String
 
     /// Type of the Departure
-    /// Beware that this is currently very prone to failure and inaccurate...
+    /// Beware that this is currently somewhat error-prone and inaccurate and shouldn't be relied upon
     public var type: TransportMode? {
-        // TODO: Improve on this...
-        let lineInt = Int(line)
-        switch lineInt {
-        case .Some(0 ... 20):
-            return .Straßenbahn
-        case .Some(21 ..< 100):
+
+        if let _ = line.rangeOfString("^F", options: .RegularExpressionSearch) {
+            return .Faehre
+        }
+
+        if let _ = line.rangeOfString("(^RE|^IC|^TL|^RB)", options: .RegularExpressionSearch) {
+            return .Zug
+        }
+
+        if let _ = line.rangeOfString("^S", options: .RegularExpressionSearch) {
+            return .SBahn
+        }
+
+        guard let line = Int(line) else { return nil }
+        switch line {
+        case 0 ... 20:
+            return .Strassenbahn
+        case 21 ..< 100:
             return .Stadtbus
-        case .Some(100 ... 1000):
+        case 100 ... 1000:
             return .Regionalbus
         default:
             return nil

@@ -28,7 +28,7 @@ class MonitorTests: QuickSpec {
             }
 
             it("should identify as the correct type") {
-                expect(dep.type) == .Straßenbahn
+                expect(dep.type) == .Strassenbahn
             }
 
             it("should have a correct NSDate") {

@@ -25,7 +25,7 @@ public enum TransportMode: String {
     /// Citybus
     case Stadtbus = "Stadtbus"
     /// Tram
-    case Straßenbahn = "Straßenbahn"
+    case Strassenbahn = "Straßenbahn"
     /// Train
     case Zug = "Zug"
 }
