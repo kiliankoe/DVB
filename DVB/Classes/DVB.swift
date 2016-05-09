@@ -24,12 +24,12 @@ public class DVB {
 
      - warning: Even when a `limit` is supplied, you're not guaranteed to receive that many results.
      */
-    public static func monitor(stop: String, city: String? = nil, line: [String]? = nil, limit: Int? = nil, offset: Int? = nil, mode: [TransportMode.Monitor]? = nil, completion: ([Departure]) -> Void) {
+    public static func monitor(stop: String, city: String? = nil, line: [String]? = nil, limit: Int? = nil, offset: Int? = nil, modes: [TransportMode.Monitor]? = nil, completion: ([Departure]) -> Void) {
         let hst = stop
         let vz = offset ?? 0
         let ort = city ?? ""
         let lim = 0
-        let vm = mode ?? []
+        let vm = modes ?? []
         let request = NSMutableURLRequest(URL: URL.VVO.Monitor(hst: hst, vz: vz, ort: ort, lim: lim, vm: vm).create())
 
         get(request) { (result) in
