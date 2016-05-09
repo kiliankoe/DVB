@@ -95,8 +95,9 @@ public class DVB {
                     return
                 }
 
-                let stops = stopList.map {
-                    Stop(name: $0[0] as? String ?? "", location: $0[1] as? String ?? "")
+                var stops = [Stop]()
+                for stopData in stopList {
+                    stops.append(Stop(name: stopData[0], location: stopData[1]))
                 }
 
                 completion(stops)
