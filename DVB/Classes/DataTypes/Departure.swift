@@ -17,9 +17,9 @@ public struct Departure {
     public let line: String
 
     /// Type of the Departure
-    public lazy var type: TransportMode.Monitor? = {
-        return self.parseType()
-    }()
+    public var type: TransportMode.Monitor? {
+        return parseType()
+    }
 
     /// Destination of the departure, e.g. "Bühlau" or "Wilder Mann".
     public let direction: String
