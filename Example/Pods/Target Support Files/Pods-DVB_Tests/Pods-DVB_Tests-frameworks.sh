@@ -85,11 +85,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-DVB_Tests/DVB.framework"
+  install_framework "Pods-DVB_Tests/Kanna.framework"
   install_framework "Pods-DVB_Tests/Nimble.framework"
   install_framework "Pods-DVB_Tests/Quick.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-DVB_Tests/DVB.framework"
+  install_framework "Pods-DVB_Tests/Kanna.framework"
   install_framework "Pods-DVB_Tests/Nimble.framework"
   install_framework "Pods-DVB_Tests/Quick.framework"
 fi

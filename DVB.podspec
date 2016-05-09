@@ -22,5 +22,7 @@ This is an unofficial Swift package, giving you a few options to query Dresden's
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.11'
 
+  s.dependency 'Kanna', '~> 1.0.6'
+
   s.source_files = 'DVB/Classes/**/*'
 end
