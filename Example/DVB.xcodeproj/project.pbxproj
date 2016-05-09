@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		392D52D31CE1022F0002B74E /* FindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B318301CE0FF5C0063E242 /* FindTests.swift */; };
 		3956F4D41CDD503800864D61 /* MonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3956F4D21CDD500900864D61 /* MonitorTests.swift */; };
 		604494A75F0F080C49789D2E /* Pods_DVB_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518033C732740926F58B7CD9 /* Pods_DVB_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 		09278FB0FB3294E38CFD1D63 /* Pods-DVB_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVB_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DVB_Tests/Pods-DVB_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		0AB6D01272F1B3266222BBEE /* Pods-DVB_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVB_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DVB_Tests/Pods-DVB_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		3956F4D21CDD500900864D61 /* MonitorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitorTests.swift; sourceTree = "<group>"; };
+		39B318301CE0FF5C0063E242 /* FindTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTests.swift; sourceTree = "<group>"; };
 		518033C732740926F58B7CD9 /* Pods_DVB_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DVB_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* DVB_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DVB_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			children = (
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				3956F4D21CDD500900864D61 /* MonitorTests.swift */,
+				39B318301CE0FF5C0063E242 /* FindTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -371,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				392D52D31CE1022F0002B74E /* FindTests.swift in Sources */,
 				3956F4D41CDD503800864D61 /* MonitorTests.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);

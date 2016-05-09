@@ -12,7 +12,7 @@ import DVB
 
 class MonitorTests: QuickSpec {
     override func spec() {
-        describe("Testing Departure Struct") {
+        describe("Departure Struct") {
             let dep = Departure(line: "3", direction: "Wilder Mann", minutesUntil: 5)
 
             it("should be the correct line") {
@@ -38,7 +38,7 @@ class MonitorTests: QuickSpec {
             }
         }
 
-        describe("Testing Monitor Method") {
+        describe("DVB.monitor") {
 
             it("should return results") {
                 DVB.monitor("Postplatz", completion: { (departures) in

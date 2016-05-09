@@ -20,7 +20,7 @@ public class DVB {
      - parameter limit:      optional maximum amount of results, defaults to as many as possible
      - parameter offset:     optional offset for the time until a departure arrives
      - parameter mode:       optional list of modes of transport, defaults to 'normal' things like buses and trams
-     - parameter completion: handler provided with list of departures, may be empty if error occurs
+     - parameter completion: handler provided with list of departures, may be empty if error occurs.
 
      - warning: Even when a `limit` is supplied, you're not guaranteed to receive that many results.
      */
@@ -64,6 +64,42 @@ public class DVB {
                 }
 
                 completion(departures)
+            }
+        }
+    }
+
+    /**
+     Find a stop by a given name.
+
+     - parameter stop:       name of the stop to be searched for
+     - parameter completion: handler provided with a list of possible stops, may be empty if error occurs.
+     */
+    public static func find(stop: String, city: String? = nil, completion: ([Stop]) -> Void) {
+        let city = city ?? ""
+        let request = NSMutableURLRequest(URL: URL.VVO.Haltestelle(hst: stop, ort: city).create())
+
+        get(request) { (result) in
+            switch result {
+            case .Failure(let error):
+                print("DVB failed with error: \(error)")
+                completion([])
+            case .Success(let value):
+
+                guard let list = value as? [AnyObject] else {
+                    completion([])
+                    return
+                }
+
+                guard let stopList = list[1] as? [AnyObject] else {
+                    completion([])
+                    return
+                }
+
+                let stops = stopList.map {
+                    Stop(name: $0[0] as? String ?? "", location: $0[1] as? String ?? "")
+                }
+
+                completion(stops)
             }
         }
     }
