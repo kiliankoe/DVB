@@ -16,12 +16,21 @@ public struct Departure {
     /// Line identifier, e.g. "3", "85" or "EV3".
     public let line: String
 
-    /// Is the line a bus or tram? Can be nil if line ID contains letters.
-    public var isBus: Bool? {
-        if let line = Int(line) {
-            return line > 20
+    /// Type of the Departure
+    /// Beware that this is currently very prone to failure and inaccurate...
+    public var type: TransportMode? {
+        // TODO: Improve on this...
+        let lineInt = Int(line)
+        switch lineInt {
+        case .Some(0 ... 20):
+            return .Straßenbahn
+        case .Some(21 ..< 100):
+            return .Stadtbus
+        case .Some(100 ... 1000):
+            return .Regionalbus
+        default:
+            return nil
         }
-        return nil
     }
 
     /// Destination of the departure, e.g. "Bühlau" or "Wilder Mann".

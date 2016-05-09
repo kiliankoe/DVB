@@ -10,19 +10,10 @@ import Foundation
 
 /**
  Available modes of transport
-
- - Rufbus:          Callable Bus (?)
- - Faehre:          Ferry
- - Regionalbus:     Regional Bus
- - SBahn:           Commuter Train
- - SeilSchwebebahn: Cablecar
- - Stadtbus:        Citybus
- - Straßenbahn:     Tram
- - Zug:             Train
  */
 public enum TransportMode: String {
-    /// Callable Bus (?)
-    case Rufbus = "Rufbus"
+    /// Callable Taxi/Bus (?)
+    case ASTRufbus = "Rufbus"
     /// Ferry
     case Faehre = "Fähre"
     /// Regional Bus
