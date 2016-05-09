@@ -69,8 +69,8 @@ Monitor a single stop to see every bus or tram leaving this stop. You can also o
 specific line, providing a list of allowed transport modes (see [TransportMode](https://github.com/kiliankoe/DVB/blob/master/DVB/Classes/DataTypes/TransportMode.swift)) or limiting the amount of results.
 
 ```swift
-DVB.monitor("Pirnaischer Platz") { (connections) in
-    // do something with the list of connections
+DVB.monitor("Pirnaischer Platz") { (departures) in
+    // do something with the list of departures
 }
 ```
 

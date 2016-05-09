@@ -1,5 +1,5 @@
 //
-//  Connection.swift
+//  Departure.swift
 //  Pods
 //
 //  Created by Kilian Költzsch on 06/05/16.
@@ -9,9 +9,9 @@
 import Foundation
 
 /**
- *  A connection is a bus or tram leaving a specific stop at a specific time.
+ *  A departure is a bus or tram leaving a specific stop at a specific time.
  */
-public struct Connection {
+public struct Departure {
 
     /// Line identifier, e.g. "3", "85" or "EV3".
     public let line: String
@@ -24,10 +24,10 @@ public struct Connection {
         return nil
     }
 
-    /// Destination of the connection, e.g. "Bühlau" or "Wilder Mann".
+    /// Destination of the departure, e.g. "Bühlau" or "Wilder Mann".
     public let direction: String
 
-    /// How many minutes until the connection leaves.
+    /// How many minutes until the departure leaves.
     public let minutesUntil: Int
 
     /// Convenience getter for minutesUntil as NSDate
@@ -42,7 +42,7 @@ public struct Connection {
     }
 }
 
-extension Connection: CustomStringConvertible {
+extension Departure: CustomStringConvertible {
     public var description: String {
         return "\(line) \(direction) departing in \(minutesUntil) minutes."
     }

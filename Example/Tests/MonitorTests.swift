@@ -12,63 +12,63 @@ import DVB
 
 class MonitorTests: QuickSpec {
     override func spec() {
-        describe("Testing Connection Struct") {
-            let con = Connection(line: "3", direction: "Wilder Mann", minutesUntil: 5)
+        describe("Testing Departure Struct") {
+            let dep = Departure(line: "3", direction: "Wilder Mann", minutesUntil: 5)
 
             it("should be the correct line") {
-                expect(con.line) == "3"
+                expect(dep.line) == "3"
             }
 
             it("should have the correct direction") {
-                expect(con.direction) == "Wilder Mann"
+                expect(dep.direction) == "Wilder Mann"
             }
 
             it("should have the correct minutesUntil") {
-                expect(con.minutesUntil) == 5
+                expect(dep.minutesUntil) == 5
             }
 
             it("should identify as the correct type") {
-                expect(con.isBus) == false
+                expect(dep.isBus) == false
             }
 
             it("should have a correct NSDate") {
                 let in5Minutes = NSDate().dateByAddingTimeInterval(5 * 60)
                 // There will be small differences in the creation of the two NSDates
-                expect(con.leavingDate.timeIntervalSince1970 - in5Minutes.timeIntervalSince1970) < 1
+                expect(dep.leavingDate.timeIntervalSince1970 - in5Minutes.timeIntervalSince1970) < 1
             }
         }
 
         describe("Testing Monitor Method") {
 
             it("should return results") {
-                DVB.monitor("Postplatz", completion: { (connections) in
-                    expect(connections.count) > 0
+                DVB.monitor("Postplatz", completion: { (departures) in
+                    expect(departures.count) > 0
                 })
             }
 
             it("shouldn't find results for unknown stop") {
-                DVB.monitor("foobarbaz", completion: { (connections) in
-                    expect(connections.count) == 0
+                DVB.monitor("foobarbaz", completion: { (departures) in
+                    expect(departures.count) == 0
                 })
             }
 
             it("should only return requested lines") {
-                DVB.monitor("Pirnaischer Platz", line: "3", completion: { (connections) in
-                    for con in connections {
-                        expect(con.line) == "3"
+                DVB.monitor("Pirnaischer Platz", line: "3", completion: { (departures) in
+                    for dep in departures {
+                        expect(dep.line) == "3"
                     }
                 })
             }
 
             it("shouldn't fail on high limit") {
-                DVB.monitor("Postplatz", limit: 500, completion: { (connections) in
-                    expect(true) == true
+                DVB.monitor("Postplatz", limit: 500, completion: { (departures) in
+                    expect(departures.count) > 0
                 })
             }
 
             it("shouldn't fail on a negative limit") {
-                DVB.monitor("Postplatz", limit: -1, completion: { (connections) in
-                    expect(true) == true
+                DVB.monitor("Postplatz", limit: -1, completion: { (departures) in
+                    expect(departures.count) > 0
                 })
             }
         }
