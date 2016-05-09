@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		392D52D31CE1022F0002B74E /* FindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B318301CE0FF5C0063E242 /* FindTests.swift */; };
+		392D52D71CE13FA40002B74E /* RouteChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392D52D61CE13FA40002B74E /* RouteChangeTests.swift */; };
 		3956F4D41CDD503800864D61 /* MonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3956F4D21CDD500900864D61 /* MonitorTests.swift */; };
 		604494A75F0F080C49789D2E /* Pods_DVB_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 518033C732740926F58B7CD9 /* Pods_DVB_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		09278FB0FB3294E38CFD1D63 /* Pods-DVB_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVB_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DVB_Tests/Pods-DVB_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		0AB6D01272F1B3266222BBEE /* Pods-DVB_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVB_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DVB_Tests/Pods-DVB_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		392D52D61CE13FA40002B74E /* RouteChangeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteChangeTests.swift; sourceTree = "<group>"; };
 		3956F4D21CDD500900864D61 /* MonitorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonitorTests.swift; sourceTree = "<group>"; };
 		39B318301CE0FF5C0063E242 /* FindTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTests.swift; sourceTree = "<group>"; };
 		518033C732740926F58B7CD9 /* Pods_DVB_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DVB_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,7 +49,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		609ABEE4D790E1B83146F187 /* Pods-DVB_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVB_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DVB_Example/Pods-DVB_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9A526B30F5ACB179C78902C2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		A4282A4CB917500110DA1CE4 /* DVB.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = DVB.podspec; path = ../DVB.podspec; sourceTree = "<group>"; };
+		A4282A4CB917500110DA1CE4 /* DVB.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = DVB.podspec; path = ../DVB.podspec; sourceTree = "<group>"; };
 		B9893DCC55E63162DCEA926C /* Pods_DVB_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DVB_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5602D2C73B3037F098474B /* Pods-DVB_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DVB_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-DVB_Example/Pods-DVB_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E462ED803003C625FB4D4824 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				3956F4D21CDD500900864D61 /* MonitorTests.swift */,
 				39B318301CE0FF5C0063E242 /* FindTests.swift */,
+				392D52D61CE13FA40002B74E /* RouteChangeTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -375,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				392D52D31CE1022F0002B74E /* FindTests.swift in Sources */,
+				392D52D71CE13FA40002B74E /* RouteChangeTests.swift in Sources */,
 				3956F4D41CDD503800864D61 /* MonitorTests.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);

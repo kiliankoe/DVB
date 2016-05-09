@@ -9,7 +9,7 @@
 import Foundation
 
 /**
- *  A departure is a bus, tram or whatever leaving a specific stop at a specific time.
+ *  A bus, tram or whatever leaving a specific stop at a specific time.
  */
 public struct Departure {
 

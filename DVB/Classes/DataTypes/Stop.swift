@@ -9,7 +9,7 @@
 import Foundation
 
 /**
- *  A stop is a place where a bus, tram or whatever can stop.
+ *  A place where a bus, tram or whatever can stop.
  */
 public struct Stop {
     /// Name of the stop

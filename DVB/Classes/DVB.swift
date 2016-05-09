@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Kanna
 
 /// DVB offers static functions to interact with all the different endpoints.
 public class DVB {
@@ -101,6 +102,51 @@ public class DVB {
                 }
 
                 completion(stops)
+            }
+        }
+    }
+
+    public static func routeChanges(completion: (updated: NSDate?, routeChanges: [RouteChange]) -> Void) {
+
+        let request = NSMutableURLRequest(URL: URL.DVB.Routechanges.create())
+
+        get(request, raw: true) { (result) in
+            switch result {
+            case .Failure(let error):
+                print("DVB failed with error: \(error)")
+                completion(updated: nil, routeChanges: [])
+            case .Success(let value):
+
+                guard let value = value as? NSData else {
+                    completion(updated: nil, routeChanges: [])
+                    return
+                }
+
+                guard let xml = Kanna.XML(xml: value, encoding: NSUTF8StringEncoding) else {
+                    completion(updated: nil, routeChanges: [])
+                    return
+                }
+
+                let dateString = xml.at_xpath("//lastBuildDate")?.text
+                let updatedDate: NSDate?
+
+                if let dateString = dateString {
+                    let dateFormatter = NSDateFormatter()
+                    dateFormatter.dateFormat = "E, dd MMMM y HH:mm:ss XX"
+                    updatedDate = dateFormatter.dateFromString(dateString)
+                } else {
+                    updatedDate = nil
+                }
+
+                var items = [RouteChange]()
+                for item in xml.xpath("//item") {
+                    if let title = item.at_xpath("title")?.text, let details = item.at_xpath("description")?.text {
+                        let details = details.stringByReplacingOccurrencesOfString("<[^>]+>", withString: "", options: .RegularExpressionSearch, range: nil)
+                        items.append(RouteChange(title: title, details: details))
+                    }
+                }
+
+                completion(updated: updatedDate, routeChanges: items)
             }
         }
     }

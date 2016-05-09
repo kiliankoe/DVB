@@ -13,10 +13,11 @@ import Foundation
  Send a GET request.
 
  - parameter request:    the request to be sent
+ - parameter raw:        bool flag that if true ensures raw data and not JSON to be returned
  - parameter completion: handler provided with a result
  */
-func get(request: NSMutableURLRequest, completion: (Result<AnyObject, DVBError>) -> Void) {
-    dataTask(request, method: "GET", completion: completion)
+func get(request: NSMutableURLRequest, raw: Bool = false, completion: (Result<AnyObject, DVBError>) -> Void) {
+    dataTask(request, method: "GET", raw: raw, completion: completion)
 }
 
 /**
@@ -24,9 +25,10 @@ func get(request: NSMutableURLRequest, completion: (Result<AnyObject, DVBError>)
 
  - parameter request:    the request to be sent
  - parameter method:     what HTTP method to use
+ - parameter raw:        bool flag that if true ensures raw data and not JSON to be returned
  - parameter completion: handler provided with a result
  */
-private func dataTask(request: NSMutableURLRequest, method: String, completion: (Result<AnyObject, DVBError>) -> Void) {
+private func dataTask(request: NSMutableURLRequest, method: String, raw: Bool, completion: (Result<AnyObject, DVBError>) -> Void) {
     request.HTTPMethod = method
 
     let session = NSURLSession(configuration: .defaultSessionConfiguration())
@@ -39,6 +41,11 @@ private func dataTask(request: NSMutableURLRequest, method: String, completion: 
 
         guard 200 ... 299 ~= (response as! NSHTTPURLResponse).statusCode else {
             completion(.Failure(error: .Server(statusCode: (response as! NSHTTPURLResponse).statusCode)))
+            return
+        }
+
+        if raw {
+            completion(.Success(value: data))
             return
         }
 
