@@ -90,7 +90,7 @@ public class DVB {
                     return
                 }
 
-                guard let stopList = list[1] as? [AnyObject] else {
+                guard let stopList = list[1] as? [[String]] else {
                     completion([])
                     return
                 }
