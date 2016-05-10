@@ -146,8 +146,7 @@ public class DVB {
                 var items = [RouteChange]()
                 for item in xml.xpath("//item") {
                     if let title = item.at_xpath("title")?.text, let details = item.at_xpath("description")?.text {
-                        let details = details.stringByReplacingOccurrencesOfString("<[^>]+>", withString: "", options: .RegularExpressionSearch, range: nil)
-                        items.append(RouteChange(title: title, details: details))
+                        items.append(RouteChange(title: title, rawDetails: details))
                     }
                 }
 

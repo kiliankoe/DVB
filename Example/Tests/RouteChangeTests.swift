@@ -13,14 +13,14 @@ import DVB
 class RouteChangeTests: QuickSpec {
     override func spec() {
         describe("RouteChange Struct") {
-            let routeChange = RouteChange(title: "DVB Linie 85: Dresden - Hepkestraße, halbseitige Sperrung", details: "These are some details")
+            let routeChange = RouteChange(title: "DVB Linie 85: Dresden - Hepkestraße, halbseitige Sperrung", rawDetails: "These are some details")
 
             it("should have the correct title") {
                 expect(routeChange.title) == "DVB Linie 85: Dresden - Hepkestraße, halbseitige Sperrung"
             }
 
             it("should have the correct details") {
-                expect(routeChange.details) == "These are some details"
+                expect(routeChange.rawDetails) == "These are some details"
             }
 
             it("should be for the correct line") {

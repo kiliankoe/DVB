@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Kanna
 
 /**
  *  A temporary change in the network e.g. due to construction.
@@ -16,8 +17,8 @@ public struct RouteChange {
     /// Title containing the affected line and stop.
     public let title: String
 
-    /// Detail text with further information regarding the change.
-    public let details: String
+    /// Raw detail HTML with further information regarding the change.
+    public let rawDetails: String
 
     /**
      Initialize a RouteChange
@@ -27,9 +28,9 @@ public struct RouteChange {
 
      - returns: new RouteChange
      */
-    public init(title: String, details: String) {
+    public init(title: String, rawDetails: String) {
         self.title = title
-        self.details = details
+        self.rawDetails = rawDetails
     }
 
     /// Identifier of the affected line.
@@ -38,6 +39,21 @@ public struct RouteChange {
             return title.substringWithRange(lineRange)
         }
         return nil
+    }
+
+    /// Affected timeframe, e.g. "ab Mo, 09.05.2016, 06:00 Uhr bis Fr, 20.05.2016, 22:00 Uhr"
+    public var timeframe: String? {
+        let html = Kanna.HTML(html: rawDetails, encoding: NSUTF8StringEncoding)
+        return html?.css("p:nth-child(1)").text
+    }
+
+    /// List of all route change details
+    public var details: [String]? {
+        let html = Kanna.HTML(html: rawDetails, encoding: NSUTF8StringEncoding)
+        var optionalDetails = html?.css("p").map { $0.text }
+        optionalDetails?.removeFirst()
+        let details = optionalDetails?.flatMap { $0 }
+        return details
     }
 }
 
