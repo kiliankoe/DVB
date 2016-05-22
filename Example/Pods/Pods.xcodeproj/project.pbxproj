@@ -204,6 +204,7 @@
 		33CB55E56927B60EC4E062429AC05C5E /* Functional.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Functional.swift; path = Sources/Nimble/Utils/Functional.swift; sourceTree = "<group>"; };
 		34862C519F6A5BFCD18E25666927B8F6 /* AssertionDispatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionDispatcher.swift; path = Sources/Nimble/Adapters/AssertionDispatcher.swift; sourceTree = "<group>"; };
 		392D52D41CE13A4B0002B74E /* RouteChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteChange.swift; sourceTree = "<group>"; };
+		393049831CF1E77D001B0D67 /* stops.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = stops.plist; sourceTree = "<group>"; };
 		3AB70D91B41EB6AC957ED48ABAD5A233 /* AllPass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AllPass.swift; path = Sources/Nimble/Matchers/AllPass.swift; sourceTree = "<group>"; };
 		3C336FE9BB62AC04677F3DBFE6F6B6A6 /* Pods-DVB_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DVB_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		3D51F80689ABD07B63371CC54DD7B276 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -505,6 +506,7 @@
 				8143E493E6A31386BAE2574FEE1184A9 /* DVB-dummy.m */,
 				75D50C9534F23AF692BCB1430B11EB0C /* DVB-prefix.pch */,
 				5AD6A90AB2EEE36A31809471061F83E0 /* DVB-umbrella.h */,
+				393049831CF1E77D001B0D67 /* stops.plist */,
 				6204AD92F1C2A4925E983B900BC8880B /* Info.plist */,
 			);
 			name = "Support Files";
