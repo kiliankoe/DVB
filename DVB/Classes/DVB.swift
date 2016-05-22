@@ -8,6 +8,7 @@
 
 import Foundation
 import Kanna
+import MapKit
 
 /// DVB offers static functions to interact with all the different endpoints.
 public class DVB {
@@ -69,15 +70,8 @@ public class DVB {
         }
     }
 
-    /**
-     Find a list of stops with a given search string.
-
-     - parameter searchString: string to search by
-     - parameter region:       optional region, defaults to `Dresden`
-
-     - returns: list of stops that match the search string
-     */
-    public static func find(searchString: String, region: String = "Dresden") -> [Stop] {
+    /// A list of all stops in the VVO network
+    public static var allVVOStops: [Stop] = {
         let dvbBundle = NSBundle(forClass: DVB.self)
         guard let vvostopsPath = dvbBundle.pathForResource("VVOStops", ofType: "plist"),
             let allStops = NSArray(contentsOfFile: vvostopsPath) else { return [] }
@@ -99,15 +93,46 @@ public class DVB {
             let stop = Stop(id: id, name: name, region: region, searchString: searchString, tarifZones: tarifZones, longitude: longitude, latitude: latitude, priority: priority)
             stops.append(stop)
         }
+        return stops
+    }()
 
-        var foundStops = stops.filter { stop in
+    /**
+     Find a list of stops with a given search string.
+
+     - parameter searchString: string to search by
+     - parameter region:       optional region, defaults to `Dresden`
+
+     - returns: list of stops that match the search string
+     */
+    public static func find(searchString: String, region: String = "Dresden") -> [Stop] {
+
+        let foundStops = self.allVVOStops.filter { stop in
             let nameMatch = stop.searchString.lowercaseString.containsString(searchString.lowercaseString) || stop.name.lowercaseString.containsString(searchString.lowercaseString)
             return nameMatch && stop.region == region
         }
 
-        foundStops.sortInPlace { $0.priority > $1.priority }
+        return foundStops.sort { $0.priority > $1.priority }
+    }
 
-        return foundStops
+    /**
+     Find a list of stops in a given radius to a set of coordinates.
+
+     - parameter latitude:  latitude
+     - parameter longitude: longitude
+     - parameter radius:    search radius in meters
+
+     - returns: list of stops in the search radius around the given coordinates
+     */
+    public static func nearestStops(latitude latitude: Double, longitude: Double, radius: Double) -> [Stop] {
+
+        let searchLocation = CLLocation(latitude: latitude, longitude: longitude)
+
+        return self.allVVOStops.filter { stop in
+            guard stop.location.latitude != 999.999999 else { return false } // Some lots have no sane location data :(
+            let stopLocation = CLLocation(latitude: stop.location.latitude, longitude: stop.location.longitude)
+            let distanceFromSearch = searchLocation.distanceFromLocation(stopLocation)
+            return distanceFromSearch <= radius
+        }
     }
 
     /**

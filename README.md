@@ -83,6 +83,13 @@ let stops = DVB.find("Zellesch")
 // Directly returns a list of `Stop` values
 ```
 
+You can also search for stops with a radius around a given location.
+
+```swift
+let stops = DVB.nearestStops(latitude: 51.0271761, longitude: 13.7258114, radius: 300)
+// Searches around the coordinate with a radius of 300 meters.
+```
+
 ### List current route changes
 
 The DVB publishes current route changes in the entire city. Look them up like this.
