@@ -70,40 +70,44 @@ public class DVB {
     }
 
     /**
-     Find a stop by a given name.
+     Find a list of stops with a given search string.
 
-     - parameter stop:       name of the stop to be searched for
-     - parameter completion: handler provided with a list of possible stops, may be empty if error occurs.
+     - parameter searchString: string to search by
+     - parameter region:       optional region, defaults to `Dresden`
+
+     - returns: list of stops that match the search string
      */
-    public static func find(stop: String, city: String? = nil, completion: ([Stop]) -> Void) {
-        let city = city ?? ""
-        let request = NSMutableURLRequest(URL: URL.VVO.Haltestelle(hst: stop, ort: city).create())
+    public static func find(searchString: String, region: String = "Dresden") -> [Stop] {
+        let dvbBundle = NSBundle(forClass: DVB.self)
+        guard let vvostopsPath = dvbBundle.pathForResource("VVOStops", ofType: "plist"),
+            let allStops = NSArray(contentsOfFile: vvostopsPath) else { return [] }
 
-        get(request) { (result) in
-            switch result {
-            case .Failure(let error):
-                print("DVB failed with error: \(error)")
-                completion([])
-            case .Success(let value):
+        var stops = [Stop]()
 
-                guard let list = value as? [AnyObject] else {
-                    completion([])
-                    return
-                }
+        for stopElement in allStops {
 
-                guard let stopList = list[1] as? [[String]] else {
-                    completion([])
-                    return
-                }
+            // FIXME: Improve on this... A lot!
+            let id = (stopElement["id"] as! NSString).integerValue
+            let name = stopElement["name"] as! String
+            let region = stopElement["region"] as! String
+            let searchString = stopElement["searchstring"] as! String
+            let tarifZones = stopElement["tarif_zones"] as? String ?? ""
+            let longitude = (stopElement["longitude"] as! NSString).doubleValue
+            let latitude = (stopElement["latitude"] as! NSString).doubleValue
+            let priority = (stopElement["priority"] as! NSString).integerValue
 
-                var stops = [Stop]()
-                for stopData in stopList {
-                    stops.append(Stop(name: stopData[0], location: stopData[1]))
-                }
-
-                completion(stops)
-            }
+            let stop = Stop(id: id, name: name, region: region, searchString: searchString, tarifZones: tarifZones, longitude: longitude, latitude: latitude, priority: priority)
+            stops.append(stop)
         }
+
+        var foundStops = stops.filter { stop in
+            let nameMatch = stop.searchString.lowercaseString.containsString(searchString.lowercaseString) || stop.name.lowercaseString.containsString(searchString.lowercaseString)
+            return nameMatch && stop.region == region
+        }
+
+        foundStops.sortInPlace { $0.priority > $1.priority }
+
+        return foundStops
     }
 
     /**

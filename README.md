@@ -79,9 +79,8 @@ DVB.monitor("Pirnaischer Platz") { (departures) in
 Say you're looking for "Zellescher Weg". You can use the following to find a selection of stops.
 
 ```swift
-DVB.find("Zellesch") { (stops) in
-    // do something with the list of stops
-}
+let stops = DVB.find("Zellesch")
+// Directly returns a list of `Stop` values
 ```
 
 ### List current route changes
