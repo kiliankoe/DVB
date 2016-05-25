@@ -1,5 +1,5 @@
 PODS:
-  - DVB (0.6.0):
+  - DVB (0.7.0):
     - Kanna (~> 1.0.6)
   - Kanna (1.0.6)
   - Nimble (3.2.0)
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  DVB: 4e6e967287fea644ef6e025a282931295b0bde3c
+  DVB: 2e6e8dd5e4d64c1ae27a1d411d740b65f2a34cae
   Kanna: 9f30945bbd293a609f698ea164687ccc0990ff60
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
   Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226

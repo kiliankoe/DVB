@@ -115,24 +115,34 @@ public class DVB {
     }
 
     /**
-     Find a list of stops in a given radius to a set of coordinates.
+     Find a list of stops with their distance to a set of coordinates in a given radius. If the search radius is not set, all stops will be returned.
 
      - parameter latitude:  latitude
      - parameter longitude: longitude
      - parameter radius:    search radius in meters
 
-     - returns: list of stops in the search radius around the given coordinates
+     - returns: list of stops and their distance from the given coordinates, limited to the search radius if given
      */
-    public static func nearestStops(latitude latitude: Double, longitude: Double, radius: Double) -> [Stop] {
+    public static func nearestStops(latitude latitude: Double, longitude: Double, radius: Double? = nil) -> [(Stop, Double)] {
 
         let searchLocation = CLLocation(latitude: latitude, longitude: longitude)
 
-        return self.allVVOStops.filter { stop in
-            guard stop.location.latitude != 999.999999 else { return false } // Some lots have no sane location data :(
+		var stopsWithDistance = [(Stop, Double)]()
+		
+		for stop in self.allVVOStops {
+            guard stop.location.latitude != 999.999999 else { continue } // Some lots have no sane location data :(
             let stopLocation = CLLocation(latitude: stop.location.latitude, longitude: stop.location.longitude)
             let distanceFromSearch = searchLocation.distanceFromLocation(stopLocation)
-            return distanceFromSearch <= radius
+			
+			// Add stop with distance, if it's within the search radius or no radius was given
+			if let radius = radius where distanceFromSearch <= radius {
+				stopsWithDistance.append((stop, distanceFromSearch))
+			} else if radius == nil {
+				stopsWithDistance.append((stop, distanceFromSearch))
+			}
         }
+		
+		return stopsWithDistance
     }
 
     /**

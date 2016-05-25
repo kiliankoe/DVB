@@ -83,11 +83,11 @@ let stops = DVB.find("Zellesch")
 // Directly returns a list of `Stop` values
 ```
 
-You can also search for stops with a radius around a given location.
+You can also search for stops and their distance to a given location and optionally limit the results to a given radius.
 
 ```swift
 let stops = DVB.nearestStops(latitude: 51.0271761, longitude: 13.7258114, radius: 300)
-// Searches around the coordinate with a radius of 300 meters.
+// Searches around the coordinate with a radius of 300 meters. Returns a list of (Stop, Double) with the stop' distance to the loation
 ```
 
 ### List current route changes
@@ -102,9 +102,10 @@ DVB.routeChanges { (updated, routeChanges) in
 
 More is still to come ;)
 
-## Author
+## Authors
 
 Kilian Koeltzsch, [@kiliankoe](https://github.com/kiliankoe)
+Max Kattner, [@maxkattner](https://github.com/maxkattner)
 
 ## License
 

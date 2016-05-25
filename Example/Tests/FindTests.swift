@@ -40,8 +40,9 @@ class FindTests: QuickSpec {
         describe("DVB.nearestStops") {
 
             it("should return correct results") {
-                let helmholtz = DVB.nearestStops(latitude: 51.0271761, longitude: 13.7258114, radius: 300).first!
+                let (helmholtz, distance) = DVB.nearestStops(latitude: 51.0271761, longitude: 13.7258114, radius: 300).first!
                 expect(helmholtz.name) == "Helmholtzstraße"
+				expect(distance) <= 300
             }
         }
     }

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '3625AAA1DA39F23B05E017FB'
+               BlueprintIdentifier = 'A399F11E3BB6DAF0DDBA2774'
                BlueprintName = 'DVB'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'DVB.framework'>
