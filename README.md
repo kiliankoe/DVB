@@ -105,6 +105,7 @@ More is still to come ;)
 ## Authors
 
 Kilian Koeltzsch, [@kiliankoe](https://github.com/kiliankoe)
+
 Max Kattner, [@maxkattner](https://github.com/maxkattner)
 
 ## License
