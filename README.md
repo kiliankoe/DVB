@@ -87,7 +87,8 @@ You can also search for stops and their distance to a given location and optiona
 
 ```swift
 let stops = DVB.nearestStops(latitude: 51.0271761, longitude: 13.7258114, radius: 300)
-// Searches around the coordinate with a radius of 300 meters. Returns a list of (Stop, Double) with the stop' distance to the loation
+// Searches around the coordinate with a radius of 300 meters
+// Returns a list of (Stop, Double) with the stop's distance to the loation
 ```
 
 ### List current route changes
