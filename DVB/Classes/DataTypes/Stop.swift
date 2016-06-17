@@ -75,3 +75,23 @@ extension Stop: CustomStringConvertible {
         return "\(name), \(region)"
     }
 }
+
+extension Stop: Equatable {
+	// Intentionally left blank
+}
+
+// Checks if two stops are equal to each other
+public func ==(lhs: Stop, rhs: Stop) -> Bool {
+	return lhs.hashValue == rhs.hashValue
+}
+
+extension Stop: Hashable {
+	
+	// Returns a unique hash value 
+	public var hashValue: Int {
+		get {
+			return self.id.hashValue
+		}
+	}
+}
+
