@@ -28,8 +28,8 @@ public struct Departure {
     public let minutesUntil: Int
 
     /// Convenience getter for minutesUntil as NSDate
-    public var leavingDate: NSDate {
-        return NSDate().dateByAddingTimeInterval(Double(minutesUntil) * 60)
+    public var leavingDate: Date {
+        return Date().addingTimeInterval(Double(minutesUntil) * 60)
     }
 
     /**
@@ -52,7 +52,7 @@ public struct Departure {
 
      - returns: type
      */
-    private func parseType() -> TransportMode.Monitor? {
+    fileprivate func parseType() -> TransportMode.Monitor? {
 
         if let line = Int(line) {
             switch line {
@@ -69,27 +69,27 @@ public struct Departure {
 
         // The next two are not necessarily always true. Not clue how this could possibly tell though.
 
-        if let _ = line.rangeOfString("^E\\d", options: .RegularExpressionSearch) {
+        if let _ = line.range(of: "^E\\d", options: .regularExpression) {
             return .Strassenbahn
         }
 
-        if let _ = line.rangeOfString("^E\\d\\d", options: .RegularExpressionSearch) {
+        if let _ = line.range(of: "^E\\d\\d", options: .regularExpression) {
             return .Stadtbus
         }
 
-        if let _ = line.rangeOfString("^F", options: .RegularExpressionSearch) {
+        if let _ = line.range(of: "^F", options: .regularExpression) {
             return .Faehre
         }
 
-        if let _ = line.rangeOfString("(^RE|^IC|^TL|^RB)", options: .RegularExpressionSearch) {
+        if let _ = line.range(of: "(^RE|^IC|^TL|^RB)", options: .regularExpression) {
             return .Zug
         }
 
-        if let _ = line.rangeOfString("^S", options: .RegularExpressionSearch) {
+        if let _ = line.range(of: "^S", options: .regularExpression) {
             return .SBahn
         }
 
-        if let _ = line.rangeOfString("alita", options: .RegularExpressionSearch) {
+        if let _ = line.range(of: "alita", options: .regularExpression) {
             // I believe this to be correct, but haven't been able to verify it :D
             return .ASTRufbus
         }

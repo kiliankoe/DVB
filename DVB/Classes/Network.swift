@@ -16,7 +16,7 @@ import Foundation
  - parameter raw:        bool flag that if true ensures raw data and not JSON to be returned
  - parameter completion: handler provided with a result
  */
-func get(request: NSMutableURLRequest, raw: Bool = false, completion: (Result<AnyObject, DVBError>) -> Void) {
+func get(_ request: NSMutableURLRequest, raw: Bool = false, completion: @escaping (Result<Any, DVBError>) -> Void) {
     dataTask(request, method: "GET", raw: raw, completion: completion)
 }
 
@@ -28,35 +28,34 @@ func get(request: NSMutableURLRequest, raw: Bool = false, completion: (Result<An
  - parameter raw:        bool flag that if true ensures raw data and not JSON to be returned
  - parameter completion: handler provided with a result
  */
-private func dataTask(request: NSMutableURLRequest, method: String, raw: Bool, completion: (Result<AnyObject, DVBError>) -> Void) {
-    request.HTTPMethod = method
+private func dataTask(_ request: NSMutableURLRequest, method: String, raw: Bool, completion: @escaping (Result<Any, DVBError>) -> Void) {
+    var request = request as URLRequest
+    request.httpMethod = method
 
-    let session = NSURLSession(configuration: .defaultSessionConfiguration())
-    session.dataTaskWithRequest(request) { (data, response, error) in
-
+    let session = URLSession(configuration: .default)
+    session.dataTask(with: request) { data, response, error in
         guard let data = data else {
-            completion(.Failure(error: .Request))
+            completion(.failure(error: .request))
             return
         }
 
-        guard 200 ... 299 ~= (response as! NSHTTPURLResponse).statusCode else {
-            completion(.Failure(error: .Server(statusCode: (response as! NSHTTPURLResponse).statusCode)))
+        guard 200 ... 299 ~= (response as! HTTPURLResponse).statusCode else {
+            completion(.failure(error: .server(statusCode: (response as! HTTPURLResponse).statusCode)))
             return
         }
 
         if raw {
-            completion(.Success(value: data))
+            completion(.success(value: data))
             return
         }
 
-        let rawJson = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
+        let rawJson = try? JSONSerialization.jsonObject(with: data, options: .allowFragments)
 
         guard let json = rawJson else {
-            completion(.Failure(error: .JSON))
+            completion(.failure(error: .json))
             return
         }
 
-        completion(.Success(value: json))
+        completion(.success(value: json))
     }.resume()
 }
-//}

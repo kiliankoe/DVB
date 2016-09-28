@@ -1,12 +1,20 @@
 use_frameworks!
 
-target 'DVB_Example', :exclusive => true do
+target 'DVB_Example' do
   pod 'DVB', :path => '../'
 end
 
-target 'DVB_Tests', :exclusive => true do
+target 'DVB_Tests' do
   pod 'DVB', :path => '../'
 
-  pod 'Quick', '~> 0.8'
-  pod 'Nimble', '~> 3.0'
+  pod 'Quick', '~> 0.10'
+  pod 'Nimble', '~> 5.0'
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '3.0'
+        end
+    end
 end

@@ -30,6 +30,33 @@ public enum TransportMode {
         case Strassenbahn = "Straßenbahn"
         /// Train
         case Zug = "Zug"
+
+        /// Identifier used by the DVB website
+        public var identifier: String {
+            switch self {
+            case .ASTRufbus:
+                return "alita"
+            case .Faehre:
+                return "ferry"
+            case .Regionalbus:
+                return "bus"
+            case .SBahn:
+                return "metropolitan"
+            case .SeilSchwebebahn:
+                return "lift"
+            case .Stadtbus:
+                return "citybus"
+            case .Strassenbahn:
+                return "tram"
+            case .Zug:
+                return "train"
+            }
+        }
+
+        /// URL of the matching SVG icon 
+        public var iconURL: Foundation.URL {
+            return Foundation.URL(string: "https://www.dvb.de/assets/img/trans-icon/transport-\(self.identifier).svg")!
+        }
     }
     public enum Route: String {
         case Placeholder = "Placeholder"

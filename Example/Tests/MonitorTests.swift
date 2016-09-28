@@ -12,34 +12,7 @@ import DVB
 
 class MonitorTests: QuickSpec {
     override func spec() {
-        describe("Departure Struct") {
-            let dep = Departure(line: "3", direction: "Wilder Mann", minutesUntil: 5)
-
-            it("should be the correct line") {
-                expect(dep.line) == "3"
-            }
-
-            it("should have the correct direction") {
-                expect(dep.direction) == "Wilder Mann"
-            }
-
-            it("should have the correct minutesUntil") {
-                expect(dep.minutesUntil) == 5
-            }
-
-            it("should identify as the correct type") {
-                expect(dep.type) == .Strassenbahn
-            }
-
-            it("should have a correct NSDate") {
-                let in5Minutes = NSDate().dateByAddingTimeInterval(5 * 60)
-                // There will be small differences in the creation of the two NSDates
-                expect(dep.leavingDate.timeIntervalSince1970 - in5Minutes.timeIntervalSince1970) < 1
-            }
-        }
-
         describe("DVB.monitor") {
-
             it("should return results") {
                 DVB.monitor("Postplatz", completion: { (departures) in
                     expect(departures.count) > 0

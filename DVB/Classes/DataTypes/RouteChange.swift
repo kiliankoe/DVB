@@ -35,21 +35,21 @@ public struct RouteChange {
 
     /// Identifier of the affected line.
     public var affectedLine: String? {
-        if let lineRange = title.rangeOfString("(\\d+)", options: .RegularExpressionSearch) {
-            return title.substringWithRange(lineRange)
+        if let lineRange = title.range(of: "(\\d+)", options: .regularExpression) {
+            return title.substring(with: lineRange)
         }
         return nil
     }
 
     /// Affected timeframe, e.g. "ab Mo, 09.05.2016, 06:00 Uhr bis Fr, 20.05.2016, 22:00 Uhr"
     public var timeframe: String? {
-        let html = Kanna.HTML(html: rawDetails, encoding: NSUTF8StringEncoding)
-        return html?.css("p:nth-child(1)").text
+        let html = Kanna.HTML(html: rawDetails, encoding: .utf8)
+        return html?.css("p:nth-child(1)").first?.text
     }
 
     /// List of all route change details
     public var details: [String]? {
-        let html = Kanna.HTML(html: rawDetails, encoding: NSUTF8StringEncoding)
+        let html = Kanna.HTML(html: rawDetails, encoding: .utf8)
         var optionalDetails = html?.css("p").map { $0.text }
         optionalDetails?.removeFirst()
         let details = optionalDetails?.flatMap { $0 }
