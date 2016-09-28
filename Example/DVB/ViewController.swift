@@ -19,33 +19,33 @@ class ViewController: UITableViewController {
     }
 
     func refresh() {
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
         DVB.monitor("Helmholtzstraße", limit: 10) { (departures) in
             self.departures = departures
-            dispatch_async(dispatch_get_main_queue(), {
+            DispatchQueue.main.async {
                 [unowned self] in
-                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 self.tableView.reloadData()
-            })
+            }
         }
     }
 
-    @IBAction func refreshButtonTapped(sender: UIBarButtonItem) {
+    @IBAction func refreshButtonTapped(_ sender: UIBarButtonItem) {
         refresh()
     }
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let departures = departures else { return 0 }
         return departures.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("departureCell") ?? UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "departureCell")
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "departureCell") ?? UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "departureCell")
 
         guard let departures = departures else { return cell }
 
@@ -65,7 +65,7 @@ class ViewController: UITableViewController {
         return cell
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

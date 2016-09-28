@@ -1,23 +1,25 @@
 PODS:
-  - DVB (0.7.1):
-    - Kanna (~> 1.0.6)
-  - Kanna (1.0.6)
-  - Nimble (3.2.0)
-  - Quick (0.9.2)
+  - DVB (2.0.0):
+    - Kanna (~> 2.0)
+  - Kanna (2.0.0)
+  - Nimble (5.0.0)
+  - Quick (0.10.0)
 
 DEPENDENCIES:
   - DVB (from `../`)
-  - Nimble (~> 3.0)
-  - Quick (~> 0.8)
+  - Nimble (~> 5.0)
+  - Quick (~> 0.10)
 
 EXTERNAL SOURCES:
   DVB:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  DVB: bfdcbeb70414653ae763938fe971a2d0d15a1b78
-  Kanna: 9f30945bbd293a609f698ea164687ccc0990ff60
-  Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
-  Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
+  DVB: 8878dfad5d69a67f0cfd4c5769f7db5b393b8563
+  Kanna: 9a6637f72f5c77fe9c045b1efb2a5bb074754af8
+  Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
+  Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: d161afedf846c12cdb1ce3ed9dd5f7926cd3b5cd
+
+COCOAPODS: 1.1.0.rc.2

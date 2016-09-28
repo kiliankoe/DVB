@@ -11,41 +11,37 @@ import Kanna
 import MapKit
 
 /// DVB offers static functions to interact with all the different endpoints.
-public class DVB {
+open class DVB {
 
-    /**
-     List all departures from a given stop.
-
-     - parameter stop:       name of the stop
-     - parameter city:       optional city, defaults to Dresden
-     - parameter line:       optional filter for returning only departures of a specific line or list of lines
-     - parameter limit:      optional maximum amount of results, defaults to as many as possible
-     - parameter offset:     optional offset for the time until a departure arrives
-     - parameter mode:       optional list of modes of transport, defaults to 'normal' things like buses and trams
-     - parameter completion: handler provided with list of departures, may be empty if error occurs.
-
-     - warning: Even when a `limit` is supplied, you're not guaranteed to receive that many results.
-     */
-    public static func monitor(stop: String, city: String? = nil, line: [String]? = nil, limit: Int? = nil, offset: Int? = nil, modes: [TransportMode.Monitor]? = nil, completion: ([Departure]) -> Void) {
+    /// List all departures from a given stop
+    ///
+    /// - parameter stop:       name of the stop
+    /// - parameter city:       optional city, defaults to Dresden
+    /// - parameter line:       optional filter for returning only departures of a specific line or list of lines
+    /// - parameter limit:      optional maximum amount of results, defaults to as many as possible
+    /// - parameter offset:     optional offset for the time until a departure arrives
+    /// - parameter modes:      optional list of modes of transport, defaults to 'normal' things like buses and trams
+    /// - parameter completion: handler provided with list of departures, may be empty if error occurs
+    open static func monitor(_ stop: String, city: String? = nil, line: [String]? = nil, limit: Int? = nil, offset: Int? = nil, modes: [TransportMode.Monitor]? = nil, completion: @escaping ([Departure]) -> Void) {
         let hst = stop
         let vz = offset ?? 0
         let ort = city ?? ""
         let lim = 0
         let vm = modes ?? []
-        let request = NSMutableURLRequest(URL: URL.VVO.Monitor(hst: hst, vz: vz, ort: ort, lim: lim, vm: vm).create())
+        let request = NSMutableURLRequest(url: URL.VVO.monitor(hst: hst, vz: vz, ort: ort, lim: lim, vm: vm).create())
 
         get(request) { (result) in
             switch result {
-            case .Failure(let error):
+            case .failure(let error):
                 print("DVB failed with error: \(error)")
                 completion([])
-            case .Success(let value):
+            case .success(let value):
                 guard let departureList = value as? [[String]] else {
                     completion([])
                     return
                 }
 
-                // Map Departure structs
+                // Init departures
                 var departures = departureList.map {
                     Departure(line: $0[0], direction: $0[1], minutesUntil: Int($0[2]) ?? 0)
                 }
@@ -71,10 +67,11 @@ public class DVB {
     }
 
     /// A list of all stops in the VVO network
-    public static var allVVOStops: [Stop] = {
-        let dvbBundle = NSBundle(forClass: DVB.self)
-        guard let vvostopsPath = dvbBundle.pathForResource("VVOStops", ofType: "plist"),
-            let allStops = NSArray(contentsOfFile: vvostopsPath) else { return [] }
+    open static var allVVOStops: [Stop] = {
+        let dvbBundle = Bundle(for: DVB.self)
+
+        guard let vvostopsPath = dvbBundle.path(forResource: "VVOStops", ofType: "plist"),
+        let allStops = NSArray(contentsOfFile: vvostopsPath) as? [[String:AnyObject]] else { return [] }
 
         var stops = [Stop]()
 
@@ -104,14 +101,14 @@ public class DVB {
 
      - returns: list of stops that match the search string
      */
-    public static func find(searchString: String, region: String = "Dresden") -> [Stop] {
+    open static func find(_ searchString: String, region: String = "Dresden") -> [Stop] {
 
         let foundStops = self.allVVOStops.filter { stop in
-            let nameMatch = stop.searchString.lowercaseString.containsString(searchString.lowercaseString) || stop.name.lowercaseString.containsString(searchString.lowercaseString)
+            let nameMatch = stop.searchString.lowercased().contains(searchString.lowercased()) || stop.name.lowercased().contains(searchString.lowercased())
             return nameMatch && stop.region == region
         }
 
-        return foundStops.sort { $0.priority > $1.priority }
+        return foundStops.sorted { $0.priority > $1.priority }
     }
 
     /**
@@ -123,7 +120,7 @@ public class DVB {
 
      - returns: list of stops and their distance from the given coordinates, limited to the search radius if given
      */
-    public static func nearestStops(latitude latitude: Double, longitude: Double, radius: Double? = nil) -> [(Stop, Double)] {
+    open static func nearestStops(latitude: Double, longitude: Double, radius: Double? = nil) -> [(Stop, Double)] {
 
         let searchLocation = CLLocation(latitude: latitude, longitude: longitude)
 
@@ -132,10 +129,10 @@ public class DVB {
 		for stop in self.allVVOStops {
             guard stop.location.latitude != 999.999999 else { continue } // Some lots have no sane location data :(
             let stopLocation = CLLocation(latitude: stop.location.latitude, longitude: stop.location.longitude)
-            let distanceFromSearch = searchLocation.distanceFromLocation(stopLocation)
+            let distanceFromSearch = searchLocation.distance(from: stopLocation)
 			
 			// Add stop with distance, if it's within the search radius or no radius was given
-			if let radius = radius where distanceFromSearch <= radius {
+			if let radius = radius , distanceFromSearch <= radius {
 				stopsWithDistance.append((stop, distanceFromSearch))
 			} else if radius == nil {
 				stopsWithDistance.append((stop, distanceFromSearch))
@@ -150,34 +147,34 @@ public class DVB {
 
      - parameter completion: handler provided with a date object when the data was last updated and a list of changes.
      */
-    public static func routeChanges(completion: (updated: NSDate?, routeChanges: [RouteChange]) -> Void) {
+    open static func routeChanges(_ completion: @escaping (_ updated: Date?, _ routeChanges: [RouteChange]) -> Void) {
 
-        let request = NSMutableURLRequest(URL: URL.DVB.Routechanges.create())
+        let request = NSMutableURLRequest(url: URL.DVB.routechanges.create())
 
         get(request, raw: true) { (result) in
             switch result {
-            case .Failure(let error):
+            case .failure(let error):
                 print("DVB failed with error: \(error)")
-                completion(updated: nil, routeChanges: [])
-            case .Success(let value):
+                completion(nil, [])
+            case .success(let value):
 
-                guard let value = value as? NSData else {
-                    completion(updated: nil, routeChanges: [])
+                guard let value = value as? Data else {
+                    completion(nil, [])
                     return
                 }
 
-                guard let xml = Kanna.XML(xml: value, encoding: NSUTF8StringEncoding) else {
-                    completion(updated: nil, routeChanges: [])
+                guard let xml = Kanna.XML(xml: value, encoding: .utf8) else {
+                    completion(nil, [])
                     return
                 }
 
                 let dateString = xml.at_xpath("//lastBuildDate")?.text
-                let updatedDate: NSDate?
+                let updatedDate: Date?
 
                 if let dateString = dateString {
-                    let dateFormatter = NSDateFormatter()
+                    let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "E, dd MMMM y HH:mm:ss XX"
-                    updatedDate = dateFormatter.dateFromString(dateString)
+                    updatedDate = dateFormatter.date(from: dateString)
                 } else {
                     updatedDate = nil
                 }
@@ -189,7 +186,7 @@ public class DVB {
                     }
                 }
 
-                completion(updated: updatedDate, routeChanges: items)
+                completion(updatedDate, items)
             }
         }
     }

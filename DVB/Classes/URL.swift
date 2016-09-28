@@ -25,31 +25,31 @@ import Foundation
  */
 enum URL {
     enum VVO {
-        case Monitor(hst: String, vz: Int, ort: String, lim: Int, vm: [TransportMode.Monitor])
-        case Haltestelle(hst: String, ort: String)
+        case monitor(hst: String, vz: Int, ort: String, lim: Int, vm: [TransportMode.Monitor])
+        case haltestelle(hst: String, ort: String)
 
-        func create() -> NSURL {
+        func create() -> Foundation.URL {
             switch self {
-            case Monitor(let hst, let vz, let ort, let lim, let vm):
-                let hst = hst.stringByAddingPercentEncodingWithAllowedCharacters(.URLQueryAllowedCharacterSet())!
-                let ort = ort.stringByAddingPercentEncodingWithAllowedCharacters(.URLQueryAllowedCharacterSet())!
-                let vmJoined = vm.map { $0.rawValue.stringByAddingPercentEncodingWithAllowedCharacters(.URLQueryAllowedCharacterSet())! }.joinWithSeparator(",")
-                return NSURL(string: "http://widgets.vvo-online.de/abfahrtsmonitor/Abfahrten.do?hst=\(hst)&vz=\(vz)&ort=\(ort)&lim=\(lim)&vm=\(vmJoined)")!
-            case Haltestelle(let hst, let ort):
-                let hst = hst.stringByAddingPercentEncodingWithAllowedCharacters(.URLQueryAllowedCharacterSet())!
-                let ort = ort.stringByAddingPercentEncodingWithAllowedCharacters(.URLQueryAllowedCharacterSet())!
-                return NSURL(string: "http://widgets.vvo-online.de/abfahrtsmonitor/Haltestelle.do?ort=\(ort)&hst=\(hst)")!
+            case .monitor(let hst, let vz, let ort, let lim, let vm):
+                let hst = hst.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                let ort = ort.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                let vmJoined = vm.map { $0.rawValue.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)! }.joined(separator: ",")
+                return Foundation.URL(string: "http://widgets.vvo-online.de/abfahrtsmonitor/Abfahrten.do?hst=\(hst)&vz=\(vz)&ort=\(ort)&lim=\(lim)&vm=\(vmJoined)")!
+            case .haltestelle(let hst, let ort):
+                let hst = hst.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                let ort = ort.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+                return Foundation.URL(string: "http://widgets.vvo-online.de/abfahrtsmonitor/Haltestelle.do?ort=\(ort)&hst=\(hst)")!
             }
         }
     }
 
     enum DVB {
-        case Routechanges
+        case routechanges
 
-        func create() -> NSURL {
+        func create() -> Foundation.URL {
             switch self {
-            case .Routechanges:
-                return NSURL(string: "https://www.dvb.de/de-de/apps/routechanges/rssfeed")!
+            case .routechanges:
+                return Foundation.URL(string: "https://www.dvb.de/de-de/apps/routechanges/rssfeed")!
             }
         }
     }

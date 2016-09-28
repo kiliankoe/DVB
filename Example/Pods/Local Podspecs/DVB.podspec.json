@@ -1,6 +1,6 @@
 {
   "name": "DVB",
-  "version": "0.7.1",
+  "version": "2.0.0",
   "summary": "Query Dresden's public transport system for current bus- and tramstop data in Swift.",
   "description": "This is an unofficial Swift package, giving you a few options to query Dresden's public transport system for current bus- and tramstop data.",
   "homepage": "https://github.com/kiliankoe/DVB",
@@ -10,18 +10,18 @@
   },
   "source": {
     "git": "https://github.com/kiliankoe/DVB.git",
-    "tag": "0.7.1"
+    "tag": "2.0.0"
   },
   "social_media_url": "https://twitter.com/kiliankoe",
   "platforms": {
-    "ios": "8.0",
+    "ios": "10.0",
     "osx": "10.11",
     "tvos": "9.0",
     "watchos": "2.0"
   },
   "dependencies": {
     "Kanna": [
-      "~> 1.0.6"
+      "~> 2.0"
     ]
   },
   "source_files": "DVB/Classes/**/*",

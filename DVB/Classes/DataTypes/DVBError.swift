@@ -15,8 +15,8 @@ import Foundation
  - Server:  The server returned an error or no data, statusCode is included in error
  - JSON:    The returned JSON data is malformed
  */
-enum DVBError: ErrorType {
-    case Request
-    case Server(statusCode: Int)
-    case JSON
+enum DVBError: Error {
+    case request
+    case server(statusCode: Int)
+    case json
 }

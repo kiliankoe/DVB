@@ -32,7 +32,7 @@ class MonitorTests: QuickSpec {
             }
 
             it("should have a correct NSDate") {
-                let in5Minutes = NSDate().dateByAddingTimeInterval(5 * 60)
+                let in5Minutes = NSDate().addingTimeInterval(5 * 60)
                 // There will be small differences in the creation of the two NSDates
                 expect(dep.leavingDate.timeIntervalSince1970 - in5Minutes.timeIntervalSince1970) < 1
             }
