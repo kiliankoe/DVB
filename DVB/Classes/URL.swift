@@ -11,17 +11,9 @@ import Foundation
 /**
  Listing of all endpoints and their parameters (if any)
 
- - Monitor:        Monitor a specific stop
- - Haltestelle:
- - Verkehrsmittel:
- */
-
-/**
- Listing of all endpoints and their parameters (if any)
-
- - Monitor:        Monitor a specific stop
- - Haltestelle:    Find a specific stop
- - Routechanges:   List current route changes
+ - monitor:        Monitor a specific stop
+ - haltestelle:    Find a specific stop
+ - routechanges:   List current route changes
  */
 enum URL {
     enum VVO {
