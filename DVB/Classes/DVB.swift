@@ -11,7 +11,7 @@ import Kanna
 import MapKit
 
 /// DVB offers static functions to interact with all the different endpoints.
-open class DVB {
+public class DVB {
 
     /// List all departures from a given stop
     ///
@@ -22,7 +22,7 @@ open class DVB {
     /// - parameter offset:     optional offset for the time until a departure arrives
     /// - parameter modes:      optional list of modes of transport, defaults to 'normal' things like buses and trams
     /// - parameter completion: handler provided with list of departures, may be empty if error occurs
-    open static func monitor(_ stop: String, city: String? = nil, line: [String]? = nil, limit: Int? = nil, offset: Int? = nil, modes: [TransportMode.Monitor]? = nil, completion: @escaping ([Departure]) -> Void) {
+    public static func monitor(_ stop: String, city: String? = nil, line: [String]? = nil, limit: Int? = nil, offset: Int? = nil, modes: [TransportMode.Monitor]? = nil, completion: @escaping ([Departure]) -> Void) {
         let hst = stop
         let vz = offset ?? 0
         let ort = city ?? ""
@@ -67,7 +67,7 @@ open class DVB {
     }
 
     /// A list of all stops in the VVO network
-    open static var allVVOStops: [Stop] = {
+    public static var allVVOStops: [Stop] = {
         let dvbBundle = Bundle(for: DVB.self)
 
         guard let vvostopsPath = dvbBundle.path(forResource: "VVOStops", ofType: "plist"),
@@ -101,7 +101,7 @@ open class DVB {
 
      - returns: list of stops that match the search string
      */
-    open static func find(_ searchString: String, region: String = "Dresden") -> [Stop] {
+    public static func find(_ searchString: String, region: String = "Dresden") -> [Stop] {
 
         let foundStops = self.allVVOStops.filter { stop in
             let nameMatch = stop.searchString.lowercased().contains(searchString.lowercased()) || stop.name.lowercased().contains(searchString.lowercased())
@@ -120,7 +120,7 @@ open class DVB {
 
      - returns: list of stops and their distance from the given coordinates, limited to the search radius if given
      */
-    open static func nearestStops(latitude: Double, longitude: Double, radius: Double? = nil) -> [(Stop, Double)] {
+    public static func nearestStops(latitude: Double, longitude: Double, radius: Double? = nil) -> [(Stop, Double)] {
 
         let searchLocation = CLLocation(latitude: latitude, longitude: longitude)
 
@@ -147,7 +147,7 @@ open class DVB {
 
      - parameter completion: handler provided with a date object when the data was last updated and a list of changes.
      */
-    open static func routeChanges(_ completion: @escaping (_ updated: Date?, _ routeChanges: [RouteChange]) -> Void) {
+    public static func routeChanges(_ completion: @escaping (_ updated: Date?, _ routeChanges: [RouteChange]) -> Void) {
 
         let request = NSMutableURLRequest(url: URL.DVB.routechanges.create())
 
