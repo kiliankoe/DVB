@@ -62,6 +62,10 @@ class ViewController: UITableViewController {
 
         cell.detailTextLabel?.text = detail
 
+        if let typeID = departure.type?.identifier {
+            cell.imageView?.image = UIImage(named: typeID)
+        }
+
         return cell
     }
 
