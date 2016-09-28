@@ -12,20 +12,7 @@ import DVB
 
 class FindTests: QuickSpec {
     override func spec() {
-        describe("Stop struct") {
-            let stop = Stop(id: 0, name: "Helmholtzstraße", region: "Dresden", searchString: "", tarifZones: "", longitude: 1.0, latitude: 1.0, priority: 1)
-
-            it("should have the correct name") {
-                expect(stop.name) == "Helmholtzstraße"
-            }
-
-            it("should have the correct location") {
-                expect(stop.region) == "Dresden"
-            }
-        }
-
         describe("DVB.find") {
-
             it("should return results") {
                 let stops = DVB.find("Helmholtzstraße")
                 expect(stops.count) > 0
