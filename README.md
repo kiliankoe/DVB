@@ -1,14 +1,13 @@
 # 🚊DVB
 
-[![CI Status](http://img.shields.io/travis/kiliankoe/DVB.svg?style=flat)](https://travis-ci.org/kiliankoe/DVB)
-[![Version](https://img.shields.io/cocoapods/v/DVB.svg?style=flat)](http://cocoapods.org/pods/DVB)
-[![License](https://img.shields.io/cocoapods/l/DVB.svg?style=flat)](http://cocoapods.org/pods/DVB)
-[![Platform](https://img.shields.io/cocoapods/p/DVB.svg?style=flat)](http://cocoapods.org/pods/DVB)
+[![CI Status](http://img.shields.io/travis/kiliankoe/DVB.svg?style=flat-square)](https://travis-ci.org/kiliankoe/DVB)
+[![Version](https://img.shields.io/cocoapods/v/DVB.svg?style=flat-square)](http://cocoapods.org/pods/DVB)
+[![License](https://img.shields.io/cocoapods/l/DVB.svg?style=flat-square)](http://cocoapods.org/pods/DVB)
+[![Platform](https://img.shields.io/cocoapods/p/DVB.svg?style=flat-square)](http://cocoapods.org/pods/DVB)
 
 This is an unofficial Swift package, giving you a few options to query Dresden's public transport system for current bus- and tramstop data.
 
-If you're looking for something like this for [Node.js](https://github.com/kiliankoe/dvbjs) or [Python](https://github.com/kiliankoe/dvbpy), just click 
-the respective links :)
+If you're looking for something like this for [Node](https://github.com/kiliankoe/dvbjs), [Python](https://github.com/kiliankoe/dvbpy), [Ruby](https://github.com/kiliankoe/dvbrs) or [Go](https://github.com/kiliankoe/dvbgo), just click the respective links 🙂
 
 ## Example
 
@@ -16,12 +15,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Caveat
 
-This library will try to access data provided by HTTP-only endpoints. Doing so will require you to add certain App Transport Security Exceptions
-to your app's Info.plist.
+This library will try to access data provided by HTTP-only endpoints. Doing so will require you to add certain App Transport Security Exceptions to your app's Info.plist.
 These include the following:
 
- - widgets.vvo-online.de
- - efa.vvo-online.de
+- widgets.vvo-online.de
+- efa.vvo-online.de
 
 A correct Info.plist will have to include the following XML, unless of course you've already got `NSAllowArbitraryLoads` in there...
 
@@ -45,8 +43,7 @@ A correct Info.plist will have to include the following XML, unless of course yo
 
 ## Installation
 
-DVB is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+DVB is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```
 pod "DVB"
@@ -60,13 +57,11 @@ github "kiliankoe/DVB"
 
 ## Quick Start
 
-Be sure to check the [docs](http://cocoadocs.org/docsets/DVB) for more detailed information on how to use this library, but here are some quick 
-examples for getting started right away.
+Be sure to check the [docs](http://cocoadocs.org/docsets/DVB) for more detailed information on how to use this library, but here are some quick examples for getting started right away.
 
 ### Monitor a single stop
 
-Monitor a single stop to see every bus or tram leaving this stop. You can also optionally add parameters for a given time offset, filtering for a
-specific line, providing a list of allowed transport modes (see [TransportMode](https://github.com/kiliankoe/DVB/blob/master/DVB/Classes/DataTypes/TransportMode.swift)) or limiting the amount of results.
+Monitor a single stop to see every bus or tram leaving this stop. You can also optionally add parameters for a given time offset, filtering for a specific line, providing a list of allowed transport modes (see [TransportMode](https://github.com/kiliankoe/DVB/blob/master/DVB/Classes/DataTypes/TransportMode.swift)) or limiting the amount of results.
 
 ```swift
 DVB.monitor("Pirnaischer Platz") { (departures) in
@@ -101,7 +96,7 @@ DVB.routeChanges { (updated, routeChanges) in
 }
 ```
 
-More is still to come ;)
+More is still to come 😉
 
 ## Authors
 
