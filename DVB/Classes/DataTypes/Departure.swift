@@ -19,7 +19,7 @@ public struct Departure {
     ///   Should you ever find inconsistencies (especially if nil is returned), please tell me about it and open an issue. Thanks! 🙂 
     ///   https://github.com/kiliankoe/DVB/issues/new
     public var type: TransportMode.Departures? {
-        return parseType()
+        return TransportMode.Departures(line: line)
     }
 
     /// Destination of the departure, e.g. "Bühlau", "Wilder Mann" etc.
@@ -58,60 +58,6 @@ public struct Departure {
         self.line = list[0]
         self.direction = list[1]
         self.minutesUntil = Int(list[2]) ?? 0
-    }
-
-    /**
-     Use some magic to try to identify the type of the departure by it's line identifier.
-
-     - returns: type
-     */
-    fileprivate func parseType() -> TransportMode.Departures? {
-
-        if let line = Int(line) {
-            switch line {
-            case 0 ... 20:
-                return .tram
-            case 21 ..< 100:
-                return .bus
-            case 100 ... 1000:
-                return .regionalbus
-            default:
-                return nil
-            }
-        }
-
-        // The next two are not necessarily always true. Not clue how this could possibly tell though.
-
-        if let _ = line.range(of: "^E\\d", options: .regularExpression) {
-            return .tram
-        }
-
-        if let _ = line.range(of: "^E\\d\\d", options: .regularExpression) {
-            return .bus
-        }
-
-        if let _ = line.range(of: "^F", options: .regularExpression) {
-            return .ferry
-        }
-
-        if let _ = line.range(of: "(^RE|^IC|^TL|^RB)", options: .regularExpression) {
-            return .train
-        }
-
-        if let _ = line.range(of: "^S", options: .regularExpression) {
-            return .citytrain
-        }
-
-        if let _ = line.range(of: "alita", options: .regularExpression) {
-            // I believe this to be correct, but haven't been able to verify it :D
-            return .oncallbus
-        }
-
-        if line == "SWB" {
-            return .cablecar
-        }
-
-        return nil
     }
 }
 
