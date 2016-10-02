@@ -57,15 +57,7 @@ class ViewController: UITableViewController {
         let departure = departures[indexPath.row]
 
         cell.textLabel?.text = "\(departure.line) \(departure.direction)"
-
-        var detail = ""
-        if departure.minutesUntil == 0 {
-            detail = "now"
-        } else {
-            detail = "\(departure.minutesUntil) min"
-        }
-
-        cell.detailTextLabel?.text = detail
+        cell.detailTextLabel?.text = departure.minutesUntil == 0 ? "now" : "\(departure.minutesUntil) min"
 
         if let typeID = departure.type?.identifier {
             cell.imageView?.image = UIImage(named: typeID)
