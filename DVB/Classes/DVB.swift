@@ -53,19 +53,17 @@ public class DVB {
         return allStops.map(Stop.init(dict:)).flatMap {$0}
     }()
 
-    /**
-     Find a list of stops with a given search string.
-
-     - parameter searchString: string to search by
-     - parameter region:       optional region, defaults to `Dresden`
-
-     - returns: list of stops that match the search string
-     */
-    public static func find(_ searchString: String, region: String = "Dresden") -> [Stop] {
-
-        let foundStops = self.allVVOStops.filter { stop in
-            let nameMatch = stop.searchString.lowercased().contains(searchString.lowercased()) || stop.name.lowercased().contains(searchString.lowercased())
-            return nameMatch && stop.region == region
+    /// Find a list of stops with a given search string.
+    ///
+    /// - parameter query:  query
+    /// - parameter region: region, defaults to 'Dresden'
+    ///
+    /// - returns: list of stops that match the query
+    public static func find(query: String, region: String = "Dresden") -> [Stop] {
+        let query = query.lowercased()
+        let foundStops = allVVOStops.filter { stop in
+            let match = stop.searchString.lowercased().contains(query) || stop.name.lowercased().contains(query)
+            return match && stop.region == region
         }
 
         return foundStops.sorted { $0.priority > $1.priority }
