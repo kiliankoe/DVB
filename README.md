@@ -1,4 +1,4 @@
-# 🚊DVB
+# 🚆DVB
 
 [![CI Status](http://img.shields.io/travis/kiliankoe/DVB.svg?style=flat-square)](https://travis-ci.org/kiliankoe/DVB)
 [![Version](https://img.shields.io/cocoapods/v/DVB.svg?style=flat-square)](http://cocoapods.org/pods/DVB)
