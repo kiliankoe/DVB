@@ -9,9 +9,7 @@
 import Foundation
 import MapKit
 
-/**
- *  A place where a bus, tram or whatever can stop.
- */
+/// A place where a bus, tram or whatever can stop.
 public struct Stop {
 
     /// This is currently not really necessary, will be when matching with additional data
@@ -44,20 +42,18 @@ public struct Stop {
     /// The static priority for users searching from within Dresden
     internal let priority: Int
 
-    /**
-     Initialize a new stop
-
-     - parameter id:           unique identifier
-     - parameter name:         name
-     - parameter region:       region
-     - parameter searchString: string elements used for identifying this stop
-     - parameter tarifZones:   list of tarif zones this stop is included in
-     - parameter longitude:    longitude
-     - parameter latitude:     latitude
-     - parameter priority:     static priority for users searching in Dresden
-
-     - returns: new Stop
-     */
+    /// Initialize a new stop
+    ///
+    /// - parameter id:           unique identifier
+    /// - parameter name:         name
+    /// - parameter region:       region
+    /// - parameter searchString: string elements used for identifying this stop
+    /// - parameter tarifZones:   list of tarif zones this stop is included in
+    /// - parameter longitude:    longitude
+    /// - parameter latitude:     latitude
+    /// - parameter priority:     static priority for users searching in Dresden
+    ///
+    /// - returns: new stop
     public init(id: Int, name: String, region: String, searchString: String, tarifZones: String, longitude: Double, latitude: Double, priority: Int) {
         self.id = id
         self.name = name
@@ -106,13 +102,13 @@ extension Stop: Equatable {
 	// Intentionally left blank
 }
 
-// Checks if two stops are equal to each other
+/// Stop equality
 public func == (lhs: Stop, rhs: Stop) -> Bool {
 	return lhs.hashValue == rhs.hashValue
 }
 
 extension Stop: Hashable {
-	// Returns a unique hash value
+	/// Unique hash value based on `id`
 	public var hashValue: Int {
 		get {
 			return self.id.hashValue
