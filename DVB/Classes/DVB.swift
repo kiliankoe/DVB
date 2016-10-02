@@ -90,29 +90,18 @@ public class DVB {
         }
     }
 
-    /**
-     List current route changes in the network.
-
-     - parameter completion: handler provided with a date object when the data was last updated and a list of changes.
-     */
-    public static func routeChanges(_ completion: @escaping (_ updated: Date?, _ routeChanges: [RouteChange]) -> Void) {
-
-        let request = NSMutableURLRequest(url: URL.DVB.routechanges.create())
-
-        get(request, raw: true) { (result) in
+    /// List current route changes in the network.
+    ///
+    /// - parameter completion: handler provided with a date last updated, a list of current route changes
+    public static func routeChanges(_ completion: @escaping (Date?, [RouteChange], DVBError?) -> Void) {
+        get(URL.DVB.routechanges.url(), raw: true) { (result) in
             switch result {
             case .failure(let error):
-                print("DVB failed with error: \(error)")
-                completion(nil, [])
+                completion(nil, [], error)
             case .success(let value):
 
-                guard let value = value as? Data else {
-                    completion(nil, [])
-                    return
-                }
-
-                guard let xml = Kanna.XML(xml: value, encoding: .utf8) else {
-                    completion(nil, [])
+                guard let value = value as? Data, let xml = Kanna.XML(xml: value, encoding: .utf8) else {
+                    completion(nil, [], .decode)
                     return
                 }
 
@@ -127,14 +116,14 @@ public class DVB {
                     updatedDate = nil
                 }
 
-                var items = [RouteChange]()
-                for item in xml.xpath("//item") {
-                    if let title = item.at_xpath("title")?.text, let details = item.at_xpath("description")?.text {
-                        items.append(RouteChange(title: title, rawDetails: details))
+                let items = xml.xpath("//item").map { item -> RouteChange? in
+                    guard let title = item.at_xpath("title")?.text, let details = item.at_xpath("description")?.text else {
+                        return nil
                     }
-                }
+                    return RouteChange(title: title, rawDetails: details)
+                }.flatMap {$0}
 
-                completion(updatedDate, items)
+                completion(updatedDate, items, nil)
             }
         }
     }
