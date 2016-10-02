@@ -11,7 +11,14 @@ import DVB
 
 class ViewController: UITableViewController {
 
-    var departures: [Departure]?
+    var departures: [Departure]? {
+        didSet {
+            DispatchQueue.main.async {
+                [weak self] in
+                self?.tableView.reloadData()
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,11 +32,7 @@ class ViewController: UITableViewController {
             guard error == nil else { print("Couldn't get departure list: \(error!)"); return }
             self.departures = departures
 
-            DispatchQueue.main.async {
-                [weak self] in
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                self?.tableView.reloadData()
-            }
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
 
