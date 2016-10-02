@@ -15,7 +15,7 @@ import MapKit
 public struct Stop {
 
     /// This is currently not really necessary, will be when matching with additional data
-    internal let id: Int
+    let id: Int
 
     /// Name of the stop
     public let name: String
@@ -30,7 +30,7 @@ public struct Stop {
     public let tarifZones: String
 
     /// The coordinate where the stop is located
-    public let location: CLLocationCoordinate2D
+    public let location: CLLocationCoordinate2D?
 
 //    /// Bike and Ride is available at this stop
 //    public let isBikeAndRide: Bool
@@ -67,6 +67,32 @@ public struct Stop {
         self.location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         self.priority = priority
     }
+
+    init?(dict: [String:String]) {
+        if let idVal = dict["id"], let id = Int(idVal),
+            let name = dict["name"],
+            let region = dict["region"],
+            let searchString = dict["searchString"],
+            let tarifZones = dict["tarifZones"],
+            let latVal = dict["latitude"], let lat = Double(latVal),
+            let lngVal = dict["longitude"], let lng = Double(lngVal),
+            let priorityVal = dict["priority"], let priority = Int(priorityVal) {
+                self.id = id
+                self.region = region
+                self.name = name
+                self.searchString = searchString
+                self.tarifZones = tarifZones
+                self.priority = priority
+
+                if lat != 999.999999 { // Some stops have no sane location data 🙁
+                    self.location = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+                } else {
+                    self.location = nil
+                }
+        } else {
+            return nil
+        }
+    }
 }
 
 extension Stop: CustomStringConvertible {
@@ -81,17 +107,15 @@ extension Stop: Equatable {
 }
 
 // Checks if two stops are equal to each other
-public func ==(lhs: Stop, rhs: Stop) -> Bool {
+public func == (lhs: Stop, rhs: Stop) -> Bool {
 	return lhs.hashValue == rhs.hashValue
 }
 
 extension Stop: Hashable {
-	
-	// Returns a unique hash value 
+	// Returns a unique hash value
 	public var hashValue: Int {
 		get {
 			return self.id.hashValue
 		}
 	}
 }
-
