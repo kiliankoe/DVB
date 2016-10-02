@@ -18,50 +18,27 @@ public class DVB {
     /// - parameter stop:       name of the stop
     /// - parameter city:       optional city, defaults to Dresden
     /// - parameter line:       optional filter for returning only departures of a specific line or list of lines
-    /// - parameter limit:      optional maximum amount of results, defaults to as many as possible
     /// - parameter offset:     optional offset for the time until a departure arrives
-    /// - parameter modes:      optional list of modes of transport, defaults to 'normal' things like buses and trams
-    /// - parameter completion: handler provided with list of departures, may be empty if error occurs
-    public static func monitor(_ stop: String, city: String? = nil, line: [String]? = nil, limit: Int? = nil, offset: Int? = nil, modes: [TransportMode.Monitor]? = nil, completion: @escaping ([Departure]) -> Void) {
-        let hst = stop
-        let vz = offset ?? 0
-        let ort = city ?? ""
-        let lim = 0
-        let vm = modes ?? []
-        let request = NSMutableURLRequest(url: URL.VVO.monitor(hst: hst, vz: vz, ort: ort, lim: lim, vm: vm).create())
+    /// - parameter modes:      optional list of allowed modes of transport, defaults to 'normal' things like buses and trams
+    /// - parameter completion: handler provided with list of departures and optional error
+    public static func departures(_ stop: String, city: String = "", line: [String]? = nil, offset: Int = 0, modes: [TransportMode.Departures] = [], completion: @escaping ([Departure], DVBError?) -> Void) {
 
-        get(request) { (result) in
+        let url = URL.VVO.departures(hst: stop, vz: offset, ort: city, lim: 0, vm: modes).url()
+
+        get(url) { (result) in
             switch result {
             case .failure(let error):
-                print("DVB failed with error: \(error)")
-                completion([])
-            case .success(let value):
-                guard let departureList = value as? [[String]] else {
-                    completion([])
-                    return
-                }
-
-                // Init departures
-                var departures = departureList.map {
-                    Departure(line: $0[0], direction: $0[1], minutesUntil: Int($0[2]) ?? 0)
-                }
+                completion([], error)
+            case .success(let json):
+                guard let list = json as? [Any] else { completion([], .decode); return }
+                var departures = list.map(Departure.init).flatMap {$0}
 
                 // Filter out non-requested lines if line filter is set
                 if let line = line {
                     departures = departures.filter { return line.contains($0.line) }
                 }
 
-                // Return only given limit amount if limit is set
-                if var limit = limit {
-                    if limit > departures.count {
-                        limit = departures.count
-                    } else if limit < 0 {
-                        limit = 0
-                    }
-                    departures = Array(departures[0 ..< limit])
-                }
-
-                completion(departures)
+                completion(departures, nil)
             }
         }
     }

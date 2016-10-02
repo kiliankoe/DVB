@@ -47,12 +47,21 @@ public struct Departure {
         self.minutesUntil = minutesUntil
     }
 
+    init?(json: Any) {
+        guard let list = json as? [String] else { return nil }
+        guard list.count >= 3 else { return nil }
+
+        self.line = list[0]
+        self.direction = list[1]
+        self.minutesUntil = Int(list[2]) ?? 0
+    }
+
     /**
      Use some magic to try to identify the type of the departure by it's line identifier.
 
      - returns: type
      */
-    fileprivate func parseType() -> TransportMode.Monitor? {
+    fileprivate func parseType() -> TransportMode.Departures? {
 
         if let line = Int(line) {
             switch line {
