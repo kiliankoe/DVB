@@ -107,3 +107,7 @@ Max Kattner, [@maxkattner](https://github.com/maxkattner)
 ## License
 
 DVB is available under the MIT license. See the LICENSE file for more info.
+
+## Terms of Service
+
+Please refer to the [VVO Terms of Service](https://www.vvo-online.de/de/service/widgets/nutzungsbedingungen-1671.cshtml) regarding their widget. Take particular care not to use this library to send off to many requests to their graciously-provided API.
