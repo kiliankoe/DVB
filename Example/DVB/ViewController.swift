@@ -21,12 +21,14 @@ class ViewController: UITableViewController {
     func refresh() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
-        DVB.monitor("Albertplatz") { (departures) in
+        DVB.departures("Postplatz") { departures, error in
+            guard error == nil else { print("Couldn't get departure list: \(error!)"); return }
             self.departures = departures
+
             DispatchQueue.main.async {
-                [unowned self] in
+                [weak self] in
                 UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
             }
         }
     }

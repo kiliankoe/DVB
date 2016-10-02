@@ -14,19 +14,22 @@ class MonitorTests: QuickSpec {
     override func spec() {
         describe("DVB.monitor") {
             it("should return results") {
-                DVB.monitor("Postplatz", completion: { (departures) in
+                DVB.departures("Postplatz", completion: { departures, err in
+                    guard err == nil else { fail("Received an API error"); return }
                     expect(departures.count) > 0
                 })
             }
 
             it("shouldn't find results for unknown stop") {
-                DVB.monitor("foobarbaz", completion: { (departures) in
+                DVB.departures("foobarbaz", completion: { departures, err in
+                    guard err == nil else { fail("Received an API error"); return }
                     expect(departures.count) == 0
                 })
             }
 
             it("should only return requested lines") {
-                DVB.monitor("Pirnaischer Platz", line: ["3"], completion: { (departures) in
+                DVB.departures("Pirnaischer Platz", line: ["3"], completion: { departures, err in
+                    guard err == nil else { fail("Received an API error"); return }
                     for dep in departures {
                         expect(dep.line) == "3"
                     }

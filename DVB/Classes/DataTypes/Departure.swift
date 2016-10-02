@@ -17,7 +17,7 @@ public struct Departure {
     public let line: String
 
     /// Type of the Departure
-    public var type: TransportMode.Monitor? {
+    public var type: TransportMode.Departures? {
         return parseType()
     }
 
@@ -57,11 +57,11 @@ public struct Departure {
         if let line = Int(line) {
             switch line {
             case 0 ... 20:
-                return .Strassenbahn
+                return .tram
             case 21 ..< 100:
-                return .Stadtbus
+                return .bus
             case 100 ... 1000:
-                return .Regionalbus
+                return .regionalbus
             default:
                 return nil
             }
@@ -70,32 +70,32 @@ public struct Departure {
         // The next two are not necessarily always true. Not clue how this could possibly tell though.
 
         if let _ = line.range(of: "^E\\d", options: .regularExpression) {
-            return .Strassenbahn
+            return .tram
         }
 
         if let _ = line.range(of: "^E\\d\\d", options: .regularExpression) {
-            return .Stadtbus
+            return .bus
         }
 
         if let _ = line.range(of: "^F", options: .regularExpression) {
-            return .Faehre
+            return .ferry
         }
 
         if let _ = line.range(of: "(^RE|^IC|^TL|^RB)", options: .regularExpression) {
-            return .Zug
+            return .train
         }
 
         if let _ = line.range(of: "^S", options: .regularExpression) {
-            return .SBahn
+            return .citytrain
         }
 
         if let _ = line.range(of: "alita", options: .regularExpression) {
             // I believe this to be correct, but haven't been able to verify it :D
-            return .ASTRufbus
+            return .oncallbus
         }
 
         if line == "SWB" {
-            return .SeilSchwebebahn
+            return .cablecar
         }
 
         return nil

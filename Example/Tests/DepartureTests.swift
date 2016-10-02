@@ -28,7 +28,7 @@ class DepartureTests: QuickSpec {
             }
 
             it("should identify as the correct type") {
-                expect(dep.type) == .Strassenbahn
+                expect(dep.type) == .tram
             }
 
             it("should have the correct type identifier") {

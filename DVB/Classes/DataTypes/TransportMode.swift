@@ -12,48 +12,48 @@ import Foundation
  Available modes of transport
  */
 public enum TransportMode {
-    /// Available modes of transport for the Monitor endpoint
-    public enum Monitor: String {
-        /// Callable Taxi/Bus (?)
-        case ASTRufbus = "Rufbus"
+    /// Available modes of transport for the departures endpoint
+    public enum Departures: String {
+        /// On-call bus
+        case oncallbus = "Rufbus"
         /// Ferry
-        case Faehre = "Fähre"
-        /// Regional Bus
-        case Regionalbus = "Regionalbus"
-        /// Commuter Train
-        case SBahn = "S-Bahn"
+        case ferry = "Fähre"
+        /// Regional bus
+        case regionalbus = "Regionalbus"
+        /// City train
+        case citytrain = "S-Bahn"
         /// Cablecar
-        case SeilSchwebebahn = "Seil-/Schwebebahn"
+        case cablecar = "Seil-/Schwebebahn"
         /// Citybus
-        case Stadtbus = "Stadtbus"
+        case bus = "Stadtbus"
         /// Tram
-        case Strassenbahn = "Straßenbahn"
+        case tram = "Straßenbahn"
         /// Train
-        case Zug = "Zug"
+        case train = "Zug"
 
         /// Identifier used by the DVB website
         public var identifier: String {
             switch self {
-            case .ASTRufbus:
+            case .oncallbus:
                 return "alita"
-            case .Faehre:
+            case .ferry:
                 return "ferry"
-            case .Regionalbus:
+            case .regionalbus:
                 return "bus"
-            case .SBahn:
+            case .citytrain:
                 return "metropolitan"
-            case .SeilSchwebebahn:
+            case .cablecar:
                 return "lift"
-            case .Stadtbus:
+            case .bus:
                 return "citybus"
-            case .Strassenbahn:
+            case .tram:
                 return "tram"
-            case .Zug:
+            case .train:
                 return "train"
             }
         }
 
-        /// URL of the matching SVG icon 
+        /// URL of the matching SVG icon
         public var iconURL: Foundation.URL {
             return Foundation.URL(string: "https://www.dvb.de/assets/img/trans-icon/transport-\(self.identifier).svg")!
         }
