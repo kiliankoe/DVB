@@ -69,35 +69,25 @@ public class DVB {
         return foundStops.sorted { $0.priority > $1.priority }
     }
 
-    /**
-     Find a list of stops with their distance to a set of coordinates in a given radius. If the search radius is not set, all stops will be returned.
-
-     - parameter latitude:  latitude
-     - parameter longitude: longitude
-     - parameter radius:    search radius in meters
-
-     - returns: list of stops and their distance from the given coordinates, limited to the search radius if given
-     */
-    public static func nearestStops(latitude: Double, longitude: Double, radius: Double? = nil) -> [(Stop, Double)] {
-
+    /// Find a list of stops with their distance to a set of coordinates in a given radius.
+    ///
+    /// - parameter latitude:  latitude
+    /// - parameter longitude: longitude
+    /// - parameter radius:    search radius in meters, defaults to 500
+    ///
+    /// - returns: list of stops and their distance from the given coordinates, limited to the search radius
+    public static func findNear(latitude: Double, longitude: Double, radius: Double = 500) -> [(Stop, Double)] {
         let searchLocation = CLLocation(latitude: latitude, longitude: longitude)
 
-		var stopsWithDistance = [(Stop, Double)]()
-		
-		for stop in self.allVVOStops {
-            guard stop.location.latitude != 999.999999 else { continue } // Some lots have no sane location data :(
-            let stopLocation = CLLocation(latitude: stop.location.latitude, longitude: stop.location.longitude)
-            let distanceFromSearch = searchLocation.distance(from: stopLocation)
-			
-			// Add stop with distance, if it's within the search radius or no radius was given
-			if let radius = radius , distanceFromSearch <= radius {
-				stopsWithDistance.append((stop, distanceFromSearch))
-			} else if radius == nil {
-				stopsWithDistance.append((stop, distanceFromSearch))
-			}
+        return allVVOStops.map { stop in
+            guard let loc = stop.location else { return nil }
+            let stopLoc = CLLocation(latitude: loc.latitude, longitude: loc.longitude)
+            return (stop, searchLocation.distance(from: stopLoc))
+        }.flatMap {
+            $0
+        }.filter { tuple in
+            tuple.1 <= radius
         }
-		
-		return stopsWithDistance
     }
 
     /**
