@@ -73,10 +73,10 @@ public class DVB {
     ///
     /// - parameter latitude:  latitude
     /// - parameter longitude: longitude
-    /// - parameter radius:    search radius in meters, defaults to 500
+    /// - parameter radius:    search radius in meters, defaults to 1000 (1km)
     ///
     /// - returns: list of stops and their distance from the given coordinates, limited to the search radius
-    public static func findNear(latitude: Double, longitude: Double, radius: Double = 500) -> [(Stop, Double)] {
+    public static func findNear(latitude: Double, longitude: Double, radius: Double = 1000) -> [(Stop, Double)] {
         let searchLocation = CLLocation(latitude: latitude, longitude: longitude)
 
         return allVVOStops.map { stop in
