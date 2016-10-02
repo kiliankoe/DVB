@@ -40,6 +40,7 @@
 		36D2BBC31FA9CA0FBD53E59A1ADC9D67 /* SuiteHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E69836F3F273A8C830AEB2503A228E4C /* SuiteHooks.swift */; };
 		36F7510A2384C6D301A46D9ED5D66C23 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6379130CCAEAAA339A4C969A820224 /* Foundation.framework */; };
 		39007AD3711A35BCFA1D853E7AB79510 /* BeLessThanOrEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5758BAC1AE53B4A791DCAC3AE81865F /* BeLessThanOrEqual.swift */; };
+		39260C8C1DA08B28008BCA82 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 39260C8B1DA08B28008BCA82 /* .swiftlint.yml */; };
 		3B78C4F35C369FBABE62D4622A67E7DF /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14128B36C09D143B4F9554FB8C05A143 /* DSL.swift */; };
 		3C918E40C04067FAF57B447C0BC52B04 /* BeGreaterThanOrEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7856810051B44ED529862F0CBE55B0D /* BeGreaterThanOrEqualTo.swift */; };
 		3D7AF86E9032C99357D2ED046461874F /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2FACA1F5E975C6F46F32718D5B0EC8 /* BeGreaterThan.swift */; };
@@ -248,6 +249,7 @@
 		3119E4F0CB7E96DFF4971129BAF37EAA /* BeLessThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThan.swift; path = Sources/Nimble/Matchers/BeLessThan.swift; sourceTree = "<group>"; };
 		31EFB2A6794D8F165DDBFB2AA4673444 /* World+DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "World+DSL.swift"; path = "Sources/Quick/DSL/World+DSL.swift"; sourceTree = "<group>"; };
 		343AAF5A3CF8464F769183C8E794D203 /* Kanna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kanna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39260C8B1DA08B28008BCA82 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
 		39F9AF60D10143B86DB12235B02A89CE /* HTMLtree.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HTMLtree.h; path = Sources/libxml/HTMLtree.h; sourceTree = "<group>"; };
 		3A0DC51705596418DBB64F86CE09B294 /* threads.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = threads.h; path = Sources/libxml/threads.h; sourceTree = "<group>"; };
 		3C336FE9BB62AC04677F3DBFE6F6B6A6 /* Pods-DVB_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DVB_Tests-frameworks.sh"; sourceTree = "<group>"; };
@@ -631,6 +633,7 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				39260C8B1DA08B28008BCA82 /* .swiftlint.yml */,
 				18951E804A5BC902982D73709727A2A3 /* Development Pods */,
 				CA28DE77DD150C9CCE2A6E22927B1766 /* Frameworks */,
 				DAE4AB3F939129868DEF1A2749D78522 /* Pods */,
@@ -1050,6 +1053,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39260C8C1DA08B28008BCA82 /* .swiftlint.yml in Resources */,
 				818F67C53A99CFAA39EA6DF3CF07A012 /* VVOStops.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
