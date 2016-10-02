@@ -9,9 +9,7 @@
 import Foundation
 import Kanna
 
-/**
- *  A temporary change in the network e.g. due to construction.
- */
+/// A temporary change in the network e.g. due to construction.
 public struct RouteChange {
 
     /// Title containing the affected line and stop.
@@ -20,14 +18,12 @@ public struct RouteChange {
     /// Raw detail HTML with further information regarding the change.
     public let rawDetails: String
 
-    /**
-     Initialize a RouteChange
-
-     - parameter title:   title containing the affected line and stop.
-     - parameter details: detail text with further information regarding the change.
-
-     - returns: new RouteChange
-     */
+    /// Initialize a RouteChange
+    ///
+    /// - parameter title:      title containing the affected line and stop
+    /// - parameter rawDetails: detail text with further information regarding the change
+    ///
+    /// - returns: new RouteChange
     public init(title: String, rawDetails: String) {
         self.title = title
         self.rawDetails = rawDetails
