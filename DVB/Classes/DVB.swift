@@ -48,26 +48,9 @@ public class DVB {
         let dvbBundle = Bundle(for: DVB.self)
 
         guard let vvostopsPath = dvbBundle.path(forResource: "VVOStops", ofType: "plist"),
-        let allStops = NSArray(contentsOfFile: vvostopsPath) as? [[String:AnyObject]] else { return [] }
+        let allStops = NSArray(contentsOfFile: vvostopsPath) as? [[String:String]] else { return [] }
 
-        var stops = [Stop]()
-
-        for stopElement in allStops {
-
-            // FIXME: Improve on this... A lot!
-            let id = (stopElement["id"] as! NSString).integerValue
-            let name = stopElement["name"] as! String
-            let region = stopElement["region"] as! String
-            let searchString = stopElement["searchstring"] as! String
-            let tarifZones = stopElement["tarif_zones"] as? String ?? ""
-            let longitude = (stopElement["longitude"] as! NSString).doubleValue
-            let latitude = (stopElement["latitude"] as! NSString).doubleValue
-            let priority = (stopElement["priority"] as! NSString).integerValue
-
-            let stop = Stop(id: id, name: name, region: region, searchString: searchString, tarifZones: tarifZones, longitude: longitude, latitude: latitude, priority: priority)
-            stops.append(stop)
-        }
-        return stops
+        return allStops.map(Stop.init(dict:)).flatMap {$0}
     }()
 
     /**
