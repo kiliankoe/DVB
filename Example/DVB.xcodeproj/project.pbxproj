@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39260C8F1DA27FA7008BCA82 /* TransportModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39260C8D1DA27F23008BCA82 /* TransportModeTests.swift */; };
 		392D52D31CE1022F0002B74E /* FindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B318301CE0FF5C0063E242 /* FindTests.swift */; };
 		392D52D71CE13FA40002B74E /* RouteChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392D52D61CE13FA40002B74E /* RouteChangeTests.swift */; };
 		3956F4D41CDD503800864D61 /* DeparturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3956F4D21CDD500900864D61 /* DeparturesTests.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39260C8D1DA27F23008BCA82 /* TransportModeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransportModeTests.swift; sourceTree = "<group>"; };
 		392D52D61CE13FA40002B74E /* RouteChangeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteChangeTests.swift; sourceTree = "<group>"; };
 		3956F4D21CDD500900864D61 /* DeparturesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeparturesTests.swift; sourceTree = "<group>"; };
 		39B318301CE0FF5C0063E242 /* FindTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindTests.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				392D52D61CE13FA40002B74E /* RouteChangeTests.swift */,
 				39C7AEF81D9C5DA600B62177 /* DepartureTests.swift */,
 				39C7AEF61D9C5D6200B62177 /* StopTests.swift */,
+				39260C8D1DA27F23008BCA82 /* TransportModeTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -404,6 +407,7 @@
 				392D52D31CE1022F0002B74E /* FindTests.swift in Sources */,
 				392D52D71CE13FA40002B74E /* RouteChangeTests.swift in Sources */,
 				3956F4D41CDD503800864D61 /* DeparturesTests.swift in Sources */,
+				39260C8F1DA27FA7008BCA82 /* TransportModeTests.swift in Sources */,
 				39C7AEF71D9C5D6200B62177 /* StopTests.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);
