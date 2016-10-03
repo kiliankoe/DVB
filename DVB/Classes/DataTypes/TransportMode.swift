@@ -78,6 +78,8 @@ public enum TransportMode {
                     let num = Int(numStr),
                     let type = matchNumericType(num) {
                     self = type
+                } else {
+                    return nil
                 }
             case Regex("^EV\\d+"):
                 self = .bus
@@ -95,8 +97,8 @@ public enum TransportMode {
                 self = .oncallbus
             default:
                 print("Failed to parse departure identifier into transport mode for \"\(line)\"")
+                return nil
             }
-            return nil
         }
     }
 }
