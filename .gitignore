@@ -34,4 +34,4 @@ Carthage
 
 # Swift Package Manager
 Packages/
-.build.
+.build/

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Kanna
+import Scrape
 
 /// A temporary change in the network e.g. due to construction.
 public struct RouteChange {
@@ -38,19 +38,19 @@ public struct RouteChange {
     }
 
     /// Affected timeframe, e.g. "ab Mo, 09.05.2016, 06:00 Uhr bis Fr, 20.05.2016, 22:00 Uhr"
-    public var timeframe: String? {
-        let html = Kanna.HTML(html: rawDetails, encoding: .utf8)
-        return html?.css("p:nth-child(1)").first?.text
-    }
-
-    /// List of all route change details
-    public var details: [String]? {
-        let html = Kanna.HTML(html: rawDetails, encoding: .utf8)
-        var optionalDetails = html?.css("p").map { $0.text }
-        optionalDetails?.removeFirst()
-        let details = optionalDetails?.flatMap { $0 }
-        return details
-    }
+    // public var timeframe: String? {
+    //     let html = HTMLDocument(html: rawDetails, encoding: .utf8)
+    //     return html?.css("p:nth-child(1)").first?.text
+    // }
+    //
+    // /// List of all route change details
+    // public var details: [String]? {
+    //     let html = HTMLDocument(html: rawDetails, encoding: .utf8)
+    //     var optionalDetails = html?.css("p").map { $0.text }
+    //     optionalDetails?.removeFirst()
+    //     let details = optionalDetails?.flatMap { $0 }
+    //     return details
+    // }
 }
 
 extension RouteChange: CustomStringConvertible {
