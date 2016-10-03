@@ -68,8 +68,8 @@ public struct Stop {
         if let idVal = dict["id"], let id = Int(idVal),
             let name = dict["name"],
             let region = dict["region"],
-            let searchString = dict["searchString"],
-            let tarifZones = dict["tarifZones"],
+            let searchString = dict["searchstring"],
+            let tarifZones = dict["tarif_zones"],
             let latVal = dict["latitude"], let lat = Double(latVal),
             let lngVal = dict["longitude"], let lng = Double(lngVal),
             let priorityVal = dict["priority"], let priority = Int(priorityVal) {
