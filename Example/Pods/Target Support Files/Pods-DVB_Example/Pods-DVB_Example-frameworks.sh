@@ -86,8 +86,10 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/DVB/DVB.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Kanna/Kanna.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/STRegex/Regex.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/DVB/DVB.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Kanna/Kanna.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/STRegex/Regex.framework"
 fi

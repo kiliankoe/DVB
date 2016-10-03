@@ -17,6 +17,7 @@ This is an unofficial Swift package, giving you a few options to query Dresden's
   s.watchos.deployment_target = '2.0'
 
   s.dependency 'Kanna', '~> 2.0'
+  s.dependency 'STRegex', '~> 0.4'
 
   s.source_files = 'DVB/Classes/**/*'
 
