@@ -14,7 +14,7 @@ import Regex
  */
 public enum TransportMode {
     /// Available modes of transport for the departures endpoint
-    public enum Departures: String {
+    public enum Departure: String {
         /// On-call bus
         case oncallbus = "Rufbus"
         /// Ferry
@@ -64,7 +64,7 @@ public enum TransportMode {
         /// - parameter line: line identifier
         ///
         /// - returns: TransportMode
-        init?(line: String) {
+        init?(line: String) { // swiftlint:disable:this cyclomatic_complexity
             if let lineInt = Int(line), let type = matchNumericType(lineInt) {
                 self = type
                 return
@@ -103,12 +103,12 @@ public enum TransportMode {
     }
 }
 
-/// Internal helper matching an integer to a specific TransportMode.Departures
+/// Internal helper matching an integer to a specific TransportMode.Departure
 ///
 /// - parameter int: line identifier
 ///
-/// - returns: TransportMode.Departures?
-fileprivate func matchNumericType(_ int: Int) -> TransportMode.Departures? {
+/// - returns: TransportMode.Departure?
+fileprivate func matchNumericType(_ int: Int) -> TransportMode.Departure? {
     switch int {
         case 0...60:
             return .tram

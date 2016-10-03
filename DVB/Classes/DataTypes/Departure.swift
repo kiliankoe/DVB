@@ -18,8 +18,8 @@ public struct Departure {
     /// - warning: This is only a best guess approximation and might fail. Substitute lines are especially hard.
     ///   Should you ever find inconsistencies (especially if nil is returned), please tell me about it and open an issue. Thanks! 🙂
     ///   https://github.com/kiliankoe/DVB/issues/new
-    public var type: TransportMode.Departures? {
-        return TransportMode.Departures(line: line)
+    public var type: TransportMode.Departure? {
+        return TransportMode.Departure(line: line)
     }
 
     /// Destination of the departure, e.g. "Bühlau", "Wilder Mann" etc.

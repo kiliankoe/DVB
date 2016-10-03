@@ -15,7 +15,7 @@ import Foundation
 /// - routechanges: List current route changes
 enum URL {
     enum VVO {
-        case departures(hst: String, vz: Int, ort: String, lim: Int, vm: [TransportMode.Departures])
+        case departures(hst: String, vz: Int, ort: String, lim: Int, vm: [TransportMode.Departure])
         case stop(hst: String, ort: String)
 
         func url() -> Foundation.URL {

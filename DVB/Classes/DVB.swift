@@ -21,7 +21,7 @@ public class DVB {
     /// - parameter offset:     optional offset for the time until a departure arrives
     /// - parameter modes:      optional list of allowed modes of transport, defaults to 'normal' things like buses and trams
     /// - parameter completion: handler provided with list of departures and optional error
-    public static func departures(_ stop: String, city: String = "", line: [String]? = nil, offset: Int = 0, modes: [TransportMode.Departures] = [], completion: @escaping ([Departure], DVBError?) -> Void) {
+    public static func departures(_ stop: String, city: String = "", line: [String]? = nil, offset: Int = 0, modes: [TransportMode.Departure] = [], completion: @escaping ([Departure], DVBError?) -> Void) {
 
         let url = URL.VVO.departures(hst: stop, vz: offset, ort: city, lim: 0, vm: modes).url()
 
