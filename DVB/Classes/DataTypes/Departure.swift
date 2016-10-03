@@ -26,7 +26,7 @@ public struct Departure {
     public let direction: String
 
     /// How many minutes until the departure leaves
-    public let minutesUntil: Int
+    public let minutesUntil: UInt
 
     /// Convenience getter for minutesUntil as Date
     public var leavingDate: Date {
@@ -40,7 +40,7 @@ public struct Departure {
     /// - parameter minutesUntil: Minutes until departure
     ///
     /// - returns: Departure
-    public init(line: String, direction: String, minutesUntil: Int) {
+    public init(line: String, direction: String, minutesUntil: UInt) {
         self.line = line
         self.direction = direction
         self.minutesUntil = minutesUntil
@@ -57,7 +57,7 @@ public struct Departure {
 
         self.line = list[0]
         self.direction = list[1]
-        self.minutesUntil = Int(list[2]) ?? 0
+        self.minutesUntil = UInt(list[2]) ?? 0
     }
 }
 
