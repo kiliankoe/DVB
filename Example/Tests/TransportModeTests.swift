@@ -69,7 +69,7 @@ class TransportModeTests: QuickSpec {
             }
 
             it("should fail with nil") {
-                expect(TransportMode.Departures(line: "Lorem Ipsum")) == nil
+                expect(TransportMode.Departures(line: "Lorem Ipsum")).to(beNil())
             }
         }
     }
