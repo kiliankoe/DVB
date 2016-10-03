@@ -1,10 +1,8 @@
 Pod::Spec.new do |s|
   s.name             = "DVB"
-  s.version          = "1.0.0"
+  s.version          = "1.1.0"
   s.summary          = "Query Dresden's public transport system for current bus- and tramstop data in Swift."
-  s.description      = <<-DESC
-This is an unofficial Swift package, giving you a few options to query Dresden's public transport system for current bus- and tramstop data.
-                       DESC
+  s.description      = "This is an unofficial Swift package, giving you a few options to query Dresden's public transport system for current bus- and tramstop data."
   s.homepage         = "https://github.com/kiliankoe/DVB"
   s.license          = 'MIT'
   s.author           = { "Kilian Koeltzsch" => "me@kilian.io" }
@@ -19,7 +17,7 @@ This is an unofficial Swift package, giving you a few options to query Dresden's
   s.dependency 'Kanna', '~> 2.0'
   s.dependency 'STRegex', '~> 0.4'
 
-  s.source_files = 'DVB/Classes/**/*'
+  s.source_files = 'Sources/**/*.swift'
 
-  s.resources = ['DVB/Assets/VVOStops.plist']
+  s.resources = ['Sources/Assets/VVOStops.plist']
 end
