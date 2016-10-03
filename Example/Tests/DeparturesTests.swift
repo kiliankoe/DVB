@@ -1,5 +1,5 @@
 //
-//  MonitorTests.swift
+//  DeparturesTests.swift
 //  DVB
 //
 //  Created by Kilian Költzsch on 07/05/16.
@@ -10,9 +10,9 @@ import Quick
 import Nimble
 import DVB
 
-class MonitorTests: QuickSpec {
+class DeparturesTests: QuickSpec {
     override func spec() {
-        describe("DVB.monitor") {
+        describe("DVB.departures") {
             it("should return results") {
                 DVB.departures("Postplatz", completion: { departures, err in
                     guard err == nil else { fail("Received an API error"); return }

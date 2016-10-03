@@ -29,7 +29,6 @@ class RouteChangeTests: QuickSpec {
         }
 
         describe("DVB.routeChanges") {
-
             it("should return data") {
                 DVB.routeChanges({ (updated, routeChanges, err) in
                     guard err == nil else { fail("Received an API error"); return }

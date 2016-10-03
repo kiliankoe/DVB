@@ -35,9 +35,9 @@ class DepartureTests: QuickSpec {
                 expect(dep.type?.identifier) == .some("tram")
             }
 
-            it("should have a correct NSDate") {
-                let in5Minutes = NSDate().addingTimeInterval(5 * 60)
-                // There will be small differences in the creation of the two NSDates
+            it("should have a correct date") {
+                let in5Minutes = Date().addingTimeInterval(5 * 60)
+                // There will be a small difference in the creation of the two Dates
                 expect(dep.leavingDate.timeIntervalSince1970 - in5Minutes.timeIntervalSince1970) < 1
             }
         }

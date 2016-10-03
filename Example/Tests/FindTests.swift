@@ -25,7 +25,6 @@ class FindTests: QuickSpec {
         }
 
         describe("DVB.nearestStops") {
-
             it("should return correct results") {
                 let (helmholtz, distance) = DVB.findNear(latitude: 51.0271761, longitude: 13.7258114, radius: 300).first!
                 expect(helmholtz.name) == "Helmholtzstraße"
