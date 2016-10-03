@@ -95,36 +95,36 @@ public class DVB {
     /// - parameter completion: handler provided with a date last updated, a list of current route changes
     public static func routeChanges(_ completion: @escaping (Date?, [RouteChange], DVBError?) -> Void) {
         get(URL.DVB.routechanges.url(), raw: true) { (result) in
-            // switch result {
-            // case .failure(let error):
-            //     completion(nil, [], error)
-            // case .success(let value):
-            //
-            //     guard let value = value as? Data, let xml = XMLDocument(xml: value, encoding: .utf8) else {
-            //         completion(nil, [], .decode)
-            //         return
-            //     }
-            //
-            //     let dateString = xml.xpath("//lastBuildDate")?.text
-            //     let updatedDate: Date?
-            //
-            //     if let dateString = dateString {
-            //         let dateFormatter = DateFormatter()
-            //         dateFormatter.dateFormat = "E, dd MMMM y HH:mm:ss XX"
-            //         updatedDate = dateFormatter.date(from: dateString)
-            //     } else {
-            //         updatedDate = nil
-            //     }
-            //
-            //     let items = xml.xpath("//item").map { item -> RouteChange? in
-            //         guard let title = item.at_xpath("title")?.text, let details = item.at_xpath("description")?.text else {
-            //             return nil
-            //         }
-            //         return RouteChange(title: title, rawDetails: details)
-            //     }.flatMap {$0}
-            //
-            //     completion(updatedDate, items, nil)
-            // }
+            switch result {
+            case .failure(let error):
+                completion(nil, [], error)
+            case .success(let value):
+
+                guard let value = value as? Data, let xml = XMLDocument(xml: value, encoding: .utf8) else {
+                    completion(nil, [], .decode)
+                    return
+                }
+
+                let dateString = xml.element(atXPath: "//lastBuildDate")?.text
+                let updatedDate: Date?
+
+                if let dateString = dateString {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "E, dd MMMM y HH:mm:ss XX"
+                    updatedDate = dateFormatter.date(from: dateString)
+                } else {
+                    updatedDate = nil
+                }
+
+                let items = xml.search(byXPath: "//item").map { item -> RouteChange? in
+                    guard let title = item.element(atXPath: "title")?.text, let details = item.element(atXPath: "description")?.text else {
+                        return nil
+                    }
+                    return RouteChange(title: title, rawDetails: details)
+                }.flatMap {$0}
+
+                completion(updatedDate, items, nil)
+            }
         }
     }
 }
