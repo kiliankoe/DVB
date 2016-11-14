@@ -24,23 +24,23 @@ class TransportModeTests: QuickSpec {
             }
 
             it("should identify correct values as 'bus'") {
-                expect(TransportMode.Departure(line: "85")) == .bus
-                expect(TransportMode.Departure(line: "99")) == .bus
-                expect(TransportMode.Departure(line: "E75")) == .bus
-                expect(TransportMode.Departure(line: "EV2")) == .bus
+                expect(TransportMode.Departure(line: "85")) == .cityBus
+                expect(TransportMode.Departure(line: "99")) == .cityBus
+                expect(TransportMode.Departure(line: "E75")) == .cityBus
+                expect(TransportMode.Departure(line: "EV2")) == .cityBus
             }
 
             it("should identify correct values as 'regionalbus'") {
-                expect(TransportMode.Departure(line: "366")) == .regionalbus
-                expect(TransportMode.Departure(line: "999")) == .regionalbus
-                expect(TransportMode.Departure(line: "A")) == .regionalbus
-                expect(TransportMode.Departure(line: "Z")) == .regionalbus
-                expect(TransportMode.Departure(line: "G/L")) == .regionalbus
-                expect(TransportMode.Departure(line: "H/S")) == .regionalbus
+                expect(TransportMode.Departure(line: "366")) == .intercityBus
+                expect(TransportMode.Departure(line: "999")) == .intercityBus
+                expect(TransportMode.Departure(line: "A")) == .intercityBus
+                expect(TransportMode.Departure(line: "Z")) == .intercityBus
+                expect(TransportMode.Departure(line: "G/L")) == .intercityBus
+                expect(TransportMode.Departure(line: "H/S")) == .intercityBus
             }
 
             it("should identify correct values as 'cablecar'") {
-                expect(TransportMode.Departure(line: "SWB")) == .cablecar
+                expect(TransportMode.Departure(line: "SWB")) == .cableway
             }
 
             it("should identify correct values as 'ferry'") {
@@ -59,13 +59,13 @@ class TransportModeTests: QuickSpec {
             }
 
             it("should identify correct values as 'citytrain'") {
-                expect(TransportMode.Departure(line: "S3")) == .citytrain
-                expect(TransportMode.Departure(line: "S 2121")) == .citytrain
+                expect(TransportMode.Departure(line: "S3")) == .suburbanRailway
+                expect(TransportMode.Departure(line: "S 2121")) == .suburbanRailway
             }
 
             it("should identify correct values as 'oncallbus'") {
-                expect(TransportMode.Departure(line: "alita")) == .oncallbus
-                expect(TransportMode.Departure(line: "alita 95")) == .oncallbus
+                expect(TransportMode.Departure(line: "alita")) == .hailedSharedTaxi
+                expect(TransportMode.Departure(line: "alita 95")) == .hailedSharedTaxi
             }
 
             it("should fail with nil") {

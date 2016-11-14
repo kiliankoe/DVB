@@ -15,18 +15,18 @@ import Regex
 public enum TransportMode {
     /// Available modes of transport for the departures endpoint
     public enum Departure: String {
-        /// On-call bus
-        case oncallbus = "Rufbus"
+        /// Hailed Shared Taxi
+        case hailedSharedTaxi = "Rufbus"
         /// Ferry
         case ferry = "Fähre"
-        /// Regional bus
-        case regionalbus = "Regionalbus"
-        /// City train
-        case citytrain = "S-Bahn"
-        /// Cablecar
-        case cablecar = "Seil-/Schwebebahn"
-        /// Citybus
-        case bus = "Stadtbus"
+        /// Intercity Bus
+        case intercityBus = "Regionalbus"
+        /// Suburban Railway
+        case suburbanRailway = "S-Bahn"
+        /// Cableway
+        case cableway = "Seil-/Schwebebahn"
+        /// City Bus
+        case cityBus = "Stadtbus"
         /// Tram
         case tram = "Straßenbahn"
         /// Train
@@ -35,17 +35,17 @@ public enum TransportMode {
         /// Identifier used by the DVB website
         public var identifier: String {
             switch self {
-            case .oncallbus:
+            case .hailedSharedTaxi:
                 return "alita"
             case .ferry:
                 return "ferry"
-            case .regionalbus:
+            case .intercityBus:
                 return "bus"
-            case .citytrain:
+            case .suburbanRailway:
                 return "metropolitan"
-            case .cablecar:
+            case .cableway:
                 return "lift"
-            case .bus:
+            case .cityBus:
                 return "citybus"
             case .tram:
                 return "tram"
@@ -72,7 +72,7 @@ public enum TransportMode {
 
             switch line {
             case "SWB":
-                self = .cablecar
+                self = .cableway
             case Regex("^E(\\d+)"):
                 if let numStr = Regex.lastMatch?.captures[0],
                     let num = Int(numStr),
@@ -82,19 +82,19 @@ public enum TransportMode {
                     return nil
                 }
             case Regex("^EV\\d+"):
-                self = .bus
+                self = .cityBus
             case "E":
                 self = .tram
             case Regex("^\\D$|^\\D\\/\\D$"):
-                self = .regionalbus
+                self = .intercityBus
             case Regex("^F"):
                 self = .ferry
             case Regex("^RE|^IC|^TL|^RB|^SB|^SE|^U\\d"):
                 self = .train
             case Regex("^S"):
-                self = .citytrain
+                self = .suburbanRailway
             case Regex("alita"):
-                self = .oncallbus
+                self = .hailedSharedTaxi
             default:
                 print("Failed to parse departure identifier into transport mode for \"\(line)\"")
                 return nil
@@ -113,9 +113,9 @@ fileprivate func matchNumericType(_ int: Int) -> TransportMode.Departure? {
         case 0...60:
             return .tram
         case 61..<100:
-            return .bus
+            return .cityBus
         case 100...1000:
-            return .regionalbus
+            return .intercityBus
         default:
             return nil
     }
