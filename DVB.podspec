@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version          = "1.0.0"
   s.summary          = "Query Dresden's public transport system for current bus- and tramstop data in Swift."
   s.description      = <<-DESC
-This is an unofficial Swift package, giving you a few options to query Dresden's public transport system for current bus- and tramstop data.
+Query Dresden's public transport system for current bus- and tramstop data
                        DESC
   s.homepage         = "https://github.com/kiliankoe/DVB"
   s.license          = 'MIT'
