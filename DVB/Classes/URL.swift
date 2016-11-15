@@ -34,16 +34,4 @@ enum URL {
             }
         }
     }
-
-    enum DVB {
-        case routechanges
-
-        func url() -> Foundation.URL {
-            switch self {
-            case .routechanges:
-                return Foundation.URL(string: "https://www.dvb.de/de-de/apps/routechanges/rssfeed")!
-            }
-        }
-    }
-
 }
