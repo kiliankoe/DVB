@@ -8,22 +8,19 @@
 
 import Foundation
 
-/// Send a GET request
-///
-/// - parameter url:        URL
-/// - parameter raw:        skip JSON deserialization and return raw data instead
-/// - parameter completion: handler provided with result
-func get(_ url: Foundation.URL, raw: Bool = false, completion: @escaping (Result<Any, DVBError>) -> Void) {
+private func get(_ url: URL, raw: Bool = false, completion: @escaping (Result<Any, DVBError>) -> Void) {
     var request = URLRequest(url: url)
     request.httpMethod = "GET"
     dataTask(request: request, raw: raw, completion: completion)
 }
 
-/// Send a NSURLSession dataTask with a given request
-///
-/// - parameter request:    request to send
-/// - parameter raw:        skip JSON deserialization and return raw data instead
-/// - parameter completion: handler provided with result
+private func post(_ url: URL, data: [String: Any], raw: Bool = false, completion: @escaping (Result<Any, DVBError>) -> Void) {
+    var request = URLRequest(url: url)
+    request.httpMethod = "POST"
+    request.httpBody = try! JSONSerialization.data(withJSONObject: data)
+    dataTask(request: request, raw: raw, completion: completion)
+}
+
 private func dataTask(request: URLRequest, raw: Bool, completion: @escaping (Result<Any, DVBError>) -> Void) {
     let session = URLSession(configuration: .default)
     session.dataTask(with: request) { data, response, error in
