@@ -110,8 +110,6 @@ public func == (lhs: Stop, rhs: Stop) -> Bool {
 extension Stop: Hashable {
 	/// Unique hash value based on `id`
 	public var hashValue: Int {
-		get {
-			return self.id.hashValue
-		}
+        return self.id.hashValue
 	}
 }
