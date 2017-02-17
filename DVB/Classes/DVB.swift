@@ -70,22 +70,31 @@ public class DVB {
 
     /// Find a list of stops with their distance to a set of coordinates in a given radius.
     ///
-    /// - parameter latitude:  latitude
-    /// - parameter longitude: longitude
-    /// - parameter radius:    search radius in meters, defaults to 1000 (1km)
-    ///
-    /// - returns: list of stops and their distance from the given coordinates, limited to the search radius
-    public static func findNear(latitude: Double, longitude: Double, radius: Double = 1000) -> [(Stop, Double)] {
-        let searchLocation = CLLocation(latitude: latitude, longitude: longitude)
-
+    /// - Parameters:
+    ///   - location: search location
+    ///   - radius: search radius in meters, defaults to 1000 (1km)
+    /// - Returns: list of stops and their distance from the given coordinates, limited to the search radius
+    public static func findNear(location: CLLocation, radius: Double = 1000) -> [(Stop, Double)] {
         return allVVOStops.map { stop in
             guard let loc = stop.location else { return nil }
             let stopLoc = CLLocation(latitude: loc.latitude, longitude: loc.longitude)
-            return (stop, searchLocation.distance(from: stopLoc))
+            return (stop, location.distance(from: stopLoc))
         }.flatMap {
             $0
         }.filter { tuple in
             tuple.1 <= radius
         }
+    }
+
+    /// Find a list of stops with their distance to a set of coordinates in a given radius.
+    ///
+    /// - Parameters:
+    ///   - latitude: latitude of search location
+    ///   - longitude: longitude of search location
+    ///   - radius: search radius in meters, defaults to 1000 (1km)
+    /// - Returns: list of stops and their distance from the given coordinates, limited to the search radius
+    public static func findNear(latitude: Double, longitude: Double, radius: Double = 1000) -> [(Stop, Double)] {
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        return findNear(location: location, radius: radius)
     }
 }
