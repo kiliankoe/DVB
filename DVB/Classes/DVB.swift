@@ -42,30 +42,23 @@ public class DVB {
         }
     }
 
-    /// A list of all stops in the VVO network
-    public static var allVVOStops: [Stop] = {
-        let dvbBundle = Bundle(for: DVB.self)
-
-        guard let vvostopsPath = dvbBundle.path(forResource: "VVOStops", ofType: "plist"),
-        let allStops = NSArray(contentsOfFile: vvostopsPath) as? [[String:String]] else { return [] }
-
-        return allStops.map(Stop.init(dict:)).flatMap {$0}
-    }()
-
-    /// Find a list of stops with a given search string.
-    ///
-    /// - parameter query:  query
-    /// - parameter region: region, defaults to 'Dresden'
-    ///
-    /// - returns: list of stops that match the query
-    public static func find(query: String, region: String = "Dresden") -> [Stop] {
-        let query = query.lowercased()
-        let foundStops = allVVOStops.filter { stop in
-            let match = stop.searchString.lowercased().contains(query) || stop.name.lowercased().contains(query)
-            return match && stop.region == region
+    public static func find(query: String, region: String = "Dresden", completion: @escaping (Result<FindResponse, DVBError>) -> Void) {
+        let data: [String: Any] = [
+            "limit": 0,
+            "query": query,
+            "stopsOnly": true,
+            "dvb": true
+        ]
+        post(Endpoint.pointfinder, data: data) { result in
+            switch result {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let json):
+                guard let json = json as? [String: Any] else { completion(.failure(.decode)); return }
+                let resp = FindResponse(json: json)
+                completion(.success(resp))
+            }
         }
-
-        return foundStops.sorted { $0.priority > $1.priority }
     }
 
     /// Find a list of stops with their distance to a set of coordinates in a given radius.

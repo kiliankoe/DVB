@@ -8,13 +8,13 @@
 
 import Foundation
 
-private func get(_ url: URL, raw: Bool = false, completion: @escaping (Result<Any, DVBError>) -> Void) {
+func get(_ url: URL, raw: Bool = false, completion: @escaping (Result<Any, DVBError>) -> Void) {
     var request = URLRequest(url: url)
     request.httpMethod = "GET"
     dataTask(request: request, raw: raw, completion: completion)
 }
 
-private func post(_ url: URL, data: [String: Any], raw: Bool = false, completion: @escaping (Result<Any, DVBError>) -> Void) {
+func post(_ url: URL, data: [String: Any], raw: Bool = false, completion: @escaping (Result<Any, DVBError>) -> Void) {
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
     request.httpBody = try! JSONSerialization.data(withJSONObject: data)
