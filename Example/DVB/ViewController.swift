@@ -13,8 +13,7 @@ class ViewController: UITableViewController {
 
     var departures: [Departure]? {
         didSet {
-            DispatchQueue.main.async {
-                [weak self] in
+            DispatchQueue.main.async { [weak self] in
                 self?.tableView.reloadData()
             }
         }
@@ -28,15 +27,16 @@ class ViewController: UITableViewController {
     func refresh() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
-        Departure.monitor(id: "33000028") { result in
-            switch result {
-            case .failure(let error):
-                print(error)
-                break
-            case .success(let response):
-                self.departures = response.departures
+        Stop.find(query: "Hauptbahnhof") { result in
+            guard let resp = result.success else { return }
+            guard let hbf = resp.stops.first else { return }
+
+            Departure.monitor(id: hbf.id) { result in
+                guard let resp = result.success else { return }
+                self.departures = resp.departures
+
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
 
