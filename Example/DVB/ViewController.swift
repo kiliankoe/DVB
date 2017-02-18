@@ -11,6 +11,8 @@ import DVB
 
 class ViewController: UITableViewController {
 
+    let STOP_NAME = "Hauptbahnhof Dresden"
+
     var departures: [Departure]? {
         didSet {
             DispatchQueue.main.async { [weak self] in
@@ -21,21 +23,20 @@ class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = STOP_NAME
         refresh()
     }
 
     func refresh() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-
-        Stop.find(query: "Hauptbahnhof") { result in
+        Stop.find(query: STOP_NAME) { result in
             guard let resp = result.success else { return }
             guard let hbf = resp.stops.first else { return }
 
             Departure.monitor(id: hbf.id) { result in
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 guard let resp = result.success else { return }
                 self.departures = resp.departures
-
-                UIApplication.shared.isNetworkActivityIndicatorVisible = false
             }
         }
     }
@@ -63,6 +64,7 @@ class ViewController: UITableViewController {
         cell.textLabel?.text = "\(departure.line) \(departure.direction)"
 //        cell.detailTextLabel?.text = departure.eta == 0 ? "now" : "\(departure.eta) min"
         cell.detailTextLabel?.text = departure.fancyEta
+        cell.detailTextLabel?.textColor = departure.state == .delayed ? .red : .black
         cell.imageView?.image = UIImage(named: departure.mode.dvbIdentifier)
 
         return cell
