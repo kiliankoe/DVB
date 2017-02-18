@@ -19,7 +19,7 @@ internal extension Date {
         guard let millis = Int(components[0]) else { return nil }
         guard let tz = Int(components[1]) else { return nil }
 
-        let seconds = Double(millis) / 1000 + Double(tz * 60 * 60)
+        let seconds = Double(millis) / 1000 + Double(tz/100 * 60 * 60)
         self = Date(timeIntervalSince1970: seconds)
     }
 }
