@@ -42,25 +42,6 @@ public class DVB {
         }
     }
 
-    public static func find(query: String, region: String = "Dresden", completion: @escaping (Result<FindResponse, DVBError>) -> Void) {
-        let data: [String: Any] = [
-            "limit": 0,
-            "query": query,
-            "stopsOnly": true,
-            "dvb": true
-        ]
-        post(Endpoint.pointfinder, data: data) { result in
-            switch result {
-            case .failure(let error):
-                completion(.failure(error))
-            case .success(let json):
-                guard let json = json as? [String: Any] else { completion(.failure(.decode)); return }
-                let resp = FindResponse(json: json)
-                completion(.success(resp))
-            }
-        }
-    }
-
     /// Find a list of stops with their distance to a set of coordinates in a given radius.
     ///
     /// - Parameters:

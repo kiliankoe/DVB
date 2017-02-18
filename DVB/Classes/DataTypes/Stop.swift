@@ -60,6 +60,44 @@ public struct Stop {
     }
 }
 
+// MARK: - API
+
+extension Stop {
+    public static func find(query: String, completion: @escaping (Result<FindResponse, DVBError>) -> Void) {
+        let data: [String: Any] = [
+            "limit": 0,
+            "query": query,
+            "stopsOnly": true,
+            "dvb": true
+        ]
+        find(data: data, completion: completion)
+    }
+
+    public static func findNear(lat: Double, lng: Double, completion: @escaping (Result<FindResponse, DVBError>) -> Void) {
+        let data: [String: Any] = [
+            "limit": 0,
+            "assignedStops": true,
+            "query": "coord:\(lat):\(lng)" // TODO: Figure out how to calculate these values based on "normal" coords
+        ]
+        find(data: data, completion: completion)
+    }
+
+    private static func find(data: [String: Any], completion: @escaping (Result<FindResponse, DVBError>) -> Void) {
+        post(Endpoint.pointfinder, data: data) { result in
+            switch result {
+            case .failure(let error):
+                completion(.failure(error))
+            case .success(let json):
+                guard let json = json as? [String: Any] else { completion(.failure(.decode)); return }
+                guard let resp = FindResponse(json: json) else { completion(.failure(.decode)); return }
+                completion(.success(resp))
+            }
+        }
+    }
+}
+
+// MARK: - Utility
+
 extension Stop: CustomStringConvertible {
     public var description: String {
         if let region = region {
