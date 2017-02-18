@@ -37,7 +37,7 @@ extension FindResponse: FromJSON {
 extension Stop {
     init?(string: String) {
         let components = string.components(separatedBy: "|")
-        guard components.count == 8 else { return nil }
+        guard components.count == 9 else { return nil }
         self.id = components[0]
         self.region = components[2]
         self.name = components[3]
