@@ -116,7 +116,20 @@ extension Departure.Platform: FromJSON {
 
 // MARK: - API
 
+extension Departure {
+    public static func monitor(id: String, date: Date = Date(), modes: [Mode] = Mode.all, completion: @escaping (Result<MonitorResponse, DVBError>) -> Void) {
+        let data: [String: Any] = [
+            "stopid": id,
+            "time": ISO8601DateFormatter().string(from: date),
+            "isarrival": false, // this should be in the func header
+            "limit": 0,
+            "shorttermchanges": true, // this should be in the func header
+            "mot": modes.map{$0.identifier}
+        ]
 
+        post(Endpoint.departureMonitor, data: data, completion: completion)
+    }
+}
 
 // MARK: - Utility
 
