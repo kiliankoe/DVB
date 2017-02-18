@@ -136,8 +136,18 @@ extension Departure {
 // MARK: - Utility
 
 extension Departure: CustomStringConvertible {
-    /// A textual representation of `self`.
     public var description: String {
-        return "\(line) \(direction) departing in \(eta) minutes."
+        return "\(line) \(direction) departing in \(fancyEta) minutes."
+    }
+}
+
+extension Departure: Equatable {}
+public func == (lhs: Departure, rhs: Departure) -> Bool {
+    return lhs.id == rhs.id
+}
+
+extension Departure: Hashable {
+    public var hashValue: Int {
+        return self.id.hashValue
     }
 }
