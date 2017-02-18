@@ -76,7 +76,7 @@ extension Stop {
 
 extension Stop: CustomStringConvertible {
     public var description: String {
-        if let region = region {
+        if let region = region, !region.isEmpty {
             return "\(name), \(region)"
         }
         return name
