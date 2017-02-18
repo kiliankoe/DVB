@@ -59,7 +59,7 @@ extension Stop {
             "stopsOnly": true,
             "dvb": true
         ]
-        find(data: data, completion: completion)
+        post(Endpoint.pointfinder, data: data, completion: completion)
     }
 
     public static func findNear(lat: Double, lng: Double, completion: @escaping (Result<FindResponse, DVBError>) -> Void) {
@@ -68,20 +68,7 @@ extension Stop {
             "assignedStops": true,
             "query": "coord:\(lat):\(lng)" // TODO: Figure out how to calculate these values based on "normal" coords
         ]
-        find(data: data, completion: completion)
-    }
-
-    private static func find(data: [String: Any], completion: @escaping (Result<FindResponse, DVBError>) -> Void) {
-        post(Endpoint.pointfinder, data: data) { result in
-            switch result {
-            case .failure(let error):
-                completion(.failure(error))
-            case .success(let json):
-                guard let json = json as? [String: Any] else { completion(.failure(.decode)); return }
-                guard let resp = FindResponse(json: json) else { completion(.failure(.decode)); return }
-                completion(.success(resp))
-            }
-        }
+        post(Endpoint.pointfinder, data: data, completion: completion)
     }
 }
 
