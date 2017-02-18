@@ -28,10 +28,14 @@ class ViewController: UITableViewController {
     func refresh() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
 
-        DVB.departures("Postplatz") { departures, error in
-            guard error == nil else { print("Couldn't get departure list: \(error!)"); return }
-            self.departures = departures
-
+        Departure.monitor(id: "33000028") { result in
+            switch result {
+            case .failure(let error):
+                print(error)
+                break
+            case .success(let response):
+                self.departures = response.departures
+            }
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
@@ -57,11 +61,9 @@ class ViewController: UITableViewController {
         let departure = departures[indexPath.row]
 
         cell.textLabel?.text = "\(departure.line) \(departure.direction)"
-        cell.detailTextLabel?.text = departure.eta == 0 ? "now" : "\(departure.eta) min"
-
-        if let typeID = departure.type?.identifier {
-            cell.imageView?.image = UIImage(named: typeID)
-        }
+//        cell.detailTextLabel?.text = departure.eta == 0 ? "now" : "\(departure.eta) min"
+        cell.detailTextLabel?.text = departure.fancyEta
+        cell.imageView?.image = UIImage(named: departure.mode.dvbIdentifier)
 
         return cell
     }
