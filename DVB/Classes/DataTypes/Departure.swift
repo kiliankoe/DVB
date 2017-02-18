@@ -81,7 +81,27 @@ extension MonitorResponse: FromJSON {
 
 extension Departure: FromJSON {
     init?(json: JSON) {
-        return nil
+        guard let id = json["Id"] as? String,
+            let line = json["LineName"] as? String,
+            let direction = json["Direction"] as? String,
+            let platformJson = json["Platform"], let platform = Platform(anyJSON: platformJson),
+            let modeStr = json["Mot"] as? String, let mode = Mode(rawValue: modeStr),
+            let realTimeStr = json["RealTime"] as? String, let realTime = Date(from: realTimeStr),
+            let scheduledTimeStr = json["ScheduledTime"] as? String, let scheduledTime = Date(from: scheduledTimeStr),
+            let stateStr = json["State"] as? String,
+            let divaStr = json["Diva"], let diva = Diva(anyJSON: divaStr) else {
+                return nil
+        }
+
+        self.id = id
+        self.line = line
+        self.direction = direction
+        self.platform = platform
+        self.mode = mode
+        self.realTime = realTime
+        self.scheduledTime = scheduledTime
+        self.state = State(stateStr)
+        self.diva = diva
     }
 }
 
