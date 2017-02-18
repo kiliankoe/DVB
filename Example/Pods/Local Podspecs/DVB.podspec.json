@@ -19,11 +19,6 @@
     "tvos": "9.0",
     "watchos": "2.0"
   },
-  "dependencies": {
-    "STRegex": [
-      "~> 0.4"
-    ]
-  },
   "source_files": "DVB/Classes/**/*",
   "resources": [
     "DVB/Assets/VVOStops.plist"

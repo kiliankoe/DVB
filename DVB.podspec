@@ -16,8 +16,6 @@ Query Dresden's public transport system for current bus- and tramstop data
   s.tvos.deployment_target = '9.0'
   s.watchos.deployment_target = '2.0'
 
-  s.dependency 'STRegex', '~> 0.4'
-
   s.source_files = 'DVB/Classes/**/*'
 
   s.resources = ['DVB/Assets/VVOStops.plist']
