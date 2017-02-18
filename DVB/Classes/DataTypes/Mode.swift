@@ -1,5 +1,5 @@
 //
-//  TransportMode.swift
+//  Mode.swift
 //  Pods
 //
 //  Created by Kilian Költzsch on 07/05/16.
@@ -18,21 +18,32 @@ public enum Mode: String {
     case ferry
     case hailedsharedtaxi
 
-    var all: [String] {
-        return [
-            "Tram",
-            "CityBus",
-            "IntercityBus",
-            "SuburbanRailway",
-            "Train",
-            "Cableway",
-            "Ferry",
-            "HailedSharedTaxi"
-        ]
+    static var all: [Mode] {
+        return [.tram, .citybus, .intercitybus, .suburbanrailway, .train, .cableway, .ferry, .hailedsharedtaxi]
     }
 
-    // as used by the DVB
     public var identifier: String {
+        switch self {
+        case .tram:
+            return "Tram"
+        case .citybus:
+            return "CityBus"
+        case .intercitybus:
+            return "IntercityBus"
+        case .suburbanrailway:
+            return "SuburbanRailway"
+        case .train:
+            return "Train"
+        case .cableway:
+            return "Cableway"
+        case .ferry:
+            return "Ferry"
+        case .hailedsharedtaxi:
+            return "HailedSharedTaxi"
+        }
+    }
+
+    public var dvbIdentifier: String {
         switch self {
         case .tram:
             return "tram"
@@ -54,6 +65,6 @@ public enum Mode: String {
     }
 
     public var iconURL: URL {
-        return URL(string: "https://www.dvb.de/assets/img/trans-icon/transport-\(self.identifier).svg")!
+        return URL(string: "https://www.dvb.de/assets/img/trans-icon/transport-\(self.dvbIdentifier).svg")!
     }
 }
