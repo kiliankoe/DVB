@@ -37,7 +37,7 @@ private func dataTask<T: FromJSON>(request: URLRequest, completion: @escaping (R
     let session = URLSession(configuration: .default)
     session.dataTask(with: request) { data, response, error in
         guard let data = data, let response = response as? HTTPURLResponse else { completion(Result(failure: DVBError.request)); return }
-        guard response.statusCode / 100 != 2 else { completion(Result(failure: DVBError.server(statusCode: response.statusCode))); return }
+        guard response.statusCode / 100 == 2 else { completion(Result(failure: DVBError.server(statusCode: response.statusCode))); return }
 
         do {
             guard let json = try JSONSerialization.jsonObject(with: data) as? JSON else { completion(Result(failure: DVBError.decode)); return }
