@@ -14,12 +14,11 @@ internal extension Date {
         let components = dateString
             .replacingOccurrences(of: "/Date(", with: "")
             .replacingOccurrences(of: ")/", with: "")
-            .components(separatedBy: "+") // FIXME: This will surely break...
+            .components(separatedBy: "+")
 
         guard let millis = Int(components[0]) else { return nil }
-        guard let tz = Int(components[1]) else { return nil }
+        let seconds = Double(millis) / 1000
 
-        let seconds = Double(millis) / 1000 + Double(tz/100 * 60 * 60)
         self = Date(timeIntervalSince1970: seconds)
     }
 }
