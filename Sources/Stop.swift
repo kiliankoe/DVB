@@ -34,8 +34,8 @@ extension Stop {
         self.region = components[2]
         self.name = components[3]
 
-        let lat = components[4]
-        let lng = components[5]
+//        let lat = components[4]
+//        let lng = components[5]
         // TODO: Figure out how to calculate correct location based on these values
         self.location = nil
     }
