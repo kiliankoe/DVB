@@ -119,13 +119,13 @@ extension Departure.Platform: FromJSON {
 // MARK: - API
 
 extension Departure {
-    public static func monitor(id: String, date: Date = Date(), modes: [Mode] = Mode.all, completion: @escaping (Result<MonitorResponse, DVBError>) -> Void) {
+    public static func monitor(id: String, date: Date = Date(), modes: [Mode] = Mode.all, allowShorttermChanges: Bool = true, completion: @escaping (Result<MonitorResponse, DVBError>) -> Void) {
         let data: [String: Any] = [
             "stopid": id,
             "time": ISO8601DateFormatter().string(from: date),
-            "isarrival": false, // this should be in the func header
+            "isarrival": false, // TODO: this should be in the func header
             "limit": 0,
-            "shorttermchanges": true, // this should be in the func header
+            "shorttermchanges": allowShorttermChanges,
             "mot": modes.map{$0.identifier}
         ]
 
