@@ -18,6 +18,7 @@ func post(_ url: URL, data: [String: Any], completion: @escaping (Result<Any, DV
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
     request.httpBody = try? JSONSerialization.data(withJSONObject: data)
+    request.addValue("application/json;charset=UTF-8", forHTTPHeaderField: "Content-Type")
     dataTask(request: request, completion: completion)
 }
 
@@ -27,8 +28,7 @@ func post<T: FromJSON>(_ url: URL, data: [String: Any], completion: @escaping (R
         case .failure(let err):
             completion(.failure(err))
         case .success(let json):
-            guard let json = json as? JSON else { completion(.failure(.decode)); return }
-            guard let resp = T(json: json) else { completion(.failure(.decode)); return }
+            guard let json = json as? JSON, let resp = T(json: json) else { completion(.failure(.decode)); return }
             completion(.success(resp))
         }
     }
@@ -45,7 +45,6 @@ private func dataTask(request: URLRequest, completion: @escaping (Result<Any, DV
         }
 
         let rawJson = try? JSONSerialization.jsonObject(with: data)
-
         guard let json = rawJson else { completion(.failure(.decode)); return }
 
         completion(.success(value: json))
