@@ -47,6 +47,7 @@ public struct Departure {
     public let realTime: Date
     public let scheduledTime: Date
     public let state: State
+    public let routeChanges: [String]?
     public let diva: Diva
 
     var eta: Int {
@@ -101,6 +102,7 @@ extension Departure: FromJSON {
         self.realTime = realTime
         self.scheduledTime = scheduledTime
         self.state = State(stateStr)
+        self.routeChanges = json["RouteChanges"] as? String
         self.diva = diva
     }
 }
