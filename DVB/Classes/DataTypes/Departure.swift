@@ -131,7 +131,7 @@ extension Departure.Platform: FromJSON {
 // MARK: - API
 
 extension Departure {
-    public static func monitor(id: String, date: Date = Date(), dateType: DateType = .arrival, allowedModes modes: [Mode] = Mode.all, allowShorttermChanges: Bool = true, completion: @escaping (Result<MonitorResponse, DVBError>) -> Void) {
+    public static func monitor(id: String, date: Date = Date(), dateType: DateType = .arrival, allowedModes modes: [Mode] = Mode.all, allowShorttermChanges: Bool = true, completion: @escaping (Result<MonitorResponse>) -> Void) {
         let data: [String: Any] = [
             "stopid": id,
             "time": ISO8601DateFormatter().string(from: date),

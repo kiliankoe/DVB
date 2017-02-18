@@ -8,9 +8,17 @@
 
 import Foundation
 
-public enum Result<Value, Err: Error> {
+public enum Result<Value> {
     case success(Value)
-    case failure(Err)
+    case failure(Error)
+
+    init(success x: Value) {
+        self = .success(x)
+    }
+
+    init(failure x: Error) {
+        self = .failure(x)
+    }
 
     public func get() throws -> Value {
         switch self {
@@ -26,7 +34,7 @@ public enum Result<Value, Err: Error> {
         }
     }
 
-    public var failure: Err? {
+    public var failure: Error? {
         switch self {
         case .success(_): return nil
         case .failure(let e): return e
@@ -34,7 +42,7 @@ public enum Result<Value, Err: Error> {
     }
 }
 
-public func ?? <T,E>(result: Result<T,E>, defaultValue: @autoclosure () -> T) -> T {
+public func ?? <T>(result: Result<T>, defaultValue: @autoclosure () -> T) -> T {
     switch result {
     case .success(let x): return x
     case .failure(_): return defaultValue()

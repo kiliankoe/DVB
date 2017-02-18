@@ -52,7 +52,7 @@ extension Stop {
 // MARK: - API
 
 extension Stop {
-    public static func find(query: String, completion: @escaping (Result<FindResponse, DVBError>) -> Void) {
+    public static func find(query: String, completion: @escaping (Result<FindResponse>) -> Void) {
         let data: [String: Any] = [
             "limit": 0,
             "query": query,
@@ -62,7 +62,7 @@ extension Stop {
         post(Endpoint.pointfinder, data: data, completion: completion)
     }
 
-    public static func findNear(lat: Double, lng: Double, completion: @escaping (Result<FindResponse, DVBError>) -> Void) {
+    public static func findNear(lat: Double, lng: Double, completion: @escaping (Result<FindResponse>) -> Void) {
         let data: [String: Any] = [
             "limit": 0,
             "assignedStops": true,
