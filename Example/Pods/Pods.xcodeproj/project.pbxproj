@@ -11,7 +11,6 @@
 		09584F5F99B9D895C480266F0603EEDA /* XCTestSuite+QuickTestSuiteBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 88B73E5DAE0AEAB130CD14A03836AADA /* XCTestSuite+QuickTestSuiteBuilder.m */; };
 		099C64CF560DC424DB43BBBEC6370D8F /* ThrowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A4B0D4F85E3E25D7C8156DB3689676 /* ThrowError.swift */; };
 		0A9718E1ACEA15DBBEAA0E51BF49E80C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F7A9C3E17DDCD91E3464783E4C00F1 /* Foundation.framework */; };
-		0B07196A685FB5636CBD2F5C6D9E2555 /* DVB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278C17A4A52B69BD702E9242D6585AA7 /* DVB.swift */; };
 		1588E116459655E46DD164C5E4E8B56C /* World+DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E957F4D18D6294B1444934F9C0BC5C75 /* World+DSL.swift */; };
 		1A2DF8EB530A437B7DD90A3715954ABC /* SuiteHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140AADB00F4B57CB6B4E50B476CB9C37 /* SuiteHooks.swift */; };
 		1B69CAE61AFA58E4C975367203C9002E /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182F3345DB8AED89E14DD353468E0EAA /* Options.swift */; };
@@ -209,7 +208,6 @@
 		24D30986192B8390AF706967066C3499 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E0DD43BB38D5142643B9D362E467CD /* Nimble-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-umbrella.h"; sourceTree = "<group>"; };
 		27086D0B6077194BFBF464FD01CE6DF6 /* Quick.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Quick.h; path = Sources/QuickObjectiveC/Quick.h; sourceTree = "<group>"; };
-		278C17A4A52B69BD702E9242D6585AA7 /* DVB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DVB.swift; sourceTree = "<group>"; };
 		299B0D7E1E4798092467A7C33DF40E13 /* ThreadLocal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThreadLocal.swift; path = Source/ThreadLocal.swift; sourceTree = "<group>"; };
 		2AC1CD53BA0CBC71BDCEFF543471B0B4 /* VVOStops.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = VVOStops.plist; sourceTree = "<group>"; };
 		2B102FAC08523540B8BDDD1FE31457DF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -596,7 +594,6 @@
 		B26C7BA1352DFA1E41C577259D020670 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				278C17A4A52B69BD702E9242D6585AA7 /* DVB.swift */,
 				0874BB3A148C3432E037146F72C05082 /* Network.swift */,
 				46E09E5F33F8A5071661FFB81E4C10AE /* Endpoint.swift */,
 				39459F961E57C83D00E7F174 /* Date+fromString.swift */,
@@ -1031,7 +1028,6 @@
 				E25E56570D8A4FD2FF94C8EE02BAC2E5 /* Departure.swift in Sources */,
 				674C1AB1995CD8D11EE3547DFF372F10 /* DVB-dummy.m in Sources */,
 				39459F991E57CFFF00E7F174 /* Diva.swift in Sources */,
-				0B07196A685FB5636CBD2F5C6D9E2555 /* DVB.swift in Sources */,
 				26967B4769DD4EB7CF54F9108F2C1214 /* DVBError.swift in Sources */,
 				7A47AE29A5590662A2BB5B13075B36B3 /* Network.swift in Sources */,
 				5011CAC7ADBE2EC196691109793E17AA /* Result.swift in Sources */,
