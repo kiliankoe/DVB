@@ -1,11 +1,3 @@
-//
-//  Stop.swift
-//  Pods
-//
-//  Created by Kilian Költzsch on 09/05/16.
-//
-//
-
 import Foundation
 import CoreLocation
 

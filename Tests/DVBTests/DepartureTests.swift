@@ -1,11 +1,3 @@
-//
-//  DepartureTests.swift
-//  DVB
-//
-//  Created by Kilian Költzsch on 28/09/2016.
-//  Copyright © 2016 CocoaPods. All rights reserved.
-//
-
 //import Quick
 //import Nimble
 import DVB

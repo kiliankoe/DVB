@@ -1,11 +1,3 @@
-//
-//  Network.swift
-//  Pods
-//
-//  Created by Kilian Költzsch on 07/05/16.
-//
-//
-
 import Foundation
 
 func get<T: FromJSON>(_ url: URL, completion: @escaping (Result<T>) -> Void) {

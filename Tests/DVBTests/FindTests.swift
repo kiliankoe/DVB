@@ -1,11 +1,3 @@
-//
-//  FindTests.swift
-//  DVB
-//
-//  Created by Kilian Költzsch on 09/05/16.
-//  Copyright © 2016 CocoaPods. All rights reserved.
-//
-
 //import Quick
 //import Nimble
 import DVB

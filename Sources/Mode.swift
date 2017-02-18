@@ -1,11 +1,3 @@
-//
-//  Mode.swift
-//  Pods
-//
-//  Created by Kilian Költzsch on 07/05/16.
-//
-//
-
 import Foundation
 
 public enum Mode: String {
