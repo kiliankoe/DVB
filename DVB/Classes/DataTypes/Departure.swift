@@ -9,10 +9,10 @@
 import Foundation
 
 public struct MonitorResponse {
-    let stopName: String
-    let place: String
-    let expirationDate: Date
-    let departures: [Departure]
+    public let stopName: String
+    public let place: String
+    public let expirationDate: Date
+    public let departures: [Departure]
 }
 
 /// A bus, tram or whatever leaving a specific stop at a specific time
@@ -28,11 +28,11 @@ public struct Departure {
     public let routeChanges: [String]?
     public let diva: Diva
 
-    var eta: Int {
+    public var eta: Int {
         return Int(realTime.timeIntervalSince(Date()) / 60)
     }
 
-    var fancyEta: String {
+    public var fancyEta: String {
         let scheduledDiff = Int(scheduledTime.timeIntervalSince(Date()) / 60)
         let realDiff = Int(realTime.timeIntervalSince(scheduledTime) / 60)
         return "\(scheduledDiff)+\(realDiff)"
