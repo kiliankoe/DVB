@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import MapKit
+import CoreLocation
 
 public struct FindResponse {
     let stops: [Stop]
