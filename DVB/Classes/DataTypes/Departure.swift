@@ -28,14 +28,25 @@ public struct Departure {
     public let routeChanges: [String]?
     public let diva: Diva
 
-    public var eta: Int {
+    public var actualEta: Int {
         return Int(realTime.timeIntervalSince(Date()) / 60)
     }
 
+    public var scheduledEta: Int {
+        return Int(scheduledTime.timeIntervalSince(Date()) / 60)
+    }
+
     public var fancyEta: String {
-        let scheduledDiff = Int(scheduledTime.timeIntervalSince(Date()) / 60)
-        let realDiff = Int(realTime.timeIntervalSince(scheduledTime) / 60)
-        return "\(scheduledDiff)+\(realDiff)"
+        let actualDiff = Int(realTime.timeIntervalSince(scheduledTime) / 60)
+
+        if actualDiff < 0 {
+            return "\(scheduledEta)\(actualDiff)"
+        } else if actualDiff == 0 {
+            return "\(scheduledEta)"
+        } else {
+            return "\(scheduledEta)+\(actualDiff)"
+        }
+
     }
 }
 
