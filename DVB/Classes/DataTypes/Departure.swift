@@ -102,7 +102,7 @@ extension Departure: FromJSON {
         self.realTime = realTime
         self.scheduledTime = scheduledTime
         self.state = State(stateStr)
-        self.routeChanges = json["RouteChanges"] as? String
+        self.routeChanges = json["RouteChanges"] as? [String]
         self.diva = diva
     }
 }
