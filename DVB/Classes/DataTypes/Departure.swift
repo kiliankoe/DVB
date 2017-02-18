@@ -163,3 +163,13 @@ extension Departure: Hashable {
         return self.id.hashValue
     }
 }
+
+extension Departure.State: Equatable {}
+public func == (lhs: Departure.State, rhs: Departure.State) -> Bool {
+    switch (lhs, rhs) {
+    case (.onTime, .onTime): return true
+    case (.delayed, .delayed): return true
+    case (.other(let x), .other(let y)): return x == y
+    default: return false
+    }
+}
