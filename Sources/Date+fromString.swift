@@ -13,4 +13,15 @@ internal extension Date {
 
         self = Date(timeIntervalSince1970: seconds)
     }
+
+    private static let iso8601Formatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        df.timeZone = TimeZone(identifier: "UTC")
+        return df
+    }()
+
+    var iso8601: String {
+        return Date.iso8601Formatter.string(from: self)
+    }
 }

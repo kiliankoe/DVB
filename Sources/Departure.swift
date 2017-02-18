@@ -38,7 +38,6 @@ public struct Departure {
         } else {
             return "\(scheduledEta)+\(actualDiff)"
         }
-
     }
 }
 
@@ -137,7 +136,7 @@ extension Departure {
     public static func monitor(id: String, date: Date = Date(), dateType: DateType = .arrival, allowedModes modes: [Mode] = Mode.all, allowShorttermChanges: Bool = true, completion: @escaping (Result<MonitorResponse>) -> Void) {
         let data: [String: Any] = [
             "stopid": id,
-            "time": ISO8601DateFormatter().string(from: date),
+            "time": date.iso8601,
             "isarrival": dateType.requestVal,
             "limit": 0,
             "shorttermchanges": allowShorttermChanges,
