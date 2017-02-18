@@ -17,6 +17,30 @@ public struct MonitorResponse {
 
 /// A bus, tram or whatever leaving a specific stop at a specific time
 public struct Departure {
+    public let id: String
+    public let line: String
+    public let direction: String
+    public let platform: Platform
+    public let mode: Mode
+    public let realTime: Date
+    public let scheduledTime: Date
+    public let state: State
+    public let routeChanges: [String]?
+    public let diva: Diva
+
+    var eta: Int {
+        return Int(realTime.timeIntervalSince(Date()) / 60)
+    }
+
+    var fancyEta: String {
+        let scheduledDiff = Int(scheduledTime.timeIntervalSince(Date()) / 60)
+        let realDiff = Int(realTime.timeIntervalSince(scheduledTime) / 60)
+        return "\(scheduledDiff)+\(realDiff)"
+    }
+}
+
+// Namespacing some sub-types
+extension Departure {
     public struct Platform {
         let name: String
         let type: String
@@ -39,25 +63,13 @@ public struct Departure {
         }
     }
 
-    public let id: String
-    public let line: String
-    public let direction: String
-    public let platform: Platform
-    public let mode: Mode
-    public let realTime: Date
-    public let scheduledTime: Date
-    public let state: State
-    public let routeChanges: [String]?
-    public let diva: Diva
+    public enum DateType {
+        case arrival
+        case departure
 
-    var eta: Int {
-        return Int(realTime.timeIntervalSince(Date()) / 60)
-    }
-
-    var fancyEta: String {
-        let scheduledDiff = Int(scheduledTime.timeIntervalSince(Date()) / 60)
-        let realDiff = Int(realTime.timeIntervalSince(scheduledTime) / 60)
-        return "\(scheduledDiff)+\(realDiff)"
+        var requestVal: Bool {
+            return self == .arrival
+        }
     }
 }
 
@@ -119,11 +131,11 @@ extension Departure.Platform: FromJSON {
 // MARK: - API
 
 extension Departure {
-    public static func monitor(id: String, date: Date = Date(), modes: [Mode] = Mode.all, allowShorttermChanges: Bool = true, completion: @escaping (Result<MonitorResponse, DVBError>) -> Void) {
+    public static func monitor(id: String, date: Date = Date(), dateType: DateType = .arrival, allowedModes modes: [Mode] = Mode.all, allowShorttermChanges: Bool = true, completion: @escaping (Result<MonitorResponse, DVBError>) -> Void) {
         let data: [String: Any] = [
             "stopid": id,
             "time": ISO8601DateFormatter().string(from: date),
-            "isarrival": false, // TODO: this should be in the func header
+            "isarrival": dateType.requestVal,
             "limit": 0,
             "shorttermchanges": allowShorttermChanges,
             "mot": modes.map{$0.identifier}
