@@ -85,7 +85,7 @@ extension Departure: FromJSON {
             let line = json["LineName"] as? String,
             let direction = json["Direction"] as? String,
             let platformJson = json["Platform"], let platform = Platform(anyJSON: platformJson),
-            let modeStr = json["Mot"] as? String, let mode = Mode(rawValue: modeStr),
+            let modeStr = json["Mot"] as? String, let mode = Mode(rawValue: modeStr.lowercased()),
             let realTimeStr = json["RealTime"] as? String, let realTime = Date(from: realTimeStr),
             let scheduledTimeStr = json["ScheduledTime"] as? String, let scheduledTime = Date(from: scheduledTimeStr),
             let stateStr = json["State"] as? String,
