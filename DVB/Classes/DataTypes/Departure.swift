@@ -9,14 +9,10 @@
 import Foundation
 
 public struct MonitorResponse {
-    let name: String
+    let stopName: String
     let place: String
-    let expirationDate: Date?
+    let expirationDate: Date
     let departures: [Departure]
-
-    init?(json: [String: Any]) {
-        return nil
-    }
 }
 
 /// A bus, tram or whatever leaving a specific stop at a specific time
@@ -63,6 +59,46 @@ public struct Departure {
         return "\(scheduledDiff)+\(realDiff)"
     }
 }
+
+// MARK: - JSON
+
+extension MonitorResponse: FromJSON {
+    init?(json: JSON) {
+        guard let stopName = json["Name"] as? String,
+            let place = json["Place"] as? String,
+            let expirationStr = json["ExpirationTime"] as? String,
+            let expirationDate = Date(from: expirationStr),
+            let departures = json["Departures"] as? [JSON] else {
+                return nil
+        }
+
+        self.stopName = stopName
+        self.place = place
+        self.expirationDate = expirationDate
+        self.departures = departures.map{Departure.init(json: $0)}.flatMap{$0}
+    }
+}
+
+extension Departure: FromJSON {
+    init?(json: JSON) {
+        return nil
+    }
+}
+
+extension Departure.Platform: FromJSON {
+    init?(json: JSON) {
+        guard let name = json["Name"] as? String,
+            let type = json["Type"] as? String else { return nil }
+        self.name = name
+        self.type = type
+    }
+}
+
+// MARK: - API
+
+
+
+// MARK: - Utility
 
 extension Departure: CustomStringConvertible {
     /// A textual representation of `self`.

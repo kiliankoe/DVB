@@ -12,14 +12,6 @@ import CoreLocation
 public struct FindResponse {
     let stops: [Stop]
     let expirationDate: Date?
-
-    init?(json: [String: Any]) {
-        guard let stops = json["Points"] as? [String] else { return nil }
-        guard let expirationDate = json["ExpirationTime"] as? String else { return nil }
-
-        self.stops = stops.map{Stop.init(string: $0)}.flatMap{$0}
-        self.expirationDate = Date(from: expirationDate)
-    }
 }
 
 /// A place where a bus, tram or whatever can stop.
@@ -28,7 +20,21 @@ public struct Stop {
     public let name: String
     public let region: String?
     public let location: CLLocationCoordinate2D?
+}
 
+// MARK: - JSON
+
+extension FindResponse: FromJSON {
+    init?(json: JSON) {
+        guard let stops = json["Points"] as? [String] else { return nil }
+        guard let expirationDate = json["ExpirationTime"] as? String else { return nil }
+
+        self.stops = stops.map{Stop.init(string: $0)}.flatMap{$0}
+        self.expirationDate = Date(from: expirationDate)
+    }
+}
+
+extension Stop {
     init?(string: String) {
         let components = string.components(separatedBy: "|")
         guard components.count == 8 else { return nil }
