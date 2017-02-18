@@ -8,45 +8,43 @@
 
 import Foundation
 
-func get(_ url: URL, completion: @escaping (Result<Any>) -> Void) {
+func get<T: FromJSON>(_ url: URL, completion: @escaping (Result<T>) -> Void) {
     var request = URLRequest(url: url)
-    request.httpMethod = "GET"
-    dataTask(request: request, completion: completion)
-}
-
-func post(_ url: URL, data: [String: Any], completion: @escaping (Result<Any>) -> Void) {
-    var request = URLRequest(url: url)
-    request.httpMethod = "POST"
-    request.httpBody = try? JSONSerialization.data(withJSONObject: data)
-    request.addValue("application/json;charset=UTF-8", forHTTPHeaderField: "Content-Type")
+    request.httpMethod = HTTPMethod.GET.rawValue
     dataTask(request: request, completion: completion)
 }
 
 func post<T: FromJSON>(_ url: URL, data: [String: Any], completion: @escaping (Result<T>) -> Void) {
-    post(url, data: data) { result in
-        switch result {
-        case .failure(let err):
-            completion(.failure(err))
-        case .success(let json):
-            guard let json = json as? JSON, let resp = T(json: json) else { completion(.failure(DVBError.decode)); return }
-            completion(.success(resp))
-        }
+    var request = URLRequest(url: url)
+    request.httpMethod = HTTPMethod.POST.rawValue
+    do {
+        request.httpBody = try JSONSerialization.data(withJSONObject: data)
+    } catch let e {
+        completion(Result(failure: e))
+        return
     }
+    request.addValue("application/json;charset=UTF-8", forHTTPHeaderField: "Content-Type")
+
+    dataTask(request: request, completion: completion)
 }
 
-private func dataTask(request: URLRequest, completion: @escaping (Result<Any>) -> Void) {
+private enum HTTPMethod: String {
+    case GET
+    case POST
+}
+
+private func dataTask<T: FromJSON>(request: URLRequest, completion: @escaping (Result<T>) -> Void) {
     let session = URLSession(configuration: .default)
     session.dataTask(with: request) { data, response, error in
-        guard let data = data else { completion(.failure(DVBError.request)); return }
+        guard let data = data, let response = response as? HTTPURLResponse else { completion(Result(failure: DVBError.request)); return }
+        guard response.statusCode / 100 != 2 else { completion(Result(failure: DVBError.server(statusCode: response.statusCode))); return }
 
-        if let resp = response as? HTTPURLResponse, resp.statusCode / 100 != 2 {
-            completion(.failure(DVBError.server(statusCode: resp.statusCode)))
-            return
+        do {
+            guard let json = try JSONSerialization.jsonObject(with: data) as? JSON else { completion(Result(failure: DVBError.decode)); return }
+            guard let resp = T(json: json) else { completion(Result(failure: DVBError.decode)); return }
+            completion(Result(success: resp))
+        } catch let e {
+            completion(Result(failure: e))
         }
-
-        let rawJson = try? JSONSerialization.jsonObject(with: data)
-        guard let json = rawJson else { completion(.failure(DVBError.decode)); return }
-
-        completion(.success(value: json))
     }.resume()
 }
