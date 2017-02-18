@@ -10,8 +10,8 @@ import Foundation
 import CoreLocation
 
 public struct FindResponse {
-    let stops: [Stop]
-    let expirationDate: Date?
+    public let stops: [Stop]
+    public let expirationDate: Date?
 }
 
 /// A place where a bus, tram or whatever can stop.
