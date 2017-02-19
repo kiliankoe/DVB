@@ -175,8 +175,8 @@
 			children = (
 				3933DF611E58FD480043ABE1 /* StopTests.swift */,
 				3933DF5F1E58FD480043ABE1 /* DepartureTests.swift */,
-				3933DF5E1E58FD480043ABE1 /* MonitorTests.swift */,
 				3933DF601E58FD480043ABE1 /* FindTests.swift */,
+				3933DF5E1E58FD480043ABE1 /* MonitorTests.swift */,
 			);
 			name = Tests;
 			sourceTree = "<group>";

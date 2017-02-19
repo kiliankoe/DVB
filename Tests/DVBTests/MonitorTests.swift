@@ -1,32 +1,34 @@
-//import Quick
-//import Nimble
+import Foundation
+import XCTest
 import DVB
 
-//class DeparturesTests: QuickSpec {
-//    override func spec() {
-//        describe("DVB.departures") {
-//            it("should return results") {
-//                DVB.departures("Postplatz", completion: { departures, err in
-//                    guard err == nil else { fail("Received an API error"); return }
-//                    expect(departures.count) > 0
-//                })
-//            }
-//
-//            it("shouldn't find results for unknown stop") {
-//                DVB.departures("foobarbaz", completion: { departures, err in
-//                    guard err == nil else { fail("Received an API error"); return }
-//                    expect(departures.count) == 0
-//                })
-//            }
-//
-//            it("should only return requested lines") {
-//                DVB.departures("Pirnaischer Platz", line: ["3"], completion: { departures, err in
-//                    guard err == nil else { fail("Received an API error"); return }
-//                    for dep in departures {
-//                        expect(dep.line) == "3"
-//                    }
-//                })
-//            }
-//        }
-//    }
-//}
+class MonitorTests: XCTestCase {
+    func testPostplatzDepartures() {
+        let e = expectation(description: "Find correct departures")
+
+        Departure.monitor(id: "33000037") { result in
+            switch result {
+            case .failure(let e):
+                XCTFail("Failed with error: \(e.localizedDescription)")
+            case .success(let response):
+                guard response.departures.count > 0 else {
+                    XCTFail("Response contains no departures")
+                    return
+                }
+                e.fulfill()
+            }
+        }
+
+        waitForExpectations(timeout: 5)
+    }
+}
+
+#if os(Linux)
+    extension MonitorTests {
+        static var allTests: [(String, (MonitorTests) -> () throws -> Void)] {
+            return [
+                ("testFindHelmholtzQuery", testFindHelmholtzQuery),
+            ]
+        }
+    }
+#endif
