@@ -28,12 +28,41 @@ private enum HTTPMethod: String {
 private func dataTask<T: FromJSON>(request: URLRequest, completion: @escaping (Result<T>) -> Void) {
     let session = URLSession(configuration: .default)
     session.dataTask(with: request) { data, response, error in
-        guard let data = data, let response = response as? HTTPURLResponse else { completion(Result(failure: DVBError.request)); return }
-        guard response.statusCode / 100 == 2 else { completion(Result(failure: DVBError.server(statusCode: response.statusCode))); return }
+        guard let data = data,
+            let response = response as? HTTPURLResponse else {
+                completion(Result(failure: DVBError.network))
+                return
+        }
+        guard response.statusCode / 100 == 2 else {
+            completion(Result(failure: DVBError.server(statusCode: response.statusCode)))
+            return
+        }
 
         do {
-            guard let json = try JSONSerialization.jsonObject(with: data) as? JSON else { completion(Result(failure: DVBError.decode)); return }
-            guard let resp = T(json: json) else { completion(Result(failure: DVBError.decode)); return }
+            guard let json = try JSONSerialization.jsonObject(with: data) as? JSON else {
+                completion(Result(failure: DVBError.decode))
+                return
+            }
+            guard let status = json["Status"] as? JSON,
+                let statusCode = status["Code"] as? String else {
+                    completion(Result(failure: DVBError.response))
+                    return
+            }
+
+            if statusCode != "Ok" {
+                var message = ""
+                if let messageTxt = status["Message"] as? String {
+                    message = messageTxt
+                }
+                completion(Result(failure: DVBError.request(status: statusCode, message: message)))
+                return
+            }
+
+            guard let resp = T(json: json) else {
+                completion(Result(failure: DVBError.decode))
+                return
+            }
+
             completion(Result(success: resp))
         } catch let e {
             completion(Result(failure: e))
