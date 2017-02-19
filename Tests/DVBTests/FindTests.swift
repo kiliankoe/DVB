@@ -1,36 +1,27 @@
-//import Quick
-//import Nimble
+import Foundation
+import XCTest
 import DVB
 
-//class FindTests: QuickSpec {
-//    override func spec() {
-//        describe("DVB.find") {
-//            it("should return results") {
-//                let stops = DVB.find(query: "Helmholtzstraße")
-//                expect(stops.count) > 0
-//            }
-//
-//            it("should return the correct stops") {
-//                let stops = DVB.find(query: "Zellesch")
-//                if let first = stops.first {
-//                    expect(first.name) == "Zellescher Weg"
-//                } else {
-//                    fail("Got empty list")
-//                }
-//            }
-//        }
-//
-//        describe("DVB.nearestStops") {
-//            it("should return correct results") {
-//                let found = DVB.findNear(latitude: 51.0271761, longitude: 13.7258114, radius: 300)
-//                if let first = found.first {
-//                    let (helmholtz, distance) = first
-//                    expect(helmholtz.name) == "Helmholtzstraße"
-//                    expect(distance) <= 300
-//                } else {
-//                    fail("Got empty list")
-//                }
-//            }
-//        }
-//    }
-//}
+class MonitorTests: XCTestCase {
+    func testFindHelmholtzQuery() {
+        let e = expectation(description: "Find correct stop")
+
+        Stop.find(query: "Helmholtz") { result in
+            switch result {
+            case .failure(let e):
+                XCTFail("Failed with error: \(e.localizedDescription)")
+            case .success(let response):
+                guard let helmholtz = response.stops.first else {
+                    XCTFail("Response contains no stops")
+                    return
+                }
+                XCTAssertEqual(helmholtz.name, "Helmholtzstraße")
+                e.fulfill()
+            }
+        }
+
+        waitForExpectations(timeout: 5)
+    }
+
+    // TODO: Test findNear()
+}
