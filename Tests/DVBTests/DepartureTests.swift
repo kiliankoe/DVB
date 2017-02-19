@@ -1,37 +1,57 @@
-//import Quick
-//import Nimble
-import DVB
+import Foundation
+import XCTest
+@testable import DVB
 
-//class DepartureTests: QuickSpec {
-//    override func spec() {
-//        describe("Departure") {
-//            let dep = Departure(line: "3", direction: "Wilder Mann", minutesUntil: 5)
-//
-//            it("should be the correct line") {
-//                expect(dep.line) == "3"
-//            }
-//
-//            it("should have the correct direction") {
-//                expect(dep.direction) == "Wilder Mann"
-//            }
-//
-//            it("should have the correct minutesUntil") {
-//                expect(dep.eta) == 5
-//            }
-//
-//            it("should identify as the correct type") {
-//                expect(dep.type) == .tram
-//            }
-//
-//            it("should have the correct type identifier") {
-//                expect(dep.type?.identifier) == .some("tram")
-//            }
-//
-//            it("should have a correct date") {
-//                let in5Minutes = Date().addingTimeInterval(5 * 60)
-//                // There will be a small difference in the creation of the two Dates
-//                expect(dep.departingAt.timeIntervalSince1970).to(beCloseTo(in5Minutes.timeIntervalSince1970, within: 1))
-//            }
-//        }
-//    }
-//}
+class DepartureTests: XCTestCase {
+    func testDepartureETA() {
+        let now = Date()
+        let in5 = now.addingTimeInterval(5 * 60 + 1) // a second extra
+        let platform = Departure.Platform(name: "3", type: "Platform")
+        let diva = Diva(number: "11003", network: "voe")
+        let dep = Departure(id: "123", line: "3", direction: "Wilder Mann", platform: platform, mode: .tram, realTime: in5, scheduledTime: now, state: .delayed, routeChanges: nil, diva: diva)
+
+        XCTAssertEqual(dep.scheduledEta, 0)
+        XCTAssertEqual(dep.actualEta, 5)
+        XCTAssertEqual(dep.fancyEta, "0+5")
+    }
+
+    func testDepartureFromJSON() {
+        let json: JSON = [
+            "Id": "65533512",
+            "LineName": "3",
+            "Direction": "Wilder Mann",
+            "Platform": [
+                "Name": "3",
+                "Type": "Platform"
+            ],
+            "Mot": "Tram",
+            "RealTime": "/Date(1487453700000+0100)/",
+            "ScheduledTime": "/Date(1487453700000+0100)/",
+            "State": "InTime",
+            "RouteChanges": [
+                "509223"
+            ],
+            "Diva": [
+                "Number": "11003",
+                "Network": "voe"
+            ]
+        ]
+        let dep = Departure(json: json)!
+
+        XCTAssertEqual(dep.line, "3")
+        XCTAssertEqual(dep.direction, "Wilder Mann")
+        XCTAssertEqual(dep.state, .onTime)
+        XCTAssertEqual(dep.platform.name, "3")
+        XCTAssertEqual(dep.routeChanges!.first!, "509223")
+    }
+}
+
+#if os(Linux)
+extension DepartureTests {
+    static var allTests: [(String, (DepartureTests) -> () throws -> Void)] {
+        return [
+            ("testDepartureETA", testDepartureETA),
+        ]
+    }
+}
+#endif
