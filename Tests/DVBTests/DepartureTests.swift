@@ -51,6 +51,7 @@ extension DepartureTests {
     static var allTests: [(String, (DepartureTests) -> () throws -> Void)] {
         return [
             ("testDepartureETA", testDepartureETA),
+            ("testDepartureFromJSON", testDepartureFromJSON),
         ]
     }
 }
