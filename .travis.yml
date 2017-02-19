@@ -2,9 +2,22 @@
 # * http://www.objc.io/issue-6/travis-ci.html
 # * https://github.com/supermarin/xcpretty#usage
 
-language: objective-c
 osx_image: xcode8
+language: objective-c
+
+before_install:
+  - gem install xcpretty
 
 script:
-- set -o pipefail && xcodebuild test -workspace Example/DVB.xcworkspace -scheme DVB-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+- xcodebuild -scheme DVB-macOS | xcpretty
+- xcodebuild -scheme DVB-iOS | xcpretty
+- xcodebuild test -scheme DVB-macOS | xcpretty
 - pod lib lint
+- swift test
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  email:
+    on_success: never
