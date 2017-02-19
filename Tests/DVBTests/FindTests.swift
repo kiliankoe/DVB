@@ -2,7 +2,7 @@ import Foundation
 import XCTest
 import DVB
 
-class MonitorTests: XCTestCase {
+class FindTests: XCTestCase {
     func testFindHelmholtzQuery() {
         let e = expectation(description: "Find correct stop")
 
@@ -25,3 +25,13 @@ class MonitorTests: XCTestCase {
 
     // TODO: Test findNear()
 }
+
+#if os(Linux)
+    extension FindTests {
+        static var allTests: [(String, (FindTests) -> () throws -> Void)] {
+            return [
+                ("testFindHelmholtzQuery", testFindHelmholtzQuery),
+            ]
+        }
+    }
+#endif
