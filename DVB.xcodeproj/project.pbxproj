@@ -47,9 +47,9 @@
 		392FAA1F1E58FB4600E2EB0A /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392FA9F91E58FB4600E2EB0A /* Stop.swift */; };
 		392FAA201E58FB4600E2EB0A /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392FA9F91E58FB4600E2EB0A /* Stop.swift */; };
 		392FAA211E58FB4600E2EB0A /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392FA9F91E58FB4600E2EB0A /* Stop.swift */; };
-		3933DF621E58FD480043ABE1 /* DeparturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3933DF5E1E58FD480043ABE1 /* DeparturesTests.swift */; };
-		3933DF631E58FD480043ABE1 /* DeparturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3933DF5E1E58FD480043ABE1 /* DeparturesTests.swift */; };
-		3933DF641E58FD480043ABE1 /* DeparturesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3933DF5E1E58FD480043ABE1 /* DeparturesTests.swift */; };
+		3933DF621E58FD480043ABE1 /* MonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3933DF5E1E58FD480043ABE1 /* MonitorTests.swift */; };
+		3933DF631E58FD480043ABE1 /* MonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3933DF5E1E58FD480043ABE1 /* MonitorTests.swift */; };
+		3933DF641E58FD480043ABE1 /* MonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3933DF5E1E58FD480043ABE1 /* MonitorTests.swift */; };
 		3933DF651E58FD480043ABE1 /* DepartureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3933DF5F1E58FD480043ABE1 /* DepartureTests.swift */; };
 		3933DF661E58FD480043ABE1 /* DepartureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3933DF5F1E58FD480043ABE1 /* DepartureTests.swift */; };
 		3933DF671E58FD480043ABE1 /* DepartureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3933DF5F1E58FD480043ABE1 /* DepartureTests.swift */; };
@@ -99,7 +99,7 @@
 		392FA9F71E58FB4600E2EB0A /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Sources/Network.swift; sourceTree = "<group>"; };
 		392FA9F81E58FB4600E2EB0A /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/Result.swift; sourceTree = "<group>"; };
 		392FA9F91E58FB4600E2EB0A /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stop.swift; path = Sources/Stop.swift; sourceTree = "<group>"; };
-		3933DF5E1E58FD480043ABE1 /* DeparturesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeparturesTests.swift; path = Tests/DVBTests/DeparturesTests.swift; sourceTree = "<group>"; };
+		3933DF5E1E58FD480043ABE1 /* MonitorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonitorTests.swift; path = Tests/DVBTests/MonitorTests.swift; sourceTree = "<group>"; };
 		3933DF5F1E58FD480043ABE1 /* DepartureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DepartureTests.swift; path = Tests/DVBTests/DepartureTests.swift; sourceTree = "<group>"; };
 		3933DF601E58FD480043ABE1 /* FindTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindTests.swift; path = Tests/DVBTests/FindTests.swift; sourceTree = "<group>"; };
 		3933DF611E58FD480043ABE1 /* StopTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StopTests.swift; path = Tests/DVBTests/StopTests.swift; sourceTree = "<group>"; };
@@ -175,7 +175,7 @@
 			children = (
 				3933DF611E58FD480043ABE1 /* StopTests.swift */,
 				3933DF5F1E58FD480043ABE1 /* DepartureTests.swift */,
-				3933DF5E1E58FD480043ABE1 /* DeparturesTests.swift */,
+				3933DF5E1E58FD480043ABE1 /* MonitorTests.swift */,
 				3933DF601E58FD480043ABE1 /* FindTests.swift */,
 			);
 			name = Tests;
@@ -545,7 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3933DF651E58FD480043ABE1 /* DepartureTests.swift in Sources */,
-				3933DF621E58FD480043ABE1 /* DeparturesTests.swift in Sources */,
+				3933DF621E58FD480043ABE1 /* MonitorTests.swift in Sources */,
 				3933DF681E58FD480043ABE1 /* FindTests.swift in Sources */,
 				3933DF6B1E58FD480043ABE1 /* StopTests.swift in Sources */,
 			);
@@ -607,7 +607,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3933DF661E58FD480043ABE1 /* DepartureTests.swift in Sources */,
-				3933DF631E58FD480043ABE1 /* DeparturesTests.swift in Sources */,
+				3933DF631E58FD480043ABE1 /* MonitorTests.swift in Sources */,
 				3933DF691E58FD480043ABE1 /* FindTests.swift in Sources */,
 				3933DF6C1E58FD480043ABE1 /* StopTests.swift in Sources */,
 			);
@@ -618,7 +618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3933DF671E58FD480043ABE1 /* DepartureTests.swift in Sources */,
-				3933DF641E58FD480043ABE1 /* DeparturesTests.swift in Sources */,
+				3933DF641E58FD480043ABE1 /* MonitorTests.swift in Sources */,
 				3933DF6A1E58FD480043ABE1 /* FindTests.swift in Sources */,
 				3933DF6D1E58FD480043ABE1 /* StopTests.swift in Sources */,
 			);
