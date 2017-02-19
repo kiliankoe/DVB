@@ -44,8 +44,8 @@ public struct Departure {
 // Namespacing some sub-types
 extension Departure {
     public struct Platform {
-        let name: String
-        let type: String
+        public let name: String
+        public let type: String
     }
 
     public enum State {

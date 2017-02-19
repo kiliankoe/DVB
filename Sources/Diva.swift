@@ -1,8 +1,8 @@
 import Foundation
 
 public struct Diva {
-    let number: String
-    let network: String
+    public let number: String
+    public let network: String
 }
 
 extension Diva: FromJSON {
