@@ -60,11 +60,8 @@
 		3933DF6C1E58FD480043ABE1 /* StopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3933DF611E58FD480043ABE1 /* StopTests.swift */; };
 		3933DF6D1E58FD480043ABE1 /* StopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3933DF611E58FD480043ABE1 /* StopTests.swift */; };
 		52D6D9871BEFF229002C0205 /* DVB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* DVB.framework */; };
-		52D6D99B1BEFF375002C0205 /* DVBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9971BEFF375002C0205 /* DVBTests.swift */; };
-		DD7502861C68FDDC006590AF /* DVBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9971BEFF375002C0205 /* DVBTests.swift */; };
 		DD7502881C68FEDE006590AF /* DVB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* DVB.framework */; };
 		DD7502921C690C7A006590AF /* DVB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* DVB.framework */; };
-		DD75029A1C690CBE006590AF /* DVBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D6D9971BEFF375002C0205 /* DVBTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,7 +105,6 @@
 		3933DF611E58FD480043ABE1 /* StopTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StopTests.swift; path = Tests/DVBTests/StopTests.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* DVB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* DVB-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DVB-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		52D6D9971BEFF375002C0205 /* DVBTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DVBTests.swift; path = Tests/DVBTests/DVBTests.swift; sourceTree = "<group>"; };
 		52D6D9E21BEFFF6E002C0205 /* DVB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9F01BEFFFBE002C0205 /* DVB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6DA0F1BF000BD002C0205 /* DVB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,11 +173,10 @@
 		392FAA221E58FB4B00E2EB0A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				52D6D9971BEFF375002C0205 /* DVBTests.swift */,
-				3933DF5E1E58FD480043ABE1 /* DeparturesTests.swift */,
-				3933DF5F1E58FD480043ABE1 /* DepartureTests.swift */,
-				3933DF601E58FD480043ABE1 /* FindTests.swift */,
 				3933DF611E58FD480043ABE1 /* StopTests.swift */,
+				3933DF5F1E58FD480043ABE1 /* DepartureTests.swift */,
+				3933DF5E1E58FD480043ABE1 /* DeparturesTests.swift */,
+				3933DF601E58FD480043ABE1 /* FindTests.swift */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -553,7 +548,6 @@
 				3933DF621E58FD480043ABE1 /* DeparturesTests.swift in Sources */,
 				3933DF681E58FD480043ABE1 /* FindTests.swift in Sources */,
 				3933DF6B1E58FD480043ABE1 /* StopTests.swift in Sources */,
-				52D6D99B1BEFF375002C0205 /* DVBTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,7 +610,6 @@
 				3933DF631E58FD480043ABE1 /* DeparturesTests.swift in Sources */,
 				3933DF691E58FD480043ABE1 /* FindTests.swift in Sources */,
 				3933DF6C1E58FD480043ABE1 /* StopTests.swift in Sources */,
-				DD7502861C68FDDC006590AF /* DVBTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,7 +621,6 @@
 				3933DF641E58FD480043ABE1 /* DeparturesTests.swift in Sources */,
 				3933DF6A1E58FD480043ABE1 /* FindTests.swift in Sources */,
 				3933DF6D1E58FD480043ABE1 /* StopTests.swift in Sources */,
-				DD75029A1C690CBE006590AF /* DVBTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
