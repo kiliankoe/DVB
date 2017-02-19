@@ -1,0 +1,8 @@
+disabled_rules:
+  - todo
+  - line_length
+  - trailing_comma
+
+variable_name:
+  excluded:
+    - id

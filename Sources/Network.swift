@@ -28,6 +28,11 @@ private enum HTTPMethod: String {
 private func dataTask<T: FromJSON>(request: URLRequest, completion: @escaping (Result<T>) -> Void) {
     let session = URLSession(configuration: .default)
     session.dataTask(with: request) { data, response, error in
+        guard error == nil else {
+            completion(Result(failure: DVBError.network))
+            return
+        }
+
         guard let data = data,
             let response = response as? HTTPURLResponse else {
                 completion(Result(failure: DVBError.network))

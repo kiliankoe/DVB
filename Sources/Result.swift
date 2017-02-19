@@ -4,12 +4,12 @@ public enum Result<Value> {
     case success(Value)
     case failure(Error)
 
-    init(success x: Value) {
-        self = .success(x)
+    init(success value: Value) {
+        self = .success(value)
     }
 
-    init(failure x: Error) {
-        self = .failure(x)
+    init(failure error: Error) {
+        self = .failure(error)
     }
 
     public func get() throws -> Value {

@@ -90,7 +90,7 @@ extension MonitorResponse: FromJSON {
         self.stopName = stopName
         self.place = place
         self.expirationDate = expirationDate
-        self.departures = departures.map{Departure.init(json: $0)}.flatMap{$0}
+        self.departures = departures.map {Departure.init(json: $0)}.flatMap {$0}
     }
 }
 
@@ -140,7 +140,7 @@ extension Departure {
             "isarrival": dateType.requestVal,
             "limit": 0,
             "shorttermchanges": allowShorttermChanges,
-            "mot": modes.map{$0.identifier}
+            "mot": modes.map {$0.identifier}
         ]
 
         post(Endpoint.departureMonitor, data: data, completion: completion)
