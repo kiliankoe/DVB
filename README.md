@@ -9,7 +9,7 @@
 
 This is an unofficial Swift package giving you a few options to query Dresden's public transport system for current bus- and tramstop data.
 
-If you're looking for something like this for [Node](https://github.com/kiliankoe/dvbjs), [Python](https://github.com/kiliankoe/dvbpy), [Ruby](https://github.com/kiliankoe/dvbrs) or [Go](https://github.com/kiliankoe/dvbgo), just click the respective links 🙂
+Want something like this for another language, look [no further](https://github.com/kiliankoe/vvo#libraries) 🙂
 
 
 
