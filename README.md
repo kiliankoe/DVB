@@ -56,6 +56,14 @@ Departure.monitor(id: "33000037") { result in
 	guard let response = result.success else { return }
 	print(response.departures)
 }
+
+// For convenience you can also use the following function. Be aware though that
+// this sends of two subsequent requests, so it is preferable to monitor a stop's
+// ID if you already have it at hand.
+Departure.monitor(name: "Postplatz") { result in
+	guard let response = result.success else { return }
+	print(response.departures)
+}
 ```
 
 ### Find a specific stop
