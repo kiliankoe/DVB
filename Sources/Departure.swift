@@ -159,6 +159,18 @@ extension Departure {
 
         post(Endpoint.departureMonitor, data: data, completion: completion)
     }
+
+    /// Convenience function taking a stop name. Sends of a find request first and uses the first result's `id` as an argument for the monitor request.
+    public static func monitor(name: String, date: Date = Date(), dateType: DateType = .arrival, allowedModes modes: [Mode] = Mode.all, allowShorttermChanges: Bool = true, completion: @escaping (Result<MonitorResponse>) -> Void) {
+        Stop.find(query: name) { result in
+            switch result {
+            case .failure(let error): completion(Result(failure: error))
+            case .success(let response):
+                guard let first = response.stops.first else { completion(Result(failure: DVBError.response)); return }
+                Departure.monitor(id: first.id, date: date, dateType: dateType, allowedModes: modes, allowShorttermChanges: allowShorttermChanges, completion: completion)
+            }
+        }
+    }
 }
 
 // MARK: - Utility

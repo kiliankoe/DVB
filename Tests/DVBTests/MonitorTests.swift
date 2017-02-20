@@ -3,10 +3,29 @@ import XCTest
 import DVB
 
 class MonitorTests: XCTestCase {
-    func testPostplatzDepartures() {
+    func testDepartureMonitor() {
         let e = expectation(description: "Find correct departures")
 
         Departure.monitor(id: "33000037") { result in
+            switch result {
+            case .failure(let error):
+                XCTFail("Failed with error: \(error.localizedDescription)")
+            case .success(let response):
+                guard response.departures.count > 0 else {
+                    XCTFail("Response contains no departures")
+                    return
+                }
+                e.fulfill()
+            }
+        }
+
+        waitForExpectations(timeout: 5)
+    }
+
+    func testMonitorWithName() {
+        let e = expectation(description: "Find correct departures")
+
+        Departure.monitor(name: "Albertplatz") { result in
             switch result {
             case .failure(let error):
                 XCTFail("Failed with error: \(error.localizedDescription)")
@@ -49,7 +68,8 @@ class MonitorTests: XCTestCase {
     extension MonitorTests {
         static var allTests: [(String, (MonitorTests) -> () throws -> Void)] {
             return [
-                ("testFindHelmholtzQuery", testFindHelmholtzQuery),
+                ("testDepartureMonitor", testDepartureMonitor),
+                ("testMonitorWithName", testMonitorWithName),
                 ("testNonExistantStopId", testNonExistantStopId),
             ]
         }
