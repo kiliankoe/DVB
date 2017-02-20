@@ -78,33 +78,36 @@ extension Departure {
 // MARK: - JSON
 
 extension MonitorResponse: FromJSON {
-    init?(json: JSON) {
+    init(json: JSON) throws {
         guard let stopName = json["Name"] as? String,
             let place = json["Place"] as? String,
             let expirationStr = json["ExpirationTime"] as? String,
             let expirationDate = Date(from: expirationStr),
             let departures = json["Departures"] as? [JSON] else {
-                return nil
+                throw DVBError.decode
         }
 
         self.stopName = stopName
         self.place = place
         self.expirationDate = expirationDate
-        self.departures = departures.map {Departure(json: $0)}.flatMap {$0}
+        self.departures = try departures.map { try Departure(json: $0) } // Why is the first try necessary here? o.O
     }
 }
 
 extension Departure: FromJSON {
-    init?(json: JSON) {
+    init(json: JSON) throws {
         guard let id = json["Id"] as? String,
             let line = json["LineName"] as? String,
             let direction = json["Direction"] as? String,
-            let platformJson = json["Platform"], let platform = Platform(anyJSON: platformJson),
+            let platformJson = json["Platform"],
             let modeStr = json["Mot"] as? String, let mode = Mode(rawValue: modeStr.lowercased()),
             let scheduledTimeStr = json["ScheduledTime"] as? String, let scheduledTime = Date(from: scheduledTimeStr),
-            let divaStr = json["Diva"], let diva = Diva(anyJSON: divaStr) else {
-                return nil
+            let divaStr = json["Diva"] else {
+                throw DVBError.decode
         }
+
+        let platform = try Platform(anyJSON: platformJson)
+        let diva = try Diva(anyJSON: divaStr)
 
         self.id = id
         self.line = line
@@ -131,9 +134,11 @@ extension Departure: FromJSON {
 }
 
 extension Departure.Platform: FromJSON {
-    init?(json: JSON) {
+    init(json: JSON) throws {
         guard let name = json["Name"] as? String,
-            let type = json["Type"] as? String else { return nil }
+            let type = json["Type"] as? String else {
+                throw DVBError.decode
+        }
         self.name = name
         self.type = type
     }
@@ -181,6 +186,7 @@ public func == (lhs: Departure.State, rhs: Departure.State) -> Bool {
     case (.onTime, .onTime): return true
     case (.delayed, .delayed): return true
     case (.other(let x), .other(let y)): return x == y
+    case (.unknown, .unknown): return true
     default: return false
     }
 }

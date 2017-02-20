@@ -63,12 +63,12 @@ private func dataTask<T: FromJSON>(request: URLRequest, completion: @escaping (R
                 return
             }
 
-            guard let resp = T(json: json) else {
-                completion(Result(failure: DVBError.decode))
-                return
+            do {
+                let resp = try T(json: json)
+                completion(Result(success: resp))
+            } catch let error {
+                completion(Result(failure: error))
             }
-
-            completion(Result(success: resp))
         } catch let e {
             completion(Result(failure: e))
         }

@@ -40,19 +40,19 @@ public struct RouteChange {
 // MARK: - JSON
 
 extension RouteChangeResponse: FromJSON {
-    init?(json: JSON) {
+    init(json: JSON) throws {
         guard let lines = json["Lines"] as? [JSON],
             let changes = json["Changes"] as? [JSON] else {
-                return nil
+                throw DVBError.decode
         }
 
-        self.lines = lines.map {Line(json: $0)}.flatMap {$0}
-        self.changes = changes.map {RouteChange(json: $0)}.flatMap {$0}
+        self.lines = try lines.map { try Line(json: $0) }
+        self.changes = try changes.map { try RouteChange(json: $0) }
     }
 }
 
 extension RouteChange: FromJSON {
-    init?(json: JSON) {
+    init(json: JSON) throws {
         guard let id = json["Id"] as? String,
             let kindStr = json["Type"] as? String,
             let title = json["Title"] as? String,
@@ -61,7 +61,7 @@ extension RouteChange: FromJSON {
             let lineIds = json["LineIds"] as? [String],
             let publishDateStr = json["PublishDate"] as? String,
             let publishDate = Date(from: publishDateStr) else {
-                return nil
+                throw DVBError.decode
         }
 
         self.id = id
@@ -69,17 +69,17 @@ extension RouteChange: FromJSON {
         self.tripRequestInclude = json["TripRequestInclude"] as? Bool
         self.title = title
         self.htmlDescription = html
-        self.validityPeriods = valPeriods.map {ValidityPeriod(json: $0)}.flatMap {$0}
+        self.validityPeriods = try valPeriods.map { try ValidityPeriod(json: $0) }
         self.lineIds = lineIds
         self.publishDate = publishDate
     }
 }
 
 extension RouteChange.ValidityPeriod: FromJSON {
-    init?(json: JSON) {
+    init(json: JSON) throws {
         guard let beginStr = json["Begin"] as? String,
-            let begin = Date(from: beginStr),
-                return nil
+            let begin = Date(from: beginStr) else {
+                throw DVBError.decode
         }
 
         self.begin = begin

@@ -36,7 +36,8 @@ class DepartureTests: XCTestCase {
                 "Network": "voe"
             ]
         ]
-        let dep = Departure(json: json)!
+        // swiftlint:disable:next force_try
+        let dep = try! Departure(json: json)
 
         XCTAssertEqual(dep.line, "3")
         XCTAssertEqual(dep.direction, "Wilder Mann")

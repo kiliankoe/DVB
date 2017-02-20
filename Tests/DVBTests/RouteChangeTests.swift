@@ -22,7 +22,8 @@ class RouteChangeTests: XCTestCase {
             "PublishDate": "/Date(1486653360000+0100)/"
         ]
 
-        let rc = RouteChange(json: json)!
+        // swiftlint:disable:next force_try
+        let rc = try! RouteChange(json: json)
         XCTAssertEqual(rc.id, "509243")
         XCTAssertEqual(rc.lineIds.first!, "428957")
         XCTAssertEqual(rc.kind, RouteChange.Kind.other("SomeRandomOtherType"))

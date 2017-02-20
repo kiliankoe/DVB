@@ -10,7 +10,7 @@ public struct Line {
 }
 
 extension Line: FromJSON {
-    init?(json: JSON) {
+    init(json: JSON) throws {
         guard let id = json["Id"] as? String,
             let name = json["Name"] as? String,
             let company = json["TransportationCompany"] as? String,
@@ -18,14 +18,14 @@ extension Line: FromJSON {
             let mode = Mode(rawValue: modeStr.lowercased()),
             let divas = json["Divas"] as? [JSON],
             let changes = json["Changes"] as? [String] else {
-                return nil
+                throw DVBError.decode
         }
 
         self.id = id
         self.name = name
         self.transportationCompany = company
         self.mode = mode
-        self.divas = divas.map {Diva(json: $0)}.flatMap {$0}
+        self.divas = try divas.map { try Diva(json: $0) }
         self.changes = changes
     }
 }

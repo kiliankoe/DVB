@@ -10,7 +10,8 @@ class StopTests: XCTestCase {
 
     func testStopFromString() {
         let string = "33000742|||Helmholtzstraße|5655904|4621157|0||"
-        let stop = Stop(string: string)!
+        // swiftlint:disable:next force_try
+        let stop = try! Stop(string: string)
 
         XCTAssertEqual(stop.id, "33000742")
         XCTAssertEqual(stop.name, "Helmholtzstraße")

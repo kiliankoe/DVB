@@ -17,19 +17,19 @@ public struct Stop {
 // MARK: - JSON
 
 extension FindResponse: FromJSON {
-    init?(json: JSON) {
-        guard let stops = json["Points"] as? [String] else { return nil }
-        guard let expirationDate = json["ExpirationTime"] as? String else { return nil }
+    init(json: JSON) throws {
+        guard let stops = json["Points"] as? [String] else { throw DVBError.decode }
+        guard let expirationDate = json["ExpirationTime"] as? String else { throw DVBError.decode }
 
-        self.stops = stops.map {Stop(string: $0)}.flatMap {$0}
+        self.stops = try stops.map { try Stop(string: $0) }
         self.expirationDate = Date(from: expirationDate)
     }
 }
 
 extension Stop {
-    init?(string: String) {
+    init(string: String) throws {
         let components = string.components(separatedBy: "|")
-        guard components.count == 9 else { return nil }
+        guard components.count == 9 else { throw DVBError.decode }
         self.id = components[0]
         self.region = components[2].isEmpty ? nil : components[2]
         self.name = components[3]
