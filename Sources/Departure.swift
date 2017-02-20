@@ -55,12 +55,9 @@ extension Departure {
 
         init(_ string: String) {
             switch string {
-            case "InTime":
-                self = .onTime
-            case "Delayed":
-                self = .delayed
-            default:
-                self = .other(string)
+            case "InTime": self = .onTime
+            case "Delayed": self = .delayed
+            default: self = .other(string)
             }
         }
     }
@@ -90,7 +87,7 @@ extension MonitorResponse: FromJSON {
         self.stopName = stopName
         self.place = place
         self.expirationDate = expirationDate
-        self.departures = departures.map {Departure.init(json: $0)}.flatMap {$0}
+        self.departures = departures.map {Departure(json: $0)}.flatMap {$0}
     }
 }
 

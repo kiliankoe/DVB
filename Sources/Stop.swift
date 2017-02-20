@@ -21,7 +21,7 @@ extension FindResponse: FromJSON {
         guard let stops = json["Points"] as? [String] else { return nil }
         guard let expirationDate = json["ExpirationTime"] as? String else { return nil }
 
-        self.stops = stops.map {Stop.init(string: $0)}.flatMap {$0}
+        self.stops = stops.map {Stop(string: $0)}.flatMap {$0}
         self.expirationDate = Date(from: expirationDate)
     }
 }
