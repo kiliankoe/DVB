@@ -59,6 +59,23 @@
 		3933DF6B1E58FD480043ABE1 /* StopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3933DF611E58FD480043ABE1 /* StopTests.swift */; };
 		3933DF6C1E58FD480043ABE1 /* StopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3933DF611E58FD480043ABE1 /* StopTests.swift */; };
 		3933DF6D1E58FD480043ABE1 /* StopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3933DF611E58FD480043ABE1 /* StopTests.swift */; };
+		39B3F7841E5A715A00FCB27B /* RouteChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */; };
+		39B3F7851E5A715A00FCB27B /* RouteChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */; };
+		39B3F7861E5A715A00FCB27B /* RouteChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */; };
+		39B3F7881E5A719700FCB27B /* LineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3F7871E5A719700FCB27B /* LineTests.swift */; };
+		39B3F7891E5A719700FCB27B /* LineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3F7871E5A719700FCB27B /* LineTests.swift */; };
+		39B3F78A1E5A719700FCB27B /* LineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3F7871E5A719700FCB27B /* LineTests.swift */; };
+		39E981D21E5A62720075E3E1 /* RouteChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981D11E5A62720075E3E1 /* RouteChange.swift */; };
+		39E981D31E5A62720075E3E1 /* RouteChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981D11E5A62720075E3E1 /* RouteChange.swift */; };
+		39E981D41E5A62720075E3E1 /* RouteChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981D11E5A62720075E3E1 /* RouteChange.swift */; };
+		39E981D51E5A62720075E3E1 /* RouteChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981D11E5A62720075E3E1 /* RouteChange.swift */; };
+		39E981D71E5A62D90075E3E1 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981D61E5A62D90075E3E1 /* Line.swift */; };
+		39E981D81E5A62D90075E3E1 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981D61E5A62D90075E3E1 /* Line.swift */; };
+		39E981D91E5A62D90075E3E1 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981D61E5A62D90075E3E1 /* Line.swift */; };
+		39E981DA1E5A62D90075E3E1 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981D61E5A62D90075E3E1 /* Line.swift */; };
+		39E981DC1E5A6D690075E3E1 /* RouteChangesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981DB1E5A6D690075E3E1 /* RouteChangesTests.swift */; };
+		39E981DD1E5A6D690075E3E1 /* RouteChangesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981DB1E5A6D690075E3E1 /* RouteChangesTests.swift */; };
+		39E981DE1E5A6D690075E3E1 /* RouteChangesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981DB1E5A6D690075E3E1 /* RouteChangesTests.swift */; };
 		52D6D9871BEFF229002C0205 /* DVB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* DVB.framework */; };
 		DD7502881C68FEDE006590AF /* DVB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* DVB.framework */; };
 		DD7502921C690C7A006590AF /* DVB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* DVB.framework */; };
@@ -103,6 +120,11 @@
 		3933DF5F1E58FD480043ABE1 /* DepartureTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DepartureTests.swift; path = Tests/DVBTests/DepartureTests.swift; sourceTree = "<group>"; };
 		3933DF601E58FD480043ABE1 /* FindTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FindTests.swift; path = Tests/DVBTests/FindTests.swift; sourceTree = "<group>"; };
 		3933DF611E58FD480043ABE1 /* StopTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StopTests.swift; path = Tests/DVBTests/StopTests.swift; sourceTree = "<group>"; };
+		39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteChangeTests.swift; path = Tests/DVBTests/RouteChangeTests.swift; sourceTree = "<group>"; };
+		39B3F7871E5A719700FCB27B /* LineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineTests.swift; path = Tests/DVBTests/LineTests.swift; sourceTree = "<group>"; };
+		39E981D11E5A62720075E3E1 /* RouteChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteChange.swift; path = Sources/RouteChange.swift; sourceTree = "<group>"; };
+		39E981D61E5A62D90075E3E1 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Line.swift; path = Sources/Line.swift; sourceTree = "<group>"; };
+		39E981DB1E5A6D690075E3E1 /* RouteChangesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteChangesTests.swift; path = Tests/DVBTests/RouteChangesTests.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* DVB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* DVB-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DVB-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9E21BEFFF6E002C0205 /* DVB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,9 +196,12 @@
 			isa = PBXGroup;
 			children = (
 				3933DF611E58FD480043ABE1 /* StopTests.swift */,
-				3933DF5F1E58FD480043ABE1 /* DepartureTests.swift */,
 				3933DF601E58FD480043ABE1 /* FindTests.swift */,
+				3933DF5F1E58FD480043ABE1 /* DepartureTests.swift */,
+				39B3F7871E5A719700FCB27B /* LineTests.swift */,
 				3933DF5E1E58FD480043ABE1 /* MonitorTests.swift */,
+				39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */,
+				39E981DB1E5A6D690075E3E1 /* RouteChangesTests.swift */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -194,6 +219,8 @@
 			children = (
 				392FA9F91E58FB4600E2EB0A /* Stop.swift */,
 				392FA9F11E58FB4600E2EB0A /* Departure.swift */,
+				39E981D11E5A62720075E3E1 /* RouteChange.swift */,
+				39E981D61E5A62D90075E3E1 /* Line.swift */,
 				392FA9F61E58FB4600E2EB0A /* Mode.swift */,
 				392FA9F21E58FB4600E2EB0A /* Diva.swift */,
 				392FA9F41E58FB4600E2EB0A /* Endpoint.swift */,
@@ -590,6 +617,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E981D21E5A62720075E3E1 /* RouteChange.swift in Sources */,
 				392FAA1A1E58FB4600E2EB0A /* Result.swift in Sources */,
 				392FA9FE1E58FB4600E2EB0A /* Departure.swift in Sources */,
 				392FA9FA1E58FB4600E2EB0A /* Date+fromString.swift in Sources */,
@@ -598,6 +626,7 @@
 				392FAA061E58FB4600E2EB0A /* DVBError.swift in Sources */,
 				392FAA0A1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA1E1E58FB4600E2EB0A /* Stop.swift in Sources */,
+				39E981D71E5A62D90075E3E1 /* Line.swift in Sources */,
 				392FAA0E1E58FB4600E2EB0A /* FromJSON.swift in Sources */,
 				392FAA121E58FB4600E2EB0A /* Mode.swift in Sources */,
 			);
@@ -607,10 +636,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E981DC1E5A6D690075E3E1 /* RouteChangesTests.swift in Sources */,
 				3933DF651E58FD480043ABE1 /* DepartureTests.swift in Sources */,
+				39B3F7881E5A719700FCB27B /* LineTests.swift in Sources */,
 				3933DF621E58FD480043ABE1 /* MonitorTests.swift in Sources */,
 				3933DF681E58FD480043ABE1 /* FindTests.swift in Sources */,
 				3933DF6B1E58FD480043ABE1 /* StopTests.swift in Sources */,
+				39B3F7841E5A715A00FCB27B /* RouteChangeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,6 +650,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E981D41E5A62720075E3E1 /* RouteChange.swift in Sources */,
 				392FAA1C1E58FB4600E2EB0A /* Result.swift in Sources */,
 				392FAA001E58FB4600E2EB0A /* Departure.swift in Sources */,
 				392FA9FC1E58FB4600E2EB0A /* Date+fromString.swift in Sources */,
@@ -626,6 +659,7 @@
 				392FAA081E58FB4600E2EB0A /* DVBError.swift in Sources */,
 				392FAA0C1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA201E58FB4600E2EB0A /* Stop.swift in Sources */,
+				39E981D91E5A62D90075E3E1 /* Line.swift in Sources */,
 				392FAA101E58FB4600E2EB0A /* FromJSON.swift in Sources */,
 				392FAA141E58FB4600E2EB0A /* Mode.swift in Sources */,
 			);
@@ -635,6 +669,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E981D51E5A62720075E3E1 /* RouteChange.swift in Sources */,
 				392FAA1D1E58FB4600E2EB0A /* Result.swift in Sources */,
 				392FAA011E58FB4600E2EB0A /* Departure.swift in Sources */,
 				392FA9FD1E58FB4600E2EB0A /* Date+fromString.swift in Sources */,
@@ -643,6 +678,7 @@
 				392FAA091E58FB4600E2EB0A /* DVBError.swift in Sources */,
 				392FAA0D1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA211E58FB4600E2EB0A /* Stop.swift in Sources */,
+				39E981DA1E5A62D90075E3E1 /* Line.swift in Sources */,
 				392FAA111E58FB4600E2EB0A /* FromJSON.swift in Sources */,
 				392FAA151E58FB4600E2EB0A /* Mode.swift in Sources */,
 			);
@@ -652,6 +688,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E981D31E5A62720075E3E1 /* RouteChange.swift in Sources */,
 				392FAA1B1E58FB4600E2EB0A /* Result.swift in Sources */,
 				392FA9FF1E58FB4600E2EB0A /* Departure.swift in Sources */,
 				392FA9FB1E58FB4600E2EB0A /* Date+fromString.swift in Sources */,
@@ -660,6 +697,7 @@
 				392FAA071E58FB4600E2EB0A /* DVBError.swift in Sources */,
 				392FAA0B1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA1F1E58FB4600E2EB0A /* Stop.swift in Sources */,
+				39E981D81E5A62D90075E3E1 /* Line.swift in Sources */,
 				392FAA0F1E58FB4600E2EB0A /* FromJSON.swift in Sources */,
 				392FAA131E58FB4600E2EB0A /* Mode.swift in Sources */,
 			);
@@ -669,10 +707,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E981DD1E5A6D690075E3E1 /* RouteChangesTests.swift in Sources */,
 				3933DF661E58FD480043ABE1 /* DepartureTests.swift in Sources */,
+				39B3F7891E5A719700FCB27B /* LineTests.swift in Sources */,
 				3933DF631E58FD480043ABE1 /* MonitorTests.swift in Sources */,
 				3933DF691E58FD480043ABE1 /* FindTests.swift in Sources */,
 				3933DF6C1E58FD480043ABE1 /* StopTests.swift in Sources */,
+				39B3F7851E5A715A00FCB27B /* RouteChangeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,10 +721,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39E981DE1E5A6D690075E3E1 /* RouteChangesTests.swift in Sources */,
 				3933DF671E58FD480043ABE1 /* DepartureTests.swift in Sources */,
+				39B3F78A1E5A719700FCB27B /* LineTests.swift in Sources */,
 				3933DF641E58FD480043ABE1 /* MonitorTests.swift in Sources */,
 				3933DF6A1E58FD480043ABE1 /* FindTests.swift in Sources */,
 				3933DF6D1E58FD480043ABE1 /* StopTests.swift in Sources */,
+				39B3F7861E5A715A00FCB27B /* RouteChangeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
