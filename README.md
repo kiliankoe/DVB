@@ -52,8 +52,13 @@ Be sure to check the [docs](http://cocoadocs.org/docsets/DVB) for more detailed 
 Monitor a single stop to see every bus, tram or whatever leaving this stop. The necessary stop id can be found by using the `find()` function.
 
 ```swift
-Departure.monitor(id: "33000037") { response in
-    // do something with the list of departures in response.departures
+Departure.monitor(id: "33000037") { result in
+    switch result {
+		case .failure(let error):
+			break
+		case .success(let response):
+			print(response.departures)
+    }
 }
 ```
 
@@ -62,8 +67,13 @@ Departure.monitor(id: "33000037") { response in
 Say you're looking for "Zellescher Weg". You can use the following to find a selection of stops.
 
 ```swift
-Stop.find(query: "Helmholtzstraße") { response in
-	// do something with the list of stops in response.stops
+Stop.find(query: "Helmholtzstraße") { result in
+    switch result {
+		case .failure(let error):
+			break
+		case .success(let response):
+			print(response.stops)
+    }
 }
 ```
 
