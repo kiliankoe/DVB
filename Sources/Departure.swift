@@ -14,13 +14,14 @@ public struct Departure {
     public let direction: String
     public let platform: Platform
     public let mode: Mode
-    public let realTime: Date
+    public let realTime: Date?
     public let scheduledTime: Date
     public let state: State
     public let routeChanges: [String]?
     public let diva: Diva
 
-    public var actualEta: Int {
+    public var actualEta: Int? {
+        guard let realTime = realTime else { return nil }
         return Int(realTime.timeIntervalSince(Date()) / 60)
     }
 
@@ -29,14 +30,15 @@ public struct Departure {
     }
 
     public var fancyEta: String {
-        let actualDiff = Int(realTime.timeIntervalSince(scheduledTime) / 60)
+        guard let realTime = realTime else { return "\(scheduledEta)" }
+        let diff = Int(realTime.timeIntervalSince(scheduledTime) / 60)
 
-        if actualDiff < 0 {
-            return "\(scheduledEta)\(actualDiff)"
-        } else if actualDiff == 0 {
+        if diff < 0 {
+            return "\(scheduledEta)\(diff)"
+        } else if diff == 0 {
             return "\(scheduledEta)"
         } else {
-            return "\(scheduledEta)+\(actualDiff)"
+            return "\(scheduledEta)+\(diff)"
         }
     }
 }
@@ -52,6 +54,7 @@ extension Departure {
         case onTime
         case delayed
         case other(String) // TODO: Figure out what these are. "Cancelled" maybe? And others?
+        case unknown
 
         init(_ string: String) {
             switch string {
@@ -98,9 +101,7 @@ extension Departure: FromJSON {
             let direction = json["Direction"] as? String,
             let platformJson = json["Platform"], let platform = Platform(anyJSON: platformJson),
             let modeStr = json["Mot"] as? String, let mode = Mode(rawValue: modeStr.lowercased()),
-            let realTimeStr = json["RealTime"] as? String, let realTime = Date(from: realTimeStr),
             let scheduledTimeStr = json["ScheduledTime"] as? String, let scheduledTime = Date(from: scheduledTimeStr),
-            let stateStr = json["State"] as? String,
             let divaStr = json["Diva"], let diva = Diva(anyJSON: divaStr) else {
                 return nil
         }
@@ -110,11 +111,22 @@ extension Departure: FromJSON {
         self.direction = direction
         self.platform = platform
         self.mode = mode
-        self.realTime = realTime
         self.scheduledTime = scheduledTime
-        self.state = State(stateStr)
         self.routeChanges = json["RouteChanges"] as? [String]
         self.diva = diva
+
+        if let realTimeStr = json["RealTime"] as? String,
+            let realTime = Date(from: realTimeStr) {
+                self.realTime = realTime
+        } else {
+            self.realTime = nil
+        }
+
+        if let stateStr = json["State"] as? String {
+            self.state = State(stateStr)
+        } else {
+            self.state = .unknown
+        }
     }
 }
 
