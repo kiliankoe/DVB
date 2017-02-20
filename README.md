@@ -67,7 +67,21 @@ Stop.find(query: "Helmholtzstraße") { response in
 }
 ```
 
+### Look up current route changes
 
+Want to see if your favorite lines are currently being re-routed due to construction or some other reason? Check the published list of route changes.
+
+```swift
+RouteChange.get { result in
+    switch result {
+		case .failure(let error):
+			break
+		case .success(let response):
+			print(response.lines)
+			print(response.changes)
+    }
+}
+```
 
 ## Authors
 
