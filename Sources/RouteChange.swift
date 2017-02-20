@@ -8,7 +8,7 @@ public struct RouteChangeResponse {
 public struct RouteChange {
     public struct ValidityPeriod {
         public let begin: Date
-        public let end: Date
+        public let end: Date?
     }
 
     public enum Kind {
@@ -29,7 +29,7 @@ public struct RouteChange {
 
     public let id: String
     public let kind: Kind
-    public let tripRequestInclude: Bool
+    public let tripRequestInclude: Bool?
     public let title: String
     public let htmlDescription: String
     public let validityPeriods: [ValidityPeriod]
@@ -55,7 +55,6 @@ extension RouteChange: FromJSON {
     init?(json: JSON) {
         guard let id = json["Id"] as? String,
             let kindStr = json["Type"] as? String,
-            let tripRequestInclude = json["TripRequestInclude"] as? Bool,
             let title = json["Title"] as? String,
             let html = json["Description"] as? String,
             let valPeriods = json["ValidityPeriods"] as? [JSON],
@@ -67,7 +66,7 @@ extension RouteChange: FromJSON {
 
         self.id = id
         self.kind = Kind(kindStr)
-        self.tripRequestInclude = tripRequestInclude
+        self.tripRequestInclude = json["TripRequestInclude"] as? Bool
         self.title = title
         self.htmlDescription = html
         self.validityPeriods = valPeriods.map {ValidityPeriod(json: $0)}.flatMap {$0}
@@ -80,13 +79,17 @@ extension RouteChange.ValidityPeriod: FromJSON {
     init?(json: JSON) {
         guard let beginStr = json["Begin"] as? String,
             let begin = Date(from: beginStr),
-            let endStr = json["End"] as? String,
-            let end = Date(from: endStr) else {
                 return nil
         }
 
         self.begin = begin
-        self.end = end
+
+        if let endStr = json["End"] as? String,
+            let end = Date(from: endStr) {
+            self.end = end
+        } else {
+            self.end = nil
+        }
     }
 }
 
