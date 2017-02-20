@@ -60,7 +60,7 @@ Departure.monitor(id: "33000037") { result in
 
 ### Find a specific stop
 
-Say you're looking for "Zellescher Weg". You can use the following to find a selection of stops.
+Say you're looking for "Helmholtzstraße". You can use the following to find a list of matches.
 
 ```swift
 Stop.find(query: "Helmholtzstraße") { result in
