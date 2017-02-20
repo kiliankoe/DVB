@@ -214,6 +214,17 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		39B3F78B1E5A77BF00FCB27B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				392FA9F41E58FB4600E2EB0A /* Endpoint.swift */,
+				392FA9F71E58FB4600E2EB0A /* Network.swift */,
+				392FA9F51E58FB4600E2EB0A /* FromJSON.swift */,
+				392FA9F81E58FB4600E2EB0A /* Result.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
 		52D6D9721BEFF229002C0205 = {
 			isa = PBXGroup;
 			children = (
@@ -223,11 +234,8 @@
 				39E981D61E5A62D90075E3E1 /* Line.swift */,
 				392FA9F61E58FB4600E2EB0A /* Mode.swift */,
 				392FA9F21E58FB4600E2EB0A /* Diva.swift */,
-				392FA9F41E58FB4600E2EB0A /* Endpoint.swift */,
-				392FA9F71E58FB4600E2EB0A /* Network.swift */,
 				392FA9F31E58FB4600E2EB0A /* DVBError.swift */,
-				392FA9F51E58FB4600E2EB0A /* FromJSON.swift */,
-				392FA9F81E58FB4600E2EB0A /* Result.swift */,
+				39B3F78B1E5A77BF00FCB27B /* Network */,
 				392FAA231E58FB7200E2EB0A /* Extensions */,
 				392FAA221E58FB4B00E2EB0A /* Tests */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
