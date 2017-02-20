@@ -23,7 +23,7 @@ class MonitorTests: XCTestCase {
     }
 
     func testNonExistantStopId() {
-        let e = expectation(description: "")
+        let e = expectation(description: "Get ServiceError")
 
         Departure.monitor(id: "1337") { result in
             switch result {
