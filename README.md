@@ -53,12 +53,8 @@ Monitor a single stop to see every bus, tram or whatever leaving this stop. The 
 
 ```swift
 Departure.monitor(id: "33000037") { result in
-    switch result {
-		case .failure(let error):
-			break
-		case .success(let response):
-			print(response.departures)
-    }
+	guard let response = result.success else { return }
+	print(response.departures)
 }
 ```
 
@@ -68,12 +64,8 @@ Say you're looking for "Zellescher Weg". You can use the following to find a sel
 
 ```swift
 Stop.find(query: "Helmholtzstraße") { result in
-    switch result {
-		case .failure(let error):
-			break
-		case .success(let response):
-			print(response.stops)
-    }
+	guard let response = result.success else { return }
+	print(response.stops)
 }
 ```
 
@@ -83,13 +75,9 @@ Want to see if your favorite lines are currently being re-routed due to construc
 
 ```swift
 RouteChange.get { result in
-    switch result {
-		case .failure(let error):
-			break
-		case .success(let response):
-			print(response.lines)
-			print(response.changes)
-    }
+	guard let response = result.success else { return }
+	print(response.lines)
+	print(response.changes)
 }
 ```
 
