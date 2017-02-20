@@ -14,12 +14,14 @@ public struct RouteChange {
     public enum Kind {
         case scheduled
         case amplifyingTransport
+        case shortTerm
         case other(String)
 
         init(_ string: String) {
             switch string {
             case "Scheduled": self = .scheduled
             case "AmplifyingTransport": self = .amplifyingTransport
+            case "ShortTerm": self = .shortTerm
             default: self = .other(string)
             }
         }
