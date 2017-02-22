@@ -8,13 +8,8 @@ enum TestError: Error {
 
 class ResultTests: XCTestCase {
 
-    var success: Result<String>!
-    var failure: Result<String>!
-
-    override func setUp() {
-        success = .success("success")
-        failure = .failure(TestError.error)
-    }
+    var success: Result<String> = .success("success")
+    var failure: Result<String> = .failure(TestError.error)
 
     func testGet() {
         // The compiler can see that this will be successful? o.O
