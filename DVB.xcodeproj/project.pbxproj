@@ -65,6 +65,9 @@
 		399D10941E5DF25600BF7D2F /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D10931E5DF25600BF7D2F /* ResultTests.swift */; };
 		399D10951E5DF25600BF7D2F /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D10931E5DF25600BF7D2F /* ResultTests.swift */; };
 		399D10961E5DF25600BF7D2F /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D10931E5DF25600BF7D2F /* ResultTests.swift */; };
+		399D109D1E5F0DE500BF7D2F /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D109C1E5F0DE500BF7D2F /* DateTests.swift */; };
+		399D109E1E5F0DE500BF7D2F /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D109C1E5F0DE500BF7D2F /* DateTests.swift */; };
+		399D109F1E5F0DE500BF7D2F /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D109C1E5F0DE500BF7D2F /* DateTests.swift */; };
 		39B3F7841E5A715A00FCB27B /* RouteChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */; };
 		39B3F7851E5A715A00FCB27B /* RouteChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */; };
 		39B3F7861E5A715A00FCB27B /* RouteChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */; };
@@ -128,6 +131,7 @@
 		3933DF611E58FD480043ABE1 /* StopTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StopTests.swift; path = Tests/DVBTests/StopTests.swift; sourceTree = "<group>"; };
 		399D108F1E5DEE7100BF7D2F /* ModeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModeTests.swift; path = Tests/DVBTests/ModeTests.swift; sourceTree = "<group>"; };
 		399D10931E5DF25600BF7D2F /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultTests.swift; path = Tests/DVBTests/ResultTests.swift; sourceTree = "<group>"; };
+		399D109C1E5F0DE500BF7D2F /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateTests.swift; path = Tests/DVBTests/DateTests.swift; sourceTree = "<group>"; };
 		39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteChangeTests.swift; path = Tests/DVBTests/RouteChangeTests.swift; sourceTree = "<group>"; };
 		39B3F7871E5A719700FCB27B /* LineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineTests.swift; path = Tests/DVBTests/LineTests.swift; sourceTree = "<group>"; };
 		39E981D11E5A62720075E3E1 /* RouteChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteChange.swift; path = Sources/RouteChange.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 				39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */,
 				39E981DB1E5A6D690075E3E1 /* RouteChangesTests.swift */,
 				399D10931E5DF25600BF7D2F /* ResultTests.swift */,
+				399D109C1E5F0DE500BF7D2F /* DateTests.swift */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -663,6 +668,7 @@
 				3933DF681E58FD480043ABE1 /* FindTests.swift in Sources */,
 				3933DF6B1E58FD480043ABE1 /* StopTests.swift in Sources */,
 				39B3F7841E5A715A00FCB27B /* RouteChangeTests.swift in Sources */,
+				399D109D1E5F0DE500BF7D2F /* DateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,6 +742,7 @@
 				3933DF691E58FD480043ABE1 /* FindTests.swift in Sources */,
 				3933DF6C1E58FD480043ABE1 /* StopTests.swift in Sources */,
 				39B3F7851E5A715A00FCB27B /* RouteChangeTests.swift in Sources */,
+				399D109E1E5F0DE500BF7D2F /* DateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -752,6 +759,7 @@
 				3933DF6A1E58FD480043ABE1 /* FindTests.swift in Sources */,
 				3933DF6D1E58FD480043ABE1 /* StopTests.swift in Sources */,
 				39B3F7861E5A715A00FCB27B /* RouteChangeTests.swift in Sources */,
+				399D109F1E5F0DE500BF7D2F /* DateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

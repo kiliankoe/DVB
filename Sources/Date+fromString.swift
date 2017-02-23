@@ -1,7 +1,7 @@
 import Foundation
 
 internal extension Date {
-    // Init with a string of the format "/Date(1487458060455+0100)/"
+    /// Init with a string of the format "/Date(1487458060455+0100)/"
     init?(from dateString: String) {
         let components = dateString
             .replacingOccurrences(of: "/Date(", with: "")
@@ -12,6 +12,13 @@ internal extension Date {
         let seconds = Double(millis) / 1000
 
         self = Date(timeIntervalSince1970: seconds)
+    }
+
+    /// Generate a date of the format `/Date(1487458060455+0100)/`
+    var datestring: String {
+        let millis = Int(self.timeIntervalSince1970 * 1000)
+        let timezone = TimeZone.current.secondsFromGMT() / 3600 * 100
+        return String(format: "/Date(\(millis)+%04d)/", timezone)
     }
 
     private static let iso8601Formatter: DateFormatter = {
