@@ -16,7 +16,7 @@ class ResultTests: XCTestCase {
         XCTAssertEqual(try success.get(), "success")
 
         do {
-            let _ = try failure.get()
+            _ = try failure.get()
         } catch let e {
             // swiftlint:disable:next force_cast
             XCTAssertEqual((e as! TestError), .error)
