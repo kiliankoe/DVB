@@ -34,10 +34,15 @@ extension Stop {
         self.region = components[2].isEmpty ? nil : components[2]
         self.name = components[3]
 
-//        let lat = components[4]
-//        let lng = components[5]
-        // TODO: Figure out how to calculate correct location based on these values
-        self.location = nil
+        guard let x = Double(components[5]),
+            let y = Double(components[4]) else {
+                throw DVBError.decode
+        }
+        if x != 0, y != 0 {
+            self.location = CLLocationCoordinate2D(x: x, y: y)
+        } else {
+            self.location = nil
+        }
     }
 }
 
@@ -55,10 +60,19 @@ extension Stop {
     }
 
     public static func findNear(lat: Double, lng: Double, completion: @escaping (Result<FindResponse>) -> Void) {
+        let coord = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        findNear(coord: coord, completion: completion)
+    }
+
+    public static func findNear(coord: CLLocationCoordinate2D, completion: @escaping (Result<FindResponse>) -> Void) {
+        guard let gk = wgs2gk(wgs: coord) else {
+            completion(Result(failure: DVBError.coordinate))
+            return
+        }
         let data: [String: Any] = [
             "limit": 0,
             "assignedStops": true,
-            "query": "coord:\(lat):\(lng)" // TODO: Figure out how to calculate these values based on "normal" coords
+            "query": "coord:\(gk.x):\(gk.y)"
         ]
         post(Endpoint.pointfinder, data: data, completion: completion)
     }

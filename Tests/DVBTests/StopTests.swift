@@ -16,6 +16,8 @@ class StopTests: XCTestCase {
         XCTAssertEqual(stop.id, "33000742")
         XCTAssertEqual(stop.name, "Helmholtzstraße")
         XCTAssertEqual(stop.region, nil)
+        XCTAssertEqual(stop.location?.latitude, 51.025570859830559)
+        XCTAssertEqual(stop.location?.longitude, 13.72543580275704)
     }
 }
 
