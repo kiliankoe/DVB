@@ -18,7 +18,7 @@ public struct Departure {
     public let scheduledTime: Date
     public let state: State
     public let routeChanges: [String]?
-    public let diva: Diva
+    public let diva: Diva?
 
     public var actualEta: Int? {
         guard let realTime = realTime else { return nil }
@@ -101,13 +101,11 @@ extension Departure: FromJSON {
             let direction = json["Direction"] as? String,
             let platformJson = json["Platform"],
             let modeStr = json["Mot"] as? String, let mode = Mode(rawValue: modeStr.lowercased()),
-            let scheduledTimeStr = json["ScheduledTime"] as? String, let scheduledTime = Date(from: scheduledTimeStr),
-            let divaStr = json["Diva"] else {
+            let scheduledTimeStr = json["ScheduledTime"] as? String, let scheduledTime = Date(from: scheduledTimeStr) else {
                 throw DVBError.decode
         }
 
         let platform = try Platform(anyJSON: platformJson)
-        let diva = try Diva(anyJSON: divaStr)
 
         self.id = id
         self.line = line
@@ -116,7 +114,12 @@ extension Departure: FromJSON {
         self.mode = mode
         self.scheduledTime = scheduledTime
         self.routeChanges = json["RouteChanges"] as? [String]
-        self.diva = diva
+
+        if let divaStr = json["Diva"] {
+            self.diva = try Diva(anyJSON: divaStr)
+        } else {
+            self.diva = nil
+        }
 
         if let realTimeStr = json["RealTime"] as? String,
             let realTime = Date(from: realTimeStr) {
