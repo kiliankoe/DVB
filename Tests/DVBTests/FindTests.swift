@@ -1,6 +1,7 @@
 import Foundation
 import XCTest
 import DVB
+import CoreLocation
 
 class FindTests: XCTestCase {
     func testFindHelmholtzQuery() {
@@ -23,7 +24,25 @@ class FindTests: XCTestCase {
         waitForExpectations(timeout: 5)
     }
 
-    // TODO: Test findNear()
+//    func testFindNear() {
+//        let e = expectation(description: "Find stops near coordinate")
+//
+//        let coordinate = CLLocationCoordinate2D(latitude: 51.031658, longitude: 13.727130)
+//        Stop.findNear(coord: coordinate) { result in
+//            switch result {
+//            case .failure(let e):
+//                XCTFail("Failed with error: \(e.localizedDescription)")
+//            case .success(let response):
+//                guard response.stops.count > 0 else {
+//                    XCTFail("Response contains no stops")
+//                    return
+//                }
+//                e.fulfill()
+//            }
+//        }
+//
+//        waitForExpectations(timeout: 5)
+//    }
 }
 
 #if os(Linux)
