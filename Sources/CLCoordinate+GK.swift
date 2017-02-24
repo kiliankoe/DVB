@@ -30,12 +30,12 @@ extension CLLocationCoordinate2D {
  in all copies or substantial portions of the Software.
  */
 
-public func gk2wgs(gk: (x: Double, y: Double)) -> CLLocationCoordinate2D? {
+func gk2wgs(gk: (x: Double, y: Double)) -> CLLocationCoordinate2D? {
     guard let pot = gk2pot(gk: gk) else { return nil }
     return pot2wgs(pot: pot)
 }
 
-public func wgs2gk(wgs: CLLocationCoordinate2D) -> (x: Double, y: Double)? {
+func wgs2gk(wgs: CLLocationCoordinate2D) -> (x: Double, y: Double)? {
     guard let pot = wgs2pot(wgs: wgs) else { return nil }
     return pot2gk(pot: pot)
 }
