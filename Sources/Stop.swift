@@ -72,7 +72,7 @@ extension Stop {
         let data: [String: Any] = [
             "limit": 0,
             "assignedStops": true,
-            "query": "coord:\(gk.x):\(gk.y)"
+            "query": "coord:\(Int(gk.x)):\(Int(gk.y))"
         ]
         post(Endpoint.pointfinder, data: data, completion: completion)
     }
