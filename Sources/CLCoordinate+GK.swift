@@ -1,19 +1,7 @@
 import Foundation
-import struct CoreLocation.CLLocationCoordinate2D
 
 // swiftlint:disable variable_name
 // swiftlint:disable function_body_length
-
-extension CLLocationCoordinate2D {
-    var asGK: (x: Double, y: Double)? {
-        return wgs2gk(wgs: self)
-    }
-
-    init?(x: Double, y: Double) {
-        guard let wgs = gk2wgs(gk: (x: x, y: y)) else { return nil }
-        self = wgs
-    }
-}
 
 // This code is copied directly from https://github.com/juliuste/gauss-krueger
 // Only minimal changes were made to ensure type-safety and usage of correct math APIs from Swift
@@ -30,12 +18,12 @@ extension CLLocationCoordinate2D {
  in all copies or substantial portions of the Software.
  */
 
-func gk2wgs(gk: (x: Double, y: Double)) -> CLLocationCoordinate2D? {
+func gk2wgs(gk: (x: Double, y: Double)) -> Coordinate? {
     guard let pot = gk2pot(gk: gk) else { return nil }
     return pot2wgs(pot: pot)
 }
 
-func wgs2gk(wgs: CLLocationCoordinate2D) -> (x: Double, y: Double)? {
+func wgs2gk(wgs: Coordinate) -> (x: Double, y: Double)? {
     guard let pot = wgs2pot(wgs: wgs) else { return nil }
     return pot2gk(pot: pot)
 }
@@ -131,7 +119,7 @@ func gk2pot(gk: (x: Double, y: Double)) -> (x: Double, y: Double)? {
 /// Breite bw (in grad) auf dem WGS84-Ellipsoid.
 /// Bei der Transformation werden die Ellipsoidachsen parallel
 /// verschoben um dx = 587 m, dy = 16 m und dz = 393 m.
-func pot2wgs(pot: (x: Double, y: Double)) -> CLLocationCoordinate2D {
+func pot2wgs(pot: (x: Double, y: Double)) -> Coordinate {
     let lp = pot.x
     let bp = pot.y
 
@@ -187,7 +175,7 @@ func pot2wgs(pot: (x: Double, y: Double)) -> CLLocationCoordinate2D {
         l2 = (180/pi) * atan(y/x) - 180
     }
 
-    return CLLocationCoordinate2D(latitude: b2, longitude: l2)
+    return Coordinate(latitude: b2, longitude: l2)
 }
 
 /// Die Funktion verschiebt das Kartenbezugssystem (map datum) vom
@@ -199,7 +187,7 @@ func pot2wgs(pot: (x: Double, y: Double)) -> CLLocationCoordinate2D {
 /// Bei der Transformation werden die Ellipsoidachsen parallel
 /// verschoben um dx = -587 m, dy = -16 m und dz = -393 m.
 /// Fehler berichten Sie bitte an Helmut.Heimeier@t-online.de
-func wgs2pot(wgs: CLLocationCoordinate2D) -> (x: Double, y: Double)? {
+func wgs2pot(wgs: Coordinate) -> (x: Double, y: Double)? {
     let lw = wgs.longitude
     let bw = wgs.latitude
 

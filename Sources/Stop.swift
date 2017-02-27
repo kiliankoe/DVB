@@ -1,5 +1,4 @@
 import Foundation
-import struct CoreLocation.CLLocationCoordinate2D
 
 public struct FindResponse {
     public let stops: [Stop]
@@ -11,7 +10,7 @@ public struct Stop {
     public let id: String
     public let name: String
     public let region: String?
-    public let location: CLLocationCoordinate2D?
+    public let location: Coordinate?
 }
 
 // MARK: - JSON
@@ -39,7 +38,7 @@ extension Stop {
                 throw DVBError.decode
         }
         if x != 0, y != 0 {
-            self.location = CLLocationCoordinate2D(x: x, y: y)
+            self.location = Coordinate(x: x, y: y)
         } else {
             self.location = nil
         }
@@ -60,11 +59,11 @@ extension Stop {
     }
 
     public static func findNear(lat: Double, lng: Double, completion: @escaping (Result<FindResponse>) -> Void) {
-        let coord = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        let coord = Coordinate(latitude: lat, longitude: lng)
         findNear(coord: coord, completion: completion)
     }
 
-    public static func findNear(coord: CLLocationCoordinate2D, completion: @escaping (Result<FindResponse>) -> Void) {
+    public static func findNear(coord: Coordinate, completion: @escaping (Result<FindResponse>) -> Void) {
         guard let gk = wgs2gk(wgs: coord) else {
             completion(Result(failure: DVBError.coordinate))
             return

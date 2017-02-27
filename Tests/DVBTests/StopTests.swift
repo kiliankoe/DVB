@@ -70,7 +70,7 @@ class StopTests: XCTestCase {
     //    func testFindNear() {
     //        let e = expectation(description: "Find stops near coordinate")
     //
-    //        let coordinate = CLLocationCoordinate2D(latitude: 51.031658, longitude: 13.727130)
+    //        let coordinate = Coordinate(latitude: 51.031658, longitude: 13.727130)
     //        Stop.findNear(coord: coordinate) { result in
     //            switch result {
     //            case .failure(let e):

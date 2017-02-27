@@ -1,19 +1,18 @@
 import Foundation
 import XCTest
-import struct CoreLocation.CLLocationCoordinate2D
 @testable import DVB
 
 class GKConversionTests: XCTestCase {
     func testGKtoWGS() {
         let gk = (x: 4591270.0, y: 5819620.0)
-        guard let wgs = CLLocationCoordinate2D(x: gk.x, y: gk.y) else { XCTFail(); return }
+        guard let wgs = Coordinate(x: gk.x, y: gk.y) else { XCTFail(); return }
 
         XCTAssertEqual(wgs.latitude, 52.502133988116455)
         XCTAssertEqual(wgs.longitude, 13.342517405215336)
     }
 
     func testWGStoGK() {
-        let wgs = CLLocationCoordinate2D(latitude: 52.502133988116455, longitude: 13.342517405215336)
+        let wgs = Coordinate(latitude: 52.502133988116455, longitude: 13.342517405215336)
         guard let gk = wgs.asGK else { XCTFail(); return }
 
         XCTAssertEqual(gk.x, 4591270)
