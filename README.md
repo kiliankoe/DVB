@@ -89,6 +89,23 @@ RouteChange.get { result in
 }
 ```
 
+### Lines running at a specific stop
+
+Looking to find which lines service a specific stop? There's a func for that.
+
+```swift
+Line.get(forStopId: "33000037") { result in
+	guard let response = result.success else { return }
+	print(response.lines)
+}
+
+// Also possible, with the same caveat as `Departure.monitor(name:)` above.
+Line.get(forStopName: "Postplatz") { result in 
+	guard let response = result.success else { return }
+	print(response.lines)
+}
+```
+
 ## Authors
 
 Kilian Koeltzsch, [@kiliankoe](https://github.com/kiliankoe)
