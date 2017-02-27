@@ -131,3 +131,18 @@ extension Line: CustomStringConvertible {
         return "\(name): \(dirs)"
     }
 }
+
+extension Line: Equatable {}
+public func == (lhs: Line, rhs: Line) -> Bool {
+    return lhs.name == rhs.name && lhs.directions == rhs.directions
+}
+
+extension Line.Direction: Equatable {}
+public func == (lhs: Line.Direction, rhs: Line.Direction) -> Bool {
+    return lhs.name == rhs.name && lhs.timetables == rhs.timetables
+}
+
+extension Line.TimeTable: Equatable {}
+public func == (lhs: Line.TimeTable, rhs: Line.TimeTable) -> Bool {
+    return lhs.id == rhs.id
+}

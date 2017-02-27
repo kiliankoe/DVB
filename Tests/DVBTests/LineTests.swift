@@ -11,6 +11,19 @@ class LineTests: XCTestCase {
         XCTAssertEqual(line.description, "Line: Direction1, Direction2")
     }
 
+    func testEquality() {
+        let tt1 = Line.TimeTable(id: "TT", name: "")
+        let tt2 = Line.TimeTable(id: "TT", name: "")
+
+        let dir1 = Line.Direction(name: "Dir", timetables: [tt1])
+        let dir2 = Line.Direction(name: "Dir", timetables: [tt2])
+
+        let line1 = Line(name: "1", mode: .tram, changes: nil, directions: [dir1], diva: nil)
+        let line2 = Line(name: "1", mode: .tram, changes: nil, directions: [dir2], diva: nil)
+
+        XCTAssert(line1 == line2)
+    }
+
     func testFromJSON() {
         let json: JSON = [
             "Name": "13",
