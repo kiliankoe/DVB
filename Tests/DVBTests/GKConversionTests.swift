@@ -1,6 +1,6 @@
 import Foundation
 import XCTest
-import CoreLocation
+import struct CoreLocation.CLLocationCoordinate2D
 @testable import DVB
 
 class GKConversionTests: XCTestCase {

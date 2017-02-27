@@ -1,5 +1,5 @@
 import Foundation
-import CoreLocation
+import struct CoreLocation.CLLocationCoordinate2D
 
 // swiftlint:disable variable_name
 // swiftlint:disable function_body_length

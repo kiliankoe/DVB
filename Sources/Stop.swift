@@ -1,5 +1,5 @@
 import Foundation
-import CoreLocation
+import struct CoreLocation.CLLocationCoordinate2D
 
 public struct FindResponse {
     public let stops: [Stop]

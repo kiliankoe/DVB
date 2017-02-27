@@ -1,7 +1,7 @@
 import Foundation
 import XCTest
 import DVB
-import CoreLocation
+import struct CoreLocation.CLLocationCoordinate2D
 
 class FindTests: XCTestCase {
     func testFindHelmholtzQuery() {
