@@ -13,7 +13,7 @@ Want something like this for another language, look [no further](https://github.
 
 ## Example
 
-WIP
+Look [no further](https://github.com/kiliankoe/DVBExample).
 
 ## Installation
 
