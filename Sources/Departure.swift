@@ -165,7 +165,7 @@ extension Departure {
 
     /// Convenience function taking a stop name. Sends of a find request first and uses the first result's `id` as an argument for the monitor request.
     public static func monitor(name: String, date: Date = Date(), dateType: DateType = .arrival, allowedModes modes: [Mode] = Mode.all, allowShorttermChanges: Bool = true, completion: @escaping (Result<MonitorResponse>) -> Void) {
-        Stop.find(query: name) { result in
+        Stop.find(name) { result in
             switch result {
             case .failure(let error): completion(Result(failure: error))
             case .success(let response):

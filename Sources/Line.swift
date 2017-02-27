@@ -109,7 +109,7 @@ extension Line {
 
     /// Convenience function taking a stop name. Sends of a find request first and uses the first result's `id` as an argument for the lines request.
     public static func get(forStopName name: String, completion: @escaping (Result<LinesResponse>) -> Void) {
-        Stop.find(query: name) { result in
+        Stop.find(name) { result in
             switch result {
             case .failure(let error): completion(Result(failure: error))
             case .success(let response):

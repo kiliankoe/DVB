@@ -49,7 +49,7 @@ extension Stop {
 // MARK: - API
 
 extension Stop {
-    public static func find(query: String, completion: @escaping (Result<FindResponse>) -> Void) {
+    public static func find(_ query: String, completion: @escaping (Result<FindResponse>) -> Void) {
         let data: [String: Any] = [
             "limit": 0,
             "query": query,

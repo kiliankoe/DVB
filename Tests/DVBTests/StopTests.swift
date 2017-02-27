@@ -50,7 +50,7 @@ class StopTests: XCTestCase {
     func testFindHelmholtzQuery() {
         let e = expectation(description: "Find correct stop")
 
-        Stop.find(query: "Helmholtz") { result in
+        Stop.find("Helmholtz") { result in
             switch result {
             case .failure(let e):
                 XCTFail("Failed with error: \(e.localizedDescription)")

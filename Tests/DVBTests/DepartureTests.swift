@@ -171,7 +171,7 @@ class DepartureTests: XCTestCase {
                 XCTFail("Shouldn't get successful response for non-existant stop ID.")
             }
         }
-        
+
         waitForExpectations(timeout: 5)
     }
 }

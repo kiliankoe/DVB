@@ -71,7 +71,7 @@ Departure.monitor(name: "Postplatz") { result in
 Say you're looking for "Helmholtzstraße". You can use the following to find a list of matches.
 
 ```swift
-Stop.find(query: "Helmholtzstraße") { result in
+Stop.find("Helmholtzstraße") { result in
 	guard let response = result.success else { return }
 	print(response.stops)
 }
