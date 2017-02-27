@@ -118,7 +118,7 @@ class DepartureTests: XCTestCase {
     func testMonitor() {
         let e = expectation(description: "Find correct departures")
 
-        Departure.monitor(id: "33000037") { result in
+        Departure.monitor(stopWithId: "33000037") { result in
             switch result {
             case .failure(let error):
                 XCTFail("Failed with error: \(error.localizedDescription)")
@@ -137,7 +137,7 @@ class DepartureTests: XCTestCase {
     func testMonitorWithName() {
         let e = expectation(description: "Find correct departures")
 
-        Departure.monitor(name: "Albertplatz") { result in
+        Departure.monitor(stopWithName: "Albertplatz") { result in
             switch result {
             case .failure(let error):
                 XCTFail("Failed with error: \(error.localizedDescription)")
@@ -156,7 +156,7 @@ class DepartureTests: XCTestCase {
     func testNonExistantStopId() {
         let e = expectation(description: "Get ServiceError")
 
-        Departure.monitor(id: "1337") { result in
+        Departure.monitor(stopWithId: "1337") { result in
             switch result {
             case .failure(let error):
                 guard let error = error as? DVBError,

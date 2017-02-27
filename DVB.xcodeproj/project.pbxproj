@@ -205,10 +205,10 @@
 			isa = PBXGroup;
 			children = (
 				3933DF611E58FD480043ABE1 /* StopTests.swift */,
-				399D108F1E5DEE7100BF7D2F /* ModeTests.swift */,
 				3933DF5F1E58FD480043ABE1 /* DepartureTests.swift */,
 				39B3F7871E5A719700FCB27B /* LineTests.swift */,
 				39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */,
+				399D108F1E5DEE7100BF7D2F /* ModeTests.swift */,
 				399D10931E5DF25600BF7D2F /* ResultTests.swift */,
 				399D109C1E5F0DE500BF7D2F /* DateTests.swift */,
 				399D10A51E5F84CE00BF7D2F /* GKConversionTests.swift */,

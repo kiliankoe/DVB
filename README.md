@@ -52,7 +52,7 @@ Be sure to check the [docs](http://cocoadocs.org/docsets/DVB) for more detailed 
 Monitor a single stop to see every bus, tram or whatever leaving this stop. The necessary stop id can be found by using the `find()` function.
 
 ```swift
-Departure.monitor(id: "33000037") { result in
+Departure.monitor(stopWithId: "33000037") { result in
 	guard let response = result.success else { return }
 	print(response.departures)
 }
@@ -60,7 +60,7 @@ Departure.monitor(id: "33000037") { result in
 // For convenience you can also use the following function. Be aware though that
 // this sends of two subsequent requests, so it is preferable to monitor a stop's
 // ID if you already have it at hand.
-Departure.monitor(name: "Postplatz") { result in
+Departure.monitor(stopWithName: "Postplatz") { result in
 	guard let response = result.success else { return }
 	print(response.departures)
 }
