@@ -45,11 +45,6 @@ public struct Departure {
 
 // Namespacing some sub-types
 extension Departure {
-    public struct Platform {
-        public let name: String
-        public let type: String
-    }
-
     public enum State {
         case onTime
         case delayed
@@ -136,17 +131,6 @@ extension Departure: FromJSON {
         } else {
             self.state = .unknown
         }
-    }
-}
-
-extension Departure.Platform: FromJSON {
-    init(json: JSON) throws {
-        guard let name = json["Name"] as? String,
-            let type = json["Type"] as? String else {
-                throw DVBError.decode
-        }
-        self.name = name
-        self.type = type
     }
 }
 
