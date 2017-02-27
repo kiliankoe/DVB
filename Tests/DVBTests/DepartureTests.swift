@@ -75,7 +75,7 @@ class DepartureTests: XCTestCase {
             XCTAssertEqual(dep.line, "3")
             XCTAssertEqual(dep.direction, "Wilder Mann")
             XCTAssertEqual(dep.state, .onTime)
-            XCTAssertEqual(dep.platform.name, "3")
+            XCTAssertEqual(dep.platform!.name, "3")
             XCTAssertEqual(dep.routeChanges!.first!, "509223")
         } catch {
             XCTFail("Failed to instantiate departure from correct JSON")
@@ -137,7 +137,7 @@ class DepartureTests: XCTestCase {
     func testMonitorWithName() {
         let e = expectation(description: "Find correct departures")
 
-        Departure.monitor(stopWithName: "Albertplatz") { result in
+        Departure.monitor(stopWithName: "Hauptbahnhof") { result in
             switch result {
             case .failure(let error):
                 XCTFail("Failed with error: \(error.localizedDescription)")

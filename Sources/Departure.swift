@@ -12,7 +12,7 @@ public struct Departure {
     public let id: String
     public let line: String
     public let direction: String
-    public let platform: Platform
+    public let platform: Platform?
     public let mode: Mode
     public let realTime: Date?
     public let scheduledTime: Date
@@ -99,21 +99,24 @@ extension Departure: FromJSON {
         guard let id = json["Id"] as? String,
             let line = json["LineName"] as? String,
             let direction = json["Direction"] as? String,
-            let platformJson = json["Platform"],
             let modeStr = json["Mot"] as? String, let mode = Mode(rawValue: modeStr.lowercased()),
             let scheduledTimeStr = json["ScheduledTime"] as? String, let scheduledTime = Date(from: scheduledTimeStr) else {
                 throw DVBError.decode
         }
 
-        let platform = try Platform(anyJSON: platformJson)
-
         self.id = id
         self.line = line
         self.direction = direction
-        self.platform = platform
         self.mode = mode
         self.scheduledTime = scheduledTime
         self.routeChanges = json["RouteChanges"] as? [String]
+
+        if let platformJson = json["Platform"] {
+            let platform = try Platform(anyJSON: platformJson)
+            self.platform = platform
+        } else {
+            self.platform = nil
+        }
 
         if let divaStr = json["Diva"] {
             self.diva = try Diva(anyJSON: divaStr)
