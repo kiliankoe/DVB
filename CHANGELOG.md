@@ -1,6 +1,20 @@
 # Changelog
 
+## [Unreleased]
 
+### Added
+
+- Route change lookups
+- convenience `Departure.monitor(stopWithName:)`
+- Serviced lines lookup
+
+### Fixed
+
+- Coordinates are back :clap:
+
+### Changed
+
+- Some argument labels were made more explicit
 
 ## [2.0.0] - 2017-02-19
 
@@ -27,8 +41,6 @@
 
 ## [1.1.0] - 2016-10-03
 
-
-
 ## [1.0.0] - 2016-09-28
 
 ### Added
@@ -48,8 +60,6 @@
 ## [0.7.0] - 2016-05-22
 
 ## [0.6.1] - 2016-05-22
-
-
 
 ## [0.6.0] - 2016-05-22
 
