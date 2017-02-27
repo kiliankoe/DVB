@@ -6,7 +6,7 @@ class DepartureTests: XCTestCase {
     func testETA() {
         let now = Date()
         let in5 = now.addingTimeInterval(5 * 60 + 1) // a second extra
-        let platform = Departure.Platform(name: "3", type: "Platform")
+        let platform = Platform(name: "3", type: "Platform")
         let diva = Diva(number: "11003", network: "voe")
 
         let dep1 = Departure(id: "123", line: "3", direction: "Wilder Mann", platform: platform, mode: .tram, realTime: in5, scheduledTime: now, state: .delayed, routeChanges: nil, diva: diva)
@@ -21,28 +21,28 @@ class DepartureTests: XCTestCase {
         let now = Date()
         let in5 = now.addingTimeInterval(5 * 60 + 1)
 
-        let dep1 = Departure(id: "", line: "", direction: "", platform: Departure.Platform(name: "", type: ""), mode: .tram, realTime: nil, scheduledTime: in5, state: .onTime, routeChanges: nil, diva: nil)
+        let dep1 = Departure(id: "", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .tram, realTime: nil, scheduledTime: in5, state: .onTime, routeChanges: nil, diva: nil)
         XCTAssertEqual(dep1.fancyEta, "5")
 
-        let dep2 = Departure(id: "", line: "", direction: "", platform: Departure.Platform(name: "", type: ""), mode: .tram, realTime: in5, scheduledTime: now, state: .onTime, routeChanges: nil, diva: nil)
+        let dep2 = Departure(id: "", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .tram, realTime: in5, scheduledTime: now, state: .onTime, routeChanges: nil, diva: nil)
         XCTAssertEqual(dep2.fancyEta, "0+5")
 
-        let dep3 = Departure(id: "", line: "", direction: "", platform: Departure.Platform(name: "", type: ""), mode: .tram, realTime: now, scheduledTime: in5, state: .onTime, routeChanges: nil, diva: nil)
+        let dep3 = Departure(id: "", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .tram, realTime: now, scheduledTime: in5, state: .onTime, routeChanges: nil, diva: nil)
         XCTAssertEqual(dep3.fancyEta, "5-5")
 
-        let dep4 = Departure(id: "", line: "", direction: "", platform: Departure.Platform(name: "", type: ""), mode: .tram, realTime: in5, scheduledTime: in5, state: .onTime, routeChanges: nil, diva: nil)
+        let dep4 = Departure(id: "", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .tram, realTime: in5, scheduledTime: in5, state: .onTime, routeChanges: nil, diva: nil)
         XCTAssertEqual(dep4.fancyEta, "5")
     }
 
     func testEquality() {
-        let dep1 = Departure(id: "123", line: "", direction: "", platform: Departure.Platform(name: "", type: ""), mode: .tram, realTime: nil, scheduledTime: Date(), state: .onTime, routeChanges: nil, diva: nil)
-        let dep2 = Departure(id: "123", line: "", direction: "", platform: Departure.Platform(name: "", type: ""), mode: .tram, realTime: nil, scheduledTime: Date(), state: .onTime, routeChanges: nil, diva: nil)
+        let dep1 = Departure(id: "123", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .tram, realTime: nil, scheduledTime: Date(), state: .onTime, routeChanges: nil, diva: nil)
+        let dep2 = Departure(id: "123", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .tram, realTime: nil, scheduledTime: Date(), state: .onTime, routeChanges: nil, diva: nil)
 
         XCTAssert(dep1 == dep2)
     }
 
     func testDescription() {
-        let dep = Departure(id: "123", line: "85", direction: "Löbtau", platform: Departure.Platform(name: "", type: ""), mode: .tram, realTime: nil, scheduledTime: Date(), state: .onTime, routeChanges: nil, diva: nil)
+        let dep = Departure(id: "123", line: "85", direction: "Löbtau", platform: Platform(name: "", type: ""), mode: .tram, realTime: nil, scheduledTime: Date(), state: .onTime, routeChanges: nil, diva: nil)
 
         XCTAssertEqual(dep.description, "85 Löbtau departing in 0 minutes.")
     }
