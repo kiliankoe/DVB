@@ -100,7 +100,7 @@ extension Line.TimeTable: FromJSON {
 // MARK: - API
 
 extension Line {
-    public static func get(forId id: String, completion: @escaping (Result<LinesResponse>) -> Void) {
+    public static func get(forStopId id: String, completion: @escaping (Result<LinesResponse>) -> Void) {
         let data = [
             "stopid": id
         ]
@@ -108,7 +108,7 @@ extension Line {
     }
 
     /// Convenience function taking a stop name. Sends of a find request first and uses the first result's `id` as an argument for the lines request.
-    public static func get(forName name: String, completion: @escaping (Result<LinesResponse>) -> Void) {
+    public static func get(forStopName name: String, completion: @escaping (Result<LinesResponse>) -> Void) {
         Stop.find(query: name) { result in
             switch result {
             case .failure(let error): completion(Result(failure: error))
@@ -117,7 +117,7 @@ extension Line {
                     completion(Result(failure: DVBError.response))
                     return
                 }
-                Line.get(forId: first.id, completion: completion)
+                Line.get(forStopId: first.id, completion: completion)
             }
         }
     }

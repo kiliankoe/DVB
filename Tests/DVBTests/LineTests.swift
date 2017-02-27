@@ -62,7 +62,7 @@ class LineTests: XCTestCase {
     func testGet() {
         let e = expectation(description: "Find correct lines")
 
-        Line.get(forId: "33000264") { result in
+        Line.get(forStopId: "33000264") { result in
             switch result {
             case .failure(let error):
                 XCTFail("Failed with error: \(error.localizedDescription)")
@@ -81,7 +81,7 @@ class LineTests: XCTestCase {
     func testGetWithName() {
         let e = expectation(description: "Find correct lines")
 
-        Line.get(forName: "Postplatz") { result in
+        Line.get(forStopName: "Postplatz") { result in
             switch result {
             case .failure(let error):
                 XCTFail("Failed with error: \(error.localizedDescription)")
