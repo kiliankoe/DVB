@@ -3,42 +3,84 @@ import XCTest
 @testable import DVB
 
 class LineTests: XCTestCase {
-    func testLineFromJSON() {
+    func testDescription() {
+        let direction1 = Line.Direction(name: "Direction1", timetables: [])
+        let direction2 = Line.Direction(name: "Direction2", timetables: [])
+        let line = Line(name: "Line", mode: .tram, changes: [], directions: [direction1, direction2], diva: nil)
+
+        XCTAssertEqual(line.description, "Line: Direction1, Direction2")
+    }
+
+    func testFromJSON() {
         let json: JSON = [
-            "Id": "428946",
-            "Name": "S 1",
-            "TransportationCompany": "DB",
-            "Mot": "SuburbanRailway",
-            "Divas": [
+            "Name": "13",
+            "Mot": "Tram",
+            "Changes": [
+                "509223"
+            ],
+            "Directions": [
                 [
-                    "Number": "10001",
-                    "Network": "voe"
-                ],
-                [
-                    "Number": "92D01",
-                    "Network": "ddb"
+                    "Name": "Dresden Kaditz Riegelplatz",
+                    "TimeTables": [
+                        [
+                            "Id": "voe:11013: :H:j17:1",
+                            "Name": "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                        ]
+                    ]
                 ]
             ],
-            "Changes": [
-                "509220"
+            "Diva": [
+                "Number": "11013",
+                "Network": "voe"
             ]
         ]
 
-        // swiftlint:disable:next force_try
-        let line = try! RouteChange.Line(json: json)
+        do {
+            let line = try Line(json: json)
 
-        XCTAssertEqual(line.id, "428946")
-        XCTAssertEqual(line.mode, .suburbanrailway)
-        XCTAssertEqual(line.divas.first!.number, "10001")
-    }
-}
-
-#if os(Linux)
-    extension LineTests {
-        static var allTests: [(String, (LineTests) -> () throws -> Void)] {
-            return [
-                ("testLineFromJSON", testLineFromJSON),
-            ]
+            XCTAssertEqual(line.name, "13")
+            XCTAssertEqual(line.directions[0].name, "Dresden Kaditz Riegelplatz")
+            XCTAssertEqual(line.directions[0].timetables[0].id, "voe:11013: :H:j17:1")
+        } catch {
+            XCTFail("Failed to instantiate line from correct JSON")
         }
     }
-#endif
+
+    func testGet() {
+        let e = expectation(description: "Find correct lines")
+
+        Line.get(forId: "33000264") { result in
+            switch result {
+            case .failure(let error):
+                XCTFail("Failed with error: \(error.localizedDescription)")
+            case .success(let response):
+                guard response.lines.count > 0 else {
+                    XCTFail("Response contains no lines")
+                    return
+                }
+                e.fulfill()
+            }
+        }
+
+        waitForExpectations(timeout: 5)
+    }
+
+    func testGetWithName() {
+        let e = expectation(description: "Find correct lines")
+
+        Line.get(forName: "Postplatz") { result in
+            switch result {
+            case .failure(let error):
+                XCTFail("Failed with error: \(error.localizedDescription)")
+            case .success(let response):
+                guard response.lines.count > 0 else {
+                    XCTFail("Response contains no lines")
+                    return
+                }
+                e.fulfill()
+            }
+        }
+
+        waitForExpectations(timeout: 5)
+    }
+}

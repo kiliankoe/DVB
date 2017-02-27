@@ -75,6 +75,10 @@
 		399D10A61E5F84CE00BF7D2F /* GKConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D10A51E5F84CE00BF7D2F /* GKConversionTests.swift */; };
 		399D10A71E5F84CE00BF7D2F /* GKConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D10A51E5F84CE00BF7D2F /* GKConversionTests.swift */; };
 		399D10A81E5F84CE00BF7D2F /* GKConversionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D10A51E5F84CE00BF7D2F /* GKConversionTests.swift */; };
+		399D10F21E63BE4B00BF7D2F /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D10F11E63BE4B00BF7D2F /* Line.swift */; };
+		399D10F31E63BE4B00BF7D2F /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D10F11E63BE4B00BF7D2F /* Line.swift */; };
+		399D10F41E63BE4B00BF7D2F /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D10F11E63BE4B00BF7D2F /* Line.swift */; };
+		399D10F51E63BE4B00BF7D2F /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D10F11E63BE4B00BF7D2F /* Line.swift */; };
 		39B3F7841E5A715A00FCB27B /* RouteChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */; };
 		39B3F7851E5A715A00FCB27B /* RouteChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */; };
 		39B3F7861E5A715A00FCB27B /* RouteChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */; };
@@ -137,6 +141,7 @@
 		399D109C1E5F0DE500BF7D2F /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateTests.swift; path = Tests/DVBTests/DateTests.swift; sourceTree = "<group>"; };
 		399D10A01E5F826400BF7D2F /* CLCoordinate+GK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CLCoordinate+GK.swift"; path = "Sources/CLCoordinate+GK.swift"; sourceTree = "<group>"; };
 		399D10A51E5F84CE00BF7D2F /* GKConversionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GKConversionTests.swift; path = Tests/DVBTests/GKConversionTests.swift; sourceTree = "<group>"; };
+		399D10F11E63BE4B00BF7D2F /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Line.swift; path = Sources/Line.swift; sourceTree = "<group>"; };
 		39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteChangeTests.swift; path = Tests/DVBTests/RouteChangeTests.swift; sourceTree = "<group>"; };
 		39B3F7871E5A719700FCB27B /* LineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineTests.swift; path = Tests/DVBTests/LineTests.swift; sourceTree = "<group>"; };
 		39E981D11E5A62720075E3E1 /* RouteChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteChange.swift; path = Sources/RouteChange.swift; sourceTree = "<group>"; };
@@ -215,8 +220,8 @@
 				399D108F1E5DEE7100BF7D2F /* ModeTests.swift */,
 				3933DF601E58FD480043ABE1 /* FindTests.swift */,
 				3933DF5F1E58FD480043ABE1 /* DepartureTests.swift */,
-				39B3F7871E5A719700FCB27B /* LineTests.swift */,
 				3933DF5E1E58FD480043ABE1 /* MonitorTests.swift */,
+				39B3F7871E5A719700FCB27B /* LineTests.swift */,
 				39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */,
 				39E981DB1E5A6D690075E3E1 /* RouteChangesTests.swift */,
 				399D10931E5DF25600BF7D2F /* ResultTests.swift */,
@@ -252,6 +257,7 @@
 				392FA9F91E58FB4600E2EB0A /* Stop.swift */,
 				392FA9F11E58FB4600E2EB0A /* Departure.swift */,
 				39E981D11E5A62720075E3E1 /* RouteChange.swift */,
+				399D10F11E63BE4B00BF7D2F /* Line.swift */,
 				392FA9F61E58FB4600E2EB0A /* Mode.swift */,
 				392FA9F21E58FB4600E2EB0A /* Diva.swift */,
 				392FA9F31E58FB4600E2EB0A /* DVBError.swift */,
@@ -652,6 +658,7 @@
 				392FAA161E58FB4600E2EB0A /* Network.swift in Sources */,
 				392FAA021E58FB4600E2EB0A /* Diva.swift in Sources */,
 				392FAA061E58FB4600E2EB0A /* DVBError.swift in Sources */,
+				399D10F21E63BE4B00BF7D2F /* Line.swift in Sources */,
 				392FAA0A1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA1E1E58FB4600E2EB0A /* Stop.swift in Sources */,
 				399D10A11E5F826400BF7D2F /* CLCoordinate+GK.swift in Sources */,
@@ -689,6 +696,7 @@
 				392FAA181E58FB4600E2EB0A /* Network.swift in Sources */,
 				392FAA041E58FB4600E2EB0A /* Diva.swift in Sources */,
 				392FAA081E58FB4600E2EB0A /* DVBError.swift in Sources */,
+				399D10F41E63BE4B00BF7D2F /* Line.swift in Sources */,
 				392FAA0C1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA201E58FB4600E2EB0A /* Stop.swift in Sources */,
 				399D10A31E5F826400BF7D2F /* CLCoordinate+GK.swift in Sources */,
@@ -708,6 +716,7 @@
 				392FAA191E58FB4600E2EB0A /* Network.swift in Sources */,
 				392FAA051E58FB4600E2EB0A /* Diva.swift in Sources */,
 				392FAA091E58FB4600E2EB0A /* DVBError.swift in Sources */,
+				399D10F51E63BE4B00BF7D2F /* Line.swift in Sources */,
 				392FAA0D1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA211E58FB4600E2EB0A /* Stop.swift in Sources */,
 				399D10A41E5F826400BF7D2F /* CLCoordinate+GK.swift in Sources */,
@@ -727,6 +736,7 @@
 				392FAA171E58FB4600E2EB0A /* Network.swift in Sources */,
 				392FAA031E58FB4600E2EB0A /* Diva.swift in Sources */,
 				392FAA071E58FB4600E2EB0A /* DVBError.swift in Sources */,
+				399D10F31E63BE4B00BF7D2F /* Line.swift in Sources */,
 				392FAA0B1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA1F1E58FB4600E2EB0A /* Stop.swift in Sources */,
 				399D10A21E5F826400BF7D2F /* CLCoordinate+GK.swift in Sources */,
