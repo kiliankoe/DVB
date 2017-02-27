@@ -1,12 +1,12 @@
 # Changelog
 
-## [Unreleased]
+## [2.1.0] - 2017-02-27
 
 ### Added
 
 - Route change lookups
-- convenience `Departure.monitor(stopWithName:)`
 - Serviced lines lookup
+- convenience `Departure.monitor(stopWithName:)`
 
 ### Fixed
 
