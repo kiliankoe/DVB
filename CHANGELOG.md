@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased]
+
+### Fixed
+
+- `Depature.platform` is optional, as it should be
+
 ## [2.1.0] - 2017-02-27
 
 ### Added
