@@ -1,7 +1,7 @@
 import Foundation
 
 public struct RouteChangeResponse {
-    public let lines: [Line]
+    public let lines: [RouteChange.Line]
     public let changes: [RouteChange]
 }
 
@@ -37,6 +37,17 @@ public struct RouteChange {
     public let publishDate: Date
 }
 
+extension RouteChange {
+    public struct Line {
+        public let id: String
+        public let name: String
+        public let transportationCompany: String
+        public let mode: Mode
+        public let divas: [Diva]
+        public let changes: [String]
+    }
+}
+
 // MARK: - JSON
 
 extension RouteChangeResponse: FromJSON {
@@ -46,7 +57,7 @@ extension RouteChangeResponse: FromJSON {
                 throw DVBError.decode
         }
 
-        self.lines = try lines.map { try Line(json: $0) }
+        self.lines = try lines.map { try RouteChange.Line(json: $0) }
         self.changes = try changes.map { try RouteChange(json: $0) }
     }
 }
@@ -72,6 +83,27 @@ extension RouteChange: FromJSON {
         self.validityPeriods = try valPeriods.map { try ValidityPeriod(json: $0) }
         self.lineIds = lineIds
         self.publishDate = publishDate
+    }
+}
+
+extension RouteChange.Line: FromJSON {
+    init(json: JSON) throws {
+        guard let id = json["Id"] as? String,
+              let name = json["Name"] as? String,
+              let company = json["TransportationCompany"] as? String,
+              let modeStr = json["Mot"] as? String,
+              let mode = Mode(rawValue: modeStr.lowercased()),
+              let divas = json["Divas"] as? [JSON],
+              let changes = json["Changes"] as? [String] else {
+            throw DVBError.decode
+        }
+
+        self.id = id
+        self.name = name
+        self.transportationCompany = company
+        self.mode = mode
+        self.divas = try divas.map { try Diva(json: $0) }
+        self.changes = changes
     }
 }
 

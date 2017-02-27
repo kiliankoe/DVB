@@ -25,7 +25,7 @@ class LineTests: XCTestCase {
         ]
 
         // swiftlint:disable:next force_try
-        let line = try! Line(json: json)
+        let line = try! RouteChange.Line(json: json)
 
         XCTAssertEqual(line.id, "428946")
         XCTAssertEqual(line.mode, .suburbanrailway)
