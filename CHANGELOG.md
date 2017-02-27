@@ -16,6 +16,10 @@
 
 - Some argument labels were made more explicit
 
+### Removed
+
+- `Stop.findNear()` since the previous implementation was broken. Will hopefully find its way back soon.
+
 ## [2.0.0] - 2017-02-19
 
 ### Added
