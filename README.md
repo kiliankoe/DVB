@@ -11,36 +11,24 @@ This is an unofficial Swift package giving you a few options to query Dresden's 
 
 Want something like this for another language, look [no further](https://github.com/kiliankoe/vvo#libraries) 🙂
 
-
-
 ## Example
 
 WIP
-
-
 
 ## Installation
 
 DVB is available through Cocoapods, Carthage/Punic and Swift Package Manager, take your pick.
 
-Copypasta for your Podfile:
-
-```ruby
-pod 'DVB'
-```
-
-Cartfile:
-
-```
-github "kiliankoe/DVB"
-```
-
-Package.swift:
-
 ```swift
+// Cocoapods
+pod 'DVB'
+
+// Carthage
+github "kiliankoe/DVB"
+
+// Swift Package Manager
 .Package(url: "https://github.com/kiliankoe/DVB", majorVersion: 2)
 ```
-
 
 
 ## Quick Start
@@ -112,13 +100,9 @@ Kilian Koeltzsch, [@kiliankoe](https://github.com/kiliankoe)
 
 Max Kattner, [@maxkattner](https://github.com/maxkattner)
 
-
-
 ## License
 
 DVB is available under the MIT license. See the LICENSE file for more info.
-
-
 
 ## Terms of Service
 
