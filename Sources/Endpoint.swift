@@ -6,7 +6,7 @@ enum Endpoint {
     // swiftlint:disable:next variable_name
     private static let tr = URL(string: "tr/", relativeTo: Endpoint.base)!
     static let pointfinder = URL(string: "pointfinder", relativeTo: Endpoint.tr)!
-    static let routing = URL(string: "trips", relativeTo: Endpoint.tr)!
+    static let trips = URL(string: "trips", relativeTo: Endpoint.tr)!
 
     static let departureMonitor = URL(string: "dm/", relativeTo: Endpoint.base)!
     static let routeMap = URL(string: "trip", relativeTo: Endpoint.departureMonitor)!
