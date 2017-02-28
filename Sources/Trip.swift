@@ -145,7 +145,6 @@ extension Trip.RoutePartial: FromJSON {
             throw DVBError.decode
         }
 
-
         self.mode = try Trip.ModeElement(json: mode)
         self.mapDataIndex = mapDataIndex
         self.shift = shift
