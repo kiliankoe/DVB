@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390C94491E64D44E00A1C15C /* TripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390C94481E64D44E00A1C15C /* TripTests.swift */; };
+		390C944A1E64D44E00A1C15C /* TripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390C94481E64D44E00A1C15C /* TripTests.swift */; };
+		390C944B1E64D44E00A1C15C /* TripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390C94481E64D44E00A1C15C /* TripTests.swift */; };
 		392C64271E647BCD00C2D0A5 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392C64261E647BCD00C2D0A5 /* Trip.swift */; };
 		392C64281E647BCD00C2D0A5 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392C64261E647BCD00C2D0A5 /* Trip.swift */; };
 		392C64291E647BCD00C2D0A5 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392C64261E647BCD00C2D0A5 /* Trip.swift */; };
@@ -125,6 +128,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		390C94481E64D44E00A1C15C /* TripTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TripTests.swift; path = Tests/DVBTests/TripTests.swift; sourceTree = "<group>"; };
 		392C64261E647BCD00C2D0A5 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Trip.swift; path = Sources/Trip.swift; sourceTree = "<group>"; };
 		392C642B1E64801E00C2D0A5 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Platform.swift; path = Sources/Platform.swift; sourceTree = "<group>"; };
 		392FA9F01E58FB4600E2EB0A /* Date+fromString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+fromString.swift"; path = "Sources/Date+fromString.swift"; sourceTree = "<group>"; };
@@ -223,6 +227,7 @@
 				3933DF5F1E58FD480043ABE1 /* DepartureTests.swift */,
 				39B3F7871E5A719700FCB27B /* LineTests.swift */,
 				39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */,
+				390C94481E64D44E00A1C15C /* TripTests.swift */,
 				399D108F1E5DEE7100BF7D2F /* ModeTests.swift */,
 				399D10931E5DF25600BF7D2F /* ResultTests.swift */,
 				399D109C1E5F0DE500BF7D2F /* DateTests.swift */,
@@ -678,6 +683,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				399D10A61E5F84CE00BF7D2F /* GKConversionTests.swift in Sources */,
+				390C94491E64D44E00A1C15C /* TripTests.swift in Sources */,
 				3933DF651E58FD480043ABE1 /* DepartureTests.swift in Sources */,
 				399D10901E5DEE7100BF7D2F /* ModeTests.swift in Sources */,
 				399D10941E5DF25600BF7D2F /* ResultTests.swift in Sources */,
@@ -762,6 +768,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				399D10A71E5F84CE00BF7D2F /* GKConversionTests.swift in Sources */,
+				390C944A1E64D44E00A1C15C /* TripTests.swift in Sources */,
 				3933DF661E58FD480043ABE1 /* DepartureTests.swift in Sources */,
 				399D10911E5DEE7100BF7D2F /* ModeTests.swift in Sources */,
 				399D10951E5DF25600BF7D2F /* ResultTests.swift in Sources */,
@@ -777,6 +784,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				399D10A81E5F84CE00BF7D2F /* GKConversionTests.swift in Sources */,
+				390C944B1E64D44E00A1C15C /* TripTests.swift in Sources */,
 				3933DF671E58FD480043ABE1 /* DepartureTests.swift in Sources */,
 				399D10921E5DEE7100BF7D2F /* ModeTests.swift in Sources */,
 				399D10961E5DF25600BF7D2F /* ResultTests.swift in Sources */,
