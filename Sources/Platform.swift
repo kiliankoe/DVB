@@ -7,8 +7,10 @@ public struct Platform {
 
 extension Platform: FromJSON {
     init(json: JSON) throws {
-        guard let name = json["Name"] as? String,
-            let type = json["Type"] as? String else {
+        guard
+            let name = json["Name"] as? String,
+            let type = json["Type"] as? String
+        else {
                 throw DVBError.decode
         }
         self.name = name
