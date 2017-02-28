@@ -429,6 +429,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52D6DA201BF000BD002C0205 /* Build configuration list for PBXNativeTarget "DVB-macOS" */;
 			buildPhases = (
+				39BCE1C11E659DFA00805646 /* TODO etc. */,
 				39E981CD1E5A5FEC0075E3E1 /* Run swiftlint */,
 				52D6DA0A1BF000BD002C0205 /* Sources */,
 				52D6DA0B1BF000BD002C0205 /* Frameworks */,
@@ -596,6 +597,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		39BCE1C11E659DFA00805646 /* TODO etc. */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "TODO etc.";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which xcodeissuegenerator >/dev/null; then\n    xcodeissuegenerator -b DEBUG -w \"TODO, FIXME\" -x \"Carthage\"\nfi";
+		};
 		39E981CD1E5A5FEC0075E3E1 /* Run swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
