@@ -16,25 +16,25 @@ public struct Trip {
     public let mapPdfId: String
     public let routeId: Int
     public let partialRoutes: [RoutePartial]
-    public let mapData: MapData
+    public let mapData: [MapData]
 }
 
 extension Trip {
     public struct ModeElement {
-        public let mode: Mode
         public let name: String
-        public let direction: String
-        public let changes: [String]
+        public let mode: Mode?
+        public let direction: String?
+        public let changes: [String]?
         public let diva: Diva
     }
 
     public struct RoutePartial {
-        public let partialRouteId: Int
-        public let duration: Int
+        public let partialRouteId: Int?
+        public let duration: Int?
         public let mode: ModeElement
         public let mapDataIndex: Int
         public let shift: String
-        public let regularStops: [RouteStop]
+        public let regularStops: [RouteStop]?
     }
 
     public struct RouteStop {
@@ -44,13 +44,13 @@ extension Trip {
         public let name: String
         public let type: String
         public let dataId: String
-        public let platform: Platform
+        public let platform: Platform?
         public let coordinate: Coordinate?
-        public let mapPdfId: String
+        public let mapPdfId: String?
     }
 
     public struct MapData {
-        public let mode: Mode
+        public let mode: String
         public let points: [Coordinate]
     }
 }
@@ -84,7 +84,7 @@ extension Trip: FromJSON {
             let mapPdfId = json["MapPdfId"] as? String,
             let routeId = json["RouteId"] as? Int,
             let partialRoutes = json["PartialRoutes"] as? [JSON],
-            let mapDataStr = json["MapData"] as? String
+            let mapDataStrs = json["MapData"] as? [String]
         else {
             throw DVBError.decode
         }
@@ -99,50 +99,74 @@ extension Trip: FromJSON {
         self.mapPdfId = mapPdfId
         self.routeId = routeId
         self.partialRoutes = try partialRoutes.map { try RoutePartial(json: $0) }
-        self.mapData = try MapData(string: mapDataStr)
+        self.mapData = try mapDataStrs.map { try MapData(string: $0) }
     }
 }
 
 extension Trip.ModeElement: FromJSON {
     init(json: JSON) throws {
         guard
-            let modeStr = json["Type"] as? String,
-            let mode = Mode(rawValue: modeStr.lowercased()),
             let name = json["Name"] as? String,
-            let direction = json["Direction"] as? String,
-            let changes = json["Changes"] as? [String],
             let diva = json["Diva"] as? JSON
         else {
             throw DVBError.decode
         }
 
-        self.mode = mode
         self.name = name
-        self.direction = direction
-        self.changes = changes
         self.diva = try Diva(json: diva)
+
+        if let modeStr = json["Type"] as? String, let mode = Mode(rawValue: modeStr.lowercased()) {
+            self.mode = mode
+        } else {
+            self.mode = nil
+        }
+
+        if let direction = json["Direction"] as? String {
+            self.direction = direction
+        } else {
+            self.direction = nil
+        }
+
+        if let changes = json["Changes"] as? [String] {
+            self.changes = changes
+        } else {
+            self.changes = nil
+        }
     }
 }
 
 extension Trip.RoutePartial: FromJSON {
     init(json: JSON) throws {
         guard
-            let partialRouteId = json["PartialRouteId"] as? Int,
-            let duration = json["Duration"] as? Int,
             let mode = json["Mot"] as? JSON,
             let mapDataIndex = json["MapDataIndex"] as? Int,
-            let shift = json["Shift"] as? String,
-            let regularStops = json["RegularStops"] as? [JSON]
+            let shift = json["Shift"] as? String
         else {
             throw DVBError.decode
         }
 
-        self.partialRouteId = partialRouteId
-        self.duration = duration
+
         self.mode = try Trip.ModeElement(json: mode)
         self.mapDataIndex = mapDataIndex
         self.shift = shift
-        self.regularStops = try regularStops.map { try Trip.RouteStop(json: $0) }
+
+        if let duration = json["Duration"] as? Int {
+            self.duration = duration
+        } else {
+            self.duration = nil
+        }
+
+        if let regularStops = json["RegularStops"] as? [JSON] {
+            self.regularStops = try regularStops.map { try Trip.RouteStop(json: $0) }
+        } else {
+            self.regularStops = nil
+        }
+
+        if let partialRouteId = json["PartialRouteId"] as? Int {
+            self.partialRouteId = partialRouteId
+        } else {
+            self.partialRouteId = nil
+        }
     }
 }
 
@@ -157,10 +181,8 @@ extension Trip.RouteStop: FromJSON {
             let name = json["Name"] as? String,
             let type = json["Type"] as? String,
             let dataId = json["DataId"] as? String,
-            let platform = json["Platform"] as? JSON,
-            let latitude = json["Latitude"] as? Double,
-            let longitude = json["Longitude"] as? Double,
-            let mapPdfId = json["MapPdfId"] as? String
+            let latitude = json["Latitude"] as? Int,
+            let longitude = json["Longitude"] as? Int
         else {
             throw DVBError.decode
         }
@@ -171,33 +193,49 @@ extension Trip.RouteStop: FromJSON {
         self.name = name
         self.type = type
         self.dataId = dataId
-        self.platform = try Platform(json: platform)
-        self.coordinate = Coordinate(x: latitude, y: longitude)
-        self.mapPdfId = mapPdfId
+        self.coordinate = Coordinate(x: Double(latitude), y: Double(longitude))
+
+        if let platform = json["Platform"] as? JSON {
+            self.platform = try Platform(json: platform)
+        } else {
+            self.platform = nil
+        }
+
+        if let mapPdfId = json["MapPdfId"] as? String {
+            self.mapPdfId = mapPdfId
+        } else {
+            self.mapPdfId = nil
+        }
     }
 }
 
 extension Trip.MapData {
     init(string: String) throws {
         let components = string.components(separatedBy: "|")
-        guard components.count % 2 != 0 else { throw DVBError.decode }
-
-        guard
-            let first = components.first,
-            let mode = Mode(rawValue: first)
-        else {
+        guard components.count % 2 == 0 else {
             throw DVBError.decode
         }
 
-        self.mode = mode
+        guard let first = components.first else {
+            throw DVBError.decode
+        }
+
+        self.mode = first
+//        if let mode = Mode(rawValue: first.lowercased()) {
+//            self.mode = mode
+//        } else {
+//            self.mode = nil // FIXME: This is stupid. Gotta find a better way to store 'Footpath'
+//        }
 
         let gkCoords = components
-            .dropFirst()
-            .dropLast()
+            .dropFirst() // transportmode
+            .dropLast() // empty value
             .map { Double($0) }
             .flatMap { $0 }
 
-        guard gkCoords.count % 2 == 0 else { throw DVBError.decode }
+        guard gkCoords.count % 2 == 0 else {
+            throw DVBError.decode
+        }
 
         // I'd love an implementation of `chunk` in the stdlib...
         var coordTuples = [(Double, Double)]()
@@ -210,5 +248,35 @@ extension Trip.MapData {
             .flatMap { $0 }
 
         self.points = coords
+    }
+}
+
+// MARK: - API
+
+extension Trip {
+    public enum MobilityRestriction: String {
+        case none = "None"
+    }
+}
+
+extension Trip {
+    public static func find(originId: String, destinationId: String, time: Date = Date(), dateIsArrival: Bool = false, allowShortTermChanges: Bool = true, mobilityRestriction: MobilityRestriction = .none, completion: @escaping (Result<TripResponse>) -> Void) {
+        let data: [String: Any] = [
+            "origin": originId,
+            "destination": destinationId,
+            "time": time.iso8601,
+            "isarrivaltime": dateIsArrival,
+            "shorttermchanges": allowShortTermChanges,
+            "mobilitySettings": mobilityRestriction.rawValue,
+            "includeAlternativeStops": true,
+            "standardSettings": [
+                "maxChanges": "Unlimited",
+                "walkingSpeed": "Normal",
+                "footpathToStop": 5,
+                "mot": Mode.all.map { $0.identifier }
+            ]
+        ]
+
+        post(Endpoint.trips, data: data, completion: completion)
     }
 }
