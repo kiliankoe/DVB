@@ -1,4 +1,5 @@
 import Foundation
+import Marshal
 
 public struct Platform {
     public let name: String
@@ -15,5 +16,12 @@ extension Platform: FromJSON {
         }
         self.name = name
         self.type = type
+    }
+}
+
+extension Platform: Unmarshaling {
+    public init(object: MarshaledObject) throws {
+        self.name = try object.value(for: "Name")
+        self.type = try object.value(for: "Type")
     }
 }
