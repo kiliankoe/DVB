@@ -9,9 +9,8 @@ before_install:
   - gem install xcpretty
 
 script:
-- xcodebuild -scheme DVB-macOS | xcpretty
-- xcodebuild -scheme DVB-iOS | xcpretty
 - xcodebuild test -scheme DVB-macOS | xcpretty
+- xcodebuild test -scheme DVB-iOS | xcpretty
 - pod lib lint
 - swift test
 
