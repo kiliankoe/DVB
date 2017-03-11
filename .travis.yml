@@ -11,8 +11,8 @@ before_install:
 script:
 - xcodebuild test -scheme DVB-macOS | xcpretty
 - xcodebuild test -scheme DVB-iOS | xcpretty
-- pod lib lint
 - swift test
+- pod lib lint
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
