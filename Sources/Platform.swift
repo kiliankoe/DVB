@@ -6,6 +6,7 @@ public struct Platform {
     public let type: String
 }
 
+// TODO: Remove me
 extension Platform: FromJSON {
     init(json: JSON) throws {
         guard

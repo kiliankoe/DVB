@@ -1,4 +1,5 @@
 import Foundation
+import Marshal
 
 internal extension Date {
     /// Init with a string of the format "/Date(1487458060455+0100)/"
@@ -38,5 +39,11 @@ internal extension Date {
 
     var iso8601: String {
         return Date.iso8601Formatter.string(from: self)
+    }
+}
+
+extension Date: ValueType {
+    public static func value(from object: Any) throws -> Date {
+        return Date() // TODO:
     }
 }
