@@ -7,12 +7,13 @@ language: objective-c
 
 before_install:
   - gem install xcpretty
+  - carthage update
 
 script:
 - xcodebuild test -scheme DVB-macOS | xcpretty
 - xcodebuild test -scheme DVB-iOS | xcpretty
 - swift test
-- pod lib lint
+# - pod lib lint
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
