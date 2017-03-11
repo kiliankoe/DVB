@@ -6,3 +6,6 @@ disabled_rules:
 variable_name:
   excluded:
     - id
+
+excluded:
+  - Carthage
