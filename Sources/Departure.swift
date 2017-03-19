@@ -88,12 +88,19 @@ extension Departure: Unmarshaling {
         self.line = try object <| "LineName"
         self.direction = try object <| "Direction"
         self.mode = try object <| "Mot"
+
         self.scheduledTime = try object <| "ScheduledTime"
         self.routeChanges = try object <| "RouteChanges"
         self.platform = try object <| "Platform"
         self.diva = try object <| "Diva"
         self.realTime = try object <| "RealTime"
-        self.state = try object <| "State"
+
+        let rawState: String? = try object <| "State"
+        if let stateString = rawState {
+            self.state = try Departure.State.value(from: stateString)
+        } else {
+            self.state = .unknown
+        }
     }
 }
 
