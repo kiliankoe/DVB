@@ -65,7 +65,7 @@ private func dataTask<T: Unmarshaling>(request: URLRequest, completion: @escapin
             }
 
             do {
-                let resp: T = try json.value(for: "") // TODO: Does this work?
+                let resp = try T(object: json)
                 completion(Result(success: resp))
             } catch let error {
                 completion(Result(failure: error))
