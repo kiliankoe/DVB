@@ -86,6 +86,7 @@ extension Trip.ModeElement: Unmarshaling {
         self.name = try object <| "Name"
         self.diva = try object <| "Diva"
         self.mode = try object <| "Type"
+
         self.direction = try object <| "Direction"
         self.changes = try object <| "Changes"
     }
@@ -117,12 +118,6 @@ extension Trip.RouteStop: Unmarshaling {
 
         self.platform = try object <| "Platform"
         self.mapPdfId = try object <| "MapPdfId"
-    }
-}
-
-extension Trip.MapData {
-    init(string: String) throws {
-
     }
 }
 
