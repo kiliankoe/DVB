@@ -1,4 +1,5 @@
 import Foundation
+import Marshal
 
 public struct LinesResponse {
     public let lines: [Line]
@@ -25,75 +26,34 @@ public struct Line {
 
 // MARK: - JSON
 
-extension LinesResponse: FromJSON {
-    init(json: JSON) throws {
-        guard
-            let lines = json["Lines"] as? [JSON],
-            let expirationStr = json["ExpirationTime"] as? String,
-            let expirationDate = Date(from: expirationStr)
-        else {
-            throw DVBError.decode
-        }
-
-        self.lines = try lines.map { try Line(json: $0) }
-        self.expirationDate = expirationDate
+extension LinesResponse: Unmarshaling {
+    public init(object: MarshaledObject) throws {
+        self.lines = try object <| "Lines"
+        self.expirationDate = try object <| "ExpirationTime"
     }
 }
 
-extension Line: FromJSON {
-    init(json: JSON) throws {
-        guard
-            let name = json["Name"] as? String,
-            let modeStr = json["Mot"] as? String,
-            let mode = Mode(rawValue: modeStr.lowercased()),
-            let directions = json["Directions"] as? [JSON]
-        else {
-            throw DVBError.decode
-        }
-
-        self.name = name
-        self.mode = mode
-        self.directions = try directions.map { try Direction(json: $0) }
-
-        if let changes = json["Changes"] as? [String] {
-            self.changes = changes
-        } else {
-            self.changes = nil
-        }
-
-        if let diva = json["Diva"] as? JSON {
-            self.diva = try Diva(json: diva)
-        } else {
-            self.diva = nil
-        }
+extension Line: Unmarshaling {
+    public init(object: MarshaledObject) throws {
+        self.name = try object <| "Name"
+        self.mode = try object <| "Mot"
+        self.directions = try object <| "Directions"
+        self.changes = try object <| "Changes"
+        self.diva = try object <| "Diva"
     }
 }
 
-extension Line.Direction: FromJSON {
-    init(json: JSON) throws {
-        guard
-            let name = json["Name"] as? String,
-            let timetables = json["TimeTables"] as? [JSON]
-        else {
-            throw DVBError.decode
-        }
-
-        self.name = name
-        self.timetables = try timetables.map { try Line.TimeTable(json: $0) }
+extension Line.Direction: Unmarshaling {
+    public init(object: MarshaledObject) throws {
+        self.name = try object <| "Name"
+        self.timetables = try object <| "TimeTables"
     }
 }
 
-extension Line.TimeTable: FromJSON {
-    init(json: JSON) throws {
-        guard
-            let name = json["Name"] as? String,
-            let id = json["Id"] as? String
-        else {
-            throw DVBError.decode
-        }
-
-        self.name = name
-        self.id = id
+extension Line.TimeTable: Unmarshaling {
+    public init(object: MarshaledObject) throws {
+        self.name = try object <| "Name"
+        self.id = try object <| "Id"
     }
 }
 

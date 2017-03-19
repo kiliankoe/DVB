@@ -1,4 +1,5 @@
 import Foundation
+import Marshal
 
 public struct RouteChangeResponse {
     public let lines: [RouteChange.Line]
@@ -50,78 +51,50 @@ extension RouteChange {
 
 // MARK: - JSON
 
-extension RouteChangeResponse: FromJSON {
-    init(json: JSON) throws {
-        guard let lines = json["Lines"] as? [JSON],
-            let changes = json["Changes"] as? [JSON] else {
-                throw DVBError.decode
-        }
-
-        self.lines = try lines.map { try RouteChange.Line(json: $0) }
-        self.changes = try changes.map { try RouteChange(json: $0) }
+extension RouteChangeResponse: Unmarshaling {
+    public init(object: MarshaledObject) throws {
+        self.lines = try object <| "Lines"
+        self.changes = try object <| "Changes"
     }
 }
 
-extension RouteChange: FromJSON {
-    init(json: JSON) throws {
-        guard let id = json["Id"] as? String,
-            let kindStr = json["Type"] as? String,
-            let title = json["Title"] as? String,
-            let html = json["Description"] as? String,
-            let valPeriods = json["ValidityPeriods"] as? [JSON],
-            let lineIds = json["LineIds"] as? [String],
-            let publishDateStr = json["PublishDate"] as? String,
-            let publishDate = Date(from: publishDateStr) else {
-                throw DVBError.decode
-        }
-
-        self.id = id
-        self.kind = Kind(kindStr)
-        self.tripRequestInclude = json["TripRequestInclude"] as? Bool
-        self.title = title
-        self.htmlDescription = html
-        self.validityPeriods = try valPeriods.map { try ValidityPeriod(json: $0) }
-        self.lineIds = lineIds
-        self.publishDate = publishDate
+extension RouteChange: Unmarshaling {
+    public init(object: MarshaledObject) throws {
+        self.id = try object <| "Id"
+        self.kind = try object <| "Type"
+        self.tripRequestInclude = try object <| "TripRequestInclude"
+        self.title = try object <| "Title"
+        self.htmlDescription = try object <| "Description"
+        self.validityPeriods = try object <| "ValidityPeriods"
+        self.lineIds = try object <| "LineIds"
+        self.publishDate = try object <| "PublishDate"
     }
 }
 
-extension RouteChange.Line: FromJSON {
-    init(json: JSON) throws {
-        guard let id = json["Id"] as? String,
-              let name = json["Name"] as? String,
-              let company = json["TransportationCompany"] as? String,
-              let modeStr = json["Mot"] as? String,
-              let mode = Mode(rawValue: modeStr.lowercased()),
-              let divas = json["Divas"] as? [JSON],
-              let changes = json["Changes"] as? [String] else {
-            throw DVBError.decode
+extension RouteChange.Kind: ValueType {
+    public static func value(from object: Any) throws -> RouteChange.Kind {
+        guard let kindStr = object as? String else {
+            throw MarshalError.typeMismatch(expected: String.self, actual: type(of: object))
         }
-
-        self.id = id
-        self.name = name
-        self.transportationCompany = company
-        self.mode = mode
-        self.divas = try divas.map { try Diva(json: $0) }
-        self.changes = changes
+        return self.init(kindStr)
     }
 }
 
-extension RouteChange.ValidityPeriod: FromJSON {
-    init(json: JSON) throws {
-        guard let beginStr = json["Begin"] as? String,
-            let begin = Date(from: beginStr) else {
-                throw DVBError.decode
-        }
+extension RouteChange.Line: Unmarshaling {
+    public init(object: MarshaledObject) throws {
+        self.id = try object <| "Id"
+        self.name = try object <| "Name"
+        self.transportationCompany = try object <| "TransportationCompany"
+        self.mode = try object <| "Mot"
+        self.divas = try object <| "Divas"
+        self.changes = try object <| "Changes"
+    }
+}
 
-        self.begin = begin
-
-        if let endStr = json["End"] as? String,
-            let end = Date(from: endStr) {
-            self.end = end
-        } else {
-            self.end = nil
-        }
+extension RouteChange.ValidityPeriod: Unmarshaling {
+    public init(object: MarshaledObject) throws {
+        self.begin = try object <| "Begin"
+        self.end = try object <| "End"
     }
 }
 

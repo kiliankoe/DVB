@@ -1,4 +1,5 @@
 import Foundation
+import Marshal
 
 public enum Mode: String {
     case tram
@@ -58,5 +59,18 @@ public enum Mode: String {
 
     public var iconURL: URL {
         return URL(string: "https://www.dvb.de/assets/img/trans-icon/transport-\(self.dvbIdentifier).svg")!
+    }
+}
+
+extension Mode: ValueType {
+    public static func value(from object: Any) throws -> Mode {
+        guard let str = object as? String else {
+            throw MarshalError.typeMismatch(expected: String.self, actual: type(of: object))
+        }
+        guard let mode = Mode(rawValue: str) else {
+            throw MarshalError.typeMismatch(expected: "Mode String", actual: str)
+        }
+
+        return mode
     }
 }

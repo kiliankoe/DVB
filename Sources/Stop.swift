@@ -16,21 +16,10 @@ public struct Stop {
 
 // MARK: - JSON
 
-// TODO: Remove me
-extension FindResponse: FromJSON {
-    init(json: JSON) throws {
-        guard let stops = json["Points"] as? [String] else { throw DVBError.decode }
-        guard let expirationDate = json["ExpirationTime"] as? String else { throw DVBError.decode }
-
-        self.stops = try stops.map { try Stop(string: $0) }
-        self.expirationDate = Date(from: expirationDate)
-    }
-}
-
 extension FindResponse: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.stops = try object.value(for: "Points")
-        self.expirationDate = try object.value(for: "ExpirationTime")
+        self.stops = try object <| "Points"
+        self.expirationDate = try object <| "ExpirationTime"
     }
 }
 
@@ -67,7 +56,7 @@ extension Stop: ValueType {
             throw MarshalError.typeMismatch(expected: "Stop string should have 9 different values", actual: components.count)
         }
         guard let x = Double(components[5]), let y = Double(components[4]) else {
-            throw MarshalError.typeMismatch(expected: "X and Y should be number values", actual: type(of: components[5]))
+            throw MarshalError.typeMismatch(expected: "X and Y should be number values", actual: (type(of: components[4]), type(of: components[5])))
         }
 
         let region = components[2].isEmpty ? nil : components[2]
