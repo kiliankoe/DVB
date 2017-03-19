@@ -75,25 +75,25 @@ extension Departure {
 
 extension MonitorResponse: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.stopName = try object.value(for: "Name")
-        self.place = try object.value(for: "Place")
-        self.expirationDate = try object.value(for: "ExpirationTime")
-        self.departures = try object.value(for: "Departures")
+        self.stopName = try object <| "Name"
+        self.place = try object <| "Place"
+        self.expirationDate = try object <| "ExpirationTime"
+        self.departures = try object <| "Departures"
     }
 }
 
 extension Departure: Unmarshaling {
     public init(object: MarshaledObject) throws {
         self.id = try object <| "Id"
-        self.line = try object.value(for: "LineName")
-        self.direction = try object.value(for: "Direction")
-        self.mode = try object.value(for: "Mot")
-        self.scheduledTime = try object.value(for: "ScheduledTime")
-        self.routeChanges = try object.value(for: "RouteChanges")
-        self.platform = try object.value(for: "Platform")
-        self.diva = try object.value(for: "Diva")
-        self.realTime = try object.value(for: "RealTime")
-        self.state = try object.value(for: "State")
+        self.line = try object <| "LineName"
+        self.direction = try object <| "Direction"
+        self.mode = try object <| "Mot"
+        self.scheduledTime = try object <| "ScheduledTime"
+        self.routeChanges = try object <| "RouteChanges"
+        self.platform = try object <| "Platform"
+        self.diva = try object <| "Diva"
+        self.realTime = try object <| "RealTime"
+        self.state = try object <| "State"
     }
 }
 
