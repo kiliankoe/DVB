@@ -85,7 +85,13 @@ extension Trip.ModeElement: Unmarshaling {
     public init(object: MarshaledObject) throws {
         self.name = try object <| "Name"
         self.diva = try object <| "Diva"
-        self.mode = try object <| "Type"
+
+        let rawMode: String = try object <| "Type"
+        if let mode = try? Mode.value(from: rawMode) {
+            self.mode = mode
+        } else {
+            self.mode = nil // FIXME: This breaks on "Footpath" for example. Should this even be a `Mode`?
+        }
 
         self.direction = try object <| "Direction"
         self.changes = try object <| "Changes"
