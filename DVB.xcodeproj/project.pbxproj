@@ -10,6 +10,10 @@
 		390C94491E64D44E00A1C15C /* TripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390C94481E64D44E00A1C15C /* TripTests.swift */; };
 		390C944A1E64D44E00A1C15C /* TripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390C94481E64D44E00A1C15C /* TripTests.swift */; };
 		390C944B1E64D44E00A1C15C /* TripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390C94481E64D44E00A1C15C /* TripTests.swift */; };
+		3926CFC71E73908700E579CF /* Marshal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3926CFC61E73908700E579CF /* Marshal.framework */; };
+		3926CFC91E73908E00E579CF /* Marshal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3926CFC81E73908E00E579CF /* Marshal.framework */; };
+		3926CFCB1E73909600E579CF /* Marshal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3926CFCA1E73909600E579CF /* Marshal.framework */; };
+		3926CFCD1E73909D00E579CF /* Marshal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3926CFCC1E73909D00E579CF /* Marshal.framework */; };
 		392C64271E647BCD00C2D0A5 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392C64261E647BCD00C2D0A5 /* Trip.swift */; };
 		392C64281E647BCD00C2D0A5 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392C64261E647BCD00C2D0A5 /* Trip.swift */; };
 		392C64291E647BCD00C2D0A5 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392C64261E647BCD00C2D0A5 /* Trip.swift */; };
@@ -129,6 +133,10 @@
 
 /* Begin PBXFileReference section */
 		390C94481E64D44E00A1C15C /* TripTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TripTests.swift; path = Tests/DVBTests/TripTests.swift; sourceTree = "<group>"; };
+		3926CFC61E73908700E579CF /* Marshal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Marshal.framework; path = Carthage/Build/iOS/Marshal.framework; sourceTree = "<group>"; };
+		3926CFC81E73908E00E579CF /* Marshal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Marshal.framework; path = Carthage/Build/Mac/Marshal.framework; sourceTree = "<group>"; };
+		3926CFCA1E73909600E579CF /* Marshal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Marshal.framework; path = Carthage/Build/watchOS/Marshal.framework; sourceTree = "<group>"; };
+		3926CFCC1E73909D00E579CF /* Marshal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Marshal.framework; path = Carthage/Build/tvOS/Marshal.framework; sourceTree = "<group>"; };
 		392C64261E647BCD00C2D0A5 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Trip.swift; path = Sources/Trip.swift; sourceTree = "<group>"; };
 		392C642B1E64801E00C2D0A5 /* Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Platform.swift; path = Sources/Platform.swift; sourceTree = "<group>"; };
 		392FA9F01E58FB4600E2EB0A /* Date+fromString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+fromString.swift"; path = "Sources/Date+fromString.swift"; sourceTree = "<group>"; };
@@ -169,6 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3926CFC71E73908700E579CF /* Marshal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3926CFCB1E73909600E579CF /* Marshal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3926CFCD1E73909D00E579CF /* Marshal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3926CFC91E73908E00E579CF /* Marshal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +232,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3926CFC51E73908700E579CF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3926CFCC1E73909D00E579CF /* Marshal.framework */,
+				3926CFCA1E73909600E579CF /* Marshal.framework */,
+				3926CFC81E73908E00E579CF /* Marshal.framework */,
+				3926CFC61E73908700E579CF /* Marshal.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		392FAA221E58FB4B00E2EB0A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +297,7 @@
 				392FAA221E58FB4B00E2EB0A /* Tests */,
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				52D6D97D1BEFF229002C0205 /* Products */,
+				3926CFC51E73908700E579CF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -936,6 +960,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Configs/DVB.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -959,6 +987,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Configs/DVB.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -977,7 +1009,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Configs/DVBTests.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks ${SRCROOT}/Carthage/Build/iOS/";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DVB.DVB-iOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -991,7 +1023,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Configs/DVBTests.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks ${SRCROOT}/Carthage/Build/iOS/";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DVB.DVB-iOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -1009,6 +1041,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
 				INFOPLIST_FILE = Configs/DVB.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1033,6 +1069,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/watchOS",
+				);
 				INFOPLIST_FILE = Configs/DVB.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1057,6 +1097,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = Configs/DVB.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1081,6 +1125,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/tvOS",
+				);
 				INFOPLIST_FILE = Configs/DVB.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1106,6 +1154,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Configs/DVB.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1131,6 +1183,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = Configs/DVB.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1152,7 +1208,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Configs/DVBTests.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks ${SRCROOT}/Carthage/Build/Mac/";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DVB.DVB-macOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1168,7 +1224,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Configs/DVBTests.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks ${SRCROOT}/Carthage/Build/Mac/";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DVB.DVB-macOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1183,7 +1239,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = Configs/DVBTests.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks ${SRCROOT}/Carthage/Build/tvOS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DVB.DVB-tvOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -1197,7 +1253,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = Configs/DVBTests.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks ${SRCROOT}/Carthage/Build/tvOS";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.DVB.DVB-tvOS-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;

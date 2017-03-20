@@ -9,3 +9,4 @@ variable_name:
 
 excluded:
   - Carthage
+  - .build

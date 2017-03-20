@@ -1,27 +1,7 @@
 import Foundation
+import Marshal
 
 internal extension Date {
-    /// Init with a string of the format "/Date(1487458060455+0100)/"
-    init?(from dateString: String) {
-        let millisWithTZ = dateString
-            .replacingOccurrences(of: "/Date(", with: "")
-            .replacingOccurrences(of: ")/", with: "")
-
-        var components = [String]()
-        if millisWithTZ.contains("+") {
-            components = millisWithTZ.components(separatedBy: "+")
-        } else if millisWithTZ.contains("-") {
-            components = millisWithTZ.components(separatedBy: "-")
-        } else {
-            return nil
-        }
-
-        guard let millis = Int(components[0]) else { return nil }
-        let seconds = Double(millis) / 1000
-
-        self = Date(timeIntervalSince1970: seconds)
-    }
-
     /// Generate a date of the format `/Date(1487458060455+0100)/`
     var datestring: String {
         let millis = Int(self.timeIntervalSince1970 * 1000)
@@ -38,5 +18,29 @@ internal extension Date {
 
     var iso8601: String {
         return Date.iso8601Formatter.string(from: self)
+    }
+}
+
+extension Date: ValueType {
+    public static func value(from object: Any) throws -> Date {
+        guard let dateString = object as? String else {
+            throw MarshalError.typeMismatch(expected: String.self, actual: type(of: object))
+        }
+
+        // swiftlint:disable:next force_try
+        let regex = try! NSRegularExpression(pattern: "/Date\\((\\d+)(\\+|-)(\\d{2})(\\d{2})\\)/", options: [])
+        guard let match = regex.firstMatch(in: dateString, options: [], range: NSRange(location: 0, length: dateString.characters.count))  else {
+            throw MarshalError.typeMismatch(expected: "Valid Date String", actual: dateString)
+        }
+
+        let nsstr = dateString as NSString
+        let millisecond = Double(nsstr.substring(with: match.rangeAt(1)))!
+        let sign = nsstr.substring(with: match.rangeAt(2))
+        let hour = Double(nsstr.substring(with: match.rangeAt(3)))!
+        let minute = Double(nsstr.substring(with: match.rangeAt(4)))!
+
+        let offset = (sign == "+" ? 1 : -1) * (hour * 3600.0 + minute * 60.0)
+
+        return Date(timeIntervalSince1970: millisecond / 1000 + offset)
     }
 }

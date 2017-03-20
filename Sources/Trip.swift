@@ -1,4 +1,5 @@
 import Foundation
+import Marshal
 
 public struct TripResponse {
     public let routes: [Trip]
@@ -57,174 +58,89 @@ extension Trip {
 
 // MARK: - JSON
 
-extension TripResponse: FromJSON {
-    init(json: JSON) throws {
-        guard
-            let sessionId = json["SessionId"] as? String,
-            let routes = json["Routes"] as? [JSON]
-        else {
-            throw DVBError.decode
-        }
-
-        self.sessionId = sessionId
-        self.routes = try routes.map { try Trip(json: $0) }
+extension TripResponse: Unmarshaling {
+    public init(object: MarshaledObject) throws {
+        self.sessionId = try object <| "SessionId"
+        self.routes = try object <| "Routes"
     }
 }
 
-extension Trip: FromJSON {
-    init(json: JSON) throws {
-        guard
-            let priceLevel = json["PriceLevel"] as? Int,
-            let price = json["Price"] as? String,
-            let duration = json["Duration"] as? Int,
-            let interchanges = json["Interchanges"] as? Int,
-            let modeChain = json["MotChain"] as? [JSON],
-            let fareZoneOrigin = json["FareZoneOrigin"] as? Int,
-            let fareZoneDestination = json["FareZoneDestination"] as? Int,
-            let mapPdfId = json["MapPdfId"] as? String,
-            let routeId = json["RouteId"] as? Int,
-            let partialRoutes = json["PartialRoutes"] as? [JSON],
-            let mapDataStrs = json["MapData"] as? [String]
-        else {
-            throw DVBError.decode
-        }
-
-        self.priceLevel = priceLevel
-        self.price = price
-        self.duration = duration
-        self.interchanges = interchanges
-        self.modeChain = try modeChain.map { try ModeElement(json: $0) }
-        self.fareZoneOrigin = fareZoneOrigin
-        self.fareZoneDestination = fareZoneDestination
-        self.mapPdfId = mapPdfId
-        self.routeId = routeId
-        self.partialRoutes = try partialRoutes.map { try RoutePartial(json: $0) }
-        self.mapData = try mapDataStrs.map { try MapData(string: $0) }
+extension Trip: Unmarshaling {
+    public init(object: MarshaledObject) throws {
+        self.priceLevel = try object <| "PriceLevel"
+        self.price = try object <| "Price"
+        self.duration = try object <| "Duration"
+        self.interchanges = try object <| "Interchanges"
+        self.modeChain = try object <| "MotChain"
+        self.fareZoneOrigin = try object <| "FareZoneOrigin"
+        self.fareZoneDestination = try object <| "FareZoneDestination"
+        self.mapPdfId = try object <| "MapPdfId"
+        self.routeId = try object <| "RouteId"
+        self.partialRoutes = try object <| "PartialRoutes"
+        self.mapData = try object <| "MapData"
     }
 }
 
-extension Trip.ModeElement: FromJSON {
-    init(json: JSON) throws {
-        guard
-            let name = json["Name"] as? String,
-            let diva = json["Diva"] as? JSON
-        else {
-            throw DVBError.decode
-        }
+extension Trip.ModeElement: Unmarshaling {
+    public init(object: MarshaledObject) throws {
+        self.name = try object <| "Name"
+        self.diva = try object <| "Diva"
 
-        self.name = name
-        self.diva = try Diva(json: diva)
-
-        if let modeStr = json["Type"] as? String, let mode = Mode(rawValue: modeStr.lowercased()) {
+        let rawMode: String = try object <| "Type"
+        if let mode = try? Mode.value(from: rawMode) {
             self.mode = mode
         } else {
-            self.mode = nil
+            self.mode = nil // FIXME: This breaks on "Footpath" for example. Should this even be a `Mode`?
         }
 
-        if let direction = json["Direction"] as? String {
-            self.direction = direction
-        } else {
-            self.direction = nil
-        }
-
-        if let changes = json["Changes"] as? [String] {
-            self.changes = changes
-        } else {
-            self.changes = nil
-        }
+        self.direction = try object <| "Direction"
+        self.changes = try object <| "Changes"
     }
 }
 
-extension Trip.RoutePartial: FromJSON {
-    init(json: JSON) throws {
-        guard
-            let mode = json["Mot"] as? JSON,
-            let mapDataIndex = json["MapDataIndex"] as? Int,
-            let shift = json["Shift"] as? String
-        else {
-            throw DVBError.decode
-        }
-
-        self.mode = try Trip.ModeElement(json: mode)
-        self.mapDataIndex = mapDataIndex
-        self.shift = shift
-
-        if let duration = json["Duration"] as? Int {
-            self.duration = duration
-        } else {
-            self.duration = nil
-        }
-
-        if let regularStops = json["RegularStops"] as? [JSON] {
-            self.regularStops = try regularStops.map { try Trip.RouteStop(json: $0) }
-        } else {
-            self.regularStops = nil
-        }
-
-        if let partialRouteId = json["PartialRouteId"] as? Int {
-            self.partialRouteId = partialRouteId
-        } else {
-            self.partialRouteId = nil
-        }
+extension Trip.RoutePartial: Unmarshaling {
+    public init(object: MarshaledObject) throws {
+        self.mode = try object <| "Mot"
+        self.mapDataIndex = try object <| "MapDataIndex"
+        self.shift = try object <| "Shift"
+        self.duration = try object <| "Duration"
+        self.regularStops = try object <| "RegularStops"
+        self.partialRouteId = try object <| "PartialRouteId"
     }
 }
 
-extension Trip.RouteStop: FromJSON {
-    init(json: JSON) throws {
-        guard
-            let arrivalTimeStr = json["ArrivalTime"] as? String,
-            let arrivalTime = Date(from: arrivalTimeStr),
-            let departureTimeStr = json["DepartureTime"] as? String,
-            let departureTime = Date(from: departureTimeStr),
-            let place = json["Place"] as? String,
-            let name = json["Name"] as? String,
-            let type = json["Type"] as? String,
-            let dataId = json["DataId"] as? String,
-            let latitude = json["Latitude"] as? Int,
-            let longitude = json["Longitude"] as? Int
-        else {
-            throw DVBError.decode
-        }
+extension Trip.RouteStop: Unmarshaling {
+    public init(object: MarshaledObject) throws {
+        self.arrivalTime = try object <| "ArrivalTime"
+        self.departureTime = try object <| "DepartureTime"
+        self.place = try object <| "Place"
+        self.name = try object <| "Name"
+        self.type = try object <| "Type"
+        self.dataId = try object <| "DataId"
 
-        self.arrivalTime = arrivalTime
-        self.departureTime = departureTime
-        self.place = place
-        self.name = name
-        self.type = type
-        self.dataId = dataId
-        self.coordinate = Coordinate(x: Double(latitude), y: Double(longitude))
+        let latitude: Double = try object <| "Latitude"
+        let longitude: Double = try object <| "Longitude"
+        self.coordinate = Coordinate(x: latitude, y: longitude)
 
-        if let platform = json["Platform"] as? JSON {
-            self.platform = try Platform(json: platform)
-        } else {
-            self.platform = nil
-        }
-
-        if let mapPdfId = json["MapPdfId"] as? String {
-            self.mapPdfId = mapPdfId
-        } else {
-            self.mapPdfId = nil
-        }
+        self.platform = try object <| "Platform"
+        self.mapPdfId = try object <| "MapPdfId"
     }
 }
 
-extension Trip.MapData {
-    init(string: String) throws {
+extension Trip.MapData: ValueType {
+    public static func value(from object: Any) throws -> Trip.MapData {
+        guard let string = object as? String else {
+            throw MarshalError.typeMismatch(expected: String.self, actual: type(of: object))
+        }
+
         let components = string.components(separatedBy: "|")
         guard components.count % 2 == 0 else {
-            throw DVBError.decode
+            throw DVBError.decode // FIXME: Use better error type
         }
 
         guard let first = components.first else {
-            throw DVBError.decode
+            throw DVBError.decode // FIXME: Use better error type
         }
-
-        self.mode = first
-//        if let mode = Mode(rawValue: first.lowercased()) {
-//            self.mode = mode
-//        } else {
-//            self.mode = nil // FIXME: This is stupid. Gotta find a better way to store 'Footpath'
-//        }
 
         let gkCoords = components
             .dropFirst() // transportmode
@@ -246,7 +162,13 @@ extension Trip.MapData {
             .map { Coordinate(x: $0.0, y: $0.1) }
             .flatMap { $0 }
 
-        self.points = coords
+        //        if let mode = Mode(rawValue: first.lowercased()) {
+        //            self.mode = mode
+        //        } else {
+        //            self.mode = nil // FIXME: This is stupid. Gotta find a better way to store 'Footpath'
+        //        }
+
+        return self.init(mode: first, points: coords)
     }
 }
 

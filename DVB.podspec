@@ -19,4 +19,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/kiliankoe/DVB.git", :tag => s.version.to_s }
   s.source_files = "Sources/**/*"
   s.frameworks   = "Foundation"
+
+  s.dependency 'Marshal', '~> 1.2.4'
 end

@@ -1,12 +1,13 @@
 import Foundation
+import Marshal
 
-func get<T: FromJSON>(_ url: URL, completion: @escaping (Result<T>) -> Void) {
+func get<T: Unmarshaling>(_ url: URL, completion: @escaping (Result<T>) -> Void) {
     var request = URLRequest(url: url)
     request.httpMethod = HTTPMethod.GET.rawValue
     dataTask(request: request, completion: completion)
 }
 
-func post<T: FromJSON>(_ url: URL, data: [String: Any], completion: @escaping (Result<T>) -> Void) {
+func post<T: Unmarshaling>(_ url: URL, data: [String: Any], completion: @escaping (Result<T>) -> Void) {
     var request = URLRequest(url: url)
     request.httpMethod = HTTPMethod.POST.rawValue
     do {
@@ -25,7 +26,7 @@ private enum HTTPMethod: String {
     case POST
 }
 
-private func dataTask<T: FromJSON>(request: URLRequest, completion: @escaping (Result<T>) -> Void) {
+private func dataTask<T: Unmarshaling>(request: URLRequest, completion: @escaping (Result<T>) -> Void) {
     let session = URLSession(configuration: .default)
     session.dataTask(with: request) { data, response, error in
         guard error == nil else {
@@ -64,7 +65,7 @@ private func dataTask<T: FromJSON>(request: URLRequest, completion: @escaping (R
             }
 
             do {
-                let resp = try T(json: json)
+                let resp = try T(object: json)
                 completion(Result(success: resp))
             } catch let error {
                 completion(Result(failure: error))

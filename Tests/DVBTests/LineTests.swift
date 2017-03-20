@@ -24,48 +24,13 @@ class LineTests: XCTestCase {
         XCTAssert(line1 == line2)
     }
 
-    func testFromJSON() {
-        let json: JSON = [
-            "Name": "13",
-            "Mot": "Tram",
-            "Changes": [
-                "509223"
-            ],
-            "Directions": [
-                [
-                    "Name": "Dresden Kaditz Riegelplatz",
-                    "TimeTables": [
-                        [
-                            "Id": "voe:11013: :H:j17:1",
-                            "Name": "Standardfahrplan 2017 - gültig ab 03.01.2017"
-                        ]
-                    ]
-                ]
-            ],
-            "Diva": [
-                "Number": "11013",
-                "Network": "voe"
-            ]
-        ]
-
-        do {
-            let line = try Line(json: json)
-
-            XCTAssertEqual(line.name, "13")
-            XCTAssertEqual(line.directions[0].name, "Dresden Kaditz Riegelplatz")
-            XCTAssertEqual(line.directions[0].timetables[0].id, "voe:11013: :H:j17:1")
-        } catch {
-            XCTFail("Failed to instantiate line from correct JSON")
-        }
-    }
-
     func testGet() {
         let e = expectation(description: "Find correct lines")
 
         Line.get(forStopId: "33000264") { result in
             switch result {
             case .failure(let error):
-                XCTFail("Failed with error: \(error.localizedDescription)")
+                XCTFail("Failed with error: \(error)")
             case .success(let response):
                 guard response.lines.count > 0 else {
                     XCTFail("Response contains no lines")
@@ -84,7 +49,7 @@ class LineTests: XCTestCase {
         Line.get(forStopName: "Postplatz") { result in
             switch result {
             case .failure(let error):
-                XCTFail("Failed with error: \(error.localizedDescription)")
+                XCTFail("Failed with error: \(error)")
             case .success(let response):
                 guard response.lines.count > 0 else {
                     XCTFail("Response contains no lines")

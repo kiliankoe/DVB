@@ -1,4 +1,5 @@
 import Foundation
+import Marshal
 
 public struct MonitorResponse {
     public let stopName: String
@@ -72,65 +73,43 @@ extension Departure {
 
 // MARK: - JSON
 
-extension MonitorResponse: FromJSON {
-    init(json: JSON) throws {
-        guard let stopName = json["Name"] as? String,
-            let place = json["Place"] as? String,
-            let expirationStr = json["ExpirationTime"] as? String,
-            let expirationDate = Date(from: expirationStr),
-            let departures = json["Departures"] as? [JSON] else {
-                throw DVBError.decode
-        }
-
-        self.stopName = stopName
-        self.place = place
-        self.expirationDate = expirationDate
-        self.departures = try departures.map { try Departure(json: $0) } // Why is the first try necessary here? o.O
+extension MonitorResponse: Unmarshaling {
+    public init(object: MarshaledObject) throws {
+        self.stopName = try object <| "Name"
+        self.place = try object <| "Place"
+        self.expirationDate = try object <| "ExpirationTime"
+        self.departures = try object <| "Departures"
     }
 }
 
-extension Departure: FromJSON {
-    init(json: JSON) throws {
-        guard let id = json["Id"] as? String,
-            let line = json["LineName"] as? String,
-            let direction = json["Direction"] as? String,
-            let modeStr = json["Mot"] as? String, let mode = Mode(rawValue: modeStr.lowercased()),
-            let scheduledTimeStr = json["ScheduledTime"] as? String, let scheduledTime = Date(from: scheduledTimeStr) else {
-                throw DVBError.decode
-        }
+extension Departure: Unmarshaling {
+    public init(object: MarshaledObject) throws {
+        self.id = try object <| "Id"
+        self.line = try object <| "LineName"
+        self.direction = try object <| "Direction"
+        self.mode = try object <| "Mot"
 
-        self.id = id
-        self.line = line
-        self.direction = direction
-        self.mode = mode
-        self.scheduledTime = scheduledTime
-        self.routeChanges = json["RouteChanges"] as? [String]
+        self.scheduledTime = try object <| "ScheduledTime"
+        self.routeChanges = try object <| "RouteChanges"
+        self.platform = try object <| "Platform"
+        self.diva = try object <| "Diva"
+        self.realTime = try object <| "RealTime"
 
-        if let platformJson = json["Platform"] {
-            let platform = try Platform(anyJSON: platformJson)
-            self.platform = platform
-        } else {
-            self.platform = nil
-        }
-
-        if let divaStr = json["Diva"] {
-            self.diva = try Diva(anyJSON: divaStr)
-        } else {
-            self.diva = nil
-        }
-
-        if let realTimeStr = json["RealTime"] as? String,
-            let realTime = Date(from: realTimeStr) {
-                self.realTime = realTime
-        } else {
-            self.realTime = nil
-        }
-
-        if let stateStr = json["State"] as? String {
-            self.state = State(stateStr)
+        let rawState: String? = try object <| "State"
+        if let stateString = rawState {
+            self.state = try Departure.State.value(from: stateString)
         } else {
             self.state = .unknown
         }
+    }
+}
+
+extension Departure.State: ValueType {
+    public static func value(from object: Any) throws -> Departure.State {
+        guard let stateStr = object as? String else {
+            throw MarshalError.typeMismatch(expected: String.self, actual: type(of: object))
+        }
+        return self.init(stateStr)
     }
 }
 

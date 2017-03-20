@@ -47,81 +47,13 @@ class DepartureTests: XCTestCase {
         XCTAssertEqual(dep.description, "85 Löbtau departing in 0 minutes.")
     }
 
-    func testFromJSON() {
-        let json: JSON = [
-            "Id": "65533512",
-            "LineName": "3",
-            "Direction": "Wilder Mann",
-            "Platform": [
-                "Name": "3",
-                "Type": "Platform"
-            ],
-            "Mot": "Tram",
-            "RealTime": "/Date(1487453700000+0100)/",
-            "ScheduledTime": "/Date(1487453700000+0100)/",
-            "State": "InTime",
-            "RouteChanges": [
-                "509223"
-            ],
-            "Diva": [
-                "Number": "11003",
-                "Network": "voe"
-            ]
-        ]
-
-        do {
-            let dep = try Departure(json: json)
-
-            XCTAssertEqual(dep.line, "3")
-            XCTAssertEqual(dep.direction, "Wilder Mann")
-            XCTAssertEqual(dep.state, .onTime)
-            XCTAssertEqual(dep.platform!.name, "3")
-            XCTAssertEqual(dep.routeChanges!.first!, "509223")
-        } catch {
-            XCTFail("Failed to instantiate departure from correct JSON")
-        }
-    }
-
-    func testFailingJSON() {
-        let json: JSON = [
-            "LineName": "3",
-            "Direction": "Wilder Mann",
-            "Platform": [
-                "Name": "3",
-                "Type": "Platform"
-            ],
-            "Mot": "Tram",
-            "RealTime": "/Date(1487453700000+0100)/",
-            "ScheduledTime": "/Date(1487453700000+0100)/",
-            "State": "InTime",
-            "RouteChanges": [
-                "509223"
-            ],
-            "Diva": [
-                "Number": "11003",
-                "Network": "voe"
-            ]
-        ]
-
-        do {
-            _ = try Departure(json: json)
-        } catch let e as DVBError {
-            switch e {
-            case .decode: break
-            default: XCTFail("Expected decoding error, got: \(e.localizedDescription)")
-            }
-        } catch {
-            XCTFail("Expected decoding error, got unexpected other error.")
-        }
-    }
-
     func testMonitor() {
         let e = expectation(description: "Find correct departures")
 
         Departure.monitor(stopWithId: "33000037") { result in
             switch result {
             case .failure(let error):
-                XCTFail("Failed with error: \(error.localizedDescription)")
+                XCTFail("Failed with error: \(error)")
             case .success(let response):
                 guard response.departures.count > 0 else {
                     XCTFail("Response contains no departures")
@@ -140,7 +72,7 @@ class DepartureTests: XCTestCase {
         Departure.monitor(stopWithName: "Hauptbahnhof") { result in
             switch result {
             case .failure(let error):
-                XCTFail("Failed with error: \(error.localizedDescription)")
+                XCTFail("Failed with error: \(error)")
             case .success(let response):
                 guard response.departures.count > 0 else {
                     XCTFail("Response contains no departures")
