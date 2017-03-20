@@ -59,7 +59,7 @@ extension Stop: ValueType {
             throw MarshalError.typeMismatch(expected: "X and Y should be number values", actual: (type(of: components[4]), type(of: components[5])))
         }
 
-        let region = components[2].isEmpty ? nil : components[2]
+        let region: String? = components[2].isEmpty ? nil : components[2]
         let location = x != 0 && y != 0 ? Coordinate(x: x, y: y) : nil
 
         return Stop(id: components[0], name: components[3], region: region, location: location)
