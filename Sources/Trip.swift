@@ -177,6 +177,7 @@ extension Trip.MapData: ValueType {
 extension Trip {
     public enum MobilityRestriction: String {
         case none = "None"
+        // TODO: Pull the other cases for this from the app
     }
 }
 
