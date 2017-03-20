@@ -3,13 +3,14 @@ import XCTest
 @testable import DVB
 
 class TripTests: XCTestCase {
-    func test3AtHbf() {
+    func test3FromAlpAtHbf() {
         let e = expectation(description: "Find a trip")
 
         // Kinda wanna keep this test readable, so let's do it synchronously.
         let semaphore = DispatchSemaphore(value: 0)
         var tripId = ""
 
+        // 33000013 -> Albertplatz
         Departure.monitor(stopWithId: "33000013") { result in
             switch result {
             case .failure(let error):
@@ -26,7 +27,8 @@ class TripTests: XCTestCase {
 
         semaphore.wait()
 
-        TripStop.get(forTripID: tripId, stopID: "33000264", atTime: Date()) { result in
+        // 33000028 -> Hauptbahnhof
+        TripStop.get(forTripID: tripId, stopID: "33000028", atTime: Date()) { result in
             switch result {
             case .failure(let error):
                 XCTFail("Failed with error: \(error)")
