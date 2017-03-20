@@ -7,13 +7,13 @@ public struct TripResponse {
 }
 
 public struct Trip {
-    public let priceLevel: Int
-    public let price: String
+    public let priceLevel: Int?
+    public let price: String?
     public let duration: Int
     public let interchanges: Int
     public let modeChain: [ModeElement]
-    public let fareZoneOrigin: Int
-    public let fareZoneDestination: Int
+    public let fareZoneOrigin: Int?
+    public let fareZoneDestination: Int?
     public let mapPdfId: String
     public let routeId: Int
     public let partialRoutes: [RoutePartial]
