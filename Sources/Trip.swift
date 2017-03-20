@@ -200,4 +200,23 @@ extension Trip {
 
         post(Endpoint.trips, data: data, completion: completion)
     }
+
+    /// Convenience function taking to stop names instead of IDs. Sends of two find requests first.
+    public static func find(from origin: String, to destination: String, time: Date = Date(), dateIsArrival: Bool = false, allowShortTermChanges: Bool = true, mobilityRestriction: MobilityRestriction = .none, completion: @escaping (Result<TripResponse>) -> Void) {
+        Stop.find(origin) { result in
+            switch result {
+            case .failure(let error): completion(Result(failure: error))
+            case .success(let response):
+                guard let originStop = response.stops.first else { completion(Result(failure: DVBError.response)); return }
+                Stop.find(destination) { result in
+                    switch result {
+                    case .failure(let error): completion(Result(failure: error))
+                    case .success(let response):
+                        guard let destinationStop = response.stops.first else { completion(Result(failure: DVBError.response)); return }
+                        Trip.find(fromWithID: originStop.id, toWithID: destinationStop.id, time: time, dateIsArrival: dateIsArrival, allowShortTermChanges: allowShortTermChanges, mobilityRestriction: mobilityRestriction, completion: completion)
+                    }
+                }
+            }
+        }
+    }
 }
