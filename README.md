@@ -35,19 +35,14 @@ github "kiliankoe/DVB"
 
 Be sure to check the [docs](http://cocoadocs.org/docsets/DVB) for more detailed information on how to use this library, but here are some quick examples for getting started right away.
 
+***Caveat***: Stops are always represented by their ID. You can get a stop's ID via `Stop.find()`. Some of the methods listed below offer convenience overloads, which are listed here since they look nicer. The downside to these is that they have to send of a find request for every stop first resulting in a significant overhead. Should you already have a stop's ID at hand I **strongly** suggest you use that instead.
+
 ### Monitor a single stop
 
 Monitor a single stop to see every bus, tram or whatever leaving this stop. The necessary stop id can be found by using the `find()` function.
 
 ```swift
-Departure.monitor(stopWithId: "33000037") { result in
-	guard let response = result.success else { return }
-	print(response.departures)
-}
-
-// For convenience you can also use the following function. Be aware though that
-// this sends of two subsequent requests, so it is preferable to monitor a stop's
-// ID if you already have it at hand.
+// See caveat above
 Departure.monitor(stopWithName: "Postplatz") { result in
 	guard let response = result.success else { return }
 	print(response.departures)
@@ -62,6 +57,18 @@ Say you're looking for "Helmholtzstraße". You can use the following to find a l
 Stop.find("Helmholtzstraße") { result in
 	guard let response = result.success else { return }
 	print(response.stops)
+}
+```
+
+### Find a route from A to B
+
+Want to go somewhere?
+
+```swift
+// See caveat above
+Trip.find(from: "Albertplatz", to: "Hauptbahnhof") { result in
+	guard let response = result.success else { return }
+	print(response.routes)
 }
 ```
 
@@ -82,12 +89,7 @@ RouteChange.get { result in
 Looking to find which lines service a specific stop? There's a func for that.
 
 ```swift
-Line.get(forStopId: "33000037") { result in
-	guard let response = result.success else { return }
-	print(response.lines)
-}
-
-// Also possible, with the same caveat as `Departure.monitor(name:)` above.
+// See caveat above
 Line.get(forStopName: "Postplatz") { result in 
 	guard let response = result.success else { return }
 	print(response.lines)
