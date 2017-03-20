@@ -1,83 +1,46 @@
 import Foundation
 import Marshal
 
-public enum Mode {
-    case tram
-    case citybus
-    case intercitybus
-    case suburbanrailway
-    case train
-    case cableway
-    case ferry
-    case hailedsharedtaxi
+public enum Mode: String {
+    case Tram
+    case CityBus
+    case IntercityBus
+    case SuburbanRailway
+    case Train
+    case Cableway
+    case Ferry
+    case HailedSharedTaxi
 
     static var all: [Mode] {
-        return [.tram, .citybus, .intercitybus, .suburbanrailway, .train, .cableway, .ferry, .hailedsharedtaxi]
+        return [.Tram, .CityBus, .IntercityBus, .SuburbanRailway, .Train, .Cableway, .Ferry, .HailedSharedTaxi]
     }
 
     public var identifier: String {
-        switch self {
-        case .tram:
-            return "Tram"
-        case .citybus:
-            return "CityBus"
-        case .intercitybus:
-            return "IntercityBus"
-        case .suburbanrailway:
-            return "SuburbanRailway"
-        case .train:
-            return "Train"
-        case .cableway:
-            return "Cableway"
-        case .ferry:
-            return "Ferry"
-        case .hailedsharedtaxi:
-            return "HailedSharedTaxi"
-        }
+        return self.rawValue
     }
 
     public var dvbIdentifier: String {
         switch self {
-        case .tram:
+        case .Tram:
             return "tram"
-        case .citybus:
+        case .CityBus:
             return "citybus"
-        case .intercitybus:
+        case .IntercityBus:
             return "bus"
-        case .suburbanrailway:
+        case .SuburbanRailway:
             return "metropolitan"
-        case .train:
+        case .Train:
             return "train"
-        case .cableway:
+        case .Cableway:
             return "lift"
-        case .ferry:
+        case .Ferry:
             return "ferry"
-        case .hailedsharedtaxi:
+        case .HailedSharedTaxi:
             return "alita"
         }
     }
 
     public var iconURL: URL {
         return URL(string: "https://www.dvb.de/assets/img/trans-icon/transport-\(self.dvbIdentifier).svg")!
-    }
-}
-
-extension Mode: ValueType {
-    public static func value(from object: Any) throws -> Mode {
-        guard let str = object as? String else {
-            throw MarshalError.typeMismatch(expected: String.self, actual: type(of: object))
-        }
-
-        switch str.lowercased() {
-        case "tram": return .tram
-        case "citybus": return .citybus
-        case "intercitybus": return .intercitybus
-        case "suburbanrailway": return .suburbanrailway
-        case "train": return .train
-        case "cableway": return .cableway
-        case "ferry": return .ferry
-        case "hailedsharedtaxi": return .hailedsharedtaxi
-        default: throw MarshalError.typeMismatch(expected: "Valid Mode String", actual: str)
-        }
     }
 }

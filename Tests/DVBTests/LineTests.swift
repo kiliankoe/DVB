@@ -6,7 +6,7 @@ class LineTests: XCTestCase {
     func testDescription() {
         let direction1 = Line.Direction(name: "Direction1", timetables: [])
         let direction2 = Line.Direction(name: "Direction2", timetables: [])
-        let line = Line(name: "Line", mode: .tram, changes: [], directions: [direction1, direction2], diva: nil)
+        let line = Line(name: "Line", mode: .Tram, changes: [], directions: [direction1, direction2], diva: nil)
 
         XCTAssertEqual(line.description, "Line: Direction1, Direction2")
     }
@@ -18,8 +18,8 @@ class LineTests: XCTestCase {
         let dir1 = Line.Direction(name: "Dir", timetables: [tt1])
         let dir2 = Line.Direction(name: "Dir", timetables: [tt2])
 
-        let line1 = Line(name: "1", mode: .tram, changes: nil, directions: [dir1], diva: nil)
-        let line2 = Line(name: "1", mode: .tram, changes: nil, directions: [dir2], diva: nil)
+        let line1 = Line(name: "1", mode: .Tram, changes: nil, directions: [dir1], diva: nil)
+        let line2 = Line(name: "1", mode: .Tram, changes: nil, directions: [dir2], diva: nil)
 
         XCTAssert(line1 == line2)
     }

@@ -87,8 +87,7 @@ extension Route.ModeElement: Unmarshaling {
         self.name = try object <| "Name"
         self.diva = try object <| "Diva"
 
-        let rawMode: String = try object <| "Type"
-        if let mode = try? Mode.value(from: rawMode) {
+        if let mode: Mode = try? object <| "Type" {
             self.mode = mode
         } else {
             self.mode = nil // FIXME: This breaks on "Footpath" for example. Should this even be a `Mode`?
