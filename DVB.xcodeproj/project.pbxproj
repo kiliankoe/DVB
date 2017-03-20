@@ -75,6 +75,13 @@
 		393F91E01E7FF051002CC8DE /* TripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F91DF1E7FF051002CC8DE /* TripTests.swift */; };
 		393F91E11E7FF051002CC8DE /* TripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F91DF1E7FF051002CC8DE /* TripTests.swift */; };
 		393F91E21E7FF051002CC8DE /* TripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F91DF1E7FF051002CC8DE /* TripTests.swift */; };
+		393F91E41E801140002CC8DE /* POI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F91E31E801140002CC8DE /* POI.swift */; };
+		393F91E51E801140002CC8DE /* POI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F91E31E801140002CC8DE /* POI.swift */; };
+		393F91E61E801140002CC8DE /* POI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F91E31E801140002CC8DE /* POI.swift */; };
+		393F91E71E801140002CC8DE /* POI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F91E31E801140002CC8DE /* POI.swift */; };
+		393F91E91E801951002CC8DE /* POITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F91E81E801951002CC8DE /* POITests.swift */; };
+		393F91EA1E801951002CC8DE /* POITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F91E81E801951002CC8DE /* POITests.swift */; };
+		393F91EB1E801951002CC8DE /* POITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F91E81E801951002CC8DE /* POITests.swift */; };
 		399D10901E5DEE7100BF7D2F /* ModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D108F1E5DEE7100BF7D2F /* ModeTests.swift */; };
 		399D10911E5DEE7100BF7D2F /* ModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D108F1E5DEE7100BF7D2F /* ModeTests.swift */; };
 		399D10921E5DEE7100BF7D2F /* ModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D108F1E5DEE7100BF7D2F /* ModeTests.swift */; };
@@ -152,6 +159,8 @@
 		393F91D81E7F75D1002CC8DE /* gausskrueger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = gausskrueger.framework; path = Carthage/Build/tvOS/gausskrueger.framework; sourceTree = "<group>"; };
 		393F91DA1E7FD880002CC8DE /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Trip.swift; path = Sources/Trip.swift; sourceTree = "<group>"; };
 		393F91DF1E7FF051002CC8DE /* TripTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TripTests.swift; path = Tests/DVBTests/TripTests.swift; sourceTree = "<group>"; };
+		393F91E31E801140002CC8DE /* POI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = POI.swift; path = Sources/POI.swift; sourceTree = "<group>"; };
+		393F91E81E801951002CC8DE /* POITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = POITests.swift; path = Tests/DVBTests/POITests.swift; sourceTree = "<group>"; };
 		399D108F1E5DEE7100BF7D2F /* ModeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModeTests.swift; path = Tests/DVBTests/ModeTests.swift; sourceTree = "<group>"; };
 		399D10931E5DF25600BF7D2F /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultTests.swift; path = Tests/DVBTests/ResultTests.swift; sourceTree = "<group>"; };
 		399D109C1E5F0DE500BF7D2F /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateTests.swift; path = Tests/DVBTests/DateTests.swift; sourceTree = "<group>"; };
@@ -258,6 +267,7 @@
 				39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */,
 				390C94481E64D44E00A1C15C /* RouteTests.swift */,
 				393F91DF1E7FF051002CC8DE /* TripTests.swift */,
+				393F91E81E801951002CC8DE /* POITests.swift */,
 				399D108F1E5DEE7100BF7D2F /* ModeTests.swift */,
 				399D10931E5DF25600BF7D2F /* ResultTests.swift */,
 				399D109C1E5F0DE500BF7D2F /* DateTests.swift */,
@@ -292,6 +302,7 @@
 				399D10F11E63BE4B00BF7D2F /* Line.swift */,
 				392C64261E647BCD00C2D0A5 /* Route.swift */,
 				393F91DA1E7FD880002CC8DE /* Trip.swift */,
+				393F91E31E801140002CC8DE /* POI.swift */,
 				392FA9F61E58FB4600E2EB0A /* Mode.swift */,
 				392C642B1E64801E00C2D0A5 /* Platform.swift */,
 				392FA9F21E58FB4600E2EB0A /* Diva.swift */,
@@ -703,6 +714,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				392C64271E647BCD00C2D0A5 /* Route.swift in Sources */,
+				393F91E41E801140002CC8DE /* POI.swift in Sources */,
 				39E981D21E5A62720075E3E1 /* RouteChange.swift in Sources */,
 				392FAA1A1E58FB4600E2EB0A /* Result.swift in Sources */,
 				392FA9FE1E58FB4600E2EB0A /* Departure.swift in Sources */,
@@ -727,6 +739,7 @@
 				393F91E01E7FF051002CC8DE /* TripTests.swift in Sources */,
 				3933DF651E58FD480043ABE1 /* DepartureTests.swift in Sources */,
 				399D10901E5DEE7100BF7D2F /* ModeTests.swift in Sources */,
+				393F91E91E801951002CC8DE /* POITests.swift in Sources */,
 				399D10941E5DF25600BF7D2F /* ResultTests.swift in Sources */,
 				39B3F7881E5A719700FCB27B /* LineTests.swift in Sources */,
 				3933DF6B1E58FD480043ABE1 /* StopTests.swift in Sources */,
@@ -740,6 +753,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				392C64291E647BCD00C2D0A5 /* Route.swift in Sources */,
+				393F91E61E801140002CC8DE /* POI.swift in Sources */,
 				39E981D41E5A62720075E3E1 /* RouteChange.swift in Sources */,
 				392FAA1C1E58FB4600E2EB0A /* Result.swift in Sources */,
 				392FAA001E58FB4600E2EB0A /* Departure.swift in Sources */,
@@ -761,6 +775,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				392C642A1E647BCD00C2D0A5 /* Route.swift in Sources */,
+				393F91E71E801140002CC8DE /* POI.swift in Sources */,
 				39E981D51E5A62720075E3E1 /* RouteChange.swift in Sources */,
 				392FAA1D1E58FB4600E2EB0A /* Result.swift in Sources */,
 				392FAA011E58FB4600E2EB0A /* Departure.swift in Sources */,
@@ -782,6 +797,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				392C64281E647BCD00C2D0A5 /* Route.swift in Sources */,
+				393F91E51E801140002CC8DE /* POI.swift in Sources */,
 				39E981D31E5A62720075E3E1 /* RouteChange.swift in Sources */,
 				392FAA1B1E58FB4600E2EB0A /* Result.swift in Sources */,
 				392FA9FF1E58FB4600E2EB0A /* Departure.swift in Sources */,
@@ -806,6 +822,7 @@
 				393F91E11E7FF051002CC8DE /* TripTests.swift in Sources */,
 				3933DF661E58FD480043ABE1 /* DepartureTests.swift in Sources */,
 				399D10911E5DEE7100BF7D2F /* ModeTests.swift in Sources */,
+				393F91EA1E801951002CC8DE /* POITests.swift in Sources */,
 				399D10951E5DF25600BF7D2F /* ResultTests.swift in Sources */,
 				39B3F7891E5A719700FCB27B /* LineTests.swift in Sources */,
 				3933DF6C1E58FD480043ABE1 /* StopTests.swift in Sources */,
@@ -822,6 +839,7 @@
 				393F91E21E7FF051002CC8DE /* TripTests.swift in Sources */,
 				3933DF671E58FD480043ABE1 /* DepartureTests.swift in Sources */,
 				399D10921E5DEE7100BF7D2F /* ModeTests.swift in Sources */,
+				393F91EB1E801951002CC8DE /* POITests.swift in Sources */,
 				399D10961E5DF25600BF7D2F /* ResultTests.swift in Sources */,
 				39B3F78A1E5A719700FCB27B /* LineTests.swift in Sources */,
 				3933DF6D1E58FD480043ABE1 /* StopTests.swift in Sources */,
@@ -1203,6 +1221,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/Mac";
 				INFOPLIST_FILE = Configs/DVBTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks ${SRCROOT}/Carthage/Build/Mac/";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -1219,6 +1238,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/Mac";
 				INFOPLIST_FILE = Configs/DVBTests.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks ${SRCROOT}/Carthage/Build/Mac/";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
