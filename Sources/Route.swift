@@ -23,11 +23,11 @@ public struct Route {
 
 extension Route {
     public struct ModeElement {
-        public let name: String
+        public let name: String?
         public let mode: Mode?
         public let direction: String?
         public let changes: [String]?
-        public let diva: Diva
+        public let diva: Diva?
     }
 
     public struct RoutePartial {
