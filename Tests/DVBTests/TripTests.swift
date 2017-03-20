@@ -10,8 +10,8 @@ class TripTests: XCTestCase {
         let semaphore = DispatchSemaphore(value: 0)
         var tripId = ""
 
-        // 33000013 -> Albertplatz
-        Departure.monitor(stopWithId: "33000013") { result in
+        let albertplatz = "33000013"
+        Departure.monitor(stopWithId: albertplatz) { result in
             switch result {
             case .failure(let error):
                 XCTFail("Failed with error: \(error)")
@@ -27,8 +27,8 @@ class TripTests: XCTestCase {
 
         semaphore.wait()
 
-        // 33000028 -> Hauptbahnhof
-        TripStop.get(forTripID: tripId, stopID: "33000028", atTime: Date()) { result in
+        let hauptbahnhof = "33000028"
+        TripStop.get(forTripID: tripId, stopID: hauptbahnhof, atTime: Date()) { result in
             switch result {
             case .failure(let error):
                 XCTFail("Failed with error: \(error)")
