@@ -68,6 +68,13 @@
 		393F91D51E7F75C7002CC8DE /* gausskrueger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393F91D41E7F75C7002CC8DE /* gausskrueger.framework */; };
 		393F91D71E7F75CC002CC8DE /* gausskrueger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393F91D61E7F75CC002CC8DE /* gausskrueger.framework */; };
 		393F91D91E7F75D1002CC8DE /* gausskrueger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393F91D81E7F75D1002CC8DE /* gausskrueger.framework */; };
+		393F91DB1E7FD880002CC8DE /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F91DA1E7FD880002CC8DE /* Trip.swift */; };
+		393F91DC1E7FD880002CC8DE /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F91DA1E7FD880002CC8DE /* Trip.swift */; };
+		393F91DD1E7FD880002CC8DE /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F91DA1E7FD880002CC8DE /* Trip.swift */; };
+		393F91DE1E7FD880002CC8DE /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F91DA1E7FD880002CC8DE /* Trip.swift */; };
+		393F91E01E7FF051002CC8DE /* TripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F91DF1E7FF051002CC8DE /* TripTests.swift */; };
+		393F91E11E7FF051002CC8DE /* TripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F91DF1E7FF051002CC8DE /* TripTests.swift */; };
+		393F91E21E7FF051002CC8DE /* TripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393F91DF1E7FF051002CC8DE /* TripTests.swift */; };
 		399D10901E5DEE7100BF7D2F /* ModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D108F1E5DEE7100BF7D2F /* ModeTests.swift */; };
 		399D10911E5DEE7100BF7D2F /* ModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D108F1E5DEE7100BF7D2F /* ModeTests.swift */; };
 		399D10921E5DEE7100BF7D2F /* ModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D108F1E5DEE7100BF7D2F /* ModeTests.swift */; };
@@ -143,6 +150,8 @@
 		393F91D41E7F75C7002CC8DE /* gausskrueger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = gausskrueger.framework; path = Carthage/Build/Mac/gausskrueger.framework; sourceTree = "<group>"; };
 		393F91D61E7F75CC002CC8DE /* gausskrueger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = gausskrueger.framework; path = Carthage/Build/watchOS/gausskrueger.framework; sourceTree = "<group>"; };
 		393F91D81E7F75D1002CC8DE /* gausskrueger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = gausskrueger.framework; path = Carthage/Build/tvOS/gausskrueger.framework; sourceTree = "<group>"; };
+		393F91DA1E7FD880002CC8DE /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Trip.swift; path = Sources/Trip.swift; sourceTree = "<group>"; };
+		393F91DF1E7FF051002CC8DE /* TripTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TripTests.swift; path = Tests/DVBTests/TripTests.swift; sourceTree = "<group>"; };
 		399D108F1E5DEE7100BF7D2F /* ModeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModeTests.swift; path = Tests/DVBTests/ModeTests.swift; sourceTree = "<group>"; };
 		399D10931E5DF25600BF7D2F /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultTests.swift; path = Tests/DVBTests/ResultTests.swift; sourceTree = "<group>"; };
 		399D109C1E5F0DE500BF7D2F /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateTests.swift; path = Tests/DVBTests/DateTests.swift; sourceTree = "<group>"; };
@@ -248,6 +257,7 @@
 				39B3F7871E5A719700FCB27B /* LineTests.swift */,
 				39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */,
 				390C94481E64D44E00A1C15C /* RouteTests.swift */,
+				393F91DF1E7FF051002CC8DE /* TripTests.swift */,
 				399D108F1E5DEE7100BF7D2F /* ModeTests.swift */,
 				399D10931E5DF25600BF7D2F /* ResultTests.swift */,
 				399D109C1E5F0DE500BF7D2F /* DateTests.swift */,
@@ -281,6 +291,7 @@
 				39E981D11E5A62720075E3E1 /* RouteChange.swift */,
 				399D10F11E63BE4B00BF7D2F /* Line.swift */,
 				392C64261E647BCD00C2D0A5 /* Route.swift */,
+				393F91DA1E7FD880002CC8DE /* Trip.swift */,
 				392FA9F61E58FB4600E2EB0A /* Mode.swift */,
 				392C642B1E64801E00C2D0A5 /* Platform.swift */,
 				392FA9F21E58FB4600E2EB0A /* Diva.swift */,
@@ -703,6 +714,7 @@
 				392FAA0A1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA1E1E58FB4600E2EB0A /* Stop.swift in Sources */,
 				392C642C1E64801E00C2D0A5 /* Platform.swift in Sources */,
+				393F91DB1E7FD880002CC8DE /* Trip.swift in Sources */,
 				392FAA121E58FB4600E2EB0A /* Mode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -712,6 +724,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				390C94491E64D44E00A1C15C /* RouteTests.swift in Sources */,
+				393F91E01E7FF051002CC8DE /* TripTests.swift in Sources */,
 				3933DF651E58FD480043ABE1 /* DepartureTests.swift in Sources */,
 				399D10901E5DEE7100BF7D2F /* ModeTests.swift in Sources */,
 				399D10941E5DF25600BF7D2F /* ResultTests.swift in Sources */,
@@ -738,6 +751,7 @@
 				392FAA0C1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA201E58FB4600E2EB0A /* Stop.swift in Sources */,
 				392C642E1E64801E00C2D0A5 /* Platform.swift in Sources */,
+				393F91DD1E7FD880002CC8DE /* Trip.swift in Sources */,
 				392FAA141E58FB4600E2EB0A /* Mode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -758,6 +772,7 @@
 				392FAA0D1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA211E58FB4600E2EB0A /* Stop.swift in Sources */,
 				392C642F1E64801E00C2D0A5 /* Platform.swift in Sources */,
+				393F91DE1E7FD880002CC8DE /* Trip.swift in Sources */,
 				392FAA151E58FB4600E2EB0A /* Mode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -778,6 +793,7 @@
 				392FAA0B1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA1F1E58FB4600E2EB0A /* Stop.swift in Sources */,
 				392C642D1E64801E00C2D0A5 /* Platform.swift in Sources */,
+				393F91DC1E7FD880002CC8DE /* Trip.swift in Sources */,
 				392FAA131E58FB4600E2EB0A /* Mode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -787,6 +803,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				390C944A1E64D44E00A1C15C /* RouteTests.swift in Sources */,
+				393F91E11E7FF051002CC8DE /* TripTests.swift in Sources */,
 				3933DF661E58FD480043ABE1 /* DepartureTests.swift in Sources */,
 				399D10911E5DEE7100BF7D2F /* ModeTests.swift in Sources */,
 				399D10951E5DF25600BF7D2F /* ResultTests.swift in Sources */,
@@ -802,6 +819,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				390C944B1E64D44E00A1C15C /* RouteTests.swift in Sources */,
+				393F91E21E7FF051002CC8DE /* TripTests.swift in Sources */,
 				3933DF671E58FD480043ABE1 /* DepartureTests.swift in Sources */,
 				399D10921E5DEE7100BF7D2F /* ModeTests.swift in Sources */,
 				399D10961E5DF25600BF7D2F /* ResultTests.swift in Sources */,

@@ -198,7 +198,7 @@ extension Route {
             ]
         ]
 
-        post(Endpoint.trips, data: data, completion: completion)
+        post(Endpoint.route, data: data, completion: completion)
     }
 
     /// Convenience function taking to stop names instead of IDs. Sends of two find requests first.
