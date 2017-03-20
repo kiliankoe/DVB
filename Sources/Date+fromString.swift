@@ -39,7 +39,9 @@ extension Date: ValueType {
         let hour = Double(nsstr.substring(with: match.rangeAt(3)))!
         let minute = Double(nsstr.substring(with: match.rangeAt(4)))!
 
-        let offset = (sign == "+" ? 1 : -1) * (hour * 3600.0 + minute * 60.0)
+        // It may appear that this behaviour is wrong, which it is. But since the API is returning "malformed" values here, we're accommodating accordingly.
+//        let offset = (sign == "+" ? 1 : -1) * (hour * 3600.0 + minute * 60.0)
+        let offset = 0.0
 
         return Date(timeIntervalSince1970: millisecond / 1000 + offset)
     }
