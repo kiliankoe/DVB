@@ -181,7 +181,7 @@ extension Trip {
 }
 
 extension Trip {
-    public static func find(originId: String, destinationId: String, time: Date = Date(), dateIsArrival: Bool = false, allowShortTermChanges: Bool = true, mobilityRestriction: MobilityRestriction = .none, completion: @escaping (Result<TripResponse>) -> Void) {
+    public static func find(fromWithID originId: String, toWithID destinationId: String, time: Date = Date(), dateIsArrival: Bool = false, allowShortTermChanges: Bool = true, mobilityRestriction: MobilityRestriction = .none, completion: @escaping (Result<TripResponse>) -> Void) {
         let data: [String: Any] = [
             "origin": originId,
             "destination": destinationId,
