@@ -8,6 +8,8 @@ public struct TripsResponse {
 
 public struct TripStop {
     public enum Position {
+        case previous
+        case current
         case next
     }
 
@@ -45,6 +47,8 @@ extension TripStop.Position: ValueType {
             throw MarshalError.typeMismatch(expected: String.self, actual: type(of: object))
         }
         switch rawVal.lowercased() {
+        case "previous": return .previous
+        case "current": return .current
         case "next": return .next
         default:
             throw MarshalError.typeMismatch(expected: "Valid Position String", actual: rawVal)
