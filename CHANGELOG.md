@@ -2,9 +2,17 @@
 
 ## [Unreleased]
 
+### Added
+
+- Trip Requests 🛤
+
 ### Fixed
 
 - `Depature.platform` is optional, as it should be
+
+### Changed
+
+- now dependent on Marshal, Carthage users will have to pull this in as well
 
 ## [2.1.0] - 2017-02-27
 
