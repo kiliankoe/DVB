@@ -1,5 +1,6 @@
 import Foundation
 import XCTest
+import gausskrueger
 @testable import DVB
 
 class StopTests: XCTestCase {
@@ -67,23 +68,23 @@ class StopTests: XCTestCase {
         waitForExpectations(timeout: 5)
     }
 
-    //    func testFindNear() {
-    //        let e = expectation(description: "Find stops near coordinate")
-    //
-    //        let coordinate = Coordinate(latitude: 51.031658, longitude: 13.727130)
-    //        Stop.findNear(coord: coordinate) { result in
-    //            switch result {
-    //            case .failure(let e):
-    //                XCTFail("Failed with error: \(e.localizedDescription)")
-    //            case .success(let response):
-    //                guard response.stops.count > 0 else {
-    //                    XCTFail("Response contains no stops")
-    //                    return
-    //                }
-    //                e.fulfill()
-    //            }
-    //        }
-    //
-    //        waitForExpectations(timeout: 5)
-    //    }
+        func testFindNear() {
+            let e = expectation(description: "Find stops near coordinate")
+
+            let coordinate = GKCoordinate(x: 4622550, y: 5660140)
+            Stop.findNear(coord: coordinate) { result in
+                switch result {
+                case .failure(let error):
+                    XCTFail("Failed with error: \(error)")
+                case .success(let response):
+                    guard response.stops.count > 0 else {
+                        XCTFail("Response contains no stops")
+                        return
+                    }
+                    e.fulfill()
+                }
+            }
+
+            waitForExpectations(timeout: 5)
+        }
 }

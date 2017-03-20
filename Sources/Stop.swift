@@ -79,23 +79,23 @@ extension Stop {
         post(Endpoint.pointfinder, data: data, completion: completion)
     }
 
-//    public static func findNear(lat: Double, lng: Double, completion: @escaping (Result<FindResponse>) -> Void) {
-//        let coord = Coordinate(latitude: lat, longitude: lng)
-//        findNear(coord: coord, completion: completion)
-//    }
-//
-//    public static func findNear(coord: Coordinate, completion: @escaping (Result<FindResponse>) -> Void) {
-//        guard let gk = wgs2gk(wgs: coord) else {
-//            completion(Result(failure: DVBError.coordinate))
-//            return
-//        }
-//        let data: [String: Any] = [
-//            "limit": 0,
-//            "assignedStops": true,
-//            "query": "coord:\(Int(gk.x)):\(Int(gk.y))"
-//        ]
-//        post(Endpoint.pointfinder, data: data, completion: completion)
-//    }
+    public static func findNear(lat: Double, lng: Double, completion: @escaping (Result<FindResponse>) -> Void) {
+        let coord = WGSCoordinate(lat: lat, lon: lng)
+        findNear(coord: coord, completion: completion)
+    }
+
+    public static func findNear(coord: Coordinate, completion: @escaping (Result<FindResponse>) -> Void) {
+        guard let gk = coord.asGK else {
+            completion(Result(failure: DVBError.coordinate))
+            return
+        }
+        let data: [String: Any] = [
+            "limit": 0,
+            "assignedStops": true,
+            "query": "coord:\(Int(gk.x)):\(Int(gk.y))"
+        ]
+        post(Endpoint.pointfinder, data: data, completion: completion)
+    }
 }
 
 // MARK: - Utility
