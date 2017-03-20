@@ -44,8 +44,8 @@ extension POI: ValueType {
 
 extension POI {
     public struct CoordRect {
-        public let northeast: WGSCoordinate
-        public let southwest: WGSCoordinate
+        public let northeast: Coordinate
+        public let southwest: Coordinate
     }
 
     public static func find(types: [POI.Kind] = POI.Kind.all, in rect: CoordRect, completion: @escaping (Result<POIResponse>) -> Void) {
