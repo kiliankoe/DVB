@@ -4,7 +4,7 @@ import gausskrueger
 
 public struct FindResponse {
     public let stops: [Stop]
-    public let expirationDate: Date?
+    public let expirationTime: Date?
 }
 
 /// A place where a bus, tram or whatever can stop.
@@ -20,7 +20,7 @@ public struct Stop {
 extension FindResponse: Unmarshaling {
     public init(object: MarshaledObject) throws {
         self.stops = try object <| "Points"
-        self.expirationDate = try object <| "ExpirationTime"
+        self.expirationTime = try object <| "ExpirationTime"
     }
 }
 

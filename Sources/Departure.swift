@@ -4,7 +4,7 @@ import Marshal
 public struct MonitorResponse {
     public let stopName: String
     public let place: String
-    public let expirationDate: Date
+    public let expirationTime: Date
     public let departures: [Departure]
 }
 
@@ -77,7 +77,7 @@ extension MonitorResponse: Unmarshaling {
     public init(object: MarshaledObject) throws {
         self.stopName = try object <| "Name"
         self.place = try object <| "Place"
-        self.expirationDate = try object <| "ExpirationTime"
+        self.expirationTime = try object <| "ExpirationTime"
         self.departures = try object <| "Departures"
     }
 }

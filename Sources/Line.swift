@@ -3,7 +3,7 @@ import Marshal
 
 public struct LinesResponse {
     public let lines: [Line]
-    public let expirationDate: Date
+    public let expirationTime: Date
 }
 
 public struct Line {
@@ -29,7 +29,7 @@ public struct Line {
 extension LinesResponse: Unmarshaling {
     public init(object: MarshaledObject) throws {
         self.lines = try object <| "Lines"
-        self.expirationDate = try object <| "ExpirationTime"
+        self.expirationTime = try object <| "ExpirationTime"
     }
 }
 
