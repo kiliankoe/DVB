@@ -10,7 +10,7 @@ class RouteChangeTests: XCTestCase {
         RouteChange.get { result in
             switch result {
             case .failure(let error):
-                XCTFail("Failed with error: \(error.localizedDescription)")
+                XCTFail("Failed with error: \(error)")
             case .success(let response):
                 guard response.lines.count > 0,
                     response.changes.count > 0 else {

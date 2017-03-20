@@ -52,8 +52,8 @@ class StopTests: XCTestCase {
 
         Stop.find("Helmholtz") { result in
             switch result {
-            case .failure(let e):
-                XCTFail("Failed with error: \(e.localizedDescription)")
+            case .failure(let error):
+                XCTFail("Failed with error: \(error)")
             case .success(let response):
                 guard let helmholtz = response.stops.first else {
                     XCTFail("Response contains no stops")

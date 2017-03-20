@@ -53,7 +53,7 @@ class DepartureTests: XCTestCase {
         Departure.monitor(stopWithId: "33000037") { result in
             switch result {
             case .failure(let error):
-                XCTFail("Failed with error: \(error.localizedDescription)")
+                XCTFail("Failed with error: \(error)")
             case .success(let response):
                 guard response.departures.count > 0 else {
                     XCTFail("Response contains no departures")
@@ -72,7 +72,7 @@ class DepartureTests: XCTestCase {
         Departure.monitor(stopWithName: "Hauptbahnhof") { result in
             switch result {
             case .failure(let error):
-                XCTFail("Failed with error: \(error.localizedDescription)")
+                XCTFail("Failed with error: \(error)")
             case .success(let response):
                 guard response.departures.count > 0 else {
                     XCTFail("Response contains no departures")

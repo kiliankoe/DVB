@@ -30,7 +30,7 @@ class LineTests: XCTestCase {
         Line.get(forStopId: "33000264") { result in
             switch result {
             case .failure(let error):
-                XCTFail("Failed with error: \(error.localizedDescription)")
+                XCTFail("Failed with error: \(error)")
             case .success(let response):
                 guard response.lines.count > 0 else {
                     XCTFail("Response contains no lines")
@@ -49,7 +49,7 @@ class LineTests: XCTestCase {
         Line.get(forStopName: "Postplatz") { result in
             switch result {
             case .failure(let error):
-                XCTFail("Failed with error: \(error.localizedDescription)")
+                XCTFail("Failed with error: \(error)")
             case .success(let response):
                 guard response.lines.count > 0 else {
                     XCTFail("Response contains no lines")
