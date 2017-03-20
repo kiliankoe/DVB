@@ -7,10 +7,10 @@ public struct TripsResponse {
 }
 
 public struct TripStop {
-    public enum Position {
-        case previous
-        case current
-        case next
+    public enum Position: String {
+        case Previous
+        case Current
+        case Next
     }
 
     public let id: String
@@ -38,21 +38,6 @@ extension TripStop: Unmarshaling {
         self.position = try object <| "Position"
         self.platform = try object <| "Platform"
         self.time = try object <| "Time"
-    }
-}
-
-extension TripStop.Position: ValueType {
-    public static func value(from object: Any) throws -> TripStop.Position {
-        guard let rawVal = object as? String else {
-            throw MarshalError.typeMismatch(expected: String.self, actual: type(of: object))
-        }
-        switch rawVal.lowercased() {
-        case "previous": return .previous
-        case "current": return .current
-        case "next": return .next
-        default:
-            throw MarshalError.typeMismatch(expected: "Valid Position String", actual: rawVal)
-        }
     }
 }
 
