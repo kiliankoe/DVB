@@ -6,4 +6,3 @@ let package = Package(
 		.Package(url: "https://github.com/utahiosmac/Marshal", majorVersion: 1, minor: 2)
 	]
 )
-
