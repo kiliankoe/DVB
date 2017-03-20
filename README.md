@@ -44,8 +44,8 @@ Monitor a single stop to see every bus, tram or whatever leaving this stop. The 
 ```swift
 // See caveat above
 Departure.monitor(stopWithName: "Postplatz") { result in
-	guard let response = result.success else { return }
-	print(response.departures)
+    guard let response = result.success else { return }
+    print(response.departures)
 }
 ```
 
@@ -55,8 +55,8 @@ Say you're looking for "Helmholtzstraße". You can use the following to find a l
 
 ```swift
 Stop.find("Helmholtzstraße") { result in
-	guard let response = result.success else { return }
-	print(response.stops)
+    guard let response = result.success else { return }
+    print(response.stops)
 }
 ```
 
@@ -67,8 +67,8 @@ Want to go somewhere?
 ```swift
 // See caveat above
 Trip.find(from: "Albertplatz", to: "Hauptbahnhof") { result in
-	guard let response = result.success else { return }
-	print(response.routes)
+    guard let response = result.success else { return }
+    print(response.routes)
 }
 ```
 
@@ -78,9 +78,9 @@ Want to see if your favorite lines are currently being re-routed due to construc
 
 ```swift
 RouteChange.get { result in
-	guard let response = result.success else { return }
-	print(response.lines)
-	print(response.changes)
+    guard let response = result.success else { return }
+    print(response.lines)
+    print(response.changes)
 }
 ```
 
@@ -90,9 +90,9 @@ Looking to find which lines service a specific stop? There's a func for that.
 
 ```swift
 // See caveat above
-Line.get(forStopName: "Postplatz") { result in 
-	guard let response = result.success else { return }
-	print(response.lines)
+Line.get(forStopName: "Postplatz") { result in
+    guard let response = result.success else { return }
+    print(response.lines)
 }
 ```
 
