@@ -2,12 +2,12 @@ import Foundation
 import Marshal
 import gausskrueger
 
-public struct TripResponse {
-    public let routes: [Trip]
+public struct RoutesResponse {
+    public let routes: [Route]
     public let sessionId: String
 }
 
-public struct Trip {
+public struct Route {
     public let priceLevel: Int?
     public let price: String?
     public let duration: Int
@@ -21,7 +21,7 @@ public struct Trip {
     public let mapData: [MapData]
 }
 
-extension Trip {
+extension Route {
     public struct ModeElement {
         public let name: String
         public let mode: Mode?
@@ -59,14 +59,14 @@ extension Trip {
 
 // MARK: - JSON
 
-extension TripResponse: Unmarshaling {
+extension RoutesResponse: Unmarshaling {
     public init(object: MarshaledObject) throws {
         self.sessionId = try object <| "SessionId"
         self.routes = try object <| "Routes"
     }
 }
 
-extension Trip: Unmarshaling {
+extension Route: Unmarshaling {
     public init(object: MarshaledObject) throws {
         self.priceLevel = try object <| "PriceLevel"
         self.price = try object <| "Price"
@@ -82,7 +82,7 @@ extension Trip: Unmarshaling {
     }
 }
 
-extension Trip.ModeElement: Unmarshaling {
+extension Route.ModeElement: Unmarshaling {
     public init(object: MarshaledObject) throws {
         self.name = try object <| "Name"
         self.diva = try object <| "Diva"
@@ -99,7 +99,7 @@ extension Trip.ModeElement: Unmarshaling {
     }
 }
 
-extension Trip.RoutePartial: Unmarshaling {
+extension Route.RoutePartial: Unmarshaling {
     public init(object: MarshaledObject) throws {
         self.mode = try object <| "Mot"
         self.mapDataIndex = try object <| "MapDataIndex"
@@ -110,7 +110,7 @@ extension Trip.RoutePartial: Unmarshaling {
     }
 }
 
-extension Trip.RouteStop: Unmarshaling {
+extension Route.RouteStop: Unmarshaling {
     public init(object: MarshaledObject) throws {
         self.arrivalTime = try object <| "ArrivalTime"
         self.departureTime = try object <| "DepartureTime"
@@ -128,8 +128,8 @@ extension Trip.RouteStop: Unmarshaling {
     }
 }
 
-extension Trip.MapData: ValueType {
-    public static func value(from object: Any) throws -> Trip.MapData {
+extension Route.MapData: ValueType {
+    public static func value(from object: Any) throws -> Route.MapData {
         guard let string = object as? String else {
             throw MarshalError.typeMismatch(expected: String.self, actual: type(of: object))
         }
@@ -174,15 +174,15 @@ extension Trip.MapData: ValueType {
 
 // MARK: - API
 
-extension Trip {
+extension Route {
     public enum MobilityRestriction: String {
         case none = "None"
         // TODO: Pull the other cases for this from the app
     }
 }
 
-extension Trip {
-    public static func find(fromWithID originId: String, toWithID destinationId: String, time: Date = Date(), dateIsArrival: Bool = false, allowShortTermChanges: Bool = true, mobilityRestriction: MobilityRestriction = .none, completion: @escaping (Result<TripResponse>) -> Void) {
+extension Route {
+    public static func find(fromWithID originId: String, toWithID destinationId: String, time: Date = Date(), dateIsArrival: Bool = false, allowShortTermChanges: Bool = true, mobilityRestriction: MobilityRestriction = .none, completion: @escaping (Result<RoutesResponse>) -> Void) {
         let data: [String: Any] = [
             "origin": originId,
             "destination": destinationId,
@@ -203,7 +203,7 @@ extension Trip {
     }
 
     /// Convenience function taking to stop names instead of IDs. Sends of two find requests first.
-    public static func find(from origin: String, to destination: String, time: Date = Date(), dateIsArrival: Bool = false, allowShortTermChanges: Bool = true, mobilityRestriction: MobilityRestriction = .none, completion: @escaping (Result<TripResponse>) -> Void) {
+    public static func find(from origin: String, to destination: String, time: Date = Date(), dateIsArrival: Bool = false, allowShortTermChanges: Bool = true, mobilityRestriction: MobilityRestriction = .none, completion: @escaping (Result<RoutesResponse>) -> Void) {
         Stop.find(origin) { result in
             switch result {
             case .failure(let error): completion(Result(failure: error))
@@ -214,7 +214,7 @@ extension Trip {
                     case .failure(let error): completion(Result(failure: error))
                     case .success(let response):
                         guard let destinationStop = response.stops.first else { completion(Result(failure: DVBError.response)); return }
-                        Trip.find(fromWithID: originStop.id, toWithID: destinationStop.id, time: time, dateIsArrival: dateIsArrival, allowShortTermChanges: allowShortTermChanges, mobilityRestriction: mobilityRestriction, completion: completion)
+                        Route.find(fromWithID: originStop.id, toWithID: destinationStop.id, time: time, dateIsArrival: dateIsArrival, allowShortTermChanges: allowShortTermChanges, mobilityRestriction: mobilityRestriction, completion: completion)
                     }
                 }
             }

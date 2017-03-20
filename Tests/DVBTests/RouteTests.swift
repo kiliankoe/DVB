@@ -2,11 +2,11 @@ import Foundation
 import XCTest
 @testable import DVB
 
-class TripTests: XCTestCase {
+class RouteTests: XCTestCase {
     func testFromAlbertToHbf() {
         let e = expectation(description: "Find a route")
 
-        Trip.find(fromWithID: "33000013", toWithID: "33000028") { result in
+        Route.find(fromWithID: "33000013", toWithID: "33000028") { result in
             switch result {
             case .failure(let error):
                 XCTFail("Failed with error: \(error)")
@@ -25,7 +25,7 @@ class TripTests: XCTestCase {
     func testFromPostToPirnaischer() {
         let e = expectation(description: "Find a route")
 
-        Trip.find(from: "Postplatz", to: "Pirnaischer Platz") { result in
+        Route.find(from: "Postplatz", to: "Pirnaischer Platz") { result in
             switch result {
             case .failure(let error):
                 XCTFail("Failed with error: \(error)")
