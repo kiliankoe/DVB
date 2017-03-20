@@ -42,10 +42,6 @@
 		392FAA0B1E58FB4600E2EB0A /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392FA9F41E58FB4600E2EB0A /* Endpoint.swift */; };
 		392FAA0C1E58FB4600E2EB0A /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392FA9F41E58FB4600E2EB0A /* Endpoint.swift */; };
 		392FAA0D1E58FB4600E2EB0A /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392FA9F41E58FB4600E2EB0A /* Endpoint.swift */; };
-		392FAA0E1E58FB4600E2EB0A /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392FA9F51E58FB4600E2EB0A /* FromJSON.swift */; };
-		392FAA0F1E58FB4600E2EB0A /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392FA9F51E58FB4600E2EB0A /* FromJSON.swift */; };
-		392FAA101E58FB4600E2EB0A /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392FA9F51E58FB4600E2EB0A /* FromJSON.swift */; };
-		392FAA111E58FB4600E2EB0A /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392FA9F51E58FB4600E2EB0A /* FromJSON.swift */; };
 		392FAA121E58FB4600E2EB0A /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392FA9F61E58FB4600E2EB0A /* Mode.swift */; };
 		392FAA131E58FB4600E2EB0A /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392FA9F61E58FB4600E2EB0A /* Mode.swift */; };
 		392FAA141E58FB4600E2EB0A /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392FA9F61E58FB4600E2EB0A /* Mode.swift */; };
@@ -141,7 +137,6 @@
 		392FA9F21E58FB4600E2EB0A /* Diva.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Diva.swift; path = Sources/Diva.swift; sourceTree = "<group>"; };
 		392FA9F31E58FB4600E2EB0A /* DVBError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DVBError.swift; path = Sources/DVBError.swift; sourceTree = "<group>"; };
 		392FA9F41E58FB4600E2EB0A /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Endpoint.swift; path = Sources/Endpoint.swift; sourceTree = "<group>"; };
-		392FA9F51E58FB4600E2EB0A /* FromJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FromJSON.swift; path = Sources/FromJSON.swift; sourceTree = "<group>"; };
 		392FA9F61E58FB4600E2EB0A /* Mode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mode.swift; path = Sources/Mode.swift; sourceTree = "<group>"; };
 		392FA9F71E58FB4600E2EB0A /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Network.swift; path = Sources/Network.swift; sourceTree = "<group>"; };
 		392FA9F81E58FB4600E2EB0A /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Sources/Result.swift; sourceTree = "<group>"; };
@@ -279,7 +274,6 @@
 			children = (
 				392FA9F41E58FB4600E2EB0A /* Endpoint.swift */,
 				392FA9F71E58FB4600E2EB0A /* Network.swift */,
-				392FA9F51E58FB4600E2EB0A /* FromJSON.swift */,
 				392FA9F81E58FB4600E2EB0A /* Result.swift */,
 			);
 			name = Network;
@@ -715,7 +709,6 @@
 				392FAA0A1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA1E1E58FB4600E2EB0A /* Stop.swift in Sources */,
 				399D10A11E5F826400BF7D2F /* CLCoordinate+GK.swift in Sources */,
-				392FAA0E1E58FB4600E2EB0A /* FromJSON.swift in Sources */,
 				392C642C1E64801E00C2D0A5 /* Platform.swift in Sources */,
 				392FAA121E58FB4600E2EB0A /* Mode.swift in Sources */,
 			);
@@ -752,7 +745,6 @@
 				392FAA0C1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA201E58FB4600E2EB0A /* Stop.swift in Sources */,
 				399D10A31E5F826400BF7D2F /* CLCoordinate+GK.swift in Sources */,
-				392FAA101E58FB4600E2EB0A /* FromJSON.swift in Sources */,
 				392C642E1E64801E00C2D0A5 /* Platform.swift in Sources */,
 				392FAA141E58FB4600E2EB0A /* Mode.swift in Sources */,
 			);
@@ -774,7 +766,6 @@
 				392FAA0D1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA211E58FB4600E2EB0A /* Stop.swift in Sources */,
 				399D10A41E5F826400BF7D2F /* CLCoordinate+GK.swift in Sources */,
-				392FAA111E58FB4600E2EB0A /* FromJSON.swift in Sources */,
 				392C642F1E64801E00C2D0A5 /* Platform.swift in Sources */,
 				392FAA151E58FB4600E2EB0A /* Mode.swift in Sources */,
 			);
@@ -796,7 +787,6 @@
 				392FAA0B1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA1F1E58FB4600E2EB0A /* Stop.swift in Sources */,
 				399D10A21E5F826400BF7D2F /* CLCoordinate+GK.swift in Sources */,
-				392FAA0F1E58FB4600E2EB0A /* FromJSON.swift in Sources */,
 				392C642D1E64801E00C2D0A5 /* Platform.swift in Sources */,
 				392FAA131E58FB4600E2EB0A /* Mode.swift in Sources */,
 			);

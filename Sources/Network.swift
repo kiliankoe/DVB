@@ -1,6 +1,8 @@
 import Foundation
 import Marshal
 
+typealias JSON = [String: Any]
+
 func get<T: Unmarshaling>(_ url: URL, completion: @escaping (Result<T>) -> Void) {
     var request = URLRequest(url: url)
     request.httpMethod = HTTPMethod.GET.rawValue
