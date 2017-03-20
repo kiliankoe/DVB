@@ -1,5 +1,6 @@
 import Foundation
 import Marshal
+import gausskrueger
 
 public struct FindResponse {
     public let stops: [Stop]
@@ -11,7 +12,7 @@ public struct Stop {
     public let id: String
     public let name: String
     public let region: String?
-    public let location: Coordinate?
+    public let location: WGSCoordinate?
 }
 
 // MARK: - JSON
@@ -36,7 +37,7 @@ extension Stop {
                 throw DVBError.decode
         }
         if x != 0, y != 0 {
-            self.location = Coordinate(x: x, y: y)
+            self.location = GKCoordinate(x: x, y: y).asWGS
         } else {
             self.location = nil
         }
@@ -59,7 +60,7 @@ extension Stop: ValueType {
         }
 
         let region: String? = components[2].isEmpty ? nil : components[2]
-        let location = x != 0 && y != 0 ? Coordinate(x: x, y: y) : nil
+        let location = x != 0 && y != 0 ? GKCoordinate(x: x, y: y).asWGS : nil
 
         return Stop(id: components[0], name: components[3], region: region, location: location)
     }

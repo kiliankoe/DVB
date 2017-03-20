@@ -1,5 +1,6 @@
 import Foundation
 import Marshal
+import gausskrueger
 
 public struct TripResponse {
     public let routes: [Trip]
@@ -46,13 +47,13 @@ extension Trip {
         public let type: String
         public let dataId: String
         public let platform: Platform?
-        public let coordinate: Coordinate?
+        public let coordinate: WGSCoordinate?
         public let mapPdfId: String?
     }
 
     public struct MapData {
         public let mode: String
-        public let points: [Coordinate]
+        public let points: [WGSCoordinate]
     }
 }
 
@@ -120,7 +121,7 @@ extension Trip.RouteStop: Unmarshaling {
 
         let latitude: Double = try object <| "Latitude"
         let longitude: Double = try object <| "Longitude"
-        self.coordinate = Coordinate(x: latitude, y: longitude)
+        self.coordinate = GKCoordinate(x: latitude, y: longitude).asWGS
 
         self.platform = try object <| "Platform"
         self.mapPdfId = try object <| "MapPdfId"
@@ -159,8 +160,7 @@ extension Trip.MapData: ValueType {
         }
 
         let coords = coordTuples
-            .map { Coordinate(x: $0.0, y: $0.1) }
-            .flatMap { $0 }
+            .flatMap { GKCoordinate(x: $0.0, y: $0.1).asWGS }
 
         //        if let mode = Mode(rawValue: first.lowercased()) {
         //            self.mode = mode
