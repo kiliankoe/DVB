@@ -77,10 +77,6 @@
 		399D109D1E5F0DE500BF7D2F /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D109C1E5F0DE500BF7D2F /* DateTests.swift */; };
 		399D109E1E5F0DE500BF7D2F /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D109C1E5F0DE500BF7D2F /* DateTests.swift */; };
 		399D109F1E5F0DE500BF7D2F /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D109C1E5F0DE500BF7D2F /* DateTests.swift */; };
-		399D10A11E5F826400BF7D2F /* CLCoordinate+GK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D10A01E5F826400BF7D2F /* CLCoordinate+GK.swift */; };
-		399D10A21E5F826400BF7D2F /* CLCoordinate+GK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D10A01E5F826400BF7D2F /* CLCoordinate+GK.swift */; };
-		399D10A31E5F826400BF7D2F /* CLCoordinate+GK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D10A01E5F826400BF7D2F /* CLCoordinate+GK.swift */; };
-		399D10A41E5F826400BF7D2F /* CLCoordinate+GK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D10A01E5F826400BF7D2F /* CLCoordinate+GK.swift */; };
 		399D10F21E63BE4B00BF7D2F /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D10F11E63BE4B00BF7D2F /* Line.swift */; };
 		399D10F31E63BE4B00BF7D2F /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D10F11E63BE4B00BF7D2F /* Line.swift */; };
 		399D10F41E63BE4B00BF7D2F /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399D10F11E63BE4B00BF7D2F /* Line.swift */; };
@@ -150,7 +146,6 @@
 		399D108F1E5DEE7100BF7D2F /* ModeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ModeTests.swift; path = Tests/DVBTests/ModeTests.swift; sourceTree = "<group>"; };
 		399D10931E5DF25600BF7D2F /* ResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultTests.swift; path = Tests/DVBTests/ResultTests.swift; sourceTree = "<group>"; };
 		399D109C1E5F0DE500BF7D2F /* DateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateTests.swift; path = Tests/DVBTests/DateTests.swift; sourceTree = "<group>"; };
-		399D10A01E5F826400BF7D2F /* CLCoordinate+GK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CLCoordinate+GK.swift"; path = "Sources/CLCoordinate+GK.swift"; sourceTree = "<group>"; };
 		399D10F11E63BE4B00BF7D2F /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Line.swift; path = Sources/Line.swift; sourceTree = "<group>"; };
 		39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteChangeTests.swift; path = Tests/DVBTests/RouteChangeTests.swift; sourceTree = "<group>"; };
 		39B3F7871E5A719700FCB27B /* LineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineTests.swift; path = Tests/DVBTests/LineTests.swift; sourceTree = "<group>"; };
@@ -264,7 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				392FA9F01E58FB4600E2EB0A /* Date+fromString.swift */,
-				399D10A01E5F826400BF7D2F /* CLCoordinate+GK.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -708,7 +702,6 @@
 				399D10F21E63BE4B00BF7D2F /* Line.swift in Sources */,
 				392FAA0A1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA1E1E58FB4600E2EB0A /* Stop.swift in Sources */,
-				399D10A11E5F826400BF7D2F /* CLCoordinate+GK.swift in Sources */,
 				392C642C1E64801E00C2D0A5 /* Platform.swift in Sources */,
 				392FAA121E58FB4600E2EB0A /* Mode.swift in Sources */,
 			);
@@ -744,7 +737,6 @@
 				399D10F41E63BE4B00BF7D2F /* Line.swift in Sources */,
 				392FAA0C1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA201E58FB4600E2EB0A /* Stop.swift in Sources */,
-				399D10A31E5F826400BF7D2F /* CLCoordinate+GK.swift in Sources */,
 				392C642E1E64801E00C2D0A5 /* Platform.swift in Sources */,
 				392FAA141E58FB4600E2EB0A /* Mode.swift in Sources */,
 			);
@@ -765,7 +757,6 @@
 				399D10F51E63BE4B00BF7D2F /* Line.swift in Sources */,
 				392FAA0D1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA211E58FB4600E2EB0A /* Stop.swift in Sources */,
-				399D10A41E5F826400BF7D2F /* CLCoordinate+GK.swift in Sources */,
 				392C642F1E64801E00C2D0A5 /* Platform.swift in Sources */,
 				392FAA151E58FB4600E2EB0A /* Mode.swift in Sources */,
 			);
@@ -786,7 +777,6 @@
 				399D10F31E63BE4B00BF7D2F /* Line.swift in Sources */,
 				392FAA0B1E58FB4600E2EB0A /* Endpoint.swift in Sources */,
 				392FAA1F1E58FB4600E2EB0A /* Stop.swift in Sources */,
-				399D10A21E5F826400BF7D2F /* CLCoordinate+GK.swift in Sources */,
 				392C642D1E64801E00C2D0A5 /* Platform.swift in Sources */,
 				392FAA131E58FB4600E2EB0A /* Mode.swift in Sources */,
 			);
