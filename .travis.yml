@@ -11,7 +11,7 @@ before_install:
 
 script:
 - xcodebuild test -scheme DVB-macOS | xcpretty
-- xcodebuild test -scheme DVB-iOS | xcpretty
+- xcodebuild test -scheme DVB-iOS -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3' | xcpretty
 - swift test
 # - pod lib lint
 
