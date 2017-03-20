@@ -1,5 +1,15 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- `Trip.find(from:to:)`
+
+### Fixed
+
+- A few `Trip` properties are now optional
+
 ## [2.2.0] - 2017-03-20
 
 ### Added
