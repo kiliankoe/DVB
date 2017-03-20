@@ -23,7 +23,6 @@ extension FindResponse: Unmarshaling {
     }
 }
 
-// TODO: Remove me
 extension Stop {
     init(string: String) throws {
         let components = string.components(separatedBy: "|")
