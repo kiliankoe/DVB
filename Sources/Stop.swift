@@ -80,7 +80,7 @@ extension Stop {
     }
 
     public static func findNear(lat: Double, lng: Double, completion: @escaping (Result<FindResponse>) -> Void) {
-        let coord = WGSCoordinate(lat: lat, lon: lng)
+        let coord = WGSCoordinate(latitude: lat, longitude: lng)
         findNear(coord: coord, completion: completion)
     }
 

@@ -21,5 +21,5 @@ Pod::Spec.new do |s|
   s.frameworks   = "Foundation"
 
   s.dependency 'Marshal', '~> 1.2.4'
-  s.dependency 'gausskrueger', '~> 0.2'
+  s.dependency 'gausskrueger', '~> 0.3'
 end
