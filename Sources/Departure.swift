@@ -75,31 +75,31 @@ extension Departure {
 
 extension MonitorResponse: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.stopName = try object <| "Name"
-        self.place = try object <| "Place"
-        self.expirationTime = try object <| "ExpirationTime"
-        self.departures = try object <| "Departures"
+        stopName = try object <| "Name"
+        place = try object <| "Place"
+        expirationTime = try object <| "ExpirationTime"
+        departures = try object <| "Departures"
     }
 }
 
 extension Departure: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.id = try object <| "Id"
-        self.line = try object <| "LineName"
-        self.direction = try object <| "Direction"
-        self.mode = try object <| "Mot"
+        id = try object <| "Id"
+        line = try object <| "LineName"
+        direction = try object <| "Direction"
+        mode = try object <| "Mot"
 
-        self.scheduledTime = try object <| "ScheduledTime"
-        self.routeChanges = try object <| "RouteChanges"
-        self.platform = try object <| "Platform"
-        self.diva = try object <| "Diva"
-        self.realTime = try object <| "RealTime"
+        scheduledTime = try object <| "ScheduledTime"
+        routeChanges = try object <| "RouteChanges"
+        platform = try object <| "Platform"
+        diva = try object <| "Diva"
+        realTime = try object <| "RealTime"
 
         let rawState: String? = try object <| "State"
         if let stateString = rawState {
-            self.state = try Departure.State.value(from: stateString)
+            state = try Departure.State.value(from: stateString)
         } else {
-            self.state = .unknown
+            state = .unknown
         }
     }
 }
@@ -123,7 +123,7 @@ extension Departure {
             "isarrival": dateType.requestVal,
             "limit": 0,
             "shorttermchanges": allowShorttermChanges,
-            "mot": modes.map {$0.identifier}
+            "mot": modes.map { $0.identifier },
         ]
 
         post(Endpoint.departureMonitor, data: data, completion: completion)
@@ -133,8 +133,8 @@ extension Departure {
     public static func monitor(stopWithName name: String, date: Date = Date(), dateType: DateType = .arrival, allowedModes modes: [Mode] = Mode.all, allowShorttermChanges: Bool = true, completion: @escaping (Result<MonitorResponse>) -> Void) {
         Stop.find(name) { result in
             switch result {
-            case .failure(let error): completion(Result(failure: error))
-            case .success(let response):
+            case let .failure(error): completion(Result(failure: error))
+            case let .success(response):
                 guard let first = response.stops.first else { completion(Result(failure: DVBError.response)); return }
                 Departure.monitor(stopWithId: first.id, date: date, dateType: dateType, allowedModes: modes, allowShorttermChanges: allowShorttermChanges, completion: completion)
             }
@@ -166,7 +166,7 @@ public func == (lhs: Departure.State, rhs: Departure.State) -> Bool {
     switch (lhs, rhs) {
     case (.onTime, .onTime): return true
     case (.delayed, .delayed): return true
-    case (.other(let x), .other(let y)): return x == y
+    case let (.other(x), .other(y)): return x == y
     case (.unknown, .unknown): return true
     default: return false
     }

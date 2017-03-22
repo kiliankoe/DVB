@@ -9,13 +9,13 @@ class RouteChangeTests: XCTestCase {
 
         RouteChange.get { result in
             switch result {
-            case .failure(let error):
+            case let .failure(error):
                 XCTFail("Failed with error: \(error)")
-            case .success(let response):
+            case let .success(response):
                 guard response.lines.count > 0,
                     response.changes.count > 0 else {
-                        XCTFail("Response contains no lines or changes")
-                        return
+                    XCTFail("Response contains no lines or changes")
+                    return
                 }
 
                 e.fulfill()

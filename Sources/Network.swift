@@ -38,8 +38,8 @@ private func dataTask<T: Unmarshaling>(request: URLRequest, completion: @escapin
 
         guard let data = data,
             let response = response as? HTTPURLResponse else {
-                completion(Result(failure: DVBError.network))
-                return
+            completion(Result(failure: DVBError.network))
+            return
         }
         guard response.statusCode / 100 == 2 else {
             completion(Result(failure: DVBError.server(statusCode: response.statusCode)))
@@ -53,8 +53,8 @@ private func dataTask<T: Unmarshaling>(request: URLRequest, completion: @escapin
             }
             guard let status = json["Status"] as? JSON,
                 let statusCode = status["Code"] as? String else {
-                    completion(Result(failure: DVBError.response))
-                    return
+                completion(Result(failure: DVBError.response))
+                return
             }
 
             if statusCode != "Ok" {

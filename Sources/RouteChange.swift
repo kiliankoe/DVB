@@ -53,21 +53,21 @@ extension RouteChange {
 
 extension RouteChangeResponse: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.lines = try object <| "Lines"
-        self.changes = try object <| "Changes"
+        lines = try object <| "Lines"
+        changes = try object <| "Changes"
     }
 }
 
 extension RouteChange: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.id = try object <| "Id"
-        self.kind = try object <| "Type"
-        self.tripRequestInclude = try object <| "TripRequestInclude"
-        self.title = try object <| "Title"
-        self.htmlDescription = try object <| "Description"
-        self.validityPeriods = try object <| "ValidityPeriods"
-        self.lineIds = try object <| "LineIds"
-        self.publishDate = try object <| "PublishDate"
+        id = try object <| "Id"
+        kind = try object <| "Type"
+        tripRequestInclude = try object <| "TripRequestInclude"
+        title = try object <| "Title"
+        htmlDescription = try object <| "Description"
+        validityPeriods = try object <| "ValidityPeriods"
+        lineIds = try object <| "LineIds"
+        publishDate = try object <| "PublishDate"
     }
 }
 
@@ -82,19 +82,19 @@ extension RouteChange.Kind: ValueType {
 
 extension RouteChange.Line: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.id = try object <| "Id"
-        self.name = try object <| "Name"
-        self.transportationCompany = try object <| "TransportationCompany"
-        self.mode = try object <| "Mot"
-        self.divas = try object <| "Divas"
-        self.changes = try object <| "Changes"
+        id = try object <| "Id"
+        name = try object <| "Name"
+        transportationCompany = try object <| "TransportationCompany"
+        mode = try object <| "Mot"
+        divas = try object <| "Divas"
+        changes = try object <| "Changes"
     }
 }
 
 extension RouteChange.ValidityPeriod: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.begin = try object <| "Begin"
-        self.end = try object <| "End"
+        begin = try object <| "Begin"
+        end = try object <| "End"
     }
 }
 
@@ -103,7 +103,7 @@ extension RouteChange.ValidityPeriod: Unmarshaling {
 extension RouteChange {
     public static func get(shortTerm: Bool = true, completion: @escaping (Result<RouteChangeResponse>) -> Void) {
         let data = [
-            "shortterm": shortTerm
+            "shortterm": shortTerm,
         ]
 
         post(Endpoint.routeChanges, data: data, completion: completion)
@@ -134,7 +134,7 @@ public func == (lhs: RouteChange.Kind, rhs: RouteChange.Kind) -> Bool {
     switch (lhs, rhs) {
     case (.scheduled, .scheduled): return true
     case (.amplifyingTransport, .amplifyingTransport): return true
-    case (.other(let x), .other(let y)): return x == y
+    case let (.other(x), .other(y)): return x == y
     default: return false
     }
 }

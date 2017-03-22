@@ -53,9 +53,9 @@ class StopTests: XCTestCase {
 
         Stop.find("Helmholtz") { result in
             switch result {
-            case .failure(let error):
+            case let .failure(error):
                 XCTFail("Failed with error: \(error)")
-            case .success(let response):
+            case let .success(response):
                 guard let helmholtz = response.stops.first else {
                     XCTFail("Response contains no stops")
                     return
@@ -68,23 +68,23 @@ class StopTests: XCTestCase {
         waitForExpectations(timeout: 5)
     }
 
-        func testFindNear() {
-            let e = expectation(description: "Find stops near coordinate")
+    func testFindNear() {
+        let e = expectation(description: "Find stops near coordinate")
 
-            let coordinate = GKCoordinate(x: 4622550, y: 5660140)
-            Stop.findNear(coord: coordinate) { result in
-                switch result {
-                case .failure(let error):
-                    XCTFail("Failed with error: \(error)")
-                case .success(let response):
-                    guard response.stops.count > 0 else {
-                        XCTFail("Response contains no stops")
-                        return
-                    }
-                    e.fulfill()
+        let coordinate = GKCoordinate(x: 4_622_550, y: 5_660_140)
+        Stop.findNear(coord: coordinate) { result in
+            switch result {
+            case let .failure(error):
+                XCTFail("Failed with error: \(error)")
+            case let .success(response):
+                guard response.stops.count > 0 else {
+                    XCTFail("Response contains no stops")
+                    return
                 }
+                e.fulfill()
             }
-
-            waitForExpectations(timeout: 5)
         }
+
+        waitForExpectations(timeout: 5)
+    }
 }

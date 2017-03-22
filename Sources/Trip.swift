@@ -25,19 +25,19 @@ public struct TripStop {
 
 extension TripsResponse: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.stops = try object <| "Stops"
-        self.expirationTime = try object <| "ExpirationTime"
+        stops = try object <| "Stops"
+        expirationTime = try object <| "ExpirationTime"
     }
 }
 
 extension TripStop: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.id = try object <| "Id"
-        self.place = try object <| "Place"
-        self.name = try object <| "Name"
-        self.position = try object <| "Position"
-        self.platform = try object <| "Platform"
-        self.time = try object <| "Time"
+        id = try object <| "Id"
+        place = try object <| "Place"
+        name = try object <| "Name"
+        position = try object <| "Position"
+        platform = try object <| "Platform"
+        time = try object <| "Time"
     }
 }
 
@@ -48,7 +48,7 @@ extension TripStop {
         let data: [String: Any] = [
             "tripid": tripID,
             "stopid": stopID,
-            "time": time.datestring
+            "time": time.datestring,
         ]
 
         post(Endpoint.trip, data: data, completion: completion)

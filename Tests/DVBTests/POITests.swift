@@ -7,15 +7,15 @@ class POITests: XCTestCase {
     func testSearchAltstadt() {
         let e = expectation(description: "Find some POIs")
 
-        let northeast = GKCoordinate(x: 5660198, y: 4622956)
-        let southwest = GKCoordinate(x: 5659219, y: 4622294)
+        let northeast = GKCoordinate(x: 5_660_198, y: 4_622_956)
+        let southwest = GKCoordinate(x: 5_659_219, y: 4_622_294)
         let coordRect = POI.CoordRect(northeast: northeast, southwest: southwest)
 
         POI.find(in: coordRect) { result in
             switch result {
-            case .failure(let error):
+            case let .failure(error):
                 XCTFail("Failed with error: \(error)")
-            case .success(let response):
+            case let .success(response):
                 guard response.pins.count > 0 else {
                     XCTFail("Found no POIs")
                     return

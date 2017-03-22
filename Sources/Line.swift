@@ -28,32 +28,32 @@ public struct Line {
 
 extension LinesResponse: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.lines = try object <| "Lines"
-        self.expirationTime = try object <| "ExpirationTime"
+        lines = try object <| "Lines"
+        expirationTime = try object <| "ExpirationTime"
     }
 }
 
 extension Line: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.name = try object <| "Name"
-        self.mode = try object <| "Mot"
-        self.directions = try object <| "Directions"
-        self.changes = try object <| "Changes"
-        self.diva = try object <| "Diva"
+        name = try object <| "Name"
+        mode = try object <| "Mot"
+        directions = try object <| "Directions"
+        changes = try object <| "Changes"
+        diva = try object <| "Diva"
     }
 }
 
 extension Line.Direction: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.name = try object <| "Name"
-        self.timetables = try object <| "TimeTables"
+        name = try object <| "Name"
+        timetables = try object <| "TimeTables"
     }
 }
 
 extension Line.TimeTable: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.name = try object <| "Name"
-        self.id = try object <| "Id"
+        name = try object <| "Name"
+        id = try object <| "Id"
     }
 }
 
@@ -62,7 +62,7 @@ extension Line.TimeTable: Unmarshaling {
 extension Line {
     public static func get(forStopId id: String, completion: @escaping (Result<LinesResponse>) -> Void) {
         let data = [
-            "stopid": id
+            "stopid": id,
         ]
         post(Endpoint.lines, data: data, completion: completion)
     }
@@ -71,8 +71,8 @@ extension Line {
     public static func get(forStopName name: String, completion: @escaping (Result<LinesResponse>) -> Void) {
         Stop.find(name) { result in
             switch result {
-            case .failure(let error): completion(Result(failure: error))
-            case .success(let response):
+            case let .failure(error): completion(Result(failure: error))
+            case let .success(response):
                 guard let first = response.stops.first else {
                     completion(Result(failure: DVBError.response))
                     return

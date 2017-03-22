@@ -14,29 +14,29 @@ public enum Result<Value> {
 
     public func get() throws -> Value {
         switch self {
-        case .success(let x): return x
-        case .failure(let e): throw e
+        case let .success(x): return x
+        case let .failure(e): throw e
         }
     }
 
     public var success: Value? {
         switch self {
-        case .success(let x): return x
-        case .failure(_): return nil
+        case let .success(x): return x
+        case .failure: return nil
         }
     }
 
     public var failure: Error? {
         switch self {
-        case .success(_): return nil
-        case .failure(let e): return e
+        case .success: return nil
+        case let .failure(e): return e
         }
     }
 }
 
 public func ?? <T>(result: Result<T>, defaultValue: @autoclosure () -> T) -> T {
     switch result {
-    case .success(let x): return x
-    case .failure(_): return defaultValue()
+    case let .success(x): return x
+    case .failure: return defaultValue()
     }
 }

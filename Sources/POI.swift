@@ -25,8 +25,8 @@ extension POI {
 
 extension POIResponse: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.pins = try object <| "Pins"
-        self.expirationTime = try object <| "ExpirationTime"
+        pins = try object <| "Pins"
+        expirationTime = try object <| "ExpirationTime"
     }
 }
 
@@ -63,7 +63,7 @@ extension POI {
             "nelat": gkNECoord.x,
             "nelng": gkNECoord.y,
             "showlines": true,
-            "pintypes": types.map { $0.rawValue }
+            "pintypes": types.map { $0.rawValue },
         ]
 
         post(Endpoint.poiSearch, data: data, completion: completion)

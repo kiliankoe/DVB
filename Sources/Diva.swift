@@ -8,7 +8,7 @@ public struct Diva {
 
 extension Diva: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.number = try object <| "Number"
-        self.network = try object <| "Network"
+        number = try object <| "Number"
+        network = try object <| "Network"
     }
 }

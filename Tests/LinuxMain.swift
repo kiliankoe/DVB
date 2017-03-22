@@ -14,5 +14,5 @@ XCTMain([
     testCase(LineTests.allTests),
     testCase(MonitorTests.allTests),
     testCase(RouteChangeTests.allTests),
-    testCase(RouteChangesTests.allTests)
+    testCase(RouteChangesTests.allTests),
 ])

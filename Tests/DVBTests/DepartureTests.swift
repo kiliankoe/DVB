@@ -52,9 +52,9 @@ class DepartureTests: XCTestCase {
 
         Departure.monitor(stopWithId: "33000037") { result in
             switch result {
-            case .failure(let error):
+            case let .failure(error):
                 XCTFail("Failed with error: \(error)")
-            case .success(let response):
+            case let .success(response):
                 guard response.departures.count > 0 else {
                     XCTFail("Response contains no departures")
                     return
@@ -71,9 +71,9 @@ class DepartureTests: XCTestCase {
 
         Departure.monitor(stopWithName: "Hauptbahnhof") { result in
             switch result {
-            case .failure(let error):
+            case let .failure(error):
                 XCTFail("Failed with error: \(error)")
-            case .success(let response):
+            case let .success(response):
                 guard response.departures.count > 0 else {
                     XCTFail("Response contains no departures")
                     return
@@ -90,16 +90,16 @@ class DepartureTests: XCTestCase {
 
         Departure.monitor(stopWithId: "1337") { result in
             switch result {
-            case .failure(let error):
+            case let .failure(error):
                 guard let error = error as? DVBError,
                     case let .request(status, message) = error else {
-                        XCTFail("Error is not of correct type with metadata.")
-                        return
+                    XCTFail("Error is not of correct type with metadata.")
+                    return
                 }
                 XCTAssertEqual(status, "ServiceError")
                 XCTAssertEqual(message, "stop invalid")
                 e.fulfill()
-            case .success(_):
+            case .success:
                 XCTFail("Shouldn't get successful response for non-existant stop ID.")
             }
         }

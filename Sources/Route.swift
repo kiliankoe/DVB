@@ -61,69 +61,69 @@ extension Route {
 
 extension RoutesResponse: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.sessionId = try object <| "SessionId"
-        self.routes = try object <| "Routes"
+        sessionId = try object <| "SessionId"
+        routes = try object <| "Routes"
     }
 }
 
 extension Route: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.priceLevel = try object <| "PriceLevel"
-        self.price = try object <| "Price"
-        self.duration = try object <| "Duration"
-        self.interchanges = try object <| "Interchanges"
-        self.modeChain = try object <| "MotChain"
-        self.fareZoneOrigin = try object <| "FareZoneOrigin"
-        self.fareZoneDestination = try object <| "FareZoneDestination"
-        self.mapPdfId = try object <| "MapPdfId"
-        self.routeId = try object <| "RouteId"
-        self.partialRoutes = try object <| "PartialRoutes"
-        self.mapData = try object <| "MapData"
+        priceLevel = try object <| "PriceLevel"
+        price = try object <| "Price"
+        duration = try object <| "Duration"
+        interchanges = try object <| "Interchanges"
+        modeChain = try object <| "MotChain"
+        fareZoneOrigin = try object <| "FareZoneOrigin"
+        fareZoneDestination = try object <| "FareZoneDestination"
+        mapPdfId = try object <| "MapPdfId"
+        routeId = try object <| "RouteId"
+        partialRoutes = try object <| "PartialRoutes"
+        mapData = try object <| "MapData"
     }
 }
 
 extension Route.ModeElement: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.name = try object <| "Name"
-        self.diva = try object <| "Diva"
+        name = try object <| "Name"
+        diva = try object <| "Diva"
 
         if let mode: Mode = try? object <| "Type" {
             self.mode = mode
         } else {
-            self.mode = nil // FIXME: This breaks on "Footpath" for example. Should this even be a `Mode`?
+            mode = nil // FIXME: This breaks on "Footpath" for example. Should this even be a `Mode`?
         }
 
-        self.direction = try object <| "Direction"
-        self.changes = try object <| "Changes"
+        direction = try object <| "Direction"
+        changes = try object <| "Changes"
     }
 }
 
 extension Route.RoutePartial: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.mode = try object <| "Mot"
-        self.mapDataIndex = try object <| "MapDataIndex"
-        self.shift = try object <| "Shift"
-        self.duration = try object <| "Duration"
-        self.regularStops = try object <| "RegularStops"
-        self.partialRouteId = try object <| "PartialRouteId"
+        mode = try object <| "Mot"
+        mapDataIndex = try object <| "MapDataIndex"
+        shift = try object <| "Shift"
+        duration = try object <| "Duration"
+        regularStops = try object <| "RegularStops"
+        partialRouteId = try object <| "PartialRouteId"
     }
 }
 
 extension Route.RouteStop: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.arrivalTime = try object <| "ArrivalTime"
-        self.departureTime = try object <| "DepartureTime"
-        self.place = try object <| "Place"
-        self.name = try object <| "Name"
-        self.type = try object <| "Type"
-        self.dataId = try object <| "DataId"
+        arrivalTime = try object <| "ArrivalTime"
+        departureTime = try object <| "DepartureTime"
+        place = try object <| "Place"
+        name = try object <| "Name"
+        type = try object <| "Type"
+        dataId = try object <| "DataId"
 
         let latitude: Double = try object <| "Latitude"
         let longitude: Double = try object <| "Longitude"
-        self.coordinate = GKCoordinate(x: latitude, y: longitude).asWGS
+        coordinate = GKCoordinate(x: latitude, y: longitude).asWGS
 
-        self.platform = try object <| "Platform"
-        self.mapPdfId = try object <| "MapPdfId"
+        platform = try object <| "Platform"
+        mapPdfId = try object <| "MapPdfId"
     }
 }
 
@@ -154,8 +154,8 @@ extension Route.MapData: ValueType {
 
         // I'd love an implementation of `chunk` in the stdlib...
         var coordTuples = [(Double, Double)]()
-        for i in 0..<gkCoords.count - 1 {
-            coordTuples.append((gkCoords[i], gkCoords[i+1]))
+        for i in 0 ..< gkCoords.count - 1 {
+            coordTuples.append((gkCoords[i], gkCoords[i + 1]))
         }
 
         let coords = coordTuples
@@ -194,8 +194,8 @@ extension Route {
                 "maxChanges": "Unlimited",
                 "walkingSpeed": "Normal",
                 "footpathToStop": 5,
-                "mot": Mode.all.map { $0.identifier }
-            ]
+                "mot": Mode.all.map { $0.identifier },
+            ],
         ]
 
         post(Endpoint.route, data: data, completion: completion)
@@ -205,13 +205,13 @@ extension Route {
     public static func find(from origin: String, to destination: String, time: Date = Date(), dateIsArrival: Bool = false, allowShortTermChanges: Bool = true, mobilityRestriction: MobilityRestriction = .none, completion: @escaping (Result<RoutesResponse>) -> Void) {
         Stop.find(origin) { result in
             switch result {
-            case .failure(let error): completion(Result(failure: error))
-            case .success(let response):
+            case let .failure(error): completion(Result(failure: error))
+            case let .success(response):
                 guard let originStop = response.stops.first else { completion(Result(failure: DVBError.response)); return }
                 Stop.find(destination) { result in
                     switch result {
-                    case .failure(let error): completion(Result(failure: error))
-                    case .success(let response):
+                    case let .failure(error): completion(Result(failure: error))
+                    case let .success(response):
                         guard let destinationStop = response.stops.first else { completion(Result(failure: DVBError.response)); return }
                         Route.find(fromWithID: originStop.id, toWithID: destinationStop.id, time: time, dateIsArrival: dateIsArrival, allowShortTermChanges: allowShortTermChanges, mobilityRestriction: mobilityRestriction, completion: completion)
                     }

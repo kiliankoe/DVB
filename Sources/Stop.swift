@@ -19,8 +19,8 @@ public struct Stop {
 
 extension FindResponse: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.stops = try object <| "Points"
-        self.expirationTime = try object <| "ExpirationTime"
+        stops = try object <| "Points"
+        expirationTime = try object <| "ExpirationTime"
     }
 }
 
@@ -28,18 +28,18 @@ extension Stop {
     init(string: String) throws {
         let components = string.components(separatedBy: "|")
         guard components.count == 9 else { throw DVBError.decode }
-        self.id = components[0]
-        self.region = components[2].isEmpty ? nil : components[2]
-        self.name = components[3]
+        id = components[0]
+        region = components[2].isEmpty ? nil : components[2]
+        name = components[3]
 
         guard let x = Double(components[5]),
             let y = Double(components[4]) else {
-                throw DVBError.decode
+            throw DVBError.decode
         }
         if x != 0, y != 0 {
-            self.location = GKCoordinate(x: x, y: y).asWGS
+            location = GKCoordinate(x: x, y: y).asWGS
         } else {
-            self.location = nil
+            location = nil
         }
     }
 }
@@ -74,7 +74,7 @@ extension Stop {
             "limit": 0,
             "query": query,
             "stopsOnly": true,
-            "dvb": true
+            "dvb": true,
         ]
         post(Endpoint.pointfinder, data: data, completion: completion)
     }
@@ -92,7 +92,7 @@ extension Stop {
         let data: [String: Any] = [
             "limit": 0,
             "assignedStops": true,
-            "query": "coord:\(Int(gk.x)):\(Int(gk.y))"
+            "query": "coord:\(Int(gk.x)):\(Int(gk.y))",
         ]
         post(Endpoint.pointfinder, data: data, completion: completion)
     }
@@ -111,11 +111,11 @@ extension Stop: CustomStringConvertible {
 
 extension Stop: Equatable {}
 public func == (lhs: Stop, rhs: Stop) -> Bool {
-	return lhs.hashValue == rhs.hashValue
+    return lhs.hashValue == rhs.hashValue
 }
 
 extension Stop: Hashable {
-	public var hashValue: Int {
+    public var hashValue: Int {
         return self.id.hashValue
-	}
+    }
 }

@@ -29,7 +29,7 @@ extension Date: ValueType {
 
         // swiftlint:disable:next force_try
         let regex = try! NSRegularExpression(pattern: "/Date\\((\\d+)(\\+|-)(\\d{2})(\\d{2})\\)/", options: [])
-        guard let match = regex.firstMatch(in: dateString, options: [], range: NSRange(location: 0, length: dateString.characters.count))  else {
+        guard let match = regex.firstMatch(in: dateString, options: [], range: NSRange(location: 0, length: dateString.characters.count)) else {
             throw MarshalError.typeMismatch(expected: "Valid Date String", actual: dateString)
         }
 
@@ -40,7 +40,7 @@ extension Date: ValueType {
         let minute = Double(nsstr.substring(with: match.rangeAt(4)))!
 
         // It may appear that this behaviour is wrong, which it is. But since the API is returning "malformed" values here, we're accommodating accordingly.
-//        let offset = (sign == "+" ? 1 : -1) * (hour * 3600.0 + minute * 60.0)
+        //        let offset = (sign == "+" ? 1 : -1) * (hour * 3600.0 + minute * 60.0)
         let offset = 0.0
 
         return Date(timeIntervalSince1970: millisecond / 1000 + offset)

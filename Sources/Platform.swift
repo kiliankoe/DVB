@@ -8,7 +8,7 @@ public struct Platform {
 
 extension Platform: Unmarshaling {
     public init(object: MarshaledObject) throws {
-        self.name = try object <| "Name"
-        self.type = try object <| "Type"
+        name = try object <| "Name"
+        type = try object <| "Type"
     }
 }
