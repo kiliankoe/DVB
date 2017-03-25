@@ -2,14 +2,8 @@ import Foundation
 import Marshal
 
 public enum Mode: String {
-    case Tram
-    case CityBus
-    case IntercityBus
-    case SuburbanRailway
-    case Train
-    case Cableway
-    case Ferry
-    case HailedSharedTaxi
+    // swiftlint:disable:next identifier_name
+    case Tram, CityBus, IntercityBus, SuburbanRailway, Train, Cableway, Ferry, HailedSharedTaxi
 
     static var all: [Mode] {
         return [.Tram, .CityBus, .IntercityBus, .SuburbanRailway, .Train, .Cableway, .Ferry, .HailedSharedTaxi]

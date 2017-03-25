@@ -13,6 +13,7 @@ public struct POI {
 
 extension POI {
     public enum Kind: String {
+        // swiftlint:disable:next identifier_name
         case RentABike, Stop, Poi, CarSharing, TicketMachine, Platform, ParkAndRide
 
         public static var all: [Kind] {

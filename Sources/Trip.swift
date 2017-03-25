@@ -8,9 +8,8 @@ public struct TripsResponse {
 
 public struct TripStop {
     public enum Position: String {
-        case Previous
-        case Current
-        case Next
+        // swiftlint:disable:next identifier_name
+        case Previous, Current, Next
     }
 
     public let id: String
