@@ -1,6 +1,7 @@
 import Foundation
 import XCTest
 import gausskrueger
+import DVR
 @testable import DVB
 
 class StopTests: XCTestCase {
@@ -51,7 +52,9 @@ class StopTests: XCTestCase {
     func testFindHelmholtzQuery() {
         let e = expectation(description: "Find correct stop")
 
-        Stop.find("Helmholtz") { result in
+        let session = Session(cassetteName: "findhelmholtzquery")
+
+        Stop.find("Helmholtz", session: session) { result in
             switch result {
             case let .failure(error):
                 XCTFail("Failed with error: \(error)")
@@ -71,8 +74,10 @@ class StopTests: XCTestCase {
     func testFindNear() {
         let e = expectation(description: "Find stops near coordinate")
 
+        let session = Session(cassetteName: "findnear")
+
         let coordinate = GKCoordinate(x: 4_622_550, y: 5_660_140)
-        Stop.findNear(coord: coordinate) { result in
+        Stop.findNear(coord: coordinate, session: session) { result in
             switch result {
             case let .failure(error):
                 XCTFail("Failed with error: \(error)")
