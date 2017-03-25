@@ -1,0 +1,50 @@
+{
+  "interactions" : [
+    {
+      "response" : {
+        "status" : 200,
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8",
+          "Content-Length" : "493",
+          "Cache-Control" : "private",
+          "Access-Control-Allow-Origin" : "*",
+          "Vary" : "Accept-Encoding",
+          "Date" : "Sat, 25 Mar 2017 13:53:24 GMT",
+          "Content-Encoding" : "gzip"
+        },
+        "body" : {
+          "PointStatus" : "Identified",
+          "Status" : {
+            "Code" : "Ok"
+          },
+          "Points" : [
+            "coord:4622546:499858:NAV4:Antonstraße 2|c||Antonstraße 2|5660142|4622546|0||",
+            "33000013|||Albertplatz|5660122|4622537|22||",
+            "33000016|||Bahnhof Neustadt|5660306|4622222|410||",
+            "33000012|||Bautzner Straße \/ Rothenburger Straße|5660084|4622915|432||",
+            "33000261|||Louisenstraße|5660629|4622586|489||",
+            "33000018|||Palaisplatz|5659774|4622037|644||",
+            "33000011|||Rosa-Luxemburg-Platz|5659698|4622927|658||",
+            "33000014|||Carolaplatz|5659526|4622505|671||"
+          ],
+          "ExpirationTime" : "\/Date(1490530657795+0200)\/"
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/tr\/pointfinder"
+      },
+      "recorded_at" : 1490450005.341607,
+      "request" : {
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8"
+        },
+        "method" : "POST",
+        "body" : {
+          "query" : "coord:4622550:5660140",
+          "limit" : 0,
+          "assignedStops" : true
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/tr\/pointfinder"
+      }
+    }
+  ],
+  "name" : "findnear"
+}

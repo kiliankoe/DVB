@@ -101,6 +101,13 @@
 		39B3F7881E5A719700FCB27B /* LineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3F7871E5A719700FCB27B /* LineTests.swift */; };
 		39B3F7891E5A719700FCB27B /* LineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3F7871E5A719700FCB27B /* LineTests.swift */; };
 		39B3F78A1E5A719700FCB27B /* LineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39B3F7871E5A719700FCB27B /* LineTests.swift */; };
+		39CF5B471E86AC2E00599432 /* DVR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39CF5B461E86AC2E00599432 /* DVR.framework */; };
+		39CF5B4E1E86AD9700599432 /* findhelmholtzquery.json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B491E86ACC800599432 /* findhelmholtzquery.json */; };
+		39CF5B4F1E86AD9900599432 /* findhelmholtzquery.json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B491E86ACC800599432 /* findhelmholtzquery.json */; };
+		39CF5B501E86AD9900599432 /* findhelmholtzquery.json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B491E86ACC800599432 /* findhelmholtzquery.json */; };
+		39CF5B521E86ADF200599432 /* findnear.json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B511E86ADF200599432 /* findnear.json */; };
+		39CF5B531E86ADF200599432 /* findnear.json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B511E86ADF200599432 /* findnear.json */; };
+		39CF5B541E86ADF200599432 /* findnear.json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B511E86ADF200599432 /* findnear.json */; };
 		39E981D21E5A62720075E3E1 /* RouteChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981D11E5A62720075E3E1 /* RouteChange.swift */; };
 		39E981D31E5A62720075E3E1 /* RouteChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981D11E5A62720075E3E1 /* RouteChange.swift */; };
 		39E981D41E5A62720075E3E1 /* RouteChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981D11E5A62720075E3E1 /* RouteChange.swift */; };
@@ -167,6 +174,9 @@
 		399D10F11E63BE4B00BF7D2F /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Line.swift; path = Sources/Line.swift; sourceTree = "<group>"; };
 		39B3F7831E5A715A00FCB27B /* RouteChangeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteChangeTests.swift; path = Tests/DVBTests/RouteChangeTests.swift; sourceTree = "<group>"; };
 		39B3F7871E5A719700FCB27B /* LineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LineTests.swift; path = Tests/DVBTests/LineTests.swift; sourceTree = "<group>"; };
+		39CF5B461E86AC2E00599432 /* DVR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVR.framework; path = Carthage/Build/Mac/DVR.framework; sourceTree = "<group>"; };
+		39CF5B491E86ACC800599432 /* findhelmholtzquery.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = findhelmholtzquery.json; path = Tests/DVBTests/Cassettes/findhelmholtzquery.json; sourceTree = "<group>"; };
+		39CF5B511E86ADF200599432 /* findnear.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = findnear.json; path = Tests/DVBTests/Cassettes/findnear.json; sourceTree = "<group>"; };
 		39E981D11E5A62720075E3E1 /* RouteChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteChange.swift; path = Sources/RouteChange.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* DVB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* DVB-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DVB-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39CF5B471E86AC2E00599432 /* DVR.framework in Frameworks */,
 				DD7502881C68FEDE006590AF /* DVB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +257,7 @@
 		3926CFC51E73908700E579CF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				39CF5B461E86AC2E00599432 /* DVR.framework */,
 				393F91D81E7F75D1002CC8DE /* gausskrueger.framework */,
 				393F91D61E7F75CC002CC8DE /* gausskrueger.framework */,
 				393F91D41E7F75C7002CC8DE /* gausskrueger.framework */,
@@ -271,6 +283,7 @@
 				399D108F1E5DEE7100BF7D2F /* ModeTests.swift */,
 				399D10931E5DF25600BF7D2F /* ResultTests.swift */,
 				399D109C1E5F0DE500BF7D2F /* DateTests.swift */,
+				39CF5B481E86AC9800599432 /* Cassettes */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -291,6 +304,15 @@
 				392FA9F81E58FB4600E2EB0A /* Result.swift */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		39CF5B481E86AC9800599432 /* Cassettes */ = {
+			isa = PBXGroup;
+			children = (
+				39CF5B491E86ACC800599432 /* findhelmholtzquery.json */,
+				39CF5B511E86ADF200599432 /* findnear.json */,
+			);
+			name = Cassettes;
 			sourceTree = "<group>";
 		};
 		52D6D9721BEFF229002C0205 = {
@@ -595,6 +617,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39CF5B521E86ADF200599432 /* findnear.json in Resources */,
+				39CF5B4E1E86AD9700599432 /* findhelmholtzquery.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +647,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39CF5B531E86ADF200599432 /* findnear.json in Resources */,
+				39CF5B4F1E86AD9900599432 /* findhelmholtzquery.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,6 +656,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39CF5B541E86ADF200599432 /* findnear.json in Resources */,
+				39CF5B501E86AD9900599432 /* findhelmholtzquery.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
