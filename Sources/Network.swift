@@ -3,13 +3,13 @@ import Marshal
 
 typealias JSON = [String: Any]
 
-func get<T: Unmarshaling>(_ url: URL, completion: @escaping (Result<T>) -> Void) {
+func get<T: Unmarshaling>(_ url: URL, session: URLSession = .shared, completion: @escaping (Result<T>) -> Void) {
     var request = URLRequest(url: url)
     request.httpMethod = HTTPMethod.GET.rawValue
-    dataTask(request: request, completion: completion)
+    dataTask(request: request, session: session, completion: completion)
 }
 
-func post<T: Unmarshaling>(_ url: URL, data: [String: Any], completion: @escaping (Result<T>) -> Void) {
+func post<T: Unmarshaling>(_ url: URL, data: [String: Any], session: URLSession = .shared, completion: @escaping (Result<T>) -> Void) {
     var request = URLRequest(url: url)
     request.httpMethod = HTTPMethod.POST.rawValue
     do {
@@ -20,7 +20,7 @@ func post<T: Unmarshaling>(_ url: URL, data: [String: Any], completion: @escapin
     }
     request.addValue("application/json;charset=UTF-8", forHTTPHeaderField: "Content-Type")
 
-    dataTask(request: request, completion: completion)
+    dataTask(request: request, session: session, completion: completion)
 }
 
 private enum HTTPMethod: String {
@@ -28,8 +28,7 @@ private enum HTTPMethod: String {
     case POST
 }
 
-private func dataTask<T: Unmarshaling>(request: URLRequest, completion: @escaping (Result<T>) -> Void) {
-    let session = URLSession(configuration: .default)
+private func dataTask<T: Unmarshaling>(request: URLRequest, session: URLSession = .shared, completion: @escaping (Result<T>) -> Void) {
     session.dataTask(with: request) { data, response, error in
         guard error == nil else {
             completion(Result(failure: DVBError.network))

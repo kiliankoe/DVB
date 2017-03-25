@@ -69,22 +69,22 @@ extension Stop: ValueType {
 // MARK: - API
 
 extension Stop {
-    public static func find(_ query: String, completion: @escaping (Result<FindResponse>) -> Void) {
+    public static func find(_ query: String, session: URLSession = .shared, completion: @escaping (Result<FindResponse>) -> Void) {
         let data: [String: Any] = [
             "limit": 0,
             "query": query,
             "stopsOnly": true,
             "dvb": true,
         ]
-        post(Endpoint.pointfinder, data: data, completion: completion)
+        post(Endpoint.pointfinder, data: data, session: session, completion: completion)
     }
 
-    public static func findNear(lat: Double, lng: Double, completion: @escaping (Result<FindResponse>) -> Void) {
+    public static func findNear(lat: Double, lng: Double, session: URLSession = .shared, completion: @escaping (Result<FindResponse>) -> Void) {
         let coord = WGSCoordinate(latitude: lat, longitude: lng)
-        findNear(coord: coord, completion: completion)
+        findNear(coord: coord, session: session, completion: completion)
     }
 
-    public static func findNear(coord: Coordinate, completion: @escaping (Result<FindResponse>) -> Void) {
+    public static func findNear(coord: Coordinate, session: URLSession = .shared, completion: @escaping (Result<FindResponse>) -> Void) {
         guard let gk = coord.asGK else {
             completion(Result(failure: DVBError.coordinate))
             return
@@ -94,7 +94,7 @@ extension Stop {
             "assignedStops": true,
             "query": "coord:\(Int(gk.x)):\(Int(gk.y))",
         ]
-        post(Endpoint.pointfinder, data: data, completion: completion)
+        post(Endpoint.pointfinder, data: data, session: session, completion: completion)
     }
 }
 
