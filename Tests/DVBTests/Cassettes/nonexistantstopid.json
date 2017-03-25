@@ -1,0 +1,53 @@
+{
+  "interactions" : [
+    {
+      "response" : {
+        "status" : 200,
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8",
+          "Content-Length" : "193",
+          "Cache-Control" : "private",
+          "Access-Control-Allow-Origin" : "*",
+          "Vary" : "Accept-Encoding",
+          "Date" : "Sat, 25 Mar 2017 22:29:47 GMT",
+          "Content-Encoding" : "gzip"
+        },
+        "body" : {
+          "Place" : "",
+          "Name" : "1337",
+          "Status" : {
+            "Code" : "ServiceError",
+            "Message" : "stop invalid"
+          }
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/dm\/"
+      },
+      "recorded_at" : 1490480987.839936,
+      "request" : {
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8"
+        },
+        "method" : "POST",
+        "body" : {
+          "limit" : 0,
+          "stopid" : "1337",
+          "mot" : [
+            "Tram",
+            "CityBus",
+            "IntercityBus",
+            "SuburbanRailway",
+            "Train",
+            "Cableway",
+            "Ferry",
+            "HailedSharedTaxi"
+          ],
+          "shorttermchanges" : true,
+          "time" : "2017-03-25T22:26:37Z",
+          "isarrival" : true
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/dm\/"
+      }
+    }
+  ],
+  "name" : "nonexistantstopid"
+}

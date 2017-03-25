@@ -116,7 +116,7 @@ extension Departure.State: ValueType {
 // MARK: - API
 
 extension Departure {
-    public static func monitor(stopWithId id: String, date: Date = Date(), dateType: DateType = .arrival, allowedModes modes: [Mode] = Mode.all, allowShorttermChanges: Bool = true, completion: @escaping (Result<MonitorResponse>) -> Void) {
+    public static func monitor(stopWithId id: String, date: Date = Date(), dateType: DateType = .arrival, allowedModes modes: [Mode] = Mode.all, allowShorttermChanges: Bool = true, session: URLSession = .shared, completion: @escaping (Result<MonitorResponse>) -> Void) {
         let data: [String: Any] = [
             "stopid": id,
             "time": date.iso8601,
@@ -126,17 +126,17 @@ extension Departure {
             "mot": modes.map { $0.identifier },
         ]
 
-        post(Endpoint.departureMonitor, data: data, completion: completion)
+        post(Endpoint.departureMonitor, data: data, session: session, completion: completion)
     }
 
     /// Convenience function taking a stop name. Sends of a find request first and uses the first result's `id` as an argument for the monitor request.
-    public static func monitor(stopWithName name: String, date: Date = Date(), dateType: DateType = .arrival, allowedModes modes: [Mode] = Mode.all, allowShorttermChanges: Bool = true, completion: @escaping (Result<MonitorResponse>) -> Void) {
-        Stop.find(name) { result in
+    public static func monitor(stopWithName name: String, date: Date = Date(), dateType: DateType = .arrival, allowedModes modes: [Mode] = Mode.all, allowShorttermChanges: Bool = true, session: URLSession = .shared, completion: @escaping (Result<MonitorResponse>) -> Void) {
+        Stop.find(name, session: session) { result in
             switch result {
             case let .failure(error): completion(Result(failure: error))
             case let .success(response):
                 guard let first = response.stops.first else { completion(Result(failure: DVBError.response)); return }
-                Departure.monitor(stopWithId: first.id, date: date, dateType: dateType, allowedModes: modes, allowShorttermChanges: allowShorttermChanges, completion: completion)
+                Departure.monitor(stopWithId: first.id, date: date, dateType: dateType, allowedModes: modes, allowShorttermChanges: allowShorttermChanges, session: session, completion: completion)
             }
         }
     }

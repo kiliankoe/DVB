@@ -1,0 +1,1294 @@
+{
+  "interactions" : [
+    {
+      "response" : {
+        "status" : 200,
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8",
+          "Content-Length" : "2474",
+          "Cache-Control" : "private",
+          "Access-Control-Allow-Origin" : "*",
+          "Vary" : "Accept-Encoding",
+          "Date" : "Sat, 25 Mar 2017 22:27:23 GMT",
+          "Content-Encoding" : "gzip"
+        },
+        "body" : {
+          "Departures" : [
+            {
+              "Direction" : "Prohlis",
+              "Id" : "66211237",
+              "LineName" : "1",
+              "State" : "Delayed",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11001"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490481244000+0100)\/",
+              "RouteChanges" : [
+                "509486"
+              ],
+              "Platform" : {
+                "Name" : "1",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490481180000+0100)\/"
+            },
+            {
+              "Direction" : "Postplatz",
+              "Id" : "66217030",
+              "LineName" : "94",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "21094"
+              },
+              "Mot" : "CityBus",
+              "RealTime" : "\/Date(1490481480000+0100)\/",
+              "RouteChanges" : [
+                "509154"
+              ],
+              "Platform" : {
+                "Name" : "5",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490481480000+0100)\/"
+            },
+            {
+              "Direction" : "Johannstadt",
+              "Id" : "66215219",
+              "LineName" : "62",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "21062"
+              },
+              "Mot" : "CityBus",
+              "RealTime" : "\/Date(1490481480000+0100)\/",
+              "RouteChanges" : [
+
+              ],
+              "Platform" : {
+                "Name" : "4",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490481480000+0100)\/"
+            },
+            {
+              "Direction" : "Gorbitz",
+              "Id" : "66211335",
+              "LineName" : "2",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11002"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490481660000+0100)\/",
+              "RouteChanges" : [
+                "509486"
+              ],
+              "Platform" : {
+                "Name" : "2",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490481660000+0100)\/"
+            },
+            {
+              "Direction" : "Dölzschen",
+              "Id" : "66215130",
+              "LineName" : "62",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "21062"
+              },
+              "Mot" : "CityBus",
+              "RealTime" : "\/Date(1490481660000+0100)\/",
+              "RouteChanges" : [
+
+              ],
+              "Platform" : {
+                "Name" : "3",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490481660000+0100)\/"
+            },
+            {
+              "Direction" : "Striesen",
+              "Id" : "66213811",
+              "LineName" : "12",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11012"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490481720000+0100)\/",
+              "RouteChanges" : [
+
+              ],
+              "Platform" : {
+                "Name" : "3",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490481720000+0100)\/"
+            },
+            {
+              "Direction" : "Bühlau",
+              "Id" : "66212742",
+              "LineName" : "11",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11011"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490481720000+0100)\/",
+              "RouteChanges" : [
+
+              ],
+              "Platform" : {
+                "Name" : "4",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490481720000+0100)\/"
+            },
+            {
+              "Direction" : "Leutewitz",
+              "Id" : "66212830",
+              "LineName" : "12",
+              "State" : "Delayed",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11012"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490481726000+0100)\/",
+              "RouteChanges" : [
+
+              ],
+              "Platform" : {
+                "Name" : "4",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490481600000+0100)\/"
+            },
+            {
+              "Direction" : "Laubegast",
+              "Id" : "66211785",
+              "LineName" : "4",
+              "State" : "Delayed",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11004"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490481751000+0100)\/",
+              "RouteChanges" : [
+
+              ],
+              "Platform" : {
+                "Name" : "1",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490481660000+0100)\/"
+            },
+            {
+              "Direction" : "Kleinzschachwitz",
+              "Id" : "66211406",
+              "LineName" : "2",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11002"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490481752000+0100)\/",
+              "RouteChanges" : [
+                "509486"
+              ],
+              "Platform" : {
+                "Name" : "1",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490481720000+0100)\/"
+            },
+            {
+              "Direction" : "Radebeul West",
+              "Id" : "66211664",
+              "LineName" : "4",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11004"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490481769000+0100)\/",
+              "RouteChanges" : [
+
+              ],
+              "Platform" : {
+                "Name" : "2",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490481720000+0100)\/"
+            },
+            {
+              "Direction" : "Zschertnitz",
+              "Id" : "66212650",
+              "LineName" : "11",
+              "State" : "Delayed",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11011"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490481797000+0100)\/",
+              "RouteChanges" : [
+
+              ],
+              "Platform" : {
+                "Name" : "3",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490481660000+0100)\/"
+            },
+            {
+              "Direction" : "Cossebaude",
+              "Id" : "66216979",
+              "LineName" : "94",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "21094"
+              },
+              "Mot" : "CityBus",
+              "RealTime" : "\/Date(1490482020000+0100)\/",
+              "RouteChanges" : [
+                "509154"
+              ],
+              "Platform" : {
+                "Name" : "4",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490482020000+0100)\/"
+            },
+            {
+              "Direction" : "Hellerau",
+              "Id" : "66212270",
+              "LineName" : "8",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11008"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490482200000+0100)\/",
+              "RouteChanges" : [
+
+              ],
+              "Platform" : {
+                "Name" : "4",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490482200000+0100)\/"
+            },
+            {
+              "Direction" : "Südvorstadt",
+              "Id" : "66212205",
+              "LineName" : "8",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11008"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490482320000+0100)\/",
+              "RouteChanges" : [
+
+              ],
+              "Platform" : {
+                "Name" : "3",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490482320000+0100)\/"
+            },
+            {
+              "Direction" : "Bf. Mitte",
+              "Id" : "66211166",
+              "LineName" : "1",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11001"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490482380000+0100)\/",
+              "RouteChanges" : [
+                "509486"
+              ],
+              "Platform" : {
+                "Name" : "2",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490482380000+0100)\/"
+            },
+            {
+              "Direction" : "Prohlis",
+              "Id" : "66211238",
+              "LineName" : "1",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11001"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490483020000+0100)\/",
+              "RouteChanges" : [
+                "509486"
+              ],
+              "Platform" : {
+                "Name" : "1",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490482980000+0100)\/"
+            },
+            {
+              "Direction" : "Hauptbahnhof ü. Postplatz",
+              "Id" : "66212556",
+              "LineName" : "E",
+              "State" : "InTime",
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490483040000+0100)\/",
+              "Platform" : {
+                "Name" : "3",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490483040000+0100)\/"
+            },
+            {
+              "Direction" : "Postplatz",
+              "Id" : "66217031",
+              "LineName" : "94",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "21094"
+              },
+              "Mot" : "CityBus",
+              "RealTime" : "\/Date(1490483280000+0100)\/",
+              "RouteChanges" : [
+                "509560",
+                "509154"
+              ],
+              "Platform" : {
+                "Name" : "5",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490483280000+0100)\/"
+            },
+            {
+              "Direction" : "Johannstadt",
+              "Id" : "66215220",
+              "LineName" : "62",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "21062"
+              },
+              "Mot" : "CityBus",
+              "RealTime" : "\/Date(1490483280000+0100)\/",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "4",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490483280000+0100)\/"
+            },
+            {
+              "Direction" : "Leutewitz",
+              "Id" : "66212831",
+              "LineName" : "12",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11012"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490483400000+0100)\/",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "4",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490483400000+0100)\/"
+            },
+            {
+              "Direction" : "Gorbitz",
+              "Id" : "66211336",
+              "LineName" : "2",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11002"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+                "509486",
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "2",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490483460000+0100)\/"
+            },
+            {
+              "Direction" : "Zschertnitz",
+              "Id" : "66212651",
+              "LineName" : "11",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11011"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490483460000+0100)\/",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "3",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490483460000+0100)\/"
+            },
+            {
+              "Direction" : "Laubegast",
+              "Id" : "66211786",
+              "LineName" : "4",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11004"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490483460000+0100)\/",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "1",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490483460000+0100)\/"
+            },
+            {
+              "Direction" : "Dölzschen",
+              "Id" : "66215131",
+              "LineName" : "62",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "21062"
+              },
+              "Mot" : "CityBus",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "3",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490483460000+0100)\/"
+            },
+            {
+              "Direction" : "Bühlau",
+              "Id" : "66212743",
+              "LineName" : "11",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11011"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "4",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490483520000+0100)\/"
+            },
+            {
+              "Direction" : "Weinböhla",
+              "Id" : "66211700",
+              "LineName" : "4",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11004"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490483520000+0100)\/",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "2",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490483520000+0100)\/"
+            },
+            {
+              "Direction" : "Laubegast",
+              "Id" : "66212836",
+              "LineName" : "12",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11012"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "3",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490483520000+0100)\/"
+            },
+            {
+              "Direction" : "Kleinzschachwitz",
+              "Id" : "66211407",
+              "LineName" : "2",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11002"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490483520000+0100)\/",
+              "RouteChanges" : [
+                "509486",
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "1",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490483520000+0100)\/"
+            },
+            {
+              "Direction" : "Postplatz",
+              "Id" : "66219583",
+              "LineName" : "333",
+              "State" : "Delayed",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "23333"
+              },
+              "Mot" : "IntercityBus",
+              "RealTime" : "\/Date(1490483789000+0100)\/",
+              "Platform" : {
+                "Name" : "8",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490483580000+0100)\/"
+            },
+            {
+              "Direction" : "Cossebaude",
+              "Id" : "66216980",
+              "LineName" : "94",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "21094"
+              },
+              "Mot" : "CityBus",
+              "RouteChanges" : [
+                "509560",
+                "509154"
+              ],
+              "Platform" : {
+                "Name" : "4",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490483820000+0100)\/"
+            },
+            {
+              "Direction" : "Wilsdruff",
+              "Id" : "66219598",
+              "LineName" : "333",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "23333"
+              },
+              "Mot" : "IntercityBus",
+              "Platform" : {
+                "Name" : "1",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490483880000+0100)\/"
+            },
+            {
+              "Direction" : "Dippoldiswalde",
+              "Id" : "66219882",
+              "LineName" : "360",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "23360"
+              },
+              "Mot" : "IntercityBus",
+              "RouteChanges" : [
+                "509460"
+              ],
+              "Platform" : {
+                "Name" : "1",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490483880000+0100)\/"
+            },
+            {
+              "Direction" : "Hellerau",
+              "Id" : "66212271",
+              "LineName" : "8",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11008"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490484000000+0100)\/",
+              "RouteChanges" : [
+
+              ],
+              "Platform" : {
+                "Name" : "4",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490484000000+0100)\/"
+            },
+            {
+              "Direction" : "Südvorstadt",
+              "Id" : "66212206",
+              "LineName" : "8",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11008"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+
+              ],
+              "Platform" : {
+                "Name" : "3",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490484120000+0100)\/"
+            },
+            {
+              "Direction" : "Gorbitz",
+              "Id" : "66211172",
+              "LineName" : "1",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11001"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+                "509486"
+              ],
+              "Platform" : {
+                "Name" : "2",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490484480000+0100)\/"
+            },
+            {
+              "Direction" : "Hauptbahnhof ü. Postplatz",
+              "Id" : "66212557",
+              "LineName" : "E",
+              "State" : "InTime",
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490484960000+0100)\/",
+              "Platform" : {
+                "Name" : "3",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490484960000+0100)\/"
+            },
+            {
+              "Direction" : "Postplatz",
+              "Id" : "66217032",
+              "LineName" : "94",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "21094"
+              },
+              "Mot" : "CityBus",
+              "RouteChanges" : [
+                "509560",
+                "509154"
+              ],
+              "Platform" : {
+                "Name" : "5",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490485080000+0100)\/"
+            },
+            {
+              "Direction" : "Johannstadt",
+              "Id" : "66215221",
+              "LineName" : "62",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "21062"
+              },
+              "Mot" : "CityBus",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "4",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490485140000+0100)\/"
+            },
+            {
+              "Direction" : "Leutewitz",
+              "Id" : "66212832",
+              "LineName" : "12",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11012"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "4",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490485200000+0100)\/"
+            },
+            {
+              "Direction" : "Laubegast",
+              "Id" : "66211787",
+              "LineName" : "4",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11004"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "1",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490485260000+0100)\/"
+            },
+            {
+              "Direction" : "Zschertnitz",
+              "Id" : "66212652",
+              "LineName" : "11",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11011"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "3",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490485260000+0100)\/"
+            },
+            {
+              "Direction" : "Gorbitz",
+              "Id" : "66211337",
+              "LineName" : "2",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11002"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490485260000+0100)\/",
+              "RouteChanges" : [
+                "509486",
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "2",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490485260000+0100)\/"
+            },
+            {
+              "Direction" : "Dölzschen",
+              "Id" : "66215132",
+              "LineName" : "62",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "21062"
+              },
+              "Mot" : "CityBus",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "3",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490485260000+0100)\/"
+            },
+            {
+              "Direction" : "Bühlau",
+              "Id" : "66212744",
+              "LineName" : "11",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11011"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "4",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490485320000+0100)\/"
+            },
+            {
+              "Direction" : "Laubegast",
+              "Id" : "66212837",
+              "LineName" : "12",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11012"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "3",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490485320000+0100)\/"
+            },
+            {
+              "Direction" : "Kleinzschachwitz",
+              "Id" : "66211408",
+              "LineName" : "2",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11002"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+                "509486",
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "1",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490485320000+0100)\/"
+            },
+            {
+              "Direction" : "Radebeul Ost",
+              "Id" : "66211612",
+              "LineName" : "4",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11004"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "2",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490485320000+0100)\/"
+            },
+            {
+              "Direction" : "Cossebaude",
+              "Id" : "66216981",
+              "LineName" : "94",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "21094"
+              },
+              "Mot" : "CityBus",
+              "RouteChanges" : [
+                "509560",
+                "509154"
+              ],
+              "Platform" : {
+                "Name" : "4",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490485620000+0100)\/"
+            },
+            {
+              "Direction" : "Hellerau",
+              "Id" : "66212272",
+              "LineName" : "8",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11008"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+
+              ],
+              "Platform" : {
+                "Name" : "4",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490485800000+0100)\/"
+            },
+            {
+              "Direction" : "Gorbitz",
+              "Id" : "66212211",
+              "LineName" : "8",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11008"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+
+              ],
+              "Platform" : {
+                "Name" : "3",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490485920000+0100)\/"
+            },
+            {
+              "Direction" : "Postplatz",
+              "Id" : "66217033",
+              "LineName" : "94",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "21094"
+              },
+              "Mot" : "CityBus",
+              "RouteChanges" : [
+                "509560",
+                "509154"
+              ],
+              "Platform" : {
+                "Name" : "5",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490486880000+0100)\/"
+            },
+            {
+              "Direction" : "Postplatz",
+              "Id" : "66215225",
+              "LineName" : "62",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "21062"
+              },
+              "Mot" : "CityBus",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "3",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490486940000+0100)\/"
+            },
+            {
+              "Direction" : "Pennrich",
+              "Id" : "66212038",
+              "LineName" : "7",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11007"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "4",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490487000000+0100)\/"
+            },
+            {
+              "Direction" : "Gorbitz",
+              "Id" : "66211338",
+              "LineName" : "2",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11002"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+                "509486",
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "2",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490487060000+0100)\/"
+            },
+            {
+              "Direction" : "Zschertnitz",
+              "Id" : "66212653",
+              "LineName" : "11",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11011"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "3",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490487060000+0100)\/"
+            },
+            {
+              "Direction" : "Laubegast",
+              "Id" : "66211788",
+              "LineName" : "4",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11004"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "1",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490487060000+0100)\/"
+            },
+            {
+              "Direction" : "Kleinzschachwitz",
+              "Id" : "66211409",
+              "LineName" : "2",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11002"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+                "509486",
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "1",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490487120000+0100)\/"
+            },
+            {
+              "Direction" : "Bühlau",
+              "Id" : "66212745",
+              "LineName" : "11",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11011"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490487120000+0100)\/",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "4",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490487120000+0100)\/"
+            },
+            {
+              "Direction" : "Weinböhla",
+              "Id" : "66211701",
+              "LineName" : "4",
+              "State" : "InTime",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11004"
+              },
+              "Mot" : "Tram",
+              "RealTime" : "\/Date(1490487120000+0100)\/",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "2",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490487120000+0100)\/"
+            },
+            {
+              "Direction" : "Postplatz",
+              "Id" : "66215087",
+              "LineName" : "62",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "21062"
+              },
+              "Mot" : "CityBus",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "3",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490487120000+0100)\/"
+            },
+            {
+              "Direction" : "Weixdorf",
+              "Id" : "66212143",
+              "LineName" : "7",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11007"
+              },
+              "Mot" : "Tram",
+              "RouteChanges" : [
+                "509560"
+              ],
+              "Platform" : {
+                "Name" : "3",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490487120000+0100)\/"
+            },
+            {
+              "Direction" : "Cossebaude",
+              "Id" : "66216982",
+              "LineName" : "94",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "21094"
+              },
+              "Mot" : "CityBus",
+              "RouteChanges" : [
+                "509560",
+                "509154"
+              ],
+              "Platform" : {
+                "Name" : "4",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490487420000+0100)\/"
+            },
+            {
+              "Direction" : "Postplatz",
+              "Id" : "66219852",
+              "LineName" : "360",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "23360"
+              },
+              "Mot" : "IntercityBus",
+              "RouteChanges" : [
+                "509460"
+              ],
+              "Platform" : {
+                "Name" : "8",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490487600000+0100)\/"
+            },
+            {
+              "Direction" : "Wilsdruff",
+              "Id" : "66219599",
+              "LineName" : "333",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "23333"
+              },
+              "Mot" : "IntercityBus",
+              "Platform" : {
+                "Name" : "1",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490487600000+0100)\/"
+            },
+            {
+              "Direction" : "Dippoldiswalde",
+              "Id" : "66219883",
+              "LineName" : "360",
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "23360"
+              },
+              "Mot" : "IntercityBus",
+              "RouteChanges" : [
+                "509460"
+              ],
+              "Platform" : {
+                "Name" : "1",
+                "Type" : "Platform"
+              },
+              "ScheduledTime" : "\/Date(1490487660000+0100)\/"
+            }
+          ],
+          "Name" : "Postplatz",
+          "Place" : "Dresden",
+          "Status" : {
+            "Code" : "Ok"
+          },
+          "ExpirationTime" : "\/Date(1490480904178+0100)\/"
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/dm\/"
+      },
+      "recorded_at" : 1490480844.095797,
+      "request" : {
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8"
+        },
+        "method" : "POST",
+        "body" : {
+          "limit" : 0,
+          "stopid" : "33000037",
+          "mot" : [
+            "Tram",
+            "CityBus",
+            "IntercityBus",
+            "SuburbanRailway",
+            "Train",
+            "Cableway",
+            "Ferry",
+            "HailedSharedTaxi"
+          ],
+          "shorttermchanges" : true,
+          "time" : "2017-03-25T22:26:37Z",
+          "isarrival" : true
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/dm\/"
+      }
+    }
+  ],
+  "name" : "monitor"
+}

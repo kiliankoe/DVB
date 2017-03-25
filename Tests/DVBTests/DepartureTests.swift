@@ -1,5 +1,6 @@
 import Foundation
 import XCTest
+import DVR
 @testable import DVB
 
 class DepartureTests: XCTestCase {
@@ -50,7 +51,10 @@ class DepartureTests: XCTestCase {
     func testMonitor() {
         let e = expectation(description: "Find correct departures")
 
-        Departure.monitor(stopWithId: "33000037") { result in
+        let session = Session(cassetteName: "monitor")
+
+        let date = Date(timeIntervalSince1970: 1490480797) // 2017-03-25 23:26:37
+        Departure.monitor(stopWithId: "33000037", date: date, session: session) { result in
             switch result {
             case let .failure(error):
                 XCTFail("Failed with error: \(error)")
@@ -69,7 +73,13 @@ class DepartureTests: XCTestCase {
     func testMonitorWithName() {
         let e = expectation(description: "Find correct departures")
 
-        Departure.monitor(stopWithName: "Hauptbahnhof") { result in
+        let session = Session(cassetteName: "monitorwithname")
+
+        session.beginRecording()
+
+        let date = Date(timeIntervalSince1970: 1490480797) // 2017-03-25 23:26:37
+        Departure.monitor(stopWithName: "Hauptbahnhof", date: date, session: session) { result in
+            session.endRecording()
             switch result {
             case let .failure(error):
                 XCTFail("Failed with error: \(error)")
@@ -88,7 +98,10 @@ class DepartureTests: XCTestCase {
     func testNonExistantStopId() {
         let e = expectation(description: "Get ServiceError")
 
-        Departure.monitor(stopWithId: "1337") { result in
+        let session = Session(cassetteName: "nonexistantstopid")
+
+        let date = Date(timeIntervalSince1970: 1490480797) // 2017-03-25 23:26:37
+        Departure.monitor(stopWithId: "1337", date: date, session: session) { result in
             switch result {
             case let .failure(error):
                 guard let error = error as? DVBError,
