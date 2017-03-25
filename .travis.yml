@@ -13,7 +13,7 @@ script:
 - xcodebuild test -scheme DVB-macOS | xcpretty
 - xcodebuild test -scheme DVB-iOS -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3' | xcpretty
 - swift test
-# - pod lib lint Disabled since Travis has outdated cocoapods specs :/
+# - pod lib lint # Disabled since Travis has outdated cocoapods specs :/
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
