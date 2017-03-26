@@ -7,7 +7,8 @@ language: objective-c
 
 before_install:
   - gem install xcpretty
-  - carthage update --platform macOS,iOS
+  - carthage version
+  - carthage update --platform OSX,iOS
 
 script:
 - xcodebuild test -scheme DVB-macOS | xcpretty
