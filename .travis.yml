@@ -12,7 +12,7 @@ before_install:
 script:
 - xcodebuild test -scheme DVB-macOS | xcpretty
 - xcodebuild test -scheme DVB-iOS -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3' | xcpretty
-- swift test
+# - swift test # Disabled since SPM can no longer build the tests as of d9de55db7b8f7428e9fb86c78bc1f533d1351325 :/
 # - pod lib lint # Disabled since Travis has outdated cocoapods specs :/
 
 after_success:
