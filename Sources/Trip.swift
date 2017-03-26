@@ -43,13 +43,13 @@ extension TripStop: Unmarshaling {
 // MARK: - API
 
 extension TripStop {
-    public static func get(forTripID tripID: String, stopID: String, atTime time: Date, completion: @escaping (Result<TripsResponse>) -> Void) {
+    public static func get(forTripID tripID: String, stopID: String, atTime time: Date, session: URLSession = .shared, completion: @escaping (Result<TripsResponse>) -> Void) {
         let data: [String: Any] = [
             "tripid": tripID,
             "stopid": stopID,
             "time": time.datestring,
         ]
 
-        post(Endpoint.trip, data: data, completion: completion)
+        post(Endpoint.trip, data: data, session: session, completion: completion)
     }
 }

@@ -1,34 +1,19 @@
 import Foundation
 import XCTest
+import DVR
 @testable import DVB
 
 class TripTests: XCTestCase {
-    func test3FromAlpAtHbf() {
+    func testTripLocation3FromAlpAtHbf() {
         let e = expectation(description: "Find a trip")
 
-        // Kinda wanna keep this test readable, so let's do it synchronously.
-        let semaphore = DispatchSemaphore(value: 0)
-        var tripId = ""
+        let session = Session(cassetteName: #function)
 
-        let albertplatz = "33000013"
-        Departure.monitor(stopWithId: albertplatz) { result in
-            switch result {
-            case .failure(let error):
-                XCTFail("Failed with error: \(error)")
-            case .success(let response):
-                guard let coschuetz3 = response.departures.filter({ $0.line == "3" && $0.direction == "Coschütz" }).first else {
-                    XCTFail("Couldn't find a fitting departure at this time. Live API tests stink.")
-                    return
-                }
-                tripId = coschuetz3.id
-                semaphore.signal()
-            }
-        }
-
-        semaphore.wait()
-
+        let tripId = "66230687" // This was chosen manually :/ For reference: It's an upcoming 3 departure at Albertplatz headed towards Coschütz
         let hauptbahnhof = "33000028"
-        TripStop.get(forTripID: tripId, stopID: hauptbahnhof, atTime: Date()) { result in
+        let date = Date(timeIntervalSince1970: 1490561874) // 2016-03-26 22:57:54
+
+        TripStop.get(forTripID: tripId, stopID: hauptbahnhof, atTime: date, session: session) { result in
             switch result {
             case .failure(let error):
                 XCTFail("Failed with error: \(error)")
@@ -41,6 +26,6 @@ class TripTests: XCTestCase {
             }
         }
 
-        waitForExpectations(timeout: 10)
+        waitForExpectations(timeout: 5)
     }
 }

@@ -132,6 +132,9 @@
 		39CF5B821E88607A00599432 /* testRouteFromPostplatzToPirnaischerPlatz().json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B811E88607A00599432 /* testRouteFromPostplatzToPirnaischerPlatz().json */; };
 		39CF5B831E88607A00599432 /* testRouteFromPostplatzToPirnaischerPlatz().json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B811E88607A00599432 /* testRouteFromPostplatzToPirnaischerPlatz().json */; };
 		39CF5B841E88607A00599432 /* testRouteFromPostplatzToPirnaischerPlatz().json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B811E88607A00599432 /* testRouteFromPostplatzToPirnaischerPlatz().json */; };
+		39CF5B861E88630200599432 /* testTripLocation3FromAlpAtHbf().json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B851E88630200599432 /* testTripLocation3FromAlpAtHbf().json */; };
+		39CF5B871E88630200599432 /* testTripLocation3FromAlpAtHbf().json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B851E88630200599432 /* testTripLocation3FromAlpAtHbf().json */; };
+		39CF5B881E88630200599432 /* testTripLocation3FromAlpAtHbf().json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B851E88630200599432 /* testTripLocation3FromAlpAtHbf().json */; };
 		39E981D21E5A62720075E3E1 /* RouteChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981D11E5A62720075E3E1 /* RouteChange.swift */; };
 		39E981D31E5A62720075E3E1 /* RouteChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981D11E5A62720075E3E1 /* RouteChange.swift */; };
 		39E981D41E5A62720075E3E1 /* RouteChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981D11E5A62720075E3E1 /* RouteChange.swift */; };
@@ -209,6 +212,7 @@
 		39CF5B711E885E9B00599432 /* testGetRouteChanges().json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "testGetRouteChanges().json"; path = "Tests/DVBTests/Cassettes/testGetRouteChanges().json"; sourceTree = "<group>"; };
 		39CF5B7D1E88606300599432 /* testRouteFromAlbertToHbf().json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "testRouteFromAlbertToHbf().json"; path = "Tests/DVBTests/Cassettes/testRouteFromAlbertToHbf().json"; sourceTree = "<group>"; };
 		39CF5B811E88607A00599432 /* testRouteFromPostplatzToPirnaischerPlatz().json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "testRouteFromPostplatzToPirnaischerPlatz().json"; path = "Tests/DVBTests/Cassettes/testRouteFromPostplatzToPirnaischerPlatz().json"; sourceTree = "<group>"; };
+		39CF5B851E88630200599432 /* testTripLocation3FromAlpAtHbf().json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "testTripLocation3FromAlpAtHbf().json"; path = "Tests/DVBTests/Cassettes/testTripLocation3FromAlpAtHbf().json"; sourceTree = "<group>"; };
 		39E981D11E5A62720075E3E1 /* RouteChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteChange.swift; path = Sources/RouteChange.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* DVB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* DVB-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DVB-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -351,6 +355,7 @@
 				39CF5B711E885E9B00599432 /* testGetRouteChanges().json */,
 				39CF5B7D1E88606300599432 /* testRouteFromAlbertToHbf().json */,
 				39CF5B811E88607A00599432 /* testRouteFromPostplatzToPirnaischerPlatz().json */,
+				39CF5B851E88630200599432 /* testTripLocation3FromAlpAtHbf().json */,
 			);
 			name = Cassettes;
 			sourceTree = "<group>";
@@ -658,6 +663,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39CF5B7E1E88606300599432 /* testRouteFromAlbertToHbf().json in Resources */,
+				39CF5B861E88630200599432 /* testTripLocation3FromAlpAtHbf().json in Resources */,
 				39CF5B521E86ADF200599432 /* testFindNearAntonstrasse().json in Resources */,
 				39CF5B621E8726A800599432 /* testDepartureMonitorAtHauptbahnhofWithName().json in Resources */,
 				39CF5B661E8726E400599432 /* testDepartureMonitorWithNonExistantStopId().json in Resources */,
@@ -696,6 +702,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39CF5B7F1E88606300599432 /* testRouteFromAlbertToHbf().json in Resources */,
+				39CF5B871E88630200599432 /* testTripLocation3FromAlpAtHbf().json in Resources */,
 				39CF5B531E86ADF200599432 /* testFindNearAntonstrasse().json in Resources */,
 				39CF5B631E8726A800599432 /* testDepartureMonitorAtHauptbahnhofWithName().json in Resources */,
 				39CF5B671E8726E400599432 /* testDepartureMonitorWithNonExistantStopId().json in Resources */,
@@ -713,6 +720,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39CF5B801E88606300599432 /* testRouteFromAlbertToHbf().json in Resources */,
+				39CF5B881E88630200599432 /* testTripLocation3FromAlpAtHbf().json in Resources */,
 				39CF5B541E86ADF200599432 /* testFindNearAntonstrasse().json in Resources */,
 				39CF5B641E8726A800599432 /* testDepartureMonitorAtHauptbahnhofWithName().json in Resources */,
 				39CF5B681E8726E400599432 /* testDepartureMonitorWithNonExistantStopId().json in Resources */,
