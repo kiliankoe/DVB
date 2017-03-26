@@ -1,12 +1,19 @@
 import Foundation
 import XCTest
+import DVR
 @testable import DVB
 
 class RouteTests: XCTestCase {
-    func testFromAlbertToHbf() {
+    func testRouteFromAlbertToHbf() {
         let e = expectation(description: "Find a route")
 
-        Route.find(fromWithID: "33000013", toWithID: "33000028") { result in
+        let session = Session(cassetteName: #function)
+
+        let date = Date(timeIntervalSince1970: 1490561146) // 2017-03-26 22:45:46
+
+        let albertplatz = "33000013"
+        let hauptbahnhof = "33000028"
+        Route.find(fromWithID: albertplatz, toWithID: hauptbahnhof, time: date, session: session) { result in
             switch result {
             case .failure(let error):
                 XCTFail("Failed with error: \(error)")
@@ -22,10 +29,17 @@ class RouteTests: XCTestCase {
         waitForExpectations(timeout: 5)
     }
 
-    func testFromPostToPirnaischer() {
+    func testRouteFromPostplatzToPirnaischerPlatz() {
         let e = expectation(description: "Find a route")
 
-        Route.find(from: "Postplatz", to: "Pirnaischer Platz") { result in
+        let session = Session(cassetteName: #function)
+        session.beginRecording()
+
+        let date = Date(timeIntervalSince1970: 1490561146) // 2017-03-26 22:45:46
+
+        Route.find(from: "Postplatz", to: "Pirnaischer Platz", time: date, session: session) { result in
+            session.endRecording()
+
             switch result {
             case .failure(let error):
                 XCTFail("Failed with error: \(error)")

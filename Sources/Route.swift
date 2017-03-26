@@ -181,7 +181,7 @@ extension Route {
 }
 
 extension Route {
-    public static func find(fromWithID originId: String, toWithID destinationId: String, time: Date = Date(), dateIsArrival: Bool = false, allowShortTermChanges: Bool = true, mobilityRestriction: MobilityRestriction = .none, completion: @escaping (Result<RoutesResponse>) -> Void) {
+    public static func find(fromWithID originId: String, toWithID destinationId: String, time: Date = Date(), dateIsArrival: Bool = false, allowShortTermChanges: Bool = true, mobilityRestriction: MobilityRestriction = .none, session: URLSession = .shared, completion: @escaping (Result<RoutesResponse>) -> Void) {
         let data: [String: Any] = [
             "origin": originId,
             "destination": destinationId,
@@ -198,22 +198,22 @@ extension Route {
             ],
         ]
 
-        post(Endpoint.route, data: data, completion: completion)
+        post(Endpoint.route, data: data, session: session, completion: completion)
     }
 
     /// Convenience function taking to stop names instead of IDs. Sends of two find requests first.
-    public static func find(from origin: String, to destination: String, time: Date = Date(), dateIsArrival: Bool = false, allowShortTermChanges: Bool = true, mobilityRestriction: MobilityRestriction = .none, completion: @escaping (Result<RoutesResponse>) -> Void) {
-        Stop.find(origin) { result in
+    public static func find(from origin: String, to destination: String, time: Date = Date(), dateIsArrival: Bool = false, allowShortTermChanges: Bool = true, mobilityRestriction: MobilityRestriction = .none, session: URLSession = .shared, completion: @escaping (Result<RoutesResponse>) -> Void) {
+        Stop.find(origin, session: session) { result in
             switch result {
             case let .failure(error): completion(Result(failure: error))
             case let .success(response):
                 guard let originStop = response.stops.first else { completion(Result(failure: DVBError.response)); return }
-                Stop.find(destination) { result in
+                Stop.find(destination, session: session) { result in
                     switch result {
                     case let .failure(error): completion(Result(failure: error))
                     case let .success(response):
                         guard let destinationStop = response.stops.first else { completion(Result(failure: DVBError.response)); return }
-                        Route.find(fromWithID: originStop.id, toWithID: destinationStop.id, time: time, dateIsArrival: dateIsArrival, allowShortTermChanges: allowShortTermChanges, mobilityRestriction: mobilityRestriction, completion: completion)
+                        Route.find(fromWithID: originStop.id, toWithID: destinationStop.id, time: time, dateIsArrival: dateIsArrival, allowShortTermChanges: allowShortTermChanges, mobilityRestriction: mobilityRestriction, session: session, completion: completion)
                     }
                 }
             }

@@ -1,0 +1,587 @@
+{
+  "interactions" : [
+    {
+      "response" : {
+        "status" : 200,
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8",
+          "Content-Length" : "541",
+          "Cache-Control" : "private",
+          "Access-Control-Allow-Origin" : "*",
+          "Vary" : "Accept-Encoding",
+          "Date" : "Sun, 26 Mar 2017 20:47:43 GMT",
+          "Content-Encoding" : "gzip"
+        },
+        "body" : {
+          "PointStatus" : "List",
+          "Status" : {
+            "Code" : "Ok"
+          },
+          "Points" : [
+            "33000037|||Postplatz|5658730|4621656|0||",
+            "33000033|||Postplatz \/ Webergasse|5658423|4621733|0||",
+            "36040112||Aue (Sachs)|Postplatz|5606043|4549703|0||",
+            "33007557||Bautzen|Postplatz|5674144|4669959|0||",
+            "36040241||Eibenstock|Postplatz|5595521|4542641|0||",
+            "40001859||Fehrbellin|Postplatz|0|0|0||",
+            "14908883||Görlitz|Postplatz|5672771|4708965|0||",
+            "36040863||Lindenau (b Aue)|Postplatz|5606136|4542992|0||",
+            "31000979||Reichenbach (Vogtl)|Postplatz|5609693|4521544|0||",
+            "36020504||Stollberg (Erzgeb)|Postplatz|5619679|4555330|0||"
+          ],
+          "ExpirationTime" : "\/Date(1490636902710+0200)\/"
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/tr\/pointfinder"
+      },
+      "recorded_at" : 1490561263.749143,
+      "request" : {
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8"
+        },
+        "method" : "POST",
+        "body" : {
+          "dvb" : true,
+          "query" : "Postplatz",
+          "stopsOnly" : true,
+          "limit" : 0
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/tr\/pointfinder"
+      }
+    },
+    {
+      "response" : {
+        "status" : 200,
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8",
+          "Content-Length" : "268",
+          "Cache-Control" : "private",
+          "Access-Control-Allow-Origin" : "*",
+          "Vary" : "Accept-Encoding",
+          "Date" : "Sun, 26 Mar 2017 20:47:43 GMT",
+          "Content-Encoding" : "gzip"
+        },
+        "body" : {
+          "PointStatus" : "Identified",
+          "Status" : {
+            "Code" : "Ok"
+          },
+          "Points" : [
+            "33000005|||Pirnaischer Platz|5658597|4622395|0||"
+          ],
+          "ExpirationTime" : "\/Date(1490636904410+0200)\/"
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/tr\/pointfinder"
+      },
+      "recorded_at" : 1490561263.780368,
+      "request" : {
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8"
+        },
+        "method" : "POST",
+        "body" : {
+          "dvb" : true,
+          "query" : "Pirnaischer Platz",
+          "stopsOnly" : true,
+          "limit" : 0
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/tr\/pointfinder"
+      }
+    },
+    {
+      "response" : {
+        "status" : 200,
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8",
+          "Content-Length" : "2503",
+          "Cache-Control" : "private",
+          "Access-Control-Allow-Origin" : "*",
+          "Vary" : "Accept-Encoding",
+          "Date" : "Sun, 26 Mar 2017 20:47:43 GMT",
+          "Content-Encoding" : "gzip"
+        },
+        "body" : {
+          "Routes" : [
+            {
+              "PartialRoutes" : [
+                {
+                  "RegularStops" : [
+                    {
+                      "DataId" : "33000037",
+                      "Place" : "Dresden",
+                      "Latitude" : 5658719,
+                      "ArrivalTime" : "\/Date(1490561100000-0000)\/",
+                      "Longitude" : 4621720,
+                      "Type" : "Stop",
+                      "Name" : "Postplatz",
+                      "MapPdfId" : "VVO_58D828F03",
+                      "Platform" : {
+                        "Name" : "1",
+                        "Type" : "Platform"
+                      },
+                      "DepartureTime" : "\/Date(1490561100000-0000)\/"
+                    },
+                    {
+                      "DataId" : "33000004",
+                      "Place" : "Dresden",
+                      "Latitude" : 5658665,
+                      "ArrivalTime" : "\/Date(1490561160000-0000)\/",
+                      "Longitude" : 4622022,
+                      "Type" : "Stop",
+                      "Name" : "Altmarkt",
+                      "Platform" : {
+                        "Name" : "1",
+                        "Type" : "Platform"
+                      },
+                      "DepartureTime" : "\/Date(1490561160000-0000)\/"
+                    },
+                    {
+                      "DataId" : "33000005",
+                      "Place" : "Dresden",
+                      "Latitude" : 5658601,
+                      "ArrivalTime" : "\/Date(1490561280000-0000)\/",
+                      "Longitude" : 4622368,
+                      "Type" : "Stop",
+                      "Name" : "Pirnaischer Platz",
+                      "MapPdfId" : "VVO_58D828F04",
+                      "Platform" : {
+                        "Name" : "2",
+                        "Type" : "Platform"
+                      },
+                      "DepartureTime" : "\/Date(1490561280000-0000)\/"
+                    }
+                  ],
+                  "MapDataIndex" : 0,
+                  "PartialRouteId" : 0,
+                  "Duration" : 3,
+                  "Shift" : "None",
+                  "Mot" : {
+                    "Type" : "Tram",
+                    "Name" : "2",
+                    "Direction" : " Kleinzschachwitz",
+                    "Changes" : [
+                      "509486"
+                    ],
+                    "Diva" : {
+                      "Network" : "voe",
+                      "Number" : "11002"
+                    }
+                  }
+                }
+              ],
+              "Duration" : 3,
+              "MapData" : [
+                "Tram|5658721|4621720|5658718|4621733|5658705|4621821|5658690|4621919|5658669|4622023|5658669|4622023|5658665|4622040|5658645|4622157|5658623|4622268|5658617|4622302|5658604|4622369|"
+              ],
+              "Interchanges" : 0,
+              "FareZoneDestination" : 10,
+              "FareZoneOrigin" : 10,
+              "Price" : "2,30",
+              "PriceLevel" : 1,
+              "MotChain" : [
+                {
+                  "Type" : "Tram",
+                  "Name" : "2",
+                  "Direction" : " Kleinzschachwitz",
+                  "Changes" : [
+                    "509486"
+                  ],
+                  "Diva" : {
+                    "Network" : "voe",
+                    "Number" : "11002"
+                  }
+                }
+              ],
+              "MapPdfId" : "VVO_58D828F02",
+              "RouteId" : 0
+            },
+            {
+              "PartialRoutes" : [
+                {
+                  "Duration" : 3,
+                  "Shift" : "None",
+                  "Infos" : [
+                    "aktuell informiert: www.vvo-mobil.de"
+                  ],
+                  "PartialRouteId" : 0,
+                  "RegularStops" : [
+                    {
+                      "DataId" : "33000037",
+                      "Place" : "Dresden",
+                      "Latitude" : 5658719,
+                      "ArrivalTime" : "\/Date(1490561340000-0000)\/",
+                      "Longitude" : 4621720,
+                      "Type" : "Stop",
+                      "Name" : "Postplatz",
+                      "MapPdfId" : "VVO_58D828F06",
+                      "Platform" : {
+                        "Name" : "1",
+                        "Type" : "Platform"
+                      },
+                      "DepartureTime" : "\/Date(1490561340000-0000)\/"
+                    },
+                    {
+                      "DataId" : "33000004",
+                      "Place" : "Dresden",
+                      "Latitude" : 5658651,
+                      "ArrivalTime" : "\/Date(1490561400000-0000)\/",
+                      "Longitude" : 4622064,
+                      "Type" : "Stop",
+                      "Name" : "Altmarkt",
+                      "Platform" : {
+                        "Name" : "3",
+                        "Type" : "Platform"
+                      },
+                      "DepartureTime" : "\/Date(1490561400000-0000)\/"
+                    },
+                    {
+                      "DataId" : "33000005",
+                      "Place" : "Dresden",
+                      "Latitude" : 5658554,
+                      "ArrivalTime" : "\/Date(1490561520000-0000)\/",
+                      "Longitude" : 4622443,
+                      "Type" : "Stop",
+                      "Name" : "Pirnaischer Platz",
+                      "MapPdfId" : "VVO_58D828F07",
+                      "Platform" : {
+                        "Name" : "5",
+                        "Type" : "Platform"
+                      },
+                      "DepartureTime" : "\/Date(1490561520000-0000)\/"
+                    }
+                  ],
+                  "Mot" : {
+                    "Type" : "Bus",
+                    "Name" : "360",
+                    "Direction" : "Kurort Altenberg Bahnhof",
+                    "Changes" : [
+                      "509460"
+                    ],
+                    "Diva" : {
+                      "Network" : "voe",
+                      "Number" : "23360"
+                    }
+                  },
+                  "MapDataIndex" : 0
+                }
+              ],
+              "Duration" : 3,
+              "MapData" : [
+                "Bus|5658721|4621720|5658718|4621733|5658705|4621821|5658690|4621919|5658678|4621917|5658665|4621980|5658657|4622024|5658654|4622039|5658650|4622064|5658650|4622064|5658636|4622157|5658614|4622277|5658590|4622381|5658581|4622403|5658562|4622449|5658553|4622444|"
+              ],
+              "Interchanges" : 0,
+              "FareZoneDestination" : 10,
+              "FareZoneOrigin" : 10,
+              "Price" : "2,30",
+              "PriceLevel" : 1,
+              "MotChain" : [
+                {
+                  "Type" : "Bus",
+                  "Name" : "360",
+                  "Direction" : "Kurort Altenberg Bahnhof",
+                  "Changes" : [
+                    "509460"
+                  ],
+                  "Diva" : {
+                    "Network" : "voe",
+                    "Number" : "23360"
+                  }
+                }
+              ],
+              "MapPdfId" : "VVO_58D828F05",
+              "RouteId" : 1
+            },
+            {
+              "PartialRoutes" : [
+                {
+                  "RegularStops" : [
+                    {
+                      "DataId" : "33000037",
+                      "Place" : "Dresden",
+                      "Latitude" : 5658699,
+                      "ArrivalTime" : "\/Date(1490561400000-0000)\/",
+                      "Longitude" : 4621660,
+                      "Type" : "Stop",
+                      "Name" : "Postplatz",
+                      "MapPdfId" : "VVO_58D828F09",
+                      "Platform" : {
+                        "Name" : "4",
+                        "Type" : "Platform"
+                      },
+                      "DepartureTime" : "\/Date(1490561400000-0000)\/"
+                    },
+                    {
+                      "DataId" : "33000020",
+                      "Place" : "Dresden",
+                      "Latitude" : 5659069,
+                      "ArrivalTime" : "\/Date(1490561520000-0000)\/",
+                      "Longitude" : 4621912,
+                      "Type" : "Stop",
+                      "Name" : "Theaterplatz",
+                      "Platform" : {
+                        "Name" : "2",
+                        "Type" : "Platform"
+                      },
+                      "DepartureTime" : "\/Date(1490561520000-0000)\/"
+                    },
+                    {
+                      "DataId" : "33000019",
+                      "Place" : "Dresden",
+                      "Latitude" : 5659469,
+                      "ArrivalTime" : "\/Date(1490561640000-0000)\/",
+                      "Longitude" : 4622169,
+                      "Type" : "Stop",
+                      "Name" : "Neustädter Markt",
+                      "Platform" : {
+                        "Name" : "4",
+                        "Type" : "Platform"
+                      },
+                      "DepartureTime" : "\/Date(1490561640000-0000)\/"
+                    },
+                    {
+                      "DataId" : "33000014",
+                      "Place" : "Dresden",
+                      "Latitude" : 5659473,
+                      "ArrivalTime" : "\/Date(1490561700000-0000)\/",
+                      "Longitude" : 4622464,
+                      "Type" : "Stop",
+                      "Name" : "Carolaplatz",
+                      "MapPdfId" : "VVO_58D828F0A",
+                      "Platform" : {
+                        "Name" : "1",
+                        "Type" : "Platform"
+                      },
+                      "DepartureTime" : "\/Date(1490561700000-0000)\/"
+                    }
+                  ],
+                  "MapDataIndex" : 0,
+                  "PartialRouteId" : 0,
+                  "Duration" : 5,
+                  "Shift" : "None",
+                  "Mot" : {
+                    "Type" : "Tram",
+                    "Name" : "8",
+                    "Direction" : " Hellerau",
+                    "Changes" : [
+
+                    ],
+                    "Diva" : {
+                      "Network" : "voe",
+                      "Number" : "11008"
+                    }
+                  }
+                },
+                {
+                  "MapDataIndex" : 1,
+                  "Duration" : 2,
+                  "Shift" : "None",
+                  "Mot" : {
+                    "Type" : "Footpath"
+                  }
+                },
+                {
+                  "RegularStops" : [
+                    {
+                      "DataId" : "33000014",
+                      "Place" : "Dresden",
+                      "Latitude" : 5659526,
+                      "ArrivalTime" : "\/Date(1490561820000-0000)\/",
+                      "Longitude" : 4622505,
+                      "Type" : "Stop",
+                      "Name" : "Carolaplatz",
+                      "MapPdfId" : "VVO_58D828F0A",
+                      "Platform" : {
+                        "Name" : "3",
+                        "Type" : "Platform"
+                      },
+                      "DepartureTime" : "\/Date(1490561820000-0000)\/"
+                    },
+                    {
+                      "DataId" : "33000015",
+                      "Place" : "Dresden",
+                      "Latitude" : 5658920,
+                      "ArrivalTime" : "\/Date(1490561940000-0000)\/",
+                      "Longitude" : 4622597,
+                      "Type" : "Stop",
+                      "Name" : "Synagoge",
+                      "Platform" : {
+                        "Name" : "1",
+                        "Type" : "Platform"
+                      },
+                      "DepartureTime" : "\/Date(1490561940000-0000)\/"
+                    },
+                    {
+                      "DataId" : "33000005",
+                      "Place" : "Dresden",
+                      "Latitude" : 5658508,
+                      "ArrivalTime" : "\/Date(1490562060000-0000)\/",
+                      "Longitude" : 4622363,
+                      "Type" : "Stop",
+                      "Name" : "Pirnaischer Platz",
+                      "MapPdfId" : "VVO_58D828F0B",
+                      "Platform" : {
+                        "Name" : "3",
+                        "Type" : "Platform"
+                      },
+                      "DepartureTime" : "\/Date(1490562060000-0000)\/"
+                    }
+                  ],
+                  "MapDataIndex" : 2,
+                  "PartialRouteId" : 1,
+                  "Duration" : 4,
+                  "Shift" : "None",
+                  "Mot" : {
+                    "Type" : "Tram",
+                    "Name" : "7",
+                    "Direction" : " Pennrich",
+                    "Changes" : [
+
+                    ],
+                    "Diva" : {
+                      "Network" : "voe",
+                      "Number" : "11007"
+                    }
+                  }
+                }
+              ],
+              "Duration" : 11,
+              "MapData" : [
+                "Tram|5658698|4621658|5658712|4621654|5658748|4621645|5658778|4621635|5658792|4621635|5658806|4621639|5658814|4621644|5658825|4621655|5658830|4621673|5658837|4621697|5658843|4621709|5658863|4621730|5658874|4621739|5658902|4621762|5658953|4621800|5659003|4621839|5659048|4621873|5659064|4621892|5659073|4621910|5659073|4621910|5659074|4621911|5659086|4621938|5659078|4621970|5659075|4621980|5659077|4621990|5659080|4621999|5659091|4622009|5659103|4622015|5659131|4622026|5659197|4622054|5659368|4622124|5659398|4622136|5659405|4622140|5659439|4622154|5659457|4622161|5659457|4622161|5659470|4622166|5659470|4622166|5659481|4622171|5659493|4622179|5659498|4622185|5659500|4622195|5659498|4622212|5659493|4622225|5659486|4622248|5659482|4622268|5659479|4622286|5659473|4622339|5659470|4622389|5659471|4622402|5659473|4622433|5659475|4622464|",
+                "Footpath|5659473|4622464|5659475|4622464|5659476|4622481|5659481|4622486|5659488|4622487|5659490|4622503|5659512|4622508|5659520|4622508|5659526|4622509|5659526|4622505|",
+                "Tram|5659526|4622509|5659520|4622508|5659512|4622508|5659473|4622506|5659441|4622514|5659435|4622516|5659388|4622527|5659091|4622606|5659058|4622612|5659035|4622614|5659021|4622615|5659010|4622615|5658990|4622613|5658966|4622609|5658937|4622602|5658920|4622599|5658920|4622599|5658901|4622595|5658888|4622592|5658870|4622587|5658852|4622582|5658816|4622567|5658765|4622541|5658702|4622509|5658692|4622502|5658682|4622494|5658661|4622474|5658638|4622450|5658629|4622441|5658628|4622440|5658621|4622432|5658607|4622421|5658595|4622411|5658588|4622406|5658574|4622398|5658507|4622365|"
+              ],
+              "Interchanges" : 1,
+              "FareZoneDestination" : 10,
+              "FareZoneOrigin" : 10,
+              "Price" : "2,30",
+              "PriceLevel" : 1,
+              "MotChain" : [
+                {
+                  "Type" : "Tram",
+                  "Name" : "8",
+                  "Direction" : " Hellerau",
+                  "Changes" : [
+
+                  ],
+                  "Diva" : {
+                    "Network" : "voe",
+                    "Number" : "11008"
+                  }
+                },
+                {
+                  "Type" : "Tram",
+                  "Name" : "7",
+                  "Direction" : " Pennrich",
+                  "Changes" : [
+
+                  ],
+                  "Diva" : {
+                    "Network" : "voe",
+                    "Number" : "11007"
+                  }
+                }
+              ],
+              "MapPdfId" : "VVO_58D828F08",
+              "RouteId" : 2
+            },
+            {
+              "Duration" : 10,
+              "Interchanges" : 0,
+              "RouteId" : 4,
+              "MapData" : [
+                "Footpath|5658719|4621720|5658721|4621720|5658718|4621733|5658705|4621821|5658690|4621919|5658698|4621922|5658675|4622045|5658671|4622065|5658652|4622158|5658633|4622250|5658629|4622272|5658617|4622347|5658618|4622346|"
+              ],
+              "MotChain" : [
+                {
+                  "Diva" : {
+                    "Network" : "",
+                    "Number" : ""
+                  },
+                  "Type" : "Footpath",
+                  "Name" : "Fussweg"
+                }
+              ],
+              "MapPdfId" : "VVO_58D828F00",
+              "PartialRoutes" : [
+                {
+                  "RegularStops" : [
+                    {
+                      "DataId" : "33000037",
+                      "Place" : "Dresden",
+                      "Latitude" : 5658719,
+                      "ArrivalTime" : "\/Date(1490561100000-0000)\/",
+                      "Longitude" : 4621720,
+                      "Type" : "Stop",
+                      "Name" : "Postplatz",
+                      "MapPdfId" : "VVO_58D828F01",
+                      "DepartureTime" : "\/Date(1490561100000-0000)\/"
+                    },
+                    {
+                      "DataId" : "33000005",
+                      "Place" : "Dresden",
+                      "Latitude" : 5658618,
+                      "ArrivalTime" : "\/Date(1490561700000-0000)\/",
+                      "Longitude" : 4622346,
+                      "Type" : "Stop",
+                      "Name" : "Pirnaischer Platz",
+                      "MapPdfId" : "VVO_58D828F01",
+                      "DepartureTime" : "\/Date(1490561700000-0000)\/"
+                    }
+                  ],
+                  "MapDataIndex" : 0,
+                  "Duration" : 10,
+                  "Shift" : "None",
+                  "Mot" : {
+                    "Diva" : {
+                      "Network" : "",
+                      "Number" : ""
+                    },
+                    "Type" : "Footpath",
+                    "Name" : "Fussweg"
+                  }
+                }
+              ]
+            }
+          ],
+          "Status" : {
+            "Code" : "Ok"
+          },
+          "SessionId" : "836523460:efa4"
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/tr\/trips"
+      },
+      "recorded_at" : 1490561264.343303,
+      "request" : {
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8"
+        },
+        "method" : "POST",
+        "body" : {
+          "origin" : "33000037",
+          "destination" : "33000005",
+          "shorttermchanges" : true,
+          "time" : "2017-03-26T20:45:46Z",
+          "isarrivaltime" : false,
+          "includeAlternativeStops" : true,
+          "standardSettings" : {
+            "walkingSpeed" : "Normal",
+            "footpathToStop" : 5,
+            "maxChanges" : "Unlimited",
+            "mot" : [
+              "Tram",
+              "CityBus",
+              "IntercityBus",
+              "SuburbanRailway",
+              "Train",
+              "Cableway",
+              "Ferry",
+              "HailedSharedTaxi"
+            ]
+          },
+          "mobilitySettings" : "None"
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/tr\/trips"
+      }
+    }
+  ],
+  "name" : "testRouteFromPostplatzToPirnaischerPlatz()"
+}
