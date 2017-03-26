@@ -49,7 +49,7 @@ extension POI {
         public let southwest: Coordinate
     }
 
-    public static func find(types: [POI.Kind] = POI.Kind.all, in rect: CoordRect, completion: @escaping (Result<POIResponse>) -> Void) {
+    public static func find(types: [POI.Kind] = POI.Kind.all, in rect: CoordRect, session: URLSession = .shared, completion: @escaping (Result<POIResponse>) -> Void) {
         guard
             let gkSWCoord = rect.southwest.asGK,
             let gkNECoord = rect.northeast.asGK
@@ -67,6 +67,6 @@ extension POI {
             "pintypes": types.map { $0.rawValue },
         ]
 
-        post(Endpoint.poiSearch, data: data, completion: completion)
+        post(Endpoint.poiSearch, data: data, session: session, completion: completion)
     }
 }
