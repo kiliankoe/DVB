@@ -49,10 +49,10 @@ class StopTests: XCTestCase {
         XCTAssert(stop1 == stop2)
     }
 
-    func testFindHelmholtzQuery() {
+    func testFindStopHelmholtz() {
         let e = expectation(description: "Find correct stop")
 
-        let session = Session(cassetteName: "findhelmholtzquery")
+        let session = Session(cassetteName: #function)
 
         Stop.find("Helmholtz", session: session) { result in
             switch result {
@@ -71,13 +71,13 @@ class StopTests: XCTestCase {
         waitForExpectations(timeout: 5)
     }
 
-    func testFindNear() {
+    func testFindNearAntonstrasse() {
         let e = expectation(description: "Find stops near coordinate")
 
-        let session = Session(cassetteName: "findnear")
+        let session = Session(cassetteName: #function)
 
-        let coordinate = GKCoordinate(x: 4_622_550, y: 5_660_140)
-        Stop.findNear(coord: coordinate, session: session) { result in
+        let antonstrasseCoord = GKCoordinate(x: 4_622_550, y: 5_660_140)
+        Stop.findNear(coord: antonstrasseCoord, session: session) { result in
             switch result {
             case let .failure(error):
                 XCTFail("Failed with error: \(error)")
