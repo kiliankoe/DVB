@@ -1,5 +1,6 @@
 import Foundation
 import XCTest
+import DVR
 @testable import DVB
 
 class RouteChangeTests: XCTestCase {
@@ -7,7 +8,9 @@ class RouteChangeTests: XCTestCase {
     func testGetRouteChanges() {
         let e = expectation(description: "Get route changes")
 
-        RouteChange.get { result in
+        let session = Session(cassetteName: #function)
+
+        RouteChange.get(session: session) { result in
             switch result {
             case let .failure(error):
                 XCTFail("Failed with error: \(error)")

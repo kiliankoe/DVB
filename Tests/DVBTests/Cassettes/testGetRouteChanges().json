@@ -1,0 +1,2872 @@
+{
+  "interactions" : [
+    {
+      "response" : {
+        "status" : 200,
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8",
+          "Content-Length" : "19825",
+          "Cache-Control" : "private",
+          "Access-Control-Allow-Origin" : "*",
+          "Vary" : "Accept-Encoding",
+          "Date" : "Sun, 26 Mar 2017 20:39:46 GMT",
+          "Content-Encoding" : "gzip"
+        },
+        "body" : {
+          "Lines" : [
+            {
+              "Mot" : "Tram",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "11001"
+                },
+                {
+                  "Network" : "voe",
+                  "Number" : "21101"
+                }
+              ],
+              "Name" : "1",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509486"
+              ],
+              "Id" : "428533"
+            },
+            {
+              "Mot" : "Tram",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "11002"
+                },
+                {
+                  "Network" : "voe",
+                  "Number" : "21102"
+                }
+              ],
+              "Name" : "2",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509486"
+              ],
+              "Id" : "428608"
+            },
+            {
+              "Mot" : "Tram",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "11003"
+                },
+                {
+                  "Network" : "voe",
+                  "Number" : "21103"
+                }
+              ],
+              "Name" : "3",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509514"
+              ],
+              "Id" : "428531"
+            },
+            {
+              "Mot" : "Tram",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "11004"
+                },
+                {
+                  "Network" : "voe",
+                  "Number" : "21104"
+                }
+              ],
+              "Name" : "4",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509565"
+              ],
+              "Id" : "428603"
+            },
+            {
+              "Mot" : "Tram",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "11006"
+                },
+                {
+                  "Network" : "voe",
+                  "Number" : "21106"
+                }
+              ],
+              "Name" : "6",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509514"
+              ],
+              "Id" : "428604"
+            },
+            {
+              "Mot" : "Tram",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "11007"
+                },
+                {
+                  "Network" : "voe",
+                  "Number" : "21107"
+                }
+              ],
+              "Name" : "7",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509563"
+              ],
+              "Id" : "428532"
+            },
+            {
+              "Mot" : "Tram",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "11008"
+                },
+                {
+                  "Network" : "voe",
+                  "Number" : "21108"
+                }
+              ],
+              "Name" : "8",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509563"
+              ],
+              "Id" : "428530"
+            },
+            {
+              "Mot" : "Tram",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "11010"
+                },
+                {
+                  "Network" : "voe",
+                  "Number" : "21110"
+                }
+              ],
+              "Name" : "10",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509564",
+                "509565"
+              ],
+              "Id" : "428581"
+            },
+            {
+              "Mot" : "Tram",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "11012"
+                },
+                {
+                  "Network" : "voe",
+                  "Number" : "21112"
+                }
+              ],
+              "Name" : "12",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509565"
+              ],
+              "Id" : "428582"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "21061"
+                }
+              ],
+              "Name" : "61",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509514",
+                "509434"
+              ],
+              "Id" : "428504"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "21063"
+                }
+              ],
+              "Name" : "63",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509529",
+                "509434"
+              ],
+              "Id" : "428751"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "21064"
+                }
+              ],
+              "Name" : "64",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509516",
+                "509435"
+              ],
+              "Id" : "428750"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "21065"
+                }
+              ],
+              "Name" : "65",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509550"
+              ],
+              "Id" : "428749"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "21066"
+                }
+              ],
+              "Name" : "66",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509514"
+              ],
+              "Id" : "428748"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "21070"
+                }
+              ],
+              "Name" : "70",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509543",
+                "509534"
+              ],
+              "Id" : "428690"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "21072"
+                }
+              ],
+              "Name" : "72",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509563"
+              ],
+              "Id" : "428506"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "21075"
+                }
+              ],
+              "Name" : "75",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509434"
+              ],
+              "Id" : "428511"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "21077"
+                }
+              ],
+              "Name" : "77",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509563"
+              ],
+              "Id" : "428494"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "21081"
+                }
+              ],
+              "Name" : "81",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509470",
+                "509534"
+              ],
+              "Id" : "428499"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "21085"
+                }
+              ],
+              "Name" : "85",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509354",
+                "509434"
+              ],
+              "Id" : "428501"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "21088"
+                }
+              ],
+              "Name" : "88",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509483"
+              ],
+              "Id" : "428399"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "21094"
+                }
+              ],
+              "Name" : "94",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509154"
+              ],
+              "Id" : "428401"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23302"
+                }
+              ],
+              "Name" : "302",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509523"
+              ],
+              "Id" : "428786"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23351"
+                }
+              ],
+              "Name" : "351",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509067"
+              ],
+              "Id" : "428774"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23361"
+                }
+              ],
+              "Name" : "361",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509460",
+                "509094"
+              ],
+              "Id" : "428388"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23362"
+                }
+              ],
+              "Name" : "362",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509290",
+                "509447"
+              ],
+              "Id" : "428387"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "70098a"
+                }
+              ],
+              "Name" : "98A",
+              "TransportationCompany" : "Müller",
+              "Changes" : [
+                "509099"
+              ],
+              "Id" : "428823"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "70098b"
+                }
+              ],
+              "Name" : "98B",
+              "TransportationCompany" : "Müller",
+              "Changes" : [
+                "509099"
+              ],
+              "Id" : "428824"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23354"
+                }
+              ],
+              "Name" : "A",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509545"
+              ],
+              "Id" : "428536"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24101"
+                },
+                {
+                  "Network" : "voe",
+                  "Number" : "24102"
+                }
+              ],
+              "Name" : "A (Meißen)",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509503"
+              ],
+              "Id" : "428712"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24201"
+                },
+                {
+                  "Network" : "voe",
+                  "Number" : "24202"
+                }
+              ],
+              "Name" : "B (Meißen)",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509503"
+              ],
+              "Id" : "428711"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23356"
+                }
+              ],
+              "Name" : "C",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509097"
+              ],
+              "Id" : "428647"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23358"
+                }
+              ],
+              "Name" : "E",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509429"
+              ],
+              "Id" : "428641"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23359"
+                }
+              ],
+              "Name" : "F",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509062"
+              ],
+              "Id" : "428563"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "12926"
+                }
+              ],
+              "Name" : "G\/L",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428631"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "12928"
+                }
+              ],
+              "Name" : "H\/S",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509557",
+                "509552"
+              ],
+              "Id" : "428630"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "12922"
+                }
+              ],
+              "Name" : "M",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428628"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "12919"
+                }
+              ],
+              "Name" : "N",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428627"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "12924"
+                }
+              ],
+              "Name" : "P",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428626"
+            },
+            {
+              "Mot" : "CityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "12920"
+                }
+              ],
+              "Name" : "Z",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428623"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "27117"
+                }
+              ],
+              "Name" : "117\/267",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428586"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "27171"
+                }
+              ],
+              "Name" : "171",
+              "TransportationCompany" : "RBO",
+              "Changes" : [
+                "509403"
+              ],
+              "Id" : "428326"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15201"
+                }
+              ],
+              "Name" : "201",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509481"
+              ],
+              "Id" : "428942"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15202"
+                }
+              ],
+              "Name" : "202",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509481"
+              ],
+              "Id" : "428941"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15204"
+                }
+              ],
+              "Name" : "204",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428648"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15205"
+                }
+              ],
+              "Name" : "205",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428472"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15206"
+                }
+              ],
+              "Name" : "206",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428423"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15207a"
+                }
+              ],
+              "Name" : "207a",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428832"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15207b"
+                }
+              ],
+              "Name" : "207b",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428831"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15209"
+                }
+              ],
+              "Name" : "209",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428421"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15214"
+                }
+              ],
+              "Name" : "214",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509049",
+                "509552"
+              ],
+              "Id" : "428760"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15216"
+                }
+              ],
+              "Name" : "216",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428765"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+
+              ],
+              "Name" : "217",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428688"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15218"
+                }
+              ],
+              "Name" : "218",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428417"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15219"
+                }
+              ],
+              "Name" : "219",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428418"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15236"
+                }
+              ],
+              "Name" : "236",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428436"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15237"
+                }
+              ],
+              "Name" : "237",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428439"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15238"
+                }
+              ],
+              "Name" : "238",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428438"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15241"
+                }
+              ],
+              "Name" : "241",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428435"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15244a"
+                }
+              ],
+              "Name" : "244a",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509559"
+              ],
+              "Id" : "428850"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15245"
+                },
+                {
+                  "Network" : "voe",
+                  "Number" : "22245"
+                }
+              ],
+              "Name" : "245",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428381"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15246"
+                }
+              ],
+              "Name" : "246",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509552"
+              ],
+              "Id" : "428382"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15247"
+                }
+              ],
+              "Name" : "247",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509049"
+              ],
+              "Id" : "428835"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15251"
+                }
+              ],
+              "Name" : "251",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509468"
+              ],
+              "Id" : "428377"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "15252"
+                }
+              ],
+              "Name" : "252",
+              "TransportationCompany" : "OVPS",
+              "Changes" : [
+                "509081",
+                "509468"
+              ],
+              "Id" : "428837"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23304"
+                }
+              ],
+              "Name" : "304",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509262"
+              ],
+              "Id" : "428589"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23305"
+                }
+              ],
+              "Name" : "305",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509523"
+              ],
+              "Id" : "428590"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23306"
+                }
+              ],
+              "Name" : "306",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509262"
+              ],
+              "Id" : "428594"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23309"
+                }
+              ],
+              "Name" : "309",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509523"
+              ],
+              "Id" : "428593"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23310"
+                }
+              ],
+              "Name" : "310",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509446"
+              ],
+              "Id" : "428598"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23316"
+                }
+              ],
+              "Name" : "316",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509064"
+              ],
+              "Id" : "428372"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23317"
+                }
+              ],
+              "Name" : "317",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509522",
+                "509402"
+              ],
+              "Id" : "428373"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23321"
+                }
+              ],
+              "Name" : "321",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509402"
+              ],
+              "Id" : "428374"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23337"
+                }
+              ],
+              "Name" : "337",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509429"
+              ],
+              "Id" : "428348"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23360"
+                }
+              ],
+              "Name" : "360",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509460"
+              ],
+              "Id" : "428406"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23363"
+                }
+              ],
+              "Name" : "363",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509495"
+              ],
+              "Id" : "428386"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23365"
+                }
+              ],
+              "Name" : "365",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509436"
+              ],
+              "Id" : "428391"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23370"
+                }
+              ],
+              "Name" : "370",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509460"
+              ],
+              "Id" : "428564"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23379"
+                }
+              ],
+              "Name" : "379",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509436"
+              ],
+              "Id" : "428446"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23380"
+                }
+              ],
+              "Name" : "380",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509460"
+              ],
+              "Id" : "428447"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23382"
+                }
+              ],
+              "Name" : "382",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509460"
+              ],
+              "Id" : "428444"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23386"
+                }
+              ],
+              "Name" : "386",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509464"
+              ],
+              "Id" : "428433"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23387"
+                }
+              ],
+              "Name" : "387",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509464"
+              ],
+              "Id" : "428432"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23388"
+                }
+              ],
+              "Name" : "388",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509460",
+                "509060"
+              ],
+              "Id" : "428428"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "23389"
+                }
+              ],
+              "Name" : "389",
+              "TransportationCompany" : "RVD",
+              "Changes" : [
+                "509460",
+                "509464"
+              ],
+              "Id" : "428427"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24400"
+                }
+              ],
+              "Name" : "400",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509412",
+                "509561"
+              ],
+              "Id" : "428429"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24404"
+                }
+              ],
+              "Name" : "404",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509312"
+              ],
+              "Id" : "428488"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24411"
+                }
+              ],
+              "Name" : "411",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509503"
+              ],
+              "Id" : "428469"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24412"
+                }
+              ],
+              "Name" : "412",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509430"
+              ],
+              "Id" : "428468"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24414"
+                }
+              ],
+              "Name" : "414",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509165"
+              ],
+              "Id" : "428466"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24418"
+                }
+              ],
+              "Name" : "418",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509430"
+              ],
+              "Id" : "428462"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24420"
+                }
+              ],
+              "Name" : "420",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509430"
+              ],
+              "Id" : "428460"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24426"
+                }
+              ],
+              "Name" : "426",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509165",
+                "509312"
+              ],
+              "Id" : "428522"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24428"
+                }
+              ],
+              "Name" : "428",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509165"
+              ],
+              "Id" : "428524"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24431"
+                }
+              ],
+              "Name" : "431",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509531"
+              ],
+              "Id" : "428883"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24432"
+                }
+              ],
+              "Name" : "432",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509162"
+              ],
+              "Id" : "428880"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24433"
+                }
+              ],
+              "Name" : "433",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509162"
+              ],
+              "Id" : "428881"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24437"
+                }
+              ],
+              "Name" : "437",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509160"
+              ],
+              "Id" : "428901"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24440"
+                }
+              ],
+              "Name" : "440",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509562"
+              ],
+              "Id" : "428903"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24442"
+                }
+              ],
+              "Name" : "442",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509162"
+              ],
+              "Id" : "428894"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24443"
+                }
+              ],
+              "Name" : "443",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509531"
+              ],
+              "Id" : "428897"
+            },
+            {
+              "Mot" : "IntercityBus",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "24457"
+                }
+              ],
+              "Name" : "457",
+              "TransportationCompany" : "VGM",
+              "Changes" : [
+                "509391"
+              ],
+              "Id" : "428891"
+            },
+            {
+              "Mot" : "Train",
+              "Divas" : [
+                {
+                  "Network" : "ddb",
+                  "Number" : "90225"
+                },
+                {
+                  "Network" : "voe",
+                  "Number" : "06031"
+                }
+              ],
+              "Name" : "RB 31",
+              "TransportationCompany" : "DB",
+              "Changes" : [
+                "509547"
+              ],
+              "Id" : "428959"
+            },
+            {
+              "Mot" : "Train",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "09020"
+                },
+                {
+                  "Network" : "ddb",
+                  "Number" : "90241A"
+                }
+              ],
+              "Name" : "RE 20",
+              "TransportationCompany" : "DB",
+              "Changes" : [
+                "509546"
+              ],
+              "Id" : "428821"
+            },
+            {
+              "Mot" : "Train",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "09050"
+                },
+                {
+                  "Network" : "ddb",
+                  "Number" : "90500"
+                }
+              ],
+              "Name" : "RE 50",
+              "TransportationCompany" : "DB",
+              "Changes" : [
+                "509555",
+                "509542"
+              ],
+              "Id" : "428817"
+            },
+            {
+              "Mot" : "Train",
+              "Divas" : [
+                {
+                  "Network" : "ddb",
+                  "Number" : "90241"
+                },
+                {
+                  "Network" : "voe",
+                  "Number" : "05U28"
+                },
+                {
+                  "Network" : "ddb",
+                  "Number" : "90247"
+                }
+              ],
+              "Name" : "U28",
+              "TransportationCompany" : "DB",
+              "Changes" : [
+                "509555"
+              ],
+              "Id" : "428875"
+            },
+            {
+              "Mot" : "SuburbanRailway",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "10001"
+                },
+                {
+                  "Network" : "ddb",
+                  "Number" : "92D01"
+                }
+              ],
+              "Name" : "S 1",
+              "TransportationCompany" : "DB",
+              "Changes" : [
+                "509555",
+                "509542",
+                "509546",
+                "509533",
+                "509536"
+              ],
+              "Id" : "428946"
+            },
+            {
+              "Mot" : "SuburbanRailway",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "10002"
+                },
+                {
+                  "Network" : "ddb",
+                  "Number" : "92D02"
+                }
+              ],
+              "Name" : "S 2",
+              "TransportationCompany" : "DB",
+              "Changes" : [
+                "509546"
+              ],
+              "Id" : "428930"
+            },
+            {
+              "Mot" : "SuburbanRailway",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "07004"
+                },
+                {
+                  "Network" : "ddb",
+                  "Number" : "92L04"
+                }
+              ],
+              "Name" : "S 4",
+              "TransportationCompany" : "DB",
+              "Changes" : [
+                "509548"
+              ],
+              "Id" : "428849"
+            },
+            {
+              "Mot" : "Cableway",
+              "Divas" : [
+                {
+                  "Network" : "voe",
+                  "Number" : "810B2"
+                }
+              ],
+              "Name" : "B2",
+              "TransportationCompany" : "DVB",
+              "Changes" : [
+                "509117"
+              ],
+              "Id" : "428490"
+            }
+          ],
+          "Status" : {
+            "Code" : "Ok"
+          },
+          "Changes" : [
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1490565600000+0200)\/",
+                  "End" : "\/Date(1505167140000+0200)\/"
+                }
+              ],
+              "Id" : "509522",
+              "Type" : "Scheduled",
+              "Title" : "Vollsperrung K 9252 in Lomnitz",
+              "LineIds" : [
+                "428373"
+              ],
+              "Description" : "<H2>Vollsperrung K 9252 in Lomnitz <\/H2>\n\t<P>Die Linie 317 verkehrt aufgrund einer Sperrung der K 9252 in Lomnitz (Ottendorfer Str.) nach einem Umleitungsfahrplan,\nwobei die Haltestelle Lomnitz, Siedlung nicht bedient werden kann.\n\nDie Haltestelle Ottendorf-Okrilla, Lomnitzer Str. wird auf die Radeberger Str. (S177 in Höhe Borngasse) verlegt. Die Haltestelle Lomnitz, Kreuzung (2) wird auf die Seifersdorfer Str. verlegt.\n\n<\/P>\n\n     \t<H2>Umleitungsfahrplan<\/H2>\n\t<UL>\n\t<LI><a href=\"http:\/\/www.rvd.de\/rvd\/view\/mdb\/rvd\/fahrplan\/mdb_246143_317u.pdf\">Umleitungsfahrplan Linie 317U\t<\/UL>",
+              "PublishDate" : "\/Date(1490174160000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1490565600000+0200)\/",
+                  "End" : "\/Date(1490997540000+0200)\/"
+                }
+              ],
+              "Id" : "509561",
+              "Type" : "Scheduled",
+              "Title" : "Radebeul, Sonnenleite - Vollsperrung",
+              "LineIds" : [
+                "428429"
+              ],
+              "Description" : "Die Haltestellen Sonnenleite und Sportplatz Lindenau werden geschlossen. Behelfshaltestellen werden an der Moritzburger Straße, oberhalb der Sonnenleite und in der Jägerhofstraße an der Neuländer Straße eingerichtet. Die Haltestellen Neuländer Straße werden entgegengesetzt bedient.",
+              "PublishDate" : "\/Date(1490454960000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1490565600000+0200)\/"
+                }
+              ],
+              "Id" : "509562",
+              "Type" : "Scheduled",
+              "Title" : "Koselitz - Vollsperrung der Ortsdurchfahrt",
+              "LineIds" : [
+                "428903"
+              ],
+              "Description" : "Die Haltestellen Koselitz, Gasthaus und Am Sportplatz sowie Pulsen, Gasthaus werden nicht bedient.\nIn Koselitz befindet sich eine Ersatzhaltestelle in Am Sportplatz, unmittelbar vor diesem, welche in beiden Richtungen bedient wird. Für die Haltestellen Pulsen, Gasthaus sind Behelfshaltestellen im Tiefenauer Weg eingerichtet. Auf Grund der Umleitungsstrecke kann es zu  Verspätungen von bis zu. 10 Minuten kommen.",
+              "PublishDate" : "\/Date(1490454960000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1490664600000+0200)\/",
+                  "End" : "\/Date(1491010200000+0200)\/"
+                }
+              ],
+              "Id" : "509565",
+              "Type" : "Scheduled",
+              "Title" : "Dresden - Canalettostraße, Straßenbau",
+              "LineIds" : [
+                "428603",
+                "428581",
+                "428582"
+              ],
+              "Description" : "<H2>Beschreibung<\/H2>\n<P><STRONG>Straßenbahnlinien 4 und 10:<\/STRONG><BR>Umleitung zwischen den Haltestellen Straßburger Platz und Mosenstraße über die Haltestellen&nbsp;<U>Comeniusplatz – Fetscherplatz<\/U>. <\/P>\n<P><BR><STRONG>Straßenbahnlinie&nbsp;12:<\/STRONG><BR>Umleitung zwischen den Haltestellen Straßburger Platz und Gabelsbergerstraße über die Haltestellen <U>Comeniusplatz – Fetscherplatz<\/U>. <\/P>\n<H2>Ersatzverkehr<\/H2>\n<P><STRONG>Ersatzbusverkehr&nbsp;E (Ringlinie):<\/STRONG> <BR><U>Krankenhaus St. Joseph-Stift – Fetscherplatz – Comeniusplatz – Krankenhaus St. Joseph-Stift<BR><\/U><\/P>\n<H2>Haltestellenanpassungen<FONT ><\/FONT><\/H2><FONT ><\/FONT>\n<UL><FONT >\n<LI>\n<DIV align=left>Die Haltestelle <STRONG>Fetscherplatz<\/STRONG> der Li. <FONT >4,10 und 12 befindet sich <\/FONT>in der Fetscherstraße.<\/DIV><\/FONT><FONT ><\/FONT>\n<LI><FONT >Die Haltestelle<STRONG> Comeniusplatz<\/STRONG> des Ersatzverkehrs befindet sich in der Comeniusstraße nach der Kreuzung Fetscherstraße.<\/FONT>\n<LI><STRONG><FONT color=#ff0000>Die zusätzliche Umleitung der Linie 10:<\/FONT><\/STRONG> Aufgrund von Bauarbeiten verkehrt die Linie 10 zwischen den Haltestellen Gret-Palucca-Straße und Bahnhof Mitte in beiden Richtungen über die Haltestellen <U>Walpurgisstraße - Postplatz<\/U>.<\/LI><\/UL>\n<H2>Tarifregelung<\/H2><FONT ><\/FONT><FONT >\n<P>Bei unterbrochenem Linienverkehr wird für jedes Umsteigen die Gültigkeitsdauer der Einzelfahrt um 5 Minuten verlängert.<\/FONT><\/P>",
+              "PublishDate" : "\/Date(1490537760000+0200)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1490665500000+0200)\/",
+                  "End" : "\/Date(1490924700000+0200)\/"
+                }
+              ],
+              "Id" : "509563",
+              "Type" : "Scheduled",
+              "Title" : "Dresden Weixdorf - Brühler Straße, Gleisbau",
+              "LineIds" : [
+                "428532",
+                "428530",
+                "428506",
+                "428494"
+              ],
+              "Description" : "<H2>Beschreibung<\/H2>\n<P><STRONG>Straßenbahnlinie 7:<\/STRONG> <FONT color=#ff0000>verkehrt verkürzt<\/FONT><\/P>\n<P>Pennrich - Hauptbahnhof - Pirnaischer Platz - Albertplatz - <U>Hellersiedlung<\/U><\/P>\n<UL>\n<LI>Die Linie 7 fährt in den Nächten von 1:30 Uhr bis 4:30 Uhr zusätzlich nach Hellerau und ersetzt das <STRONG>alita 8<\/STRONG> zwischen Moritzburger Weg und Hellerau.<\/LI><\/UL>\n<P><STRONG>Buslinie 72 &amp; 77:<\/STRONG> <FONT color=#ff0000>verlängerte Linienführung<\/FONT><\/P>\n<P>Flughafen \/ Elbepark - Infineon Nord - Hellersiedlung<\/P>\n<H2>Ersatzverkehr<\/H2>\n<P><STRONG>Ersatzbusverkehr EV7:<\/STRONG><\/P>\n<P><U>Hellersiedlung<\/U> - Infineon Nord - Weixdorf<\/P>\n<H2>Tarifregelung<\/H2>\n<UL>\n<LI>Bei unterbrochener Linienführung wird die Gültigkeitsdauer der Einzelfahrt um 5 Minuten verlängert.<\/LI><\/UL>\n<H2>Zusatzinformation<\/H2>\n<UL>\n<LI>Die Linien 72 \/ 77 erreichen Sie bereits ab der Haltestelle Hellersiedlung. \n<LI>Das alita 8 wird durch die Fahrten der Linie 7 ersetzt. \n<LI>Bitte richten Sie sich auf die angepassten Abfahrtszeiten ein.<\/LI><\/UL>",
+              "PublishDate" : "\/Date(1490537760000+0200)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1490666400000+0200)\/",
+                  "End" : "\/Date(1491442200000+0200)\/"
+                }
+              ],
+              "Id" : "509564",
+              "Type" : "Scheduled",
+              "Title" : "Dresden - Könneritzstraße, Errichtung Fußgängerquerung",
+              "LineIds" : [
+                "428581"
+              ],
+              "Description" : "<h2>Beschreibung<\/h2>\n\t<p><b>Straßenbahnlinie 10<\/b>:<br>Umleitung zwischen den Haltestellen Bahnhof Mitte und Gret-Palucca-Straße in beiden Richtungen über die Haltestellen <u>Schweriner Straße – Postplatz – Prager Straße – Walpurgisstraße – Hauptbahnhof Nord<\/u>.<br><\/p><h2>Tarifregelung<\/h2><p>Bei Fahrten der Straßenbahnlinie 10 über die Umleitungsstrecke wird die Gültigkeit der<b> Kurzstrecke um 2 Haltestellen<\/b> und der <b>Einzelfahrt um 5 Minuten<\/b> erweitert.<\/p>",
+              "PublishDate" : "\/Date(1490537760000+0200)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1490680800000+0200)\/"
+                }
+              ],
+              "Id" : "509531",
+              "Type" : "Scheduled",
+              "Title" : "Seerhausen, Vollsperrung B169",
+              "LineIds" : [
+                "428883",
+                "428897"
+              ],
+              "Description" : "Die Haltestellen Seerhausen, Meißner Str., Am Hang sowie Plotitz und Stösitz, Gasthaus werden geschlossen. Als Ersatz dienen die Haltestellen Seerhausen, Gasthaus sowie die Behelfshaltestellen in Stösitz in der Poststraße.",
+              "PublishDate" : "\/Date(1490256960000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1490738400000+0200)\/",
+                  "End" : "\/Date(1511823540000+0100)\/"
+                }
+              ],
+              "Id" : "509557",
+              "Type" : "Scheduled",
+              "Title" : "Linie H\/S: Entfall der Haltestelle „Pirna Dresdner Straße“",
+              "LineIds" : [
+                "428630"
+              ],
+              "Description" : "Linie H\/S: Entfall der Haltestelle „Pirna Dresdner Straße“\n\nAb Mittwoch, den 29.03. bis Montag, den 27.11.2017 wird die Haltestelle „Pirna Dresdner Straße“  in beiden Richtungen, aufgrund von Hochwasserschadensbeseitigungsmaßnahmen, ersatzlos gestrichen.\n\n\n\nBei Fragen und Hinweisen bezüglich des Fahrplans und der Tarife stehen wir Ihnen gern in unserem OVPS-Servicebüro auf dem ZOB (Busbahnhof) Pirna sowie am \nOVPS-ServiceTelefon unter 03501 792-160 zur Verfügung.",
+              "PublishDate" : "\/Date(1490350560000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1490738400000+0200)\/",
+                  "End" : "\/Date(1511823540000+0100)\/"
+                }
+              ],
+              "Id" : "509552",
+              "Type" : "Scheduled",
+              "Title" : "Verlegung aller Haltestellen der „ Breiten Straße“",
+              "LineIds" : [
+                "428631",
+                "428630",
+                "428628",
+                "428627",
+                "428626",
+                "428623",
+                "428586",
+                "428648",
+                "428472",
+                "428423",
+                "428832",
+                "428831",
+                "428421",
+                "428760",
+                "428765",
+                "428688",
+                "428417",
+                "428418",
+                "428436",
+                "428439",
+                "428438",
+                "428435",
+                "428381",
+                "428382"
+              ],
+              "Description" : "Verlegung aller Haltestellen der „ Breiten Straße“  \n\nAb Mittwoch, den 29.03. bis Montag, den 27.11.2017 wird der Bereich der Haltestellen „Pirna Breite Straße“ aufgrund von Bauarbeiten zur Beseitigung von Hochwasserschäden gesperrt. \nAlle betroffenen Haltestellen werden in gleicher Richtung auf die Robert-Koch-Straße verlegt.\nDie Busse fahren Umleitung über die Königsteiner Straße (S172).\n\n\n\nBei Fragen und Hinweisen bezüglich des Fahrplans und der Tarife stehen wir Ihnen gern in unserem OVPS-Servicebüro auf dem ZOB (Busbahnhof) Pirna sowie am \nOVPS-ServiceTelefon unter 03501 792-160 zur Verfügung.",
+              "PublishDate" : "\/Date(1490289360000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1490374800000+0100)\/",
+                  "End" : "\/Date(1490583600000+0200)\/"
+                }
+              ],
+              "Id" : "509529",
+              "Type" : "Scheduled",
+              "Title" : "Dresden - Stübelallee\/Karcherallee, Gleisbau",
+              "LineIds" : [
+                "428751"
+              ],
+              "Description" : "<h2>Beschreibung<\/h2>\n<p><strong>Buslinie 63<\/strong><font color=\"#303030\">:<br>Umleitung in beiden Richtungen zwischen den Haltestellen Tiergartenstraße und Mansfelder Straße über den&nbsp;Fahrweg&nbsp;<u>Karcherallee – Stübelallee <\/u><\/font><font color=\"#303030\"><u><font color=\"#303030\"><u>–<\/u><\/font> Müller-Berset-Straße <\/u><\/font><font color=\"#303030\"><u><font color=\"#303030\"><u>–<\/u><\/font> Bertholt-Brecht-Straße.<\/u><\/font>\n<\/p><h2>Haltestellenanpassung<\/h2>\n<ul>\n<li>Die Haltestelle <strong>Karcherallee<\/strong> wird in beiden Richtungen in die Comeniusstraße verlegt.<\/li><\/ul>",
+              "PublishDate" : "\/Date(1490256960000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1490241600000+0100)\/"
+                }
+              ],
+              "Id" : "509550",
+              "Type" : "Scheduled",
+              "Title" : "Dresden - Berggartenstraße, Kanaleinbruch",
+              "LineIds" : [
+                "428749"
+              ],
+              "Description" : "<h2>Beschreibung<\/h2>\n<p><strong>Buslinie 65<\/strong>:<br>Umleitung <font color=\"#ff0000\">in Richtung Heidenau \/ Luga <\/font>zwischen den Haltestellen Kretschmerstraße und Niederwaldplatz über den Fahrweg <u>Tolkewitzer Straße – Oehmestraße<\/u>.<\/p>\n<p>Umleitung<font color=\"#ff0000\"> in Richtung Schillerplatz <\/font>zwischen den Haltestellen Niederwaldplatz und Schillerplatz über den Fahrweg <u>Niederwaldstraße <\/u><u><u>–<\/u> Hüblerstraße<\/u>.<\/p>\n\n<h2>Haltestellenanpassungen<\/h2>\n<ul>\n<li>Die Haltestelle <b>Berggartenstraße<\/b> kann in beiden Richtungen <font color=\"#ff0000\">nicht bedient <\/font>werden.<br><\/li><li>Die Haltestelle<strong> Jüngststraße<\/strong> <font color=\"#ff0000\">in Richtung Heidenau \/ Luga <\/font>wird zusätzlich bedient.<\/li>\n<li>Die Haltestellen <strong>Niederwaldstraße<\/strong>, <strong>Jacobistraße<\/strong> und <strong>Wägnerstraße<\/strong> werden <font color=\"#ff0000\">in Richtung Schillerplatz <\/font>zusätzlich bedient.<\/li><\/ul>",
+              "PublishDate" : "\/Date(1490282160000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1490223600000+0100)\/",
+                  "End" : "\/Date(1491947940000+0200)\/"
+                }
+              ],
+              "Id" : "509523",
+              "Type" : "Scheduled",
+              "Title" : "Vollsperrung Pulsnitzer Straße Radeberg",
+              "LineIds" : [
+                "428786",
+                "428590",
+                "428593"
+              ],
+              "Description" : "<H2>Vollsperrung  Pulsnitzer Straße Radeberg<\/H2>\n\t<P>Wegen einer Sperrung der Pulsnitzer Straße in Radeberg verkehren die Linien 305 und 309 sowie alle Fahrten der Linie 302 über Oberstraße und Badstraße.\n \nDie Haltestelle Pulsnitzer Straße in Richtung Bischofswerda\/ Pulsnitz wird zur Haltestelle Oberstraße verlegt. \nDie Haltestelle Pulsnitzer Straße in Richtung Radeberg wird an die Otto-Uhlig-Straße verlegt.\nDie Haltestelle Krankenhaus kann nicht bedient werden. \n \nDie Haltestellen Fußweg zum Krankenhaus, C.-Seydel-Str. und Am Sandberg können von der Linie \n302 nicht bedient werden.\n<\/P>",
+              "PublishDate" : "\/Date(1490174160000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1490940000000+0200)\/",
+                  "End" : "\/Date(1491177600000+0200)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1490274960000+0100)\/",
+              "Id" : "509547",
+              "Type" : "Scheduled",
+              "Title" : "Ersatzverkehr Elsterwerda-Biehla - Großenhain",
+              "TripRequestInclude" : true,
+              "Description" : "Vom 31.3.2017 (8 Uhr) bis 3.4.2017 (2 Uhr) fallen die Züge zwischen Großenhain und Elsterwerda-Biehla aus. Es besteht Ersatzverkehr mit Bussen, Die Busse haben in Großenhain Anschluss an die Züge von\/nach Dresden Hbf. Bitte beachten Sie, die früheren Abfahrtszeiten der Busse ab Elsterwerda-Biehla in Richtung Großenhain.",
+              "LineIds" : [
+                "428959"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1490940000000+0200)\/",
+                  "End" : "\/Date(1491177600000+0200)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1490274960000+0100)\/",
+              "Id" : "509548",
+              "Type" : "Scheduled",
+              "Title" : "Ersatzverkehr Falkenberg - Ruhland - Hoyerswerda",
+              "TripRequestInclude" : true,
+              "Description" : "Vom 31.3.2017 (ab 8 Uhr) bis 2.4.2017 fallen die Züge der RB49 zwischen Falkenberg und Ruhland sowie die Züge der S4 zwischen Falkenberg und Hoyerswerda aus. Es besteht Ersatzverkehr mit Bussen. Linie A fährt stündlich Falkenberg <> Ruhland für RB49 und S4. Linie B fährt zweistündlich Ruhland <> Hoyerswerda. Bitte benutzen Sie in der anderen Stunde die RE15",
+              "LineIds" : [
+                "428849"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1490997600000+0200)\/",
+                  "End" : "\/Date(1491170340000+0200)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1490274960000+0100)\/",
+              "Id" : "509546",
+              "Type" : "Scheduled",
+              "Title" : "Brückenarbeiten zwischen Dresden Hbf und Dresden-Reick",
+              "TripRequestInclude" : true,
+              "Description" : "<H2>Beschreibung<\/H2>\n<P  >&nbsp;<\/P>\n<P  >Wegen Brückenarbeiten zwischen Dresden Hbf und Dresden-Reick<\/P>\n<P  >kommt es am 1. und 2. April 2017 zu folgenden Fahrplanänderungen:<\/P>\n<P  >Am 1. April 2017 fällt die S 2 zwischen Dresden Hbf und Pirna aus,<\/P>\n<P  >Ersatz mit der S 1.<\/P>\n<P  >Am 1. und 2. April 2017 fährt RE 5279 (Dresden Hbf ab 7.50 Uhr) bis<\/P>\n<P  >zu 6 Minuten früher ab Dresden Hbf, Dresden-Strehlen und Dresden-<\/P>\n<P  >Reick.<\/P>\n<P  >Am 2. April 2017 fahren S 31783 (Dresden Hbf ab 9.50 Uhr) und<\/P>\n<P  >S 31785 (Dresden Hbf ab 10.20 Uhr) jeweils 6 Minuten früher ab<\/P>\n<P  >Dresden Hbf, Dresden-Strehlen und Dresden-Reick.<\/P>\n<H2>Links<\/H2>\n<UL>\n<LI><A href=\"https:\/\/bauinfos.deutschebahn.com\/docs\/sachsen\/infos\/S1_2_01-02042017_fahrplan.pdf\">https:\/\/bauinfos.deutschebahn.com\/docs\/sachsen\/infos\/S1_2_01-02042017_fahrplan.pdf<\/A><\/LI><\/UL>",
+              "LineIds" : [
+                "428821",
+                "428946",
+                "428930"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1489978800000+0100)\/",
+                  "End" : "\/Date(1490580000000+0200)\/"
+                }
+              ],
+              "LineIds" : [
+                "428690"
+              ],
+              "Id" : "509543",
+              "PublishDate" : "\/Date(1490267760000+0100)\/",
+              "Type" : "Scheduled",
+              "Title" : "Dresden - Gottfried-Keller-Straße, Straßenbau",
+              "TripRequestInclude" : true,
+              "Topic" : "",
+              "Description" : "<h2>Beschreibung<\/h2><p><strong>Buslinie 70<\/strong>: <br>Umleitung in beiden Richtungen zwischen den Haltestellen Grillparzer Straße und Coventrystraße bzw. Dahlienweg über den Fahrweg <u>Steinbacher Straße – Gorbitzer Straße – Coventrystraße<\/u>.<\/p>\n<h2>Haltestellenanpassungen<\/h2>\n<ul>\n<li>Die Haltestelle <strong>Weidentalstraße<\/strong> wird in beiden Richtungen in die Gorbitzer Straße an die Kreuzung Coventrystraße verlegt. \n<\/li><li>Die Haltestelle <strong>Arthur-Weineck-Straße<\/strong> wird<font color=\"#000000\"> in beiden Richtungen <\/font>zusätzlich bedient. \n<\/li><li>Die Haltestelle <strong>Gorbitzer Straße<\/strong> wird <font color=\"#ff0000\">nur in Richtung Klotzsche <\/font>zusätzlich bedient.<\/li><\/ul>"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1489964400000+0100)\/",
+                  "End" : "\/Date(1493416740000+0200)\/"
+                }
+              ],
+              "Id" : "509481",
+              "Type" : "Scheduled",
+              "Title" : "Buslinien 201, 202: Sperrung der Weesensteiner Straße",
+              "LineIds" : [
+                "428942",
+                "428941"
+              ],
+              "Description" : "Buslinien 201, 202:  Sperrung der  Weesensteiner Straße\n\nAb Montag, den 20.03.2017 bis voraussichtlich Freitag, 28.04.2017 wird die Weesensteiner Straße gesperrt. Grund hierfür sind Brückenbauarbeiten über der Müglitz. Die gesamten Fahrten führen in dieser Zeit über den Kuxberg.\n\n•Die Haltestelle „Dohna Altenberger Straße“ wird nur von den Fahrten 6,9 und 12 der Linie 201 bedient. \n•Die Haltestelle „Dohna Reppchenstraße“ wird zur Haltestelle „Dohna Markt“ verlegt.     \n\nFür Fragen und Hinweise stehen wir Ihnen gern in unserem OVPS-Servicebüro auf dem ZOB (Busbahnhof) Pirna  und am OVPS-ServiceTelefon 03501 792-160 zur Verfügung",
+              "PublishDate" : "\/Date(1489572960000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1491170400000+0200)\/",
+                  "End" : "\/Date(1501451940000+0200)\/"
+                }
+              ],
+              "Id" : "509559",
+              "Type" : "Scheduled",
+              "Title" : "Buslinie 244: Verlegung der Haltestelle „Pfaffendorf Ortsmitte“",
+              "LineIds" : [
+                "428850"
+              ],
+              "Description" : "Ab Montag, den 3.April 2017 bis einschließlich 30.Juni 2017 erfolgt eine Verlegung der Haltestelle „Pfaffendorf Ortsmitte“ zur Haltestelle „Pfaffendorf Vereinshaus“. \nGrund hierfür ist die Erneuerung der Stützwände.\n\nDie Busse der Regionallinie 244a können die Straße passieren und es gibt keine Einschränkungen auf dem Linienweg. Alle Haltestellen werden laut Fahrplan bedient.\n\nFür Fragen und Hinweise bezüglich des Fahrplans stehen wir Ihnen gern in unserem OVPS-Servicebüro auf dem ZOB (Busbahnhof) Pirna und am OVPS-ServiceTelefon 03501 792-160 zur Verfügung.",
+              "PublishDate" : "\/Date(1490354160000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1491170400000+0200)\/",
+                  "End" : "\/Date(1491861540000+0200)\/"
+                }
+              ],
+              "Id" : "509555",
+              "Type" : "Scheduled",
+              "Title" : "Oberleitungsarbeiten zwischen Bad Schandau Ost und Dolni Zleb",
+              "LineIds" : [
+                "428817",
+                "428875",
+                "428946"
+              ],
+              "Description" : "<H2>Beschreibung<\/H2>\n<P>Wegen Oberleitungsarbeiten zwischen Bad Schandau Ost und Dolni Zleb werden vom 03. bis 10. April 2017 folgende Fahrplanänderungen erforderlich:<\/P>\n<UL>\n<LI><STRONG>S 1 Meißen Triebischtal - Dresden Hbf - Bad Schandau - Schöna<\/STRONG><\/LI><\/UL>\n<P><STRONG>3.\/ 4. April 2017<\/STRONG>: Ausfall von einigen Zügen zwischen Krippen und Schöna, bitte nutzen Sie die noch verkehrenden Züge der S 1 und der U 28<\/P>\n<P><STRONG>6. April 2017<\/STRONG>: Ausfall S 31769 (Bad Schandau ab 22.14 Uhr) von Krippen bis Schöna<\/P>\n<P><STRONG>9. April 2017:<\/STRONG> Ausfall S 31783 (Bad Schandau ab 10.37 Uhr) und S 31785 (Bad Schandau ab 11.07 Uhr) von Krippen bis Schöna sowie&nbsp; S 31784 (Schöna ab 16.50 Uhr) und S 31786 (Schöna ab 17.50 Uhr) Ausfall von Schöna bis Krippen<\/P>\n<UL>\n<LI><STRONG>U 28 Decin - Schöna - Bad Schandau - Sebnitz - Dolni Pousteva - Rumburk<\/STRONG><\/LI><\/UL>\n<P><STRONG>4. bis 10. April 2017:<\/STRONG> die Züge der U 28 fahren bis zu 5 Minuten später zwischen Bad Schandau und Decin<\/P>\n<UL>\n<LI><STRONG>RE 50 Saison (Leipzig - Riesa) Dresden - Bad Schandau - Schöna<\/STRONG><\/LI><\/UL>\n<P><STRONG>8. April 2017:<\/STRONG> RE 16546 (Schöna ab 16.25 Uhr) fährt 20 Minuten früher ab Schöna und Schmilka-Hirschmühle<\/P>\n<P><FONT ><B ><\/B><\/FONT>&nbsp;&nbsp;<\/P>\n<P><\/P>\n<UL>\n<LI><A href=\"https:\/\/bauinfos.deutschebahn.com\/docs\/sachsen\/infos\/RE50_U28_S1_03-10042017_fahrplan.pdf\">https:\/\/bauinfos.deutschebahn.com\/docs\/sachsen\/infos\/RE50_U28_S1_03-10042017_fahrplan.pdf<\/A><\/LI><\/UL>",
+              "PublishDate" : "\/Date(1490346960000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1491184800000+0200)\/",
+                  "End" : "\/Date(1496455200000+0200)\/"
+                }
+              ],
+              "Id" : "509534",
+              "Type" : "Scheduled",
+              "Title" : "Dresden - Radeburger Straße, Straßenbau",
+              "LineIds" : [
+                "428690",
+                "428499"
+              ],
+              "Description" : "<H2>Beschreibung<\/H2>\n<P><STRONG>Buslinie 70:<\/STRONG><\/P>\n<P>Umleitung zwischen den Haltestellen Beckerstraße und Am Olter <FONT color=#ff0000>nur in Richtung Gompitz <\/FONT>über den Fahrweg <U>Radeburger Straße - Wilschdorfer Landstraße - Autobahn 4<\/U>.<\/P>\n<P><STRONG>Buslinie 81, 328:<\/STRONG><\/P>\n<P>Umleitung zwischen den Haltestellen Saßnitzer Straße und Am Olter <FONT color=#ff0000>nur in Richtung Bahnhof Neustadt <\/FONT>über den Fahrweg <U>Radeburger Straße - Wilschdorfer Landstraße - Autobahn 4<\/U>.<\/P>\n\n<H2>Haltestellenanpassungen<\/H2>\n<UL>\n<LI>Die Haltestelle <STRONG>Waldteichstraße<\/STRONG> kann in Richtung Gompitz \/ Bahnhof Neustadt nicht bedient werden. Nutzen Sie bitte die Haltestelle Saßnitzer Straße in der Radeburger Straße (Richtung Wilschdorfer Landstraße).<\/LI>\n<LI>Die Haltestelle <STRONG>Elsterweg <\/STRONG>kann in Richtung Gompitz \/ Bahnhof Neustadt nicht bedient werden.<\/LI>\n<LI>Die Haltestelle <STRONG>Am Olter<\/STRONG> wird in beiden Richtungen verlegt.<\/LI><\/UL>",
+              "PublishDate" : "\/Date(1490260560000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1489719600000+0100)\/",
+                  "End" : "\/Date(1490664600000+0200)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1489590960000+0100)\/",
+              "Id" : "509486",
+              "Type" : "Scheduled",
+              "Title" : "Dresden - Bodenbacher Straße \/ Pirnaer Landstraße, Gleisbau",
+              "TripRequestInclude" : true,
+              "Description" : "<h2>Beschreibung<\/h2> <p><strong>Straßenbahnlinie 1<\/strong>: <font color=\"#ff0000\">verkürzte Linienführung<\/font><br>Leutewitz – Postplatz – Straßburger Platz – <u>Krankenhaus St. Joseph-Stift<\/u> – Comeniusplatz <br><br><strong>Straßenbahnlinie 2<\/strong>: <font color=\"#ff0000\">verkürzte Linienführung<\/font><br>Gorbitz – Postplatz – Straßburger Platz – <u>Krankenhaus St. Joseph-Stift<\/u> – Comeniusplatz<br><br><strong>Straßenbahnlinie E<\/strong>: <font color=\"#ff0000\">verkehrt außerhalb der Einsatzzeiten der Linie 9<\/font><br><u>Albert-Wolf-Platz<\/u> – Prohlis<br><\/p> <h2>Ersatzverkehr<\/h2> <p><strong>Ersatzbusverkehr EV1<\/strong>:<u><br>Krankenhaus St-Joseph-Stift<\/u> – Comeniusplatz – Zwinglistraße – Abzweig nach Reick – Hp. Dobritz – <u>Albert-Wolf-Platz<\/u><strong><br><br>Ersatzbusverkehr EV2<\/strong>:<strong><br><u><\/u><\/strong><u>Krhs. St.-Joseph-Stift<\/u> – Comeniusplatz – Zwinglistraße – Altleuben – Kleinzschachwitz<\/p> <h2>Haltestellenanpassungen \/ Zusatzinformationen<\/h2> <p><\/p><ul><li>Der Umstieg von den Straßenbahnlinien 1 und 2 zum Ersatzverkehr erfolgt an der Haltestelle <strong>Krankenhaus St. Joseph-Stift<\/strong>.<\/li> <li>Der Umstieg vom Ersatzverkehr zu den Straßenbahnlinien 1 und 2 erfolgt an der Haltestelle <strong>Comeniusplatz<\/strong>.<\/li> <li>Die Haltestellen <strong>Comeniusplatz<\/strong>, <strong>Lipsiusstraße<\/strong> und <strong>Karcherallee<\/strong> werden <font color=\"#ff0000\">in Richtung Prohlis \/ Kleinzschachwitz<\/font> in die Comeniusstraße verlegt.<\/li> <li>Die Straßenbahnlinien 1 und 2 bedienen die Haltestelle <strong>Fetscherplatz<\/strong> im Gleisbogen von der Nicolaistraße in die Fetscherstraße.<\/li> <li>Nutzen Sie bitte zwischen <strong>Albert-Wolf-Platz<\/strong> und <strong>Prohlis<\/strong> die Straßenbahnlinien 9 und 13 beziehungsweise die Fahrten der Straßenbahnlinie E.<\/li> <\/ul> <p><\/p> <h2>Wichtiger Hinweis<\/h2> <p>Der <b>Ersatzverkehr<\/b> wird <font color=\"#ff0000\">in stadtwärtiger Richtung<\/font> dem jeweiligen Baufortschritt angepasst. Somit ergeben sich in den folgenden Zeiträumen unterschiedliche Fahrtwege:<br> <\/p><ul><li>vom 17.03.2017, 04:00 Uhr bis 23.03.2017, 07:00 Uhr<\/li> <li>vom 23.03.2017, 07:00 Uhr bis 27.03.2017, 07:00 Uhr<\/li> <li>vom 27.03.2017, 07:00 Uhr bis 28.03.2017, 03:30 Uhr<\/li><\/ul><p>Die genauen Fahrtverläufe entnehmen Sie bitte dem Bauflyer:<\/p><ul><li><a href=\"http:\/\/www.dvb.de\/ext\/pdf\/bau_bodenbacher_170417.pdf\" target=\"_blank\">Infoflyer mit Kartendarstellung der Ersatzverkehre<\/a> (PDF&nbsp;|&nbsp;375&nbsp;KB)<\/li><\/ul><h2>Tarifregelung<\/h2> <p>Bei unterbrochenem Linienverkehr wird für jedes Umsteigen die Gültigkeitsdauer der Einzelfahrt um 5 Minuten verlängert.<\/p>",
+              "LineIds" : [
+                "428533",
+                "428608"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1489618800000+0100)\/",
+                  "End" : "\/Date(1490824740000+0200)\/"
+                }
+              ],
+              "Id" : "509495",
+              "Type" : "Scheduled",
+              "Title" : "Haltestelle Pohrsdorf, Abzweig Fördergersdorf",
+              "LineIds" : [
+                "428386"
+              ],
+              "Description" : "<H2>Haltestelle Pohrsdorf, Abzweig Fördergersdorf<\/H2>\n\t<P>\nDie Haltestelle Pohrsdorf, Abzweig Fördergersdorf wird in Richtung Spechtshausen um ca. 30 m verlegt. \n<\/P>",
+              "PublishDate" : "\/Date(1489688160000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1489618800000+0100)\/",
+                  "End" : "\/Date(1490997540000+0200)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1490274960000+0100)\/",
+              "Id" : "509545",
+              "Type" : "Scheduled",
+              "Title" : "Umleitung wegen Baumaßnahmen",
+              "TripRequestInclude" : true,
+              "Description" : "<H2>Umleitung wegen Baumaßnahmen<\/H2>\n\t<P>Im Zuge einer Baumaßnahme verkehrt die Linie A in Fahrtrichtung Freital über Tharandter Straße, Mohorner Straße und Reisewitzer Straße. Als Ersatz für die Haltestelle Bohnhöfer Platz wird die Haltestelle Clara-Viebig-Straße auf der Tharandter Str. bedient.\n<\/P>",
+              "LineIds" : [
+                "428536"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1489464000000+0100)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1489407360000+0100)\/",
+              "Id" : "509470",
+              "Type" : "Scheduled",
+              "Title" : "Dresden - Lößnitzstraße, Leitungsbau",
+              "TripRequestInclude" : true,
+              "Description" : "<H2>Beschreibung<\/H2>\n\n<P><STRONG>Buslinie 81:<\/STRONG><BR>Umleitung <FONT color=#ff0000>nur in Richtung Bahnhof Neustadt<\/font> zwischen den Haltestellen Liststraße und Bahnhof Neustadt über den Fahrweg <U>Großenhainer Straße – Fritz-Reuter-Straße – Eschenstraße – Dammweg –  Dr.-Friedrich-Wolf-Straße – Schlesischer Platz<\/U>.<BR>\n\n<H2>Haltestellenanpassungen<\/H2>\n<P><ul><li>Die Haltestellen <STRONG>Friedensstraße<\/STRONG> und <STRONG>Bischofsplatz<\/STRONG> können nicht bedient werden.<\/li>\n<li>Die Haltestelle <STRONG>Dammweg<\/STRONG> wird in der Dr.-Friedrich-Wolf-Straße eingerichtet.<\/li>\n<\/ul><\/P>\n\n<H2>Zusatzinformation<\/h2>\n<p>Die Umleitung betrifft außerdem die Buslinien <STRONG>326, 328, 457<\/STRONG> und <STRONG>458<\/STRONG>.<\/p>",
+              "LineIds" : [
+                "428499"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1489446000000+0100)\/",
+                  "End" : "\/Date(1514761140000+0100)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1489396560000+0100)\/",
+              "Id" : "509468",
+              "Type" : "Scheduled",
+              "Title" : "Buslinien 251 und 252: Haltestelle \"Krippen Zum Kohlbornstein\"",
+              "TripRequestInclude" : true,
+              "Description" : "Buslinien 251 und 252: Haltestelle \"Krippen Zum Kohlbornstein\"\n\nAb Dienstag, 14.03.2017 wird die Haltestelle \"Krippen Zum Kohlbornstein“ dauerhaft an die Kreuzung nach Kleinhennersdorf verlegt.",
+              "LineIds" : [
+                "428377",
+                "428837"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1489377600000+0100)\/",
+                  "End" : "\/Date(1495854000000+0200)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1489583760000+0100)\/",
+              "Id" : "509483",
+              "Type" : "Scheduled",
+              "Title" : "Dresden - Windmühlenstraße, Straßenbau",
+              "TripRequestInclude" : true,
+              "Description" : "<h2>Beschreibung<\/h2>\n<p><strong>Buslinie 88:<\/strong><\/p>\n<p>Umleitung <font color=\"#ff0000\">Richtung Prohlis<\/font> zwischen den Haltestellen Reisstraße und Prohlis, Bad über den Fahrweg <u>Reisstraße \/ Niedersedlitzer Straße – Niedersedlitzer Straße – Langer Weg – Gleisschleife Prohlis<\/u>.<\/p>\n<p>Umleitung <font color=\"#ff0000\">Richtung Kleinzschachwitz, Fähre<\/font> zwischen den Haltestellen Göppersdorfer Weg und Reisstraße über den Fahrweg <u>Erich-Kästner-Straße \/ Windmühlenstraße – Windmühlenstraße – Langer Weg – Niedersedlitzer Straße – Reisstraße<\/u>.<\/p>\n<h2>Haltestellenanpassungen<\/h2>\n<ul>\n<li>Die Haltestellen <strong>Göppersdorfer Weg<\/strong>, <strong>Kurt-Tucholsky-Straße<\/strong>, <strong>Erich-Kästner-Straße<\/strong> und <strong>Prohlis, Kaufpark Nickern<\/strong> in <font color=\"#ff0000\">Richtung Prohlis <\/font><font color=\"#000000\">können nicht bedient werden<\/font>. \n<\/li><li>Die Haltestellen <strong>Ernst-Toller-Straße<\/strong> und <strong>Niedersedlitzer Straße<\/strong> werden zusätzlich bedient.\n<\/li><li>Auf der Windmühlenstraße wird in <font color=\"#ff0000\">Richtung Kleinzschachwitz, Fähre<\/font> eine neue Haltestelle <strong>Windmühlenstraße<\/strong> eingerichtet.\n<\/li><li>Die Haltestellen <strong>Mühlenstraße<\/strong> werden auf die Niedersedlitzer Straße verlegt.<\/li><\/ul>",
+              "LineIds" : [
+                "428399"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1489374000000+0100)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1490102160000+0100)\/",
+              "Id" : "509516",
+              "Type" : "Scheduled",
+              "Title" : "Dresden - Borsbergstraße\/Fetscherstraße, Leitungsbau",
+              "TripRequestInclude" : true,
+              "Description" : "<H2>Beschreibung<\/H2>\n<P><STRONG>Buslinie 64:<\/STRONG><BR>Umleitung <FONT color=#ff0000>nur in Richtung Kaditz<\/FONT> zwischen den Haltestellen Mosenstraße und Gabelsbergerstraße über den Fahrweg <U>Borsbergstraße – Krenkelstraße - Holbeinstraße - Fetscherstraße<\/U>.<BR><\/P>\n<H2>Haltestellenanpassung<\/H2>\n<P>Die Haltestelle <STRONG>Fetscherplatz<\/STRONG> der Buslinie 64 <FONT color=#ff0000>in Richtung Kaditz<\/FONT> wird in der Borsbergstraße vor die&nbsp;Einmündung&nbsp;Krenkenlstraße verlegt.<\/P>",
+              "LineIds" : [
+                "428750"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1489359600000+0100)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1489245360000+0100)\/",
+              "Id" : "509464",
+              "Type" : "Scheduled",
+              "Title" : "Vollsperrung Knotenpunkt S 183 \/ K 9022 Reinhardtsgrimma",
+              "TripRequestInclude" : true,
+              "Description" : "<H2>Vollsperrung Knotenpunkt S 183 \/ K 9022 Reinhardtsgrimma<\/H2>\n\t<P>Aufgrund der Vollsperrung des Knotenpunktes S 183 \/ K 9022 in Reinhardtsgrimma verkehren die Linien 386 und 389 nach einem Umleitungsfahrplan. Die Haltestelle Cunnersdorf, Am Gründel kann nicht bedient werden. Für die Linien 386 und 389 ist die Haltestelle Reinhardtsgrimma Schlossgasse eingerichtet und einzelne Fahrten der Linie 389 beginnen an der Ersatzhaltestelle Schule. Die Haltestelle Niederschlottwitz wird zusätzlich mit bedient.\n<\/P>\n\n\t<H2>Umleitungsfahrpläne<\/H2>\n\t<UL>\n\t<LI><a href=\"http:\/\/www.rvd.de\/rvd\/view\/mdb\/rvd\/fahrplan\/pdf-fahrplanaenderungen\/mdb_245505_386u.pdf\">Umleitungsfahrplan 386U<\/a><\/LI>\n\t<LI><a href=\"http:\/\/www.rvd.de\/rvd\/view\/mdb\/rvd\/fahrplan\/pdf-fahrplanaenderungen\/mdb_245509_389u.pdf\">Umleitungsfahrplan 389U <\/a><\/LI>\n\t\t<\/UL>",
+              "LineIds" : [
+                "428433",
+                "428432",
+                "428427"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1489014000000+0100)\/"
+                }
+              ],
+              "Id" : "509447",
+              "Type" : "Scheduled",
+              "Title" : "Vollsperrung S 187 Reichstädt Oberdorf",
+              "LineIds" : [
+                "428387"
+              ],
+              "Description" : "<H2>Vollsperrung S 187 Reichstädt Oberdorf<\/H2>\n\t<P>Die Hauptstraße S187 in Reichstädt Oberdorf wird aufgrund von Bauarbeiten gesperrt, weshalb die Linie 362 über die Röthenbacher Straße umgeleitet wird. Die Haltestellen Reichstädt, Wendeplatz und Oberdorf können dabei nicht bedient werden.\n\nDie Ersatzhaltestelle Oberdorf befindet sich an der Hauptstraße.<\/P>",
+              "PublishDate" : "\/Date(1488899760000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1488927600000+0100)\/",
+                  "End" : "\/Date(1493589540000+0200)\/"
+                }
+              ],
+              "Id" : "509460",
+              "Type" : "Scheduled",
+              "Title" : "Einrichtung einer Baustellenampel in Dippoldiswalde",
+              "LineIds" : [
+                "428388",
+                "428406",
+                "428564",
+                "428447",
+                "428444",
+                "428428",
+                "428427"
+              ],
+              "Description" : "<H2>Einrichtung einer Baustellenampel in Dippoldiswalde <\/H2>\n\t<P>Aufgrund der halbseitigen Sperrung der Glashütter Straße in Dippoldiswalde in Verbindung mit der Einrichtung einer Baustellenampel kommt es im gesamten Tagesverlauf auf den o. g Linien zu Verzögerungen von bis zu 20 Minuten, weshalb die Anschlüsse am Busbahnhof Dippoldiswalde zeitweise nicht gewährleitet werden können. \n<b>Wir bitten unsere Fahrgäste sich auf die Verzögerungen einzustellen und mehr Zeit für Ihren Reiseweg einzuplanen.<\/b>\n\n<\/P>",
+              "PublishDate" : "\/Date(1489151760000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1488785400000+0100)\/",
+                  "End" : "\/Date(1496267940000+0200)\/"
+                }
+              ],
+              "Id" : "509429",
+              "Type" : "Scheduled",
+              "Title" : "Vollsperrung der Oberstraße in Freital",
+              "LineIds" : [
+                "428641",
+                "428348"
+              ],
+              "Description" : "<H2>Vollsperrung der Oberstraße in Freital<\/H2>\n\t<P>Aufgrund einer Sperrung der Oberstraße in Freital werden die Haltestellen\nOberstraße und Unterstraße auf die Oberhermsdorfer Straße verlegt.<\/P>",
+              "PublishDate" : "\/Date(1488640560000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1488780000000+0100)\/"
+                }
+              ],
+              "Id" : "509435",
+              "Type" : "Scheduled",
+              "Title" : "Dresden - Heynahtsstraße, Leitungsbau",
+              "LineIds" : [
+                "428750"
+              ],
+              "Description" : "<H2>Beschreibung<\/H2>\n<P>In der Heynahtsstraße werden Kanal- und Leitungsarbeiten im Auftrag der Stadtentwässerung durchgeführt.<\/P>\n<P><STRONG>Buslinie 64:<\/STRONG><\/P>\n<P>Umleitung <FONT color=#ff0000>in Richtung Kaditz <\/FONT>zwischen den Haltestellen Zwinglistraße und Hepkeplatz über den Fahrweg <U>Zwinglistraße - Schneebergstraße - Schlüterstraße - Eibenstocker Straße - Hepkeplatz<\/U>.<\/P>\n\n<H2>Haltestellenanpassungen<\/H2>\n<UL>\n<LI>Die Haltestelle <STRONG>Schneebergstraße<\/STRONG> <FONT color=#ff0000>in Richtung Kaditz <\/FONT>wird ersatzweise an der Haltestelle Schneebergstraße der Linie 61 Richtung Weißig\/Fernsehturm bedient.<\/LI>\n<LI>Die Haltestelle <STRONG>Schlüterstraße<\/STRONG> (Linie 61 Richtung Weißig\/Fernsehturm) wird <FONT color=#ff0000>in Richtung Kaditz <\/FONT>zusätzlich bedient.<\/LI><\/UL>",
+              "PublishDate" : "\/Date(1488640560000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1488769200000+0100)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1488640560000+0100)\/",
+              "Id" : "509434",
+              "Type" : "Scheduled",
+              "Title" : "Dresden - Oskarstraße, Neubau Stadtbahntrasse BA 1.2 und 1.3",
+              "TripRequestInclude" : true,
+              "Description" : "&nbsp;<h2>Beschreibung<\/h2> <p><strong>Buslinien 61, 63<\/strong> und <strong>85<\/strong>:<br>Umleitung in beiden Richtungen zwischen den Haltestellen Tiergartenstraße und Wasaplatz über den Fahrweg <u>Karcherallee – Tiergartenstraße – Oskarstraße – Wiener Straße – Franz-Liszt-Straße – Wasastraße<\/u>.<br><br><strong>Buslinie 75<\/strong>:<br>Umleitung in beiden Richtungen zwischen den Haltestellen Querallee und Wasaplatz über den Fahrweg <u>Tiergartenstraße – Franz-Liszt-Straße – Wasastraße<\/u>. <\/p><h2>Haltestellenanpassungen<\/h2> <ul><li>Die Haltestelle <strong>Haltepunkt Strehlen<\/strong> wird in beiden Richtungen in die Wiener Straße an die Einmündung Oskarstraße verlegt.<\/li> <li>Die Haltestelle <strong>Julius-Otto-Straße<\/strong> wird in beiden Richtungen zusätzlich bedient.<\/li><\/ul> <h2>Anschlüsse<\/h2> <p>Die bisher im Spät- und Wochenendfrühverkehr an der Haltestelle Haltepunkt Strehlen stattfindenden Anschlüsse werden an der Haltestelle <strong>Julius-Otto-Straße <\/strong>durchgeführt.<\/p> <h2>Weitere Informationen<\/h2> <ul> <li><a href=\"http:\/\/www.dvb.de\/ext\/pdf\/bau_oskarstr_170306.pdf\" target=\"_blank\">Flyer zum Bau Oskarstraße<\/a> (PDF | 478 KB)<\/li><\/ul>",
+              "LineIds" : [
+                "428504",
+                "428751",
+                "428511",
+                "428501"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1488754800000+0100)\/"
+                }
+              ],
+              "Id" : "509436",
+              "Type" : "Scheduled",
+              "Title" : "Vollsperrung S 189 Ortslage Kleinbobritzsch",
+              "LineIds" : [
+                "428391",
+                "428446"
+              ],
+              "Description" : "<H2>Vollsperrung S 189 Ortslage Kleinbobritzsch <\/H2>\n\t<P>Die Fahrten der Linie 365 über Hartmannsdorf verkehren von Schmiedeberg kommend bis Hartmannsdorf Abzweig Röthenbach und zum Wendeplatz an der alten Schule. Anschließend zurück über Reichenau nach Frauenstein. Die Linie 379 verkehrt über Hartmannsdorf und Reichenau nach Frauenstein. Die Rückfahrt erfolgt in umgekehrter Reihenfolge. \n\nDie Haltestellen Hartmannsdorf Az. Röthenbach, Unterdorf und Bobritzschtal sowie Kleinbobritzsch können von der Linie 365 nicht bedient werden. Die Ersatzhaltestelle Hartmannsdorf Az. Röthenbach befindet sich an der Röthenbacher Straße. Die Linie 379 kann je nach Route diese Haltestellen nur zum Teil bedienen. Bitte planen Sie eine längere Reisezeit ein! Bitte beachten Sie die lokalen Informationen zu weiterführenden Veränderungen während der Sperrzeit.\n<\/P>",
+              "PublishDate" : "\/Date(1488640560000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1488754800000+0100)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1488888960000+0100)\/",
+              "Id" : "509446",
+              "Type" : "Scheduled",
+              "Title" : "Straßensperrung in Seeligstadt",
+              "TripRequestInclude" : true,
+              "Description" : "<H2>Straßensperrung in Seeligstadt<\/H2>\n\t<P>Aufgrund von Straßenbauarbeiten in Seeligstadt verkehrt die Linie 310 nach einem Umleitungsfahrplan, wobei die Haltestelle Busplatz  Fischbacher Straße in Seeligstadt nicht bedient wird. Zusätzlich wird eine Ersatzhaltestelle in Höhe Bahnübergang eingerichtet. \n<\/P>\n\n    \n\t\t<H2>Umleitungsfahrplan<\/H2>\n\t<UL>\n\t<LI><a href=\"http:\/\/www.rvd.de\/rvd\/view\/mdb\/rvd\/fahrplan\/pdf-fahrplanaenderungen\/mdb_245318_310u.pdf\">Umleitungsfahrplan Linie 310U ab 06.03.2017<\/a><\/LI>\n\t\t<\/UL>",
+              "LineIds" : [
+                "428598"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1488754800000+0100)\/"
+                }
+              ],
+              "Id" : "509430",
+              "Type" : "Scheduled",
+              "Title" : "Nossen, Talstraße Vollsperrung",
+              "LineIds" : [
+                "428468",
+                "428462",
+                "428460"
+              ],
+              "Description" : "Die Haltestellen Talstraße, Fabrikstraße und Abzweig Rhäsa entfallen. Als Ersatz dienen die Haltestellen Bahnhof und Dresdner Straße  sowie die Behelfshaltestelle zwischen der Hackestraße und B 101.",
+              "PublishDate" : "\/Date(1488640560000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1492608600000+0200)\/",
+                  "End" : "\/Date(1492614900000+0200)\/"
+                }
+              ],
+              "Id" : "509536",
+              "Type" : "Scheduled",
+              "Title" : "Gleisarbeiten zwischen Coswig (Dresden) und Dresden Hbf",
+              "LineIds" : [
+                "428946"
+              ],
+              "Description" : "<H2>Beschreibung<\/H2>\n<UL>\n<LI>Am 19. April 2017 fahren S 31033 (Meißen Triebischtal ab 15.32 Uhr) und S 31037 (Meißen Triebischtal ab 16.32 Uhr) bis zu 8 Minuten später zwischen Coswig (Dresden) und Dresden Hbf.&nbsp;<\/LI><\/UL>\n<H2>Links<\/H2>\n<UL>\n<LI>Alle weiteren Informationen zu Bauarbeiten erhalten Sie auch unter <A title=\"Bauarbeiten Sachsen\" href=\"https:\/\/bauinfos.deutschebahn.com\/sachsen\" target=_blank><U><FONT color=#0066cc>Bauarbeiten Sachsen<\/FONT><\/U><\/A>.<\/LI><\/UL>",
+              "PublishDate" : "\/Date(1490260560000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1492698600000+0200)\/",
+                  "End" : "\/Date(1492701300000+0200)\/"
+                }
+              ],
+              "Id" : "509533",
+              "Type" : "Scheduled",
+              "Title" : "Gleisarbeiten zwischen Coswig (Dresden) und Dresden Hbf",
+              "LineIds" : [
+                "428946"
+              ],
+              "Description" : "<H2>Beschreibung<\/H2>\n<UL>\n<LI>Am 20. April 2017 fährt S 31037 (Meißen Triebischtal ab 16.32 Uhr) bis zu 8 Minuten später zwischen Coswig (Dresden) und Dresden Hbf.<BR><\/LI><\/UL>\n<H2>Links<\/H2>\n<UL>\n<LI>Alle weiteren Informationen zu Bauarbeiten erhalten Sie auch unter <A title=\"Bauarbeiten Sachsen\" href=\"https:\/\/bauinfos.deutschebahn.com\/sachsen\" target=_blank><U><FONT color=#0066cc>Bauarbeiten Sachsen<\/FONT><\/U><\/A>.<\/LI><\/UL>",
+              "PublishDate" : "\/Date(1490260560000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1488150000000+0100)\/",
+                  "End" : "\/Date(1492293540000+0200)\/"
+                }
+              ],
+              "Id" : "509412",
+              "Type" : "Scheduled",
+              "Title" : "Coswig - Kötitz, Naundorfer Str. Vollsperrung",
+              "LineIds" : [
+                "428429"
+              ],
+              "Description" : "Die Haltestellen Schule und Gasthaus sind in die Seestraße verlegt. Für die Haltestelle Wettinstraße\nin Richtung Coswig Bahnhof wird ersatzweise die Schulbushaltestelle Sonnenleite (SV) in der Seestraße bedient.",
+              "PublishDate" : "\/Date(1488532560000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1488150000000+0100)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1488471360000+0100)\/",
+              "Id" : "509402",
+              "Type" : "Scheduled",
+              "Title" : "Vollsperrung Dresdner Straße in Ottendorf-Okrilla",
+              "TripRequestInclude" : true,
+              "Description" : "<H2>Vollsperrung Dresdner Straße in Ottendorf-Okrilla<\/H2>\n\t<P>Aufgrund einer Vollsperrung der Dresdener Straße in Ottendorf-Okrilla werden die Linien 317 und 321 umgeleitet.\n\nBei folgenden Fahrten der Linie 317 können die Haltestellen Rathaus, Radeburger Str. und Dresdner Str. in Ottendorf-Okrilla\nnicht bedient werden:\n-in Fahrtrichtung Ottendorf-Okrilla von den Fahrten 240, 242 und 250 und\n-in Fahrtrichtung Medingen\/Grünberg von den Fahrten 135, 337, 345\n\nWeiterhin wird die Haltestelle Ottendorf-Okrilla, Bf Süd von der Fahrt 121 (fahrplanmäßige Abfahrt 07.17 Uhr) bereits 5 Minuten eher bedient.\nDie Haltestelle Ottendorf-Okrilla, Frankenfurt kann bei der Fahrt 222 (planmäßige Abfahrt 07:10 Uhr) nicht bedient werden.\n\nBei den Fahrten 741 und 783 (11:44 und 17:33 Uhr ab Weixdorf, Haltepunkt Bad in Fahrtrichtung Ottendorf-Okrilla) kann die Haltestelle Dresdner Str. nicht bedient werden.\nDie Haltestelle Bergener Ring wird auf der gegenüberliegenden Seite bedient.\n\nFür die Linie 321 wird die Haltestelle Bf. Süd (2) (B97) an den Bf. Süd verlegt.<\/P>",
+              "LineIds" : [
+                "428373",
+                "428374"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1493040600000+0200)\/",
+                  "End" : "\/Date(1493046900000+0200)\/"
+                },
+                {
+                  "Begin" : "\/Date(1493105100000+0200)\/",
+                  "End" : "\/Date(1493133300000+0200)\/"
+                }
+              ],
+              "Id" : "509542",
+              "Type" : "Scheduled",
+              "Title" : "Gleisarbeiten zwischen Coswig (Dresden) und Dresden Hbf",
+              "LineIds" : [
+                "428817",
+                "428946"
+              ],
+              "Description" : "<H2>Beschreibung<\/H2>\n<P><FONT color=#000000>Am <STRONG>24. und 25. April 2017<\/STRONG> fahren <STRONG>S 31033<\/STRONG> (Meißen Triebischtal ab 15.32 Uhr) und <STRONG>S 31037<\/STRONG> (Meißen Triebischtal ab 16.32 Uhr) <STRONG>bis zu 8 Minuten später zwischen Coswig (Dresden) und Dresden Hbf<\/STRONG>.<\/FONT> <\/P>\n<P>Am <STRONG>25. April 2017 entfällt<\/STRONG> bei folgenden Zügen der RE-Linie 50 in Richtung Dresden - Leipzig der <STRONG>Halt in Radebeul Ost<\/STRONG>:<\/P>\n<UL>\n<LI>RE 16510 (Dresden Hbf ab 9.17 Uhr) \n<LI>RE 16512 (Dresden Hbf ab 10.17 Uhr) \n<LI>RE 16514 (Dresden Hbf ab 11.17 Uhr) \n<LI>RE 16516 (Dresden Hbf ab 12.17 Uhr) \n<LI>RE 16518 (Dresden Hbf ab 13.17 Uhr) \n<LI>RE 16520 (Dresden Hbf ab 14.17 Uhr) \n<LI>RE 16522 (Dresden Hbf ab 15.17 Uhr) \n<LI>RE 16524 (Dresden Hbf ab 16.17 Uhr)<\/LI><\/UL>\n<H2>Links<\/H2>\n<UL>\n<LI>Alle weiteren Informationen zu Bauarbeiten erhalten Sie auch unter <A title=\"Bauarbeiten Sachsen\" href=\"https:\/\/bauinfos.deutschebahn.com\/sachsen\" target=_blank><U><FONT color=#0066cc>Bauarbeiten Sachsen<\/FONT><\/U><\/A>.<\/LI><\/UL>",
+              "PublishDate" : "\/Date(1490267760000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1487905200000+0100)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1488194160000+0100)\/",
+              "Id" : "509354",
+              "Type" : "Scheduled",
+              "Title" : "Dresden - Caspar-David-Friedrich-Straße, Straßenbau",
+              "TripRequestInclude" : true,
+              "Description" : "<h2>Beschreibung<\/h2>\n<p><strong>Buslinie 85<\/strong>:<br>Umleitung in beiden Richtungen zwischen den Haltestellen Wasaplatz und Räcknitzhöhe über den Fahrweg <u>Zellescher Weg – Paradiesstraße.<\/u><\/p><h2>Haltestellenanpassungen<\/h2>\n<ul>\n<li>Die Haltestellen <strong>Schurichtstraße<\/strong>, <strong>Dora-Stock-Straße<\/strong> und <strong>Rubensweg<\/strong> können nicht bedient werden. \n<\/li><li>Die Haltestellen <strong>Caspar-David-Friedrich-Straße<\/strong> (Haltestelle der Linie 61 Richtung Löbtau) und <strong>Zellescher Weg<\/strong> werden zusätzlich bedient.<\/li><\/ul>",
+              "LineIds" : [
+                "428501"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1487804400000+0100)\/"
+                }
+              ],
+              "Id" : "509262",
+              "Type" : "Scheduled",
+              "Title" : "Vollsperrung der S56 zwischen Ohorn und Bretnig",
+              "LineIds" : [
+                "428589",
+                "428594"
+              ],
+              "Description" : "<H2>Vollsperrung der S56 zwischen Ohorn und Bretnig<\/H2>\n\t<P>Wegen einer Sperrung der S56 im Abschnitt zwischen Ohorn und Bretnig werden die Linie 304 und 306  über die Hauptstraße – Hauswalder Str. - Röderstraße umgeleitet.\n\nDie Haltestelle „Ohorn, Bretniger Str.“ wird an die Einmündung Hauptstraße verlegt.\n\n<\/P>",
+              "PublishDate" : "\/Date(1487088960000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1487718000000+0100)\/",
+                  "End" : "\/Date(1506722340000+0200)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1487603760000+0100)\/",
+              "Id" : "509312",
+              "Type" : "Scheduled",
+              "Title" : "Scharfenberg, Schachtberg - Vollsperrung",
+              "TripRequestInclude" : true,
+              "Description" : "Die Haltestellen Scharfenberg, Heimatmuseum und Wendeplatz entfallen. Bei der Linie 426 entfallen zusätzlich die Haltestellen Naustadt, Neuer Anbau und Pegenau, Eichberg.",
+              "LineIds" : [
+                "428488",
+                "428522"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1487718000000+0100)\/"
+                }
+              ],
+              "Id" : "509391",
+              "Type" : "Scheduled",
+              "Title" : "Cunnersdorf, Vollsperrung",
+              "LineIds" : [
+                "428891"
+              ],
+              "Description" : "Die Haltestellen Freitelsdorf, Schönfelder Straße sind in die Ortslage an den Gasthof verlegt.",
+              "PublishDate" : "\/Date(1488438960000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1487545200000+0100)\/"
+                }
+              ],
+              "Id" : "509290",
+              "Type" : "Scheduled",
+              "Title" : "Haltestelle Gasthaus zur Linde in Reichstädt",
+              "LineIds" : [
+                "428387"
+              ],
+              "Description" : "<H2>Haltestelle Gasthaus zur Linde in Reichstädt<\/H2>\n\t<P>Wegen Bauarbeiten kann die Haltestelle Reichstädt Gasthaus zur Linde nicht bedient werden. Die Ersatzhaltestellen befinden sich 50 Meter in Richtung Dippoldiswalde.\n\n<\/P>",
+              "PublishDate" : "\/Date(1487340960000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1486335600000+0100)\/",
+                  "End" : "\/Date(1490997540000+0200)\/"
+                }
+              ],
+              "LineIds" : [
+                "428531",
+                "428604",
+                "428504",
+                "428748"
+              ],
+              "Id" : "509514",
+              "PublishDate" : "\/Date(1490102160000+0100)\/",
+              "Type" : "AmplifyingTransport",
+              "Title" : "Dresden - Veränderungen im Studentenverkehr",
+              "TripRequestInclude" : true,
+              "Topic" : "Änderungen Studentenverkehr",
+              "Description" : " <h2>Beschreibung<\/h2> <p>Während der vorlesungsfreien Zeit <font color=\"#ff0000\">entfallen <\/font><strong>vom 06.02.2017 bis 31.03.2017<\/strong> die Studentenverstärkungen der Linien 3, 6, 61 und 66. <\/p>"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1484548200000+0100)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1488471360000+0100)\/",
+              "Id" : "509403",
+              "Type" : "Scheduled",
+              "Title" : "Abzweig Reichenau - Vollsperrung",
+              "TripRequestInclude" : true,
+              "Description" : "<H2>Beschreibung<\/H2>\n\t<P>Ab dem genannten Zeitpunkt ist die S100 Kamenz - Königsbrück im Bereich Abzweig Reichenau wegen Bauarbeiten voll gesperrt.<\/P>\n\n     \t<H2>Achtung<\/H2>\n\t<P>Die Umleitung in Richtung Kamenz erfolgt über Reichenau nach Koitzsch, in Richtung Königsbrück ab Koitzsch über Weißbach. In dieser Richtung kann Reichenau nicht bedient werden. Die Haltestelle Koitzsch, Gasthaus Brüderchen kann in beiden Richtungen nicht bedient werden. Ersatzhaltestelle ist Koitzsch, Ort.<\/P>",
+              "LineIds" : [
+                "428326"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1483570800000+0100)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1484306160000+0100)\/",
+              "Id" : "509160",
+              "Type" : "Scheduled",
+              "Title" : "Zschepa - Lorenzkirch Vollsperrung",
+              "TripRequestInclude" : true,
+              "Description" : "Die Haltestellen Zschepa und Lorenzkirch sind geschlossen. Für Zschepa befinden sich Ersatzhaltestellen an der S 88. In Lorenzkirch sind Ersatzhaltestellen  an der Salzstraße eingerichtet.",
+              "LineIds" : [
+                "428901"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1483484400000+0100)\/"
+                }
+              ],
+              "Id" : "509503",
+              "Type" : "Scheduled",
+              "Title" : "Meißen, Wegfall Haltestelle Landratsamt in Loosestraße",
+              "LineIds" : [
+                "428712",
+                "428711",
+                "428469"
+              ],
+              "Description" : "Auf Grund der Vollsperrung der Loosestraße im Bereich der Haltestelle Landratsamt kann diese Haltestelle nicht bedient werden. Als Ersatz dient für die Linien B und 411 landwärts die Haltestelle\nLutherstraße in der K.-Hein-Str.. Stadtwärts kann die Behelfshaltestelle in der Brauhausstraße genutzt werden. Die Linie A stadtwärts bedient ersatzweise die Haltestelle Dresdner Str. vor dem Hamburger Hof.",
+              "PublishDate" : "\/Date(1489752960000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1483421400000+0100)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1483956960000+0100)\/",
+              "Id" : "509154",
+              "Type" : "Scheduled",
+              "Title" : "Dresden - Meißner Straße, Brückenbau",
+              "TripRequestInclude" : true,
+              "Description" : "<H2>Beschreibung<\/H2>\n<P><B>Die Linie 94 wird nur Montag bis Freitag von 06:30 Uhr bis 19:00 Uhr in Cossebaude, wie folgt geteilt.<\/B><\/P>\n<P><B>Buslinie 94<\/B>: <FONT color=#ff0000>verkürzte Linienführung (für Fahrten nach Niederwartha) <\/FONT><BR>Postplatz –<U> Erna-Berger-Straße <\/U>– Bahnhof Cossebaude <BR><\/P>\n<P><B>Pendelbus E 94<\/B>:<FONT color=#ff0000> <\/FONT><BR>Bf. Cossebaude –<U> Erna-Berger-Straße <\/U>– An den Winkelwiesen – Hp. Niederwartha <\/P>\n<H2>Tarifregelung<\/H2>\n<P>Die Gültigkeit der <B>Einzelfahrt<\/B> verlängert sich bei unterbrochener Linienführung um 5 Minuten.<BR><\/P>",
+              "LineIds" : [
+                "428401"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1483398000000+0100)\/",
+                  "End" : "\/Date(1499291940000+0200)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1482419760000+0100)\/",
+              "Id" : "509099",
+              "Type" : "Scheduled",
+              "Title" : "Haltestellenverlegung Kurze Straße auf Schulstraße in Pappritz",
+              "TripRequestInclude" : true,
+              "Description" : "<H2>2. Bauabschnitt: Straße des Friedens<\/H2>\n\t<P>Die Linie 98 A und 98 B wird weiterhin bis Niederpoyritz bedient. <\/P>\n\t<H2>Achtung<\/H2>\n\t<P>Text<\/P>\n\t<H2>Ersatzverkehr<\/H2>\n\t<P>Text<\/P>\n\t<H2>Zusatzinformation<\/H2>\n\t<P>Text<\/P>\n\t<H2>Links<\/H2>\n\t<UL>\n\t<LI>Link 1<\/LI>\n\t<LI>Link 2<\/LI>\n\t<LI>Link 3<\/LI>\n\t<\/UL>",
+              "LineIds" : [
+                "428823",
+                "428824"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1483333200000+0100)\/",
+                  "End" : "\/Date(1491595200000+0200)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1483197360000+0100)\/",
+              "Id" : "509117",
+              "Type" : "Scheduled",
+              "Title" : "Dresden - Schwebebahn, umfangreiche Revisionsarbeiten",
+              "TripRequestInclude" : true,
+              "Description" : "<h2>Beschreibung<\/h2>\n<p>Aufgrund umfangreicher Revisionsarbeiten ist die <STRONG>Schwebebahn<\/STRONG> in der Zeit vom 2. Januar 2017 bis einschließlich 7. April 2017 <font color=\"#ff0000\">außer Betrieb<\/font>. <br><br>\n\nBitte nutzen Sie zum Erreichen der Haltestellen <b>Körnerplatz<\/b> beziehungsweise <b>Obere Station Schwebebahn<\/b> die Buslinie 84 \/ 309. <br><br>\n\n<STRONG>Die Standseilbahn bleibt weiterhin in Betrieb!<\/STRONG>\n<\/p>",
+              "LineIds" : [
+                "428490"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1481238000000+0100)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1481282160000+0100)\/",
+              "Id" : "509049",
+              "Type" : "Scheduled",
+              "Title" : "Buslinien 214, 247: Dauerhafter Rückbau der Haltestellen",
+              "TripRequestInclude" : true,
+              "Description" : "Buslinien 214, 247: Dauerhafter Rückbau der Haltestellen „Oelsen Viehanlage“ und  „Abzweig Oelsen“\n                                      \n              \nAb 12.12.2016 werden die Haltestellen „Oelsen Viehanlage und „Abzweig Oelsen“\nersatzlos gestrichen.\n\n\nFür Fragen und Hinweise stehen wir Ihnen gern in unserem OVPS-Servicebüro auf dem ZOB (Busbahnhof) Pirna  und am OVPS-ServiceTelefon 03501 792-160 zur Verfügung.",
+              "LineIds" : [
+                "428760",
+                "428835"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1480978800000+0100)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1484565360000+0100)\/",
+              "Id" : "509165",
+              "Type" : "Scheduled",
+              "Title" : "Reichenbach, Vollsperrung",
+              "TripRequestInclude" : true,
+              "Description" : "Die Haltestellen Reichenbach werden geschlossen. Als Ersatz dienen, außer bei der Abfahrt der Linie 414 um 6:24 Uhr, die Haltestellen Reichenbach, Kreuzung. Die Abfahrt  der Linie 414 um 6:24 Uhr in Richtung Meißen erfolgt an der Behelfshaltestelle, in Nähe des Platzes am Rückhaltebecken.",
+              "LineIds" : [
+                "428466",
+                "428522",
+                "428524"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1474840800000+0200)\/",
+                  "End" : "\/Date(1501538340000+0200)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1482419760000+0100)\/",
+              "Id" : "509097",
+              "Type" : "Scheduled",
+              "Title" : "Vollsperrung Freitaler Straße in Pesterwitz",
+              "TripRequestInclude" : true,
+              "Description" : "<H2>Vollsperrung Freitaler Straße in Pesterwitz<\/H2>\n\t<P>Wegen einer Vollsperrung der Freitaler Straße in Pesterwitz beginnen und enden alle Fahrten der Linie C am Dorfplatz, wobei die Fahrten\nam Dorfplatz jeweils 1 Minute vor der fahrplanmäßigen Abfahrtszeit der Haltestelle  Pesterwitz, Zum Weinberg stattfinden.\nDie  Haltestellen Siedlerstraße und Freitaler Straße können nicht bedient werden.\n<\/P>",
+              "LineIds" : [
+                "428647"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1471384800000+0200)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1481897760000+0100)\/",
+              "Id" : "509081",
+              "Type" : "Scheduled",
+              "Title" : "Linie 252:Entfall der Hltst.\"Ostrau Schanzenweg\"u.\"Ostrauer Ring\"",
+              "TripRequestInclude" : true,
+              "Description" : "Aufgrund von Baumaßnahmen im Umfeld der Falkensteinklinik entfallen ab Mittwoch, den 17.08.2016 bis voraussichtlich Sommer 2018 folgende Haltestellen:\n•\t„Ostrau  Schanzenweg“ \n•\t„Ostrau Ostrauer Ring“\n\n                 \nIn diesem Zeitraum verkehrt die Linie 252 nur bis zur Haltestelle “Ostrau Falkensteinklinik“ und wendet auf der dafür eingerichteten Wendeschleife. \n \nFür Fragen und Hinweise stehen wir Ihnen gern in unserem OVPS-Servicebüro auf dem ZOB (Busbahnhof) Pirna  und am OVPS-ServiceTelefon 03501 792-160 zur Verfügung.",
+              "LineIds" : [
+                "428837"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1471298400000+0200)\/",
+                  "End" : "\/Date(1496181540000+0200)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1484324160000+0100)\/",
+              "Id" : "509162",
+              "Type" : "Scheduled",
+              "Title" : "Strehla, S 31 Oschatzer Str.- Vollsperrung",
+              "TripRequestInclude" : true,
+              "Description" : "Die Haltstellen Markt sind in die Ernst-Thälmann-Str. vor den Spielplatz verlegt. Die Haltestellen Am Wasserturm und Kleinrügeln entfallen.",
+              "LineIds" : [
+                "428880",
+                "428881",
+                "428894"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1470952800000+0200)\/"
+                }
+              ],
+              "PublishDate" : "\/Date(1482419760000+0100)\/",
+              "Id" : "509094",
+              "Type" : "Scheduled",
+              "Title" : "Stadtverkehr Dippoldiswalde",
+              "TripRequestInclude" : true,
+              "Description" : "<H2>Stadtverkehr Dippoldiswalde<\/H2>\n\t<P>Wegen Bauarbeiten kann im oben genannten Zeitraum die Haltestelle Ulberndorf, Alte Straße in Dippoldiswalde  nicht bedient. Als Ersatzhaltestelle können die Haltestellen  Ulberndorf, Bahnhof und Ulberndorf, An der Niedermühle genutzt werden. \n<\/P>\n\t\t<H2>Zusatzinformation<\/H2>\n\t<P>Weiterhin können in der Zeit vom 15.08.2016 bis 19.08.2016 die Haltestellen Dippoldiswalde, Schwarzbachtalstraße und Dippoldiswalde, Schillerstraße\nnicht bedient werden. Eine Ersatzhaltestelle ist auf der Wolframsdorfer Straße (am Dänischen Bettenlager) eingerichtet.\n<\/P>",
+              "LineIds" : [
+                "428388"
+              ]
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1467756000000+0200)\/"
+                }
+              ],
+              "Id" : "509067",
+              "Type" : "Scheduled",
+              "Title" : "Haltestellenbedienung in Golberode",
+              "LineIds" : [
+                "428774"
+              ],
+              "Description" : "<H2>Haltestellenbedienung in Golberode <\/H2>\n\t<P>Die Haltestelle Golberode, Zur Pappel wird aufgrund von Baumaßnahmen ab 06.07.2016 auf die Verbindungsstraße zwischen Golberode und Gaustritz verlegt.<\/P>",
+              "PublishDate" : "\/Date(1481620560000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1466632800000+0200)\/"
+                }
+              ],
+              "Id" : "509060",
+              "Type" : "Scheduled",
+              "Title" : "Haltestelle Niederfrauendorf Wendeplatz",
+              "LineIds" : [
+                "428428"
+              ],
+              "Description" : "<H2>Haltestelle Niederfrauendorf Wendeplatz<\/H2>\n\t<P>Wegen Straßenbauarbeiten kann die Haltestelle Niederfrauendorf, Wendeplatz in Richtung Glashütte nicht bedient werden. Die Ersatzhaltestelle befindet ca. 30 Meter in Richtung Glashütte.\n\n<\/P>",
+              "PublishDate" : "\/Date(1481620560000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1465768800000+0200)\/"
+                }
+              ],
+              "Id" : "509062",
+              "Type" : "Scheduled",
+              "Title" : "Haltestelle Freital Bergmannsweg",
+              "LineIds" : [
+                "428563"
+              ],
+              "Description" : "<H2>Haltestelle Freital Bergmannsweg<\/H2>\n\t<P>Wegen Baumaßnahmen auf der Poisentalstraße in Freital kann die Haltestelle Bergmannsweg in beiden Richtungen nicht bedient werden.\n<\/P>",
+              "PublishDate" : "\/Date(1481620560000+0100)\/"
+            },
+            {
+              "ValidityPeriods" : [
+                {
+                  "Begin" : "\/Date(1462917600000+0200)\/"
+                }
+              ],
+              "Id" : "509064",
+              "Type" : "Scheduled",
+              "Title" : "Haltestelle Gersdorf, Siedlung",
+              "LineIds" : [
+                "428372"
+              ],
+              "Description" : "<H2>Haltestelle Gersdorf, Siedlung<\/H2>\n\t<P>Wegen Baumaßnahmen kann die Haltestelle Gersdorf, Siedlung durch die Linie 316 bei der Fahrt um 09:27 Uhr ab Pulsnitz, Bahnhof nach Bischheim (Fahrt Nr. 121) sowie an schulfreien Tagen bei der Fahrt um 11:27 Uhr ab Pulsnitz, Bahnhof nach Bischheim (Fahrt Nr. 129) nicht bedient werden.\n<\/P>",
+              "PublishDate" : "\/Date(1481620560000+0100)\/"
+            }
+          ],
+          "ExpirationTime" : "\/Date(1490560911860+0200)\/"
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/rc"
+      },
+      "recorded_at" : 1490560786.583049,
+      "request" : {
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8"
+        },
+        "method" : "POST",
+        "body" : {
+          "shortterm" : true
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/rc"
+      }
+    }
+  ],
+  "name" : "testGetRouteChanges()"
+}

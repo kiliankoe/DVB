@@ -101,12 +101,12 @@ extension RouteChange.ValidityPeriod: Unmarshaling {
 // MARK: - API
 
 extension RouteChange {
-    public static func get(shortTerm: Bool = true, completion: @escaping (Result<RouteChangeResponse>) -> Void) {
+    public static func get(shortTerm: Bool = true, session: URLSession = .shared, completion: @escaping (Result<RouteChangeResponse>) -> Void) {
         let data = [
             "shortterm": shortTerm,
         ]
 
-        post(Endpoint.routeChanges, data: data, completion: completion)
+        post(Endpoint.routeChanges, data: data, session: session, completion: completion)
     }
 }
 
