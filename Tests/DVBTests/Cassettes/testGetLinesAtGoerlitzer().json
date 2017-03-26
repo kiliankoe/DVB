@@ -1,0 +1,88 @@
+{
+  "interactions" : [
+    {
+      "response" : {
+        "status" : 200,
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8",
+          "Content-Length" : "478",
+          "Cache-Control" : "private",
+          "Access-Control-Allow-Origin" : "*",
+          "Vary" : "Accept-Encoding",
+          "Date" : "Sun, 26 Mar 2017 20:26:30 GMT",
+          "Content-Encoding" : "gzip"
+        },
+        "body" : {
+          "Lines" : [
+            {
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11013"
+              },
+              "Name" : "13",
+              "Directions" : [
+                {
+                  "Name" : "Dresden Mickten",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11013: :H:j17:6",
+                      "Name" : "Aktualisierter Standardfahrplan - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:11013: :H:j17:13",
+                      "Name" : "Fahrplan gültig vom 23. bis 26.03.2017"
+                    }
+                  ]
+                },
+                {
+                  "Name" : "Dresden Prohlis Gleisschleife",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11013: :R:j17:6",
+                      "Name" : "Aktualisierter Standardfahrplan - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:11013: :R:j17:12",
+                      "Name" : "Fahrplan vom 16. Mrz - 02. Apr 2017"
+                    },
+                    {
+                      "Id" : "voe:11013: :R:j17:13",
+                      "Name" : "Fahrplan gültig vom 23. bis 26.03.2017"
+                    }
+                  ]
+                },
+                {
+                  "Name" : "Dresden Kaditz Riegelplatz",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11013: :H:j17:12",
+                      "Name" : "Fahrplan vom 16. Mrz - 02. Apr 2017"
+                    }
+                  ]
+                }
+              ],
+              "Mot" : "Tram"
+            }
+          ],
+          "Status" : {
+            "Code" : "Ok"
+          },
+          "ExpirationTime" : "\/Date(1490574118122+0200)\/"
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/stt\/lines"
+      },
+      "recorded_at" : 1490559991.275285,
+      "request" : {
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8"
+        },
+        "method" : "POST",
+        "body" : {
+          "stopid" : "33000264"
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/stt\/lines"
+      }
+    }
+  ],
+  "name" : "testGetLinesAtGoerlitzer()"
+}

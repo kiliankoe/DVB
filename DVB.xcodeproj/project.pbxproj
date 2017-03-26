@@ -117,6 +117,12 @@
 		39CF5B661E8726E400599432 /* nonexistantstopid.json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B651E8726E400599432 /* nonexistantstopid.json */; };
 		39CF5B671E8726E400599432 /* nonexistantstopid.json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B651E8726E400599432 /* nonexistantstopid.json */; };
 		39CF5B681E8726E400599432 /* nonexistantstopid.json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B651E8726E400599432 /* nonexistantstopid.json */; };
+		39CF5B6A1E885B8700599432 /* testGetLinesAtGoerlitzer().json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B691E885B8700599432 /* testGetLinesAtGoerlitzer().json */; };
+		39CF5B6B1E885B8700599432 /* testGetLinesAtGoerlitzer().json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B691E885B8700599432 /* testGetLinesAtGoerlitzer().json */; };
+		39CF5B6C1E885B8700599432 /* testGetLinesAtGoerlitzer().json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B691E885B8700599432 /* testGetLinesAtGoerlitzer().json */; };
+		39CF5B6E1E885C0900599432 /* testGetLinesAtPostplatzWithName().json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B6D1E885C0900599432 /* testGetLinesAtPostplatzWithName().json */; };
+		39CF5B6F1E885C0900599432 /* testGetLinesAtPostplatzWithName().json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B6D1E885C0900599432 /* testGetLinesAtPostplatzWithName().json */; };
+		39CF5B701E885C0900599432 /* testGetLinesAtPostplatzWithName().json in Resources */ = {isa = PBXBuildFile; fileRef = 39CF5B6D1E885C0900599432 /* testGetLinesAtPostplatzWithName().json */; };
 		39E981D21E5A62720075E3E1 /* RouteChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981D11E5A62720075E3E1 /* RouteChange.swift */; };
 		39E981D31E5A62720075E3E1 /* RouteChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981D11E5A62720075E3E1 /* RouteChange.swift */; };
 		39E981D41E5A62720075E3E1 /* RouteChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E981D11E5A62720075E3E1 /* RouteChange.swift */; };
@@ -189,6 +195,8 @@
 		39CF5B5D1E87265500599432 /* monitor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = monitor.json; path = Tests/DVBTests/Cassettes/monitor.json; sourceTree = "<group>"; };
 		39CF5B611E8726A800599432 /* monitorwithname.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = monitorwithname.json; path = Tests/DVBTests/Cassettes/monitorwithname.json; sourceTree = "<group>"; };
 		39CF5B651E8726E400599432 /* nonexistantstopid.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = nonexistantstopid.json; path = Tests/DVBTests/Cassettes/nonexistantstopid.json; sourceTree = "<group>"; };
+		39CF5B691E885B8700599432 /* testGetLinesAtGoerlitzer().json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "testGetLinesAtGoerlitzer().json"; path = "Tests/DVBTests/Cassettes/testGetLinesAtGoerlitzer().json"; sourceTree = "<group>"; };
+		39CF5B6D1E885C0900599432 /* testGetLinesAtPostplatzWithName().json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "testGetLinesAtPostplatzWithName().json"; path = "Tests/DVBTests/Cassettes/testGetLinesAtPostplatzWithName().json"; sourceTree = "<group>"; };
 		39E981D11E5A62720075E3E1 /* RouteChange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RouteChange.swift; path = Sources/RouteChange.swift; sourceTree = "<group>"; };
 		52D6D97C1BEFF229002C0205 /* DVB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D6D9861BEFF229002C0205 /* DVB-iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DVB-iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -326,6 +334,8 @@
 				39CF5B5D1E87265500599432 /* monitor.json */,
 				39CF5B611E8726A800599432 /* monitorwithname.json */,
 				39CF5B651E8726E400599432 /* nonexistantstopid.json */,
+				39CF5B691E885B8700599432 /* testGetLinesAtGoerlitzer().json */,
+				39CF5B6D1E885C0900599432 /* testGetLinesAtPostplatzWithName().json */,
 			);
 			name = Cassettes;
 			sourceTree = "<group>";
@@ -635,8 +645,10 @@
 				39CF5B521E86ADF200599432 /* findnear.json in Resources */,
 				39CF5B621E8726A800599432 /* monitorwithname.json in Resources */,
 				39CF5B661E8726E400599432 /* nonexistantstopid.json in Resources */,
+				39CF5B6E1E885C0900599432 /* testGetLinesAtPostplatzWithName().json in Resources */,
 				39CF5B4E1E86AD9700599432 /* findhelmholtzquery.json in Resources */,
 				39CF5B5E1E87265500599432 /* monitor.json in Resources */,
+				39CF5B6A1E885B8700599432 /* testGetLinesAtGoerlitzer().json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,8 +680,10 @@
 				39CF5B531E86ADF200599432 /* findnear.json in Resources */,
 				39CF5B631E8726A800599432 /* monitorwithname.json in Resources */,
 				39CF5B671E8726E400599432 /* nonexistantstopid.json in Resources */,
+				39CF5B6F1E885C0900599432 /* testGetLinesAtPostplatzWithName().json in Resources */,
 				39CF5B4F1E86AD9900599432 /* findhelmholtzquery.json in Resources */,
 				39CF5B5F1E87265500599432 /* monitor.json in Resources */,
+				39CF5B6B1E885B8700599432 /* testGetLinesAtGoerlitzer().json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,8 +694,10 @@
 				39CF5B541E86ADF200599432 /* findnear.json in Resources */,
 				39CF5B641E8726A800599432 /* monitorwithname.json in Resources */,
 				39CF5B681E8726E400599432 /* nonexistantstopid.json in Resources */,
+				39CF5B701E885C0900599432 /* testGetLinesAtPostplatzWithName().json in Resources */,
 				39CF5B501E86AD9900599432 /* findhelmholtzquery.json in Resources */,
 				39CF5B601E87265500599432 /* monitor.json in Resources */,
+				39CF5B6C1E885B8700599432 /* testGetLinesAtGoerlitzer().json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

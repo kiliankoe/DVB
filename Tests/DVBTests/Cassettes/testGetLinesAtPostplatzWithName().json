@@ -1,0 +1,644 @@
+{
+  "interactions" : [
+    {
+      "response" : {
+        "status" : 200,
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8",
+          "Content-Length" : "541",
+          "Cache-Control" : "private",
+          "Access-Control-Allow-Origin" : "*",
+          "Vary" : "Accept-Encoding",
+          "Date" : "Sun, 26 Mar 2017 20:28:43 GMT",
+          "Content-Encoding" : "gzip"
+        },
+        "body" : {
+          "PointStatus" : "List",
+          "Status" : {
+            "Code" : "Ok"
+          },
+          "Points" : [
+            "33000037|||Postplatz|5658730|4621656|0||",
+            "33000033|||Postplatz \/ Webergasse|5658423|4621733|0||",
+            "36040112||Aue (Sachs)|Postplatz|5606043|4549703|0||",
+            "33007557||Bautzen|Postplatz|5674144|4669959|0||",
+            "36040241||Eibenstock|Postplatz|5595521|4542641|0||",
+            "40001859||Fehrbellin|Postplatz|0|0|0||",
+            "14908883||Görlitz|Postplatz|5672771|4708965|0||",
+            "36040863||Lindenau (b Aue)|Postplatz|5606136|4542992|0||",
+            "31000979||Reichenbach (Vogtl)|Postplatz|5609693|4521544|0||",
+            "36020504||Stollberg (Erzgeb)|Postplatz|5619679|4555330|0||"
+          ],
+          "ExpirationTime" : "\/Date(1490636902710+0200)\/"
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/tr\/pointfinder"
+      },
+      "recorded_at" : 1490560124.044194,
+      "request" : {
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8"
+        },
+        "method" : "POST",
+        "body" : {
+          "dvb" : true,
+          "query" : "Postplatz",
+          "stopsOnly" : true,
+          "limit" : 0
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/tr\/pointfinder"
+      }
+    },
+    {
+      "response" : {
+        "status" : 200,
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8",
+          "Content-Length" : "1771",
+          "Cache-Control" : "private",
+          "Access-Control-Allow-Origin" : "*",
+          "Vary" : "Accept-Encoding",
+          "Date" : "Sun, 26 Mar 2017 20:28:43 GMT",
+          "Content-Encoding" : "gzip"
+        },
+        "body" : {
+          "Lines" : [
+            {
+              "Directions" : [
+                {
+                  "Name" : "Dresden Leutewitz",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11001: :H:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:11001: :H:j17:9",
+                      "Name" : "Fahrplan vom 16. - 27. Mrz 2017"
+                    },
+                    {
+                      "Id" : "voe:11001: :H:j17:10",
+                      "Name" : "Fahrplan gültig vom 23. - 27.03.2017"
+                    }
+                  ]
+                },
+                {
+                  "Name" : "Dresden Prohlis Gleisschleife",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11001: :R:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:11001: :R:j17:9",
+                      "Name" : "Fahrplan vom 16. - 27. Mrz 2017"
+                    },
+                    {
+                      "Id" : "voe:11001: :R:j17:10",
+                      "Name" : "Fahrplan gültig vom 23. - 27.03.2017"
+                    }
+                  ]
+                }
+              ],
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11001"
+              },
+              "Name" : "1",
+              "Changes" : [
+                "509486"
+              ],
+              "Mot" : "Tram"
+            },
+            {
+              "Directions" : [
+                {
+                  "Name" : "Dresden Betriebshof Gorbitz",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11002: :H:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:11002: :H:j17:11",
+                      "Name" : "Fahrplan vom 16. Mrz - 02. Apr 2017"
+                    },
+                    {
+                      "Id" : "voe:11002: :H:j17:12",
+                      "Name" : "Fahrplan gültig vom 23. - 27.03.2017"
+                    }
+                  ]
+                },
+                {
+                  "Name" : "DD Kleinzschachwitz Freystraße",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11002: :R:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:11002: :R:j17:11",
+                      "Name" : "Fahrplan vom 16. Mrz - 02. Apr 2017"
+                    },
+                    {
+                      "Id" : "voe:11002: :R:j17:12",
+                      "Name" : "Fahrplan gültig vom 23. - 27.03.2017"
+                    }
+                  ]
+                }
+              ],
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11002"
+              },
+              "Name" : "2",
+              "Changes" : [
+                "509486"
+              ],
+              "Mot" : "Tram"
+            },
+            {
+              "Directions" : [
+                {
+                  "Name" : "Radebeul West (Flemmingstraße)",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11004: :H:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:11004: :H:j17:11",
+                      "Name" : "Fahrplan vom 16. Mrz - 02. Apr 2017"
+                    },
+                    {
+                      "Id" : "voe:11004: :H:j17:12",
+                      "Name" : "Fahrplan gültig vom 23. - 31.03.2017"
+                    }
+                  ]
+                },
+                {
+                  "Name" : "DD Laubegast Kronstädter Platz",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11004: :R:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:11004: :R:j17:11",
+                      "Name" : "Fahrplan vom 16. Mrz - 02. Apr 2017"
+                    },
+                    {
+                      "Id" : "voe:11004: :R:j17:12",
+                      "Name" : "Fahrplan gültig vom 23. - 31.03.2017"
+                    }
+                  ]
+                }
+              ],
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11004"
+              },
+              "Name" : "4",
+              "Changes" : [
+                "509565"
+              ],
+              "Mot" : "Tram"
+            },
+            {
+              "Directions" : [
+                {
+                  "Name" : "Pennrich Gleisschleife",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11007: :H:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:11007: :H:j17:12",
+                      "Name" : "Fahrplan vom 16. Mrz - 02. Apr 2017"
+                    },
+                    {
+                      "Id" : "voe:11007: :H:j17:13",
+                      "Name" : "Fahrplan gültig vom 23.03. bis 30.03.2017"
+                    }
+                  ]
+                },
+                {
+                  "Name" : "Weixdorf (Rathenaustraße, Gleisschleife)",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11007: :R:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:11007: :R:j17:12",
+                      "Name" : "Fahrplan vom 16. Mrz - 02. Apr 2017"
+                    }
+                  ]
+                },
+                {
+                  "Name" : "Dresden Diebsteig",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11007: :R:j17:13",
+                      "Name" : "Fahrplan gültig vom 23.03. bis 30.03.2017"
+                    }
+                  ]
+                }
+              ],
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11007"
+              },
+              "Name" : "7",
+              "Changes" : [
+                "509563"
+              ],
+              "Mot" : "Tram"
+            },
+            {
+              "Directions" : [
+                {
+                  "Name" : "Dresden Südvorstadt",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11008: :H:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:11008: :H:j17:12",
+                      "Name" : "Fahrplan gültig vom 23.03. bis 30.03.2017"
+                    }
+                  ]
+                },
+                {
+                  "Name" : "Dresden Hellerau Kiefernweg",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11008: :R:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:11008: :R:j17:12",
+                      "Name" : "Fahrplan gültig vom 23.03. bis 30.03.2017"
+                    }
+                  ]
+                }
+              ],
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11008"
+              },
+              "Name" : "8",
+              "Changes" : [
+                "509563"
+              ],
+              "Mot" : "Tram"
+            },
+            {
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11009"
+              },
+              "Name" : "9",
+              "Directions" : [
+                {
+                  "Name" : "Dresden Kaditz Riegelplatz",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11009: :H:j17:12",
+                      "Name" : "Fahrplan vom 16. Mrz - 02. Apr 2017"
+                    },
+                    {
+                      "Id" : "voe:11009: :H:j17:13",
+                      "Name" : "Fahrplan gültig vom 23. - 27.03.2017"
+                    }
+                  ]
+                },
+                {
+                  "Name" : "Dresden Prohlis Gleisschleife",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11009: :R:j17:12",
+                      "Name" : "Fahrplan vom 16. Mrz - 02. Apr 2017"
+                    },
+                    {
+                      "Id" : "voe:11009: :R:j17:13",
+                      "Name" : "Fahrplan gültig vom 23. - 27.03.2017"
+                    }
+                  ]
+                }
+              ],
+              "Mot" : "Tram"
+            },
+            {
+              "Directions" : [
+                {
+                  "Name" : "Dresden Striesen Ludwig-Hartmann-Straße",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11010: :R:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:11010: :R:j17:13",
+                      "Name" : "Fahrplan gültig vom 23.03. bis 05.04.2017"
+                    }
+                  ]
+                },
+                {
+                  "Name" : "Dresden Messe Gleisschleife",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11010: :H:j17:12",
+                      "Name" : "Fahrplan vom 16. Mrz - 02. Apr 2017"
+                    },
+                    {
+                      "Id" : "voe:11010: :H:j17:13",
+                      "Name" : "Fahrplan gültig vom 23.03. bis 05.04.2017"
+                    }
+                  ]
+                }
+              ],
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11010"
+              },
+              "Name" : "10",
+              "Changes" : [
+                "509564",
+                "509565"
+              ],
+              "Mot" : "Tram"
+            },
+            {
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11011"
+              },
+              "Name" : "11",
+              "Directions" : [
+                {
+                  "Name" : "DD Zschertnitz Münzmeisterstr.",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11011: :H:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:11011: :H:j17:10",
+                      "Name" : "Fahrplan vom 16. Mrz - 02. Apr 2017"
+                    },
+                    {
+                      "Id" : "voe:11011: :H:j17:11",
+                      "Name" : "Fahrplan gültig vom 23. bis 26.03.2017"
+                    }
+                  ]
+                },
+                {
+                  "Name" : "Dresden Bühlau Ullersdorfer Platz",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11011: :R:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:11011: :R:j17:10",
+                      "Name" : "Fahrplan vom 16. Mrz - 02. Apr 2017"
+                    },
+                    {
+                      "Id" : "voe:11011: :R:j17:11",
+                      "Name" : "Fahrplan gültig vom 23. bis 26.03.2017"
+                    }
+                  ]
+                }
+              ],
+              "Mot" : "Tram"
+            },
+            {
+              "Directions" : [
+                {
+                  "Name" : "Dresden Leutewitz",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11012: :H:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:11012: :H:j17:11",
+                      "Name" : "Fahrplan vom 16. Mrz - 02. Apr 2017"
+                    },
+                    {
+                      "Id" : "voe:11012: :H:j17:12",
+                      "Name" : "Fahrplan gültig vom 23.03. bis 05.04.2017"
+                    }
+                  ]
+                },
+                {
+                  "Name" : "Dresden Striesen Ludwig-Hartmann-Straße",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11012: :R:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:11012: :R:j17:11",
+                      "Name" : "Fahrplan vom 16. Mrz - 02. Apr 2017"
+                    },
+                    {
+                      "Id" : "voe:11012: :R:j17:12",
+                      "Name" : "Fahrplan gültig vom 23.03. bis 05.04.2017"
+                    }
+                  ]
+                }
+              ],
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11012"
+              },
+              "Name" : "12",
+              "Changes" : [
+                "509565"
+              ],
+              "Mot" : "Tram"
+            },
+            {
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "11020"
+              },
+              "Name" : "20",
+              "Directions" : [
+                {
+                  "Name" : "Dresden Messe Gleisschleife",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:11020: :H:j17:6",
+                      "Name" : "Fahrplan gültig vom 23. bis 26.03.2017"
+                    },
+                    {
+                      "Id" : "voe:11020: :R:j17:6",
+                      "Name" : "Fahrplan gültig vom 23. bis 26.03.2017"
+                    }
+                  ]
+                }
+              ],
+              "Mot" : "Tram"
+            },
+            {
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "21062"
+              },
+              "Name" : "62",
+              "Directions" : [
+                {
+                  "Name" : "DD Löbtau Süd Mohorner Str.",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:21062: :H:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:21062: :H:j17:8",
+                      "Name" : "Fahrplan gültig vom 25. bis 26.03.2017"
+                    }
+                  ]
+                },
+                {
+                  "Name" : "Dresden Johannstadt",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:21062: :R:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:21062: :R:j17:8",
+                      "Name" : "Fahrplan gültig vom 25. bis 26.03.2017"
+                    }
+                  ]
+                }
+              ],
+              "Mot" : "CityBus"
+            },
+            {
+              "Directions" : [
+                {
+                  "Name" : "Niederwartha Haltepunkt",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:21094: :H:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:21094: :H:j17:8",
+                      "Name" : "Fahrplan gültig vom 25. bis 26.03.2017"
+                    }
+                  ]
+                },
+                {
+                  "Name" : "Dresden Postplatz \/ Webergasse",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:21094: :R:j17:1",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 03.01.2017"
+                    },
+                    {
+                      "Id" : "voe:21094: :R:j17:8",
+                      "Name" : "Fahrplan gültig vom 25. bis 26.03.2017"
+                    }
+                  ]
+                }
+              ],
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "21094"
+              },
+              "Name" : "94",
+              "Changes" : [
+                "509154"
+              ],
+              "Mot" : "CityBus"
+            },
+            {
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "12928n"
+              },
+              "Name" : "H\/S (Pirna)",
+              "Directions" : [
+                {
+                  "Name" : "Pirna Sonnenstein Süd",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:12928:n:R:j17:1",
+                      "Name" : "Jahresfahrplan 2017 - Gültig ab 11. Dezember 2016"
+                    }
+                  ]
+                }
+              ],
+              "Mot" : "CityBus"
+            },
+            {
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "23333"
+              },
+              "Name" : "333",
+              "Directions" : [
+                {
+                  "Name" : "Grumbach Wendeplatz",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:23333: :H:j17:5",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 11.12.2016"
+                    }
+                  ]
+                }
+              ],
+              "Mot" : "IntercityBus"
+            },
+            {
+              "Directions" : [
+                {
+                  "Name" : "Bannewitz Windbergstraße",
+                  "TimeTables" : [
+                    {
+                      "Id" : "voe:23360: :H:j17:2",
+                      "Name" : "Standardfahrplan 2017 - gültig ab 01.01.2017"
+                    }
+                  ]
+                }
+              ],
+              "Diva" : {
+                "Network" : "voe",
+                "Number" : "23360"
+              },
+              "Name" : "360",
+              "Changes" : [
+                "509460"
+              ],
+              "Mot" : "IntercityBus"
+            }
+          ],
+          "Status" : {
+            "Code" : "Ok"
+          },
+          "ExpirationTime" : "\/Date(1490564903038+0200)\/"
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/stt\/lines"
+      },
+      "recorded_at" : 1490560124.086977,
+      "request" : {
+        "headers" : {
+          "Content-Type" : "application\/json;charset=UTF-8"
+        },
+        "method" : "POST",
+        "body" : {
+          "stopid" : "33000037"
+        },
+        "url" : "https:\/\/webapi.vvo-online.de\/stt\/lines"
+      }
+    }
+  ],
+  "name" : "testGetLinesAtPostplatzWithName()"
+}

@@ -60,16 +60,16 @@ extension Line.TimeTable: Unmarshaling {
 // MARK: - API
 
 extension Line {
-    public static func get(forStopId id: String, completion: @escaping (Result<LinesResponse>) -> Void) {
+    public static func get(forStopId id: String, session: URLSession = .shared, completion: @escaping (Result<LinesResponse>) -> Void) {
         let data = [
             "stopid": id,
         ]
-        post(Endpoint.lines, data: data, completion: completion)
+        post(Endpoint.lines, data: data, session: session, completion: completion)
     }
 
     /// Convenience function taking a stop name. Sends of a find request first and uses the first result's `id` as an argument for the lines request.
-    public static func get(forStopName name: String, completion: @escaping (Result<LinesResponse>) -> Void) {
-        Stop.find(name) { result in
+    public static func get(forStopName name: String, session: URLSession = .shared, completion: @escaping (Result<LinesResponse>) -> Void) {
+        Stop.find(name, session: session) { result in
             switch result {
             case let .failure(error): completion(Result(failure: error))
             case let .success(response):
@@ -77,7 +77,7 @@ extension Line {
                     completion(Result(failure: DVBError.response))
                     return
                 }
-                Line.get(forStopId: first.id, completion: completion)
+                Line.get(forStopId: first.id, session: session, completion: completion)
             }
         }
     }
