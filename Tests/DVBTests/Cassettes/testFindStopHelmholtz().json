@@ -43,5 +43,5 @@
       }
     }
   ],
-  "name" : "findhelmholtzquery"
+  "name" : "testFindStopHelmholtz()"
 }
