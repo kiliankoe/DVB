@@ -48,13 +48,14 @@ class DepartureTests: XCTestCase {
         XCTAssertEqual(dep.description, "85 Löbtau departing in 0 minutes.")
     }
 
-    func testMonitor() {
+    func testDepartureMonitorAtPostplatz() {
         let e = expectation(description: "Find correct departures")
 
-        let session = Session(cassetteName: "monitor")
+        let session = Session(cassetteName: #function)
 
+        let postplatz = "33000037"
         let date = Date(timeIntervalSince1970: 1490480797) // 2017-03-25 23:26:37
-        Departure.monitor(stopWithId: "33000037", date: date, session: session) { result in
+        Departure.monitor(stopWithId: postplatz, date: date, session: session) { result in
             switch result {
             case let .failure(error):
                 XCTFail("Failed with error: \(error)")
@@ -70,10 +71,10 @@ class DepartureTests: XCTestCase {
         waitForExpectations(timeout: 5)
     }
 
-    func testMonitorWithName() {
+    func testDepartureMonitorAtHauptbahnhofWithName() {
         let e = expectation(description: "Find correct departures")
 
-        let session = Session(cassetteName: "monitorwithname")
+        let session = Session(cassetteName: #function)
 
         session.beginRecording()
 
@@ -95,10 +96,10 @@ class DepartureTests: XCTestCase {
         waitForExpectations(timeout: 5)
     }
 
-    func testNonExistantStopId() {
+    func testDepartureMonitorWithNonExistantStopId() {
         let e = expectation(description: "Get ServiceError")
 
-        let session = Session(cassetteName: "nonexistantstopid")
+        let session = Session(cassetteName: #function)
 
         let date = Date(timeIntervalSince1970: 1490480797) // 2017-03-25 23:26:37
         Departure.monitor(stopWithId: "1337", date: date, session: session) { result in
