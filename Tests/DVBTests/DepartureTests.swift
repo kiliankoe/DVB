@@ -81,6 +81,7 @@ class DepartureTests: XCTestCase {
         let date = Date(timeIntervalSince1970: 1490480797) // 2017-03-25 23:26:37
         Departure.monitor(stopWithName: "Hauptbahnhof", date: date, session: session) { result in
             session.endRecording()
+
             switch result {
             case let .failure(error):
                 XCTFail("Failed with error: \(error)")
