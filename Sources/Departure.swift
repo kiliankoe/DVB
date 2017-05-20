@@ -21,8 +21,8 @@ public struct Departure {
     public let routeChanges: [String]?
     public let diva: Diva?
 
-    public var actualEta: Int? {
-        guard let realTime = realTime else { return nil }
+    public var actualEta: Int {
+        guard let realTime = realTime else { return scheduledEta }
         return Int(realTime.timeIntervalSince(Date()) / 60)
     }
 
