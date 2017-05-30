@@ -21,25 +21,28 @@ public struct Departure {
     public let routeChanges: [String]?
     public let diva: Diva?
 
-    public var actualEta: Int {
-        guard let realTime = realTime else { return scheduledEta }
+    /// The actual ETA. Should only be different from the scheduled ETA if not on time.
+    public var actualETA: Int {
+        guard let realTime = realTime else { return scheduledETA }
         return Int(realTime.timeIntervalSince(Date()) / 60)
     }
 
-    public var scheduledEta: Int {
+    /// The scheduled ETA, differs from actualEta if not on time.
+    public var scheduledETA: Int {
         return Int(scheduledTime.timeIntervalSince(Date()) / 60)
     }
 
-    public var fancyEta: String {
-        guard let realTime = realTime else { return "\(scheduledEta)" }
+    /// ETA value including any possible delay.
+    public var fancyETA: String {
+        guard let realTime = realTime else { return "\(scheduledETA)" }
         let diff = Int(realTime.timeIntervalSince(scheduledTime) / 60)
 
         if diff < 0 {
-            return "\(scheduledEta)\(diff)"
+            return "\(scheduledETA)\(diff)"
         } else if diff == 0 {
-            return "\(scheduledEta)"
+            return "\(scheduledETA)"
         } else {
-            return "\(scheduledEta)+\(diff)"
+            return "\(scheduledETA)+\(diff)"
         }
     }
 }
@@ -146,7 +149,7 @@ extension Departure {
 
 extension Departure: CustomStringConvertible {
     public var description: String {
-        return "\(line) \(direction) departing in \(fancyEta) minutes."
+        return "\(line) \(direction) departing in \(fancyETA) minutes."
     }
 }
 
