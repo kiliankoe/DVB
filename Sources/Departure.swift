@@ -22,7 +22,7 @@ public struct Departure {
     public let diva: Diva?
 
     /// The actual ETA. Should only be different from the scheduled ETA if not on time.
-    public var actualETA: Int {
+    public var ETA: Int {
         guard let realTime = realTime else { return scheduledETA }
         return Int(realTime.timeIntervalSince(Date()) / 60)
     }
