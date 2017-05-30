@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name        = "DVB"
-  s.version     = "2.2.0"
+  s.version     = "2.3.0"
   s.summary     = "Query Dresden's public transport system for current bus- and tramstop data"
   s.description = <<-DESC
     Query Dresden's public transport system for current bus- and tramstop data in Swift.

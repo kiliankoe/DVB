@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+
+
+## [2.3.0] - 2017-05-30
+
 ### Added
 
 - `Route.find(from:to:)`
