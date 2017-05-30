@@ -4,11 +4,19 @@
 
 ### Added
 
-- `Trip.find(from:to:)`
+- `Route.find(from:to:)`
+- `.localizedETA()` on Departure
+- `Stop.monitor()`
 
 ### Fixed
 
-- A few `Trip` properties are now optional
+- A few `Route` properties are now optional
+
+### Changed
+
+- Renamed `Trip` to `Route`
+- some coordinate handling, should now work better
+- `Departure`'s `actualETA` is now just `ETA` and no longer optional
 
 ## [2.2.0] - 2017-03-20
 
