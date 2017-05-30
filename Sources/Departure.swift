@@ -47,11 +47,11 @@ public struct Departure {
     }
 
     /// ETA as a localized description, e.g. "now" or "5 minutes".
-    /// Supports German and English.
+    /// Supports German and English. Defaults to English for everything else.
     ///
     /// - Parameter locale: locale to use for localization, defaults to `Locale.current`
     /// - Returns: localized string
-    public func localizedETA(_ locale: Locale = Locale.current) -> String {
+    public func localizedETA(for locale: Locale = Locale.current) -> String {
         switch locale.languageCode?.lowercased() {
         case .some("de"):
             switch self.ETA {

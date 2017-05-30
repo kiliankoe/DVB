@@ -44,18 +44,18 @@ class DepartureTests: XCTestCase {
         let enLocale = Locale(identifier: "en_US")
 
         let de1 = Departure(id: "", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .Tram, realTime: nil, scheduledTime: now, state: .onTime, routeChanges: nil, diva: nil)
-        XCTAssertEqual(de1.localizedETA(deLocale), "jetzt")
+        XCTAssertEqual(de1.localizedETA(for: deLocale), "jetzt")
         let de2 = Departure(id: "", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .Tram, realTime: nil, scheduledTime: in1, state: .onTime, routeChanges: nil, diva: nil)
-        XCTAssertEqual(de2.localizedETA(deLocale), "1 Minute")
+        XCTAssertEqual(de2.localizedETA(for: deLocale), "1 Minute")
         let de3 = Departure(id: "", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .Tram, realTime: nil, scheduledTime: in5, state: .onTime, routeChanges: nil, diva: nil)
-        XCTAssertEqual(de3.localizedETA(deLocale), "5 Minuten")
+        XCTAssertEqual(de3.localizedETA(for: deLocale), "5 Minuten")
 
         let en1 = Departure(id: "", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .Tram, realTime: nil, scheduledTime: now, state: .onTime, routeChanges: nil, diva: nil)
-        XCTAssertEqual(en1.localizedETA(enLocale), "now")
+        XCTAssertEqual(en1.localizedETA(for: enLocale), "now")
         let en2 = Departure(id: "", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .Tram, realTime: nil, scheduledTime: in1, state: .onTime, routeChanges: nil, diva: nil)
-        XCTAssertEqual(en2.localizedETA(enLocale), "1 minute")
+        XCTAssertEqual(en2.localizedETA(for: enLocale), "1 minute")
         let en3 = Departure(id: "", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .Tram, realTime: nil, scheduledTime: in5, state: .onTime, routeChanges: nil, diva: nil)
-        XCTAssertEqual(en3.localizedETA(enLocale), "5 minutes")
+        XCTAssertEqual(en3.localizedETA(for: enLocale), "5 minutes")
     }
 
     func testEquality() {
