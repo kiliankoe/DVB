@@ -98,6 +98,12 @@ extension Stop {
     }
 }
 
+extension Stop {
+    public func monitor(date: Date = Date(), dateType: Departure.DateType = .arrival, allowedModes modes: [Mode] = Mode.all, allowShorttermChanges: Bool = true, session: URLSession = .shared, completion: @escaping (Result<MonitorResponse>) -> Void) {
+        Departure.monitor(stopWithId: self.id, date: date, dateType: dateType, allowedModes: modes, allowShorttermChanges: allowShorttermChanges, session: session, completion: completion)
+    }
+}
+
 // MARK: - Utility
 
 extension Stop: CustomStringConvertible {
