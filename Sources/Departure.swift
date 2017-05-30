@@ -45,6 +45,34 @@ public struct Departure {
             return "\(scheduledETA)+\(diff)"
         }
     }
+
+    /// ETA as a localized description, e.g. "now" or "5 minutes".
+    /// Supports German and English.
+    ///
+    /// - Parameter locale: locale to use for localization, defaults to `Locale.current`
+    /// - Returns: localized string
+    public func localizedETA(_ locale: Locale = Locale.current) -> String {
+        switch locale.languageCode?.lowercased() {
+        case .some("de"):
+            switch self.ETA {
+            case 0:
+                return "jetzt"
+            case 1:
+                return "1 Minute"
+            default:
+                return "\(self.ETA) Minuten"
+            }
+        default:
+            switch self.ETA {
+            case 0:
+                return "now"
+            case 1:
+                return "1 minute"
+            default:
+                return "\(self.ETA) minutes"
+            }
+        }
+    }
 }
 
 // Namespacing some sub-types

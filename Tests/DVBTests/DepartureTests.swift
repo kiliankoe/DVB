@@ -35,6 +35,29 @@ class DepartureTests: XCTestCase {
         XCTAssertEqual(dep4.fancyETA, "5")
     }
 
+    func testLocalizedETA() {
+        let now = Date()
+        let in1 = now.addingTimeInterval(60 + 1)
+        let in5 = now.addingTimeInterval(5 * 60 + 1)
+
+        let deLocale = Locale(identifier: "de_DE")
+        let enLocale = Locale(identifier: "en_US")
+
+        let de1 = Departure(id: "", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .Tram, realTime: nil, scheduledTime: now, state: .onTime, routeChanges: nil, diva: nil)
+        XCTAssertEqual(de1.localizedETA(deLocale), "jetzt")
+        let de2 = Departure(id: "", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .Tram, realTime: nil, scheduledTime: in1, state: .onTime, routeChanges: nil, diva: nil)
+        XCTAssertEqual(de2.localizedETA(deLocale), "1 Minute")
+        let de3 = Departure(id: "", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .Tram, realTime: nil, scheduledTime: in5, state: .onTime, routeChanges: nil, diva: nil)
+        XCTAssertEqual(de3.localizedETA(deLocale), "5 Minuten")
+
+        let en1 = Departure(id: "", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .Tram, realTime: nil, scheduledTime: now, state: .onTime, routeChanges: nil, diva: nil)
+        XCTAssertEqual(en1.localizedETA(enLocale), "now")
+        let en2 = Departure(id: "", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .Tram, realTime: nil, scheduledTime: in1, state: .onTime, routeChanges: nil, diva: nil)
+        XCTAssertEqual(en2.localizedETA(enLocale), "1 minute")
+        let en3 = Departure(id: "", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .Tram, realTime: nil, scheduledTime: in5, state: .onTime, routeChanges: nil, diva: nil)
+        XCTAssertEqual(en3.localizedETA(enLocale), "5 minutes")
+    }
+
     func testEquality() {
         let dep1 = Departure(id: "123", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .Tram, realTime: nil, scheduledTime: Date(), state: .onTime, routeChanges: nil, diva: nil)
         let dep2 = Departure(id: "123", line: "", direction: "", platform: Platform(name: "", type: ""), mode: .Tram, realTime: nil, scheduledTime: Date(), state: .onTime, routeChanges: nil, diva: nil)
