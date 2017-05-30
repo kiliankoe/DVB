@@ -15,7 +15,7 @@ class DepartureTests: XCTestCase {
         XCTAssertEqual(dep1.actualETA, 5)
 
         let dep2 = Departure(id: "123", line: "3", direction: "Wilder Mann", platform: platform, mode: .Tram, realTime: nil, scheduledTime: now, state: .delayed, routeChanges: nil, diva: diva)
-        XCTAssertEqual(dep2.actualEta, nil)
+        XCTAssertEqual(dep2.actualETA, 0)
     }
 
     func testFancyETA() {
