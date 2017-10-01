@@ -31,14 +31,8 @@ class StopTests: XCTestCase {
         let string = "33000742|||Helmholtzstraße|5655904|4621157|0|"
         do {
             _ = try Stop(string: string)
-        } catch let e as DVBError {
-            switch e {
-            case .decode: break
-            default: XCTFail("Got unexpected error type")
-            }
-        } catch {
-            XCTFail("Got unexpected error type")
-        }
+            XCTFail("Invalid string should not initialize Stop value")
+        } catch { }
     }
 
     func testEquality() {
@@ -99,7 +93,9 @@ private extension Stop {
     }
 
     init(string: String) throws {
-        let data = string.data(using: .utf8)!
-        self = try JSONDecoder().decode(Stop.self, from: data)
+        let data = """
+        ["\(string)"]
+        """.data(using: .utf8)!
+        self = try JSONDecoder().decode([Stop].self, from: data)[0]
     }
 }
