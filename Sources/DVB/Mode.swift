@@ -41,4 +41,9 @@ public struct Mode: Decodable {
         guard let identifier = self.identifier.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return nil }
         return URL(string: "https://www.dvb.de/assets/trans-icon/transport-\(identifier).svg")
     }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        self.init(value: try container.decode(String.self))
+    }
 }
