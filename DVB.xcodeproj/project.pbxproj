@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		39291FA01F81AFF40063E485 /* SAPDateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39291F9F1F81AFF40063E485 /* SAPDateDecoder.swift */; };
 		OBJ_100 /* GaussKrueger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "GaussKrueger::GaussKrueger::Product" /* GaussKrueger.framework */; };
 		OBJ_106 /* gausskrueger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* gausskrueger.swift */; };
 		OBJ_51 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
@@ -86,6 +87,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		39291F9F1F81AFF40063E485 /* SAPDateDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAPDateDecoder.swift; sourceTree = "<group>"; };
 		"DVB::DVB::Product" /* DVB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"DVB::DVBTests::Product" /* DVBTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = DVBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		"GaussKrueger::GaussKrueger::Product" /* GaussKrueger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GaussKrueger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,7 +205,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -214,7 +216,6 @@
 				OBJ_38 /* Dependencies */,
 				OBJ_42 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -243,6 +244,7 @@
 				OBJ_21 /* RouteChange.swift */,
 				OBJ_22 /* Stop.swift */,
 				OBJ_23 /* Trip.swift */,
+				39291F9F1F81AFF40063E485 /* SAPDateDecoder.swift */,
 			);
 			name = DVB;
 			path = Sources/DVB;
@@ -345,7 +347,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_42 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -413,6 +415,7 @@
 				OBJ_88 /* Endpoint.swift in Sources */,
 				OBJ_89 /* Line.swift in Sources */,
 				OBJ_90 /* Mode.swift in Sources */,
+				39291FA01F81AFF40063E485 /* SAPDateDecoder.swift in Sources */,
 				OBJ_91 /* Network.swift in Sources */,
 				OBJ_92 /* POI.swift in Sources */,
 				OBJ_93 /* Platform.swift in Sources */,

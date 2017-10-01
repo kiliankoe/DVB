@@ -66,7 +66,9 @@ private func dataTask<T: Decodable>(request: URLRequest, session: URLSession = .
                 return
             }
 
-            let decoded = try JSONDecoder().decode(T.self, from: data)
+            let jsonDecoder = JSONDecoder()
+            jsonDecoder.dateDecodingStrategy = .custom(SAPDateDecoder.strategy)
+            let decoded = try jsonDecoder.decode(T.self, from: data)
             completion(Result(success: decoded))
 
         } catch let e {
