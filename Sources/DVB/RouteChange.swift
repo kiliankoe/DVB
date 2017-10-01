@@ -78,9 +78,9 @@ extension RouteChange {
     public struct Kind {
         public let rawValue: String
 
-        public let Scheduled = Kind(rawValue: "Scheduled")
-        public let AmplifyingTransport = Kind(rawValue: "AmplifyingTransport")
-        public let ShortTerm = Kind(rawValue: "ShortTerm")
+        public static let Scheduled = Kind(rawValue: "Scheduled")
+        public static let AmplifyingTransport = Kind(rawValue: "AmplifyingTransport")
+        public static let ShortTerm = Kind(rawValue: "ShortTerm")
     }
 }
 
