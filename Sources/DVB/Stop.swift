@@ -20,7 +20,7 @@ public struct Stop: Decodable {
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
-        let string = container.decode(String.self)
+        let string = try container.decode(String.self)
 
         let components = string.components(separatedBy: "|")
         guard components.count == 9 else {
