@@ -24,13 +24,13 @@ extension POI {
     public struct Kind {
         public let rawValue: String
 
-        public let RentABike = Kind(rawValue: "RentABike")
-        public let Stop = Kind(rawValue: "Stop")
-        public let Poi = Kind(rawValue: "Poi")
-        public let CarSharing = Kind(rawValue: "CarSharing")
-        public let TicketMachine = Kind(rawValue: "TicketMachine")
-        public let Platform = Kind(rawValue: "Platform")
-        public let ParkAndRide = Kind(rawValue: "ParkAndRide")
+        public static let RentABike = Kind(rawValue: "RentABike")
+        public static let Stop = Kind(rawValue: "Stop")
+        public static let Poi = Kind(rawValue: "Poi")
+        public static let CarSharing = Kind(rawValue: "CarSharing")
+        public static let TicketMachine = Kind(rawValue: "TicketMachine")
+        public static let Platform = Kind(rawValue: "Platform")
+        public static let ParkAndRide = Kind(rawValue: "ParkAndRide")
 
         public static var all: [Kind] {
             return [.RentABike, .Stop, .Poi, .CarSharing, .TicketMachine, .Platform, .ParkAndRide]
