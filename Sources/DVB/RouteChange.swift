@@ -75,12 +75,21 @@ extension RouteChange {
         }
     }
 
-    public struct Kind {
+    public struct Kind: Decodable {
         public let rawValue: String
 
         public static let Scheduled = Kind(rawValue: "Scheduled")
         public static let AmplifyingTransport = Kind(rawValue: "AmplifyingTransport")
         public static let ShortTerm = Kind(rawValue: "ShortTerm")
+
+        public init(rawValue value: String) {
+            self.rawValue = value
+        }
+
+        public init(from decoder: Decoder) throws {
+            let container = try decoder.singleValueContainer()
+            self.rawValue = try container.decode(String.self)
+        }
     }
 }
 
