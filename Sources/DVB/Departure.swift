@@ -1,15 +1,22 @@
 import Foundation
 import Marshal
 
-public struct MonitorResponse {
+public struct MonitorResponse: Codable {
     public let stopName: String
     public let place: String
     public let expirationTime: Date
     public let departures: [Departure]
+
+    private enum CodingKeys: String, CodingKey {
+        case stopName = "Name"
+        case place = "Place"
+        case expirationTime = "ExpirationTime"
+        case departures = "Departures"
+    }
 }
 
 /// A bus, tram or whatever leaving a specific stop at a specific time
-public struct Departure {
+public struct Departure: Codable {
     public let id: String
     public let line: String
     public let direction: String
@@ -20,6 +27,30 @@ public struct Departure {
     public let state: State
     public let routeChanges: [String]?
     public let diva: Diva?
+
+    private var rawState: String? {
+        set {
+            guard let stateStr = newValue else {
+                self.state = .unknown
+                return
+            }
+            self.state = Departure.State(stateStr)
+        }
+        get {}
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case id = "Id"
+        case line = "LineName"
+        case direction = "Direction"
+        case mode = "Mot"
+        case scheduledTime = "ScheduledTime"
+        case routeChanges = "RouteChanges"
+        case platform = "Platform"
+        case diva = "Diva"
+        case realTime = "RealTime"
+        case rawState = "State"
+    }
 
     /// The actual ETA. Should only be different from the scheduled ETA if not on time.
     public var ETA: Int {
