@@ -1,13 +1,11 @@
 import Foundation
 
-public struct Diva {
+public struct Diva: Decodable {
     public let number: String
     public let network: String
-}
 
-extension Diva: Unmarshaling {
-    public init(object: MarshaledObject) throws {
-        number = try object <| "Number"
-        network = try object <| "Network"
+    private enum CodingKeys: String, CodingKey {
+        case number = "Number"
+        case network = "Network"
     }
 }
