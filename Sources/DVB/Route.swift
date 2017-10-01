@@ -1,12 +1,17 @@
 import Foundation
 import GaussKrueger
 
-public struct RoutesResponse {
+public struct RoutesResponse: Decodable {
     public let routes: [Route]
     public let sessionId: String
+
+    private enum CodingKeys: String, CodingKey {
+        case routes = "Routes"
+        case sessionId = "SessionId"
+    }
 }
 
-public struct Route {
+public struct Route: Decodable {
     public let priceLevel: Int?
     public let price: String?
     public let duration: Int
@@ -18,27 +23,58 @@ public struct Route {
     public let routeId: Int
     public let partialRoutes: [RoutePartial]
     public let mapData: [MapData]
+
+    private enum CodingKeys: String, CodingKey {
+        case priceLevel = "PriceLevel"
+        case price = "Price"
+        case duration = "Duration"
+        case interchanges = "Interchanges"
+        case modeChain = "MotChain"
+        case fareZoneOrigin = "FareZoneOrigin"
+        case fareZoneDestination = "FareZoneDestination"
+        case mapPdfId = "MapPdfId"
+        case routeId = "RouteId"
+        case partialRoutes = "PartialRoutes"
+        case mapData = "MapData"
+    }
 }
 
 extension Route {
-    public struct ModeElement {
+    public struct ModeElement: Decodable {
         public let name: String?
         public let mode: Mode?
         public let direction: String?
         public let changes: [String]?
         public let diva: Diva?
+
+        private enum CodingKeys: String, CodingKey {
+            case name = "Name"
+            case mode = "Type"
+            case direction = "Direction"
+            case changes = "Changes"
+            case diva = "Diva"
+        }
     }
 
-    public struct RoutePartial {
+    public struct RoutePartial: Decodable {
         public let partialRouteId: Int?
         public let duration: Int?
         public let mode: ModeElement
         public let mapDataIndex: Int
         public let shift: String
         public let regularStops: [RouteStop]?
+
+        private enum CodingKeys: String, CodingKey {
+            case partialRouteId = "PartialRouteId"
+            case duration = "Duration"
+            case mode = "Mot"
+            case mapDataIndex = "MapDataIndex"
+            case shift = "Shift"
+            case regularStops = "RegularStops"
+        }
     }
 
-    public struct RouteStop {
+    public struct RouteStop: Decodable {
         public let arrivalTime: Date
         public let departureTime: Date
         public let place: String
@@ -48,125 +84,82 @@ extension Route {
         public let platform: Platform?
         public let coordinate: WGSCoordinate?
         public let mapPdfId: String?
+
+        private enum CodingKeys: String, CodingKey {
+            case arrivalTime = "ArrivalTime"
+            case departureTime = "DepartureTime"
+            case place = "Place"
+            case name = "Name"
+            case type = "Type"
+            case dataId = "DataId"
+            case platform = "Platform"
+            case latitude = "Latitude"
+            case longitude = "Longitude"
+            case mapPdfId = "MapPdfId"
+        }
+
+        public init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            let rawArrivalTime = try container.decode(String.self, forKey: .arrivalTime)
+            guard let arrivalTime = Date(fromSAPPattern: rawArrivalTime) else {
+                throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [CodingKeys.arrivalTime], debugDescription: "Failed to read arrival time."))
+            }
+            self.arrivalTime = arrivalTime
+            let rawDepartureTime = try container.decode(String.self, forKey: .departureTime)
+            guard let departureTime = Date(fromSAPPattern: rawDepartureTime) else {
+                throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [CodingKeys.departureTime], debugDescription: "Failed to read departure time."))
+            }
+            self.departureTime = departureTime
+            self.place = try container.decode(String.self, forKey: .place)
+            self.name = try container.decode(String.self, forKey: .name)
+            self.type = try container.decode(String.self, forKey: .type)
+            self.dataId = try container.decode(String.self, forKey: .dataId)
+            self.platform = try container.decodeIfPresent(Platform.self, forKey: .platform)
+            let lat = try container.decode(Double.self, forKey: .latitude)
+            let lng = try container.decode(Double.self, forKey: .longitude)
+            self.coordinate = GKCoordinate(x: lat, y: lng).asWGS
+            self.mapPdfId = try container.decode(String.self, forKey: .mapPdfId)
+        }
     }
 
-    public struct MapData {
+    public struct MapData: Decodable {
         public let mode: String
         public let points: [WGSCoordinate]
-    }
-}
 
-// MARK: - JSON
+        public init(from decoder: Decoder) throws {
+            let container = try decoder.singleValueContainer()
+            let string = try container.decode(String.self)
 
-extension RoutesResponse: Unmarshaling {
-    public init(object: MarshaledObject) throws {
-        sessionId = try object <| "SessionId"
-        routes = try object <| "Routes"
-    }
-}
+            let components = string.components(separatedBy: "|")
+            guard components.count % 2 == 0 else {
+                throw DVBError.decode // FIXME: Use better error type
+            }
 
-extension Route: Unmarshaling {
-    public init(object: MarshaledObject) throws {
-        priceLevel = try object <| "PriceLevel"
-        price = try object <| "Price"
-        duration = try object <| "Duration"
-        interchanges = try object <| "Interchanges"
-        modeChain = try object <| "MotChain"
-        fareZoneOrigin = try object <| "FareZoneOrigin"
-        fareZoneDestination = try object <| "FareZoneDestination"
-        mapPdfId = try object <| "MapPdfId"
-        routeId = try object <| "RouteId"
-        partialRoutes = try object <| "PartialRoutes"
-        mapData = try object <| "MapData"
-    }
-}
+            guard let mode = components.first else {
+                throw DVBError.decode // FIXME: Use better error type
+            }
 
-extension Route.ModeElement: Unmarshaling {
-    public init(object: MarshaledObject) throws {
-        name = try object <| "Name"
-        diva = try object <| "Diva"
+            let gkCoords = components
+                .dropFirst() // transportmode
+                .dropLast() // empty value
+                .flatMap { Double($0) }
 
-        if let mode: Mode = try? object <| "Type" {
+            guard gkCoords.count % 2 == 0 else {
+                throw DVBError.decode
+            }
+
+            // I'd love an implementation of `chunk` in the stdlib...
+            var coordTuples = [(Double, Double)]()
+            for i in 0 ..< gkCoords.count - 1 {
+                coordTuples.append((gkCoords[i], gkCoords[i + 1]))
+            }
+
+            let coords = coordTuples
+                .flatMap { GKCoordinate(x: $0.0, y: $0.1).asWGS }
+
             self.mode = mode
-        } else {
-            mode = nil // FIXME: This breaks on "Footpath" for example. Should this even be a `Mode`?
+            self.points = coords
         }
-
-        direction = try object <| "Direction"
-        changes = try object <| "Changes"
-    }
-}
-
-extension Route.RoutePartial: Unmarshaling {
-    public init(object: MarshaledObject) throws {
-        mode = try object <| "Mot"
-        mapDataIndex = try object <| "MapDataIndex"
-        shift = try object <| "Shift"
-        duration = try object <| "Duration"
-        regularStops = try object <| "RegularStops"
-        partialRouteId = try object <| "PartialRouteId"
-    }
-}
-
-extension Route.RouteStop: Unmarshaling {
-    public init(object: MarshaledObject) throws {
-        arrivalTime = try object <| "ArrivalTime"
-        departureTime = try object <| "DepartureTime"
-        place = try object <| "Place"
-        name = try object <| "Name"
-        type = try object <| "Type"
-        dataId = try object <| "DataId"
-
-        let latitude: Double = try object <| "Latitude"
-        let longitude: Double = try object <| "Longitude"
-        coordinate = GKCoordinate(x: latitude, y: longitude).asWGS
-
-        platform = try object <| "Platform"
-        mapPdfId = try object <| "MapPdfId"
-    }
-}
-
-extension Route.MapData: ValueType {
-    public static func value(from object: Any) throws -> Route.MapData {
-        guard let string = object as? String else {
-            throw MarshalError.typeMismatch(expected: String.self, actual: type(of: object))
-        }
-
-        let components = string.components(separatedBy: "|")
-        guard components.count % 2 == 0 else {
-            throw DVBError.decode // FIXME: Use better error type
-        }
-
-        guard let first = components.first else {
-            throw DVBError.decode // FIXME: Use better error type
-        }
-
-        let gkCoords = components
-            .dropFirst() // transportmode
-            .dropLast() // empty value
-            .map { Double($0) }
-            .flatMap { $0 }
-
-        guard gkCoords.count % 2 == 0 else {
-            throw DVBError.decode
-        }
-
-        // I'd love an implementation of `chunk` in the stdlib...
-        var coordTuples = [(Double, Double)]()
-        for i in 0 ..< gkCoords.count - 1 {
-            coordTuples.append((gkCoords[i], gkCoords[i + 1]))
-        }
-
-        let coords = coordTuples
-            .flatMap { GKCoordinate(x: $0.0, y: $0.1).asWGS }
-
-        //        if let mode = Mode(rawValue: first.lowercased()) {
-        //            self.mode = mode
-        //        } else {
-        //            self.mode = nil // FIXME: This is stupid. Gotta find a better way to store 'Footpath'
-        //        }
-
-        return self.init(mode: first, points: coords)
     }
 }
 
@@ -180,7 +173,14 @@ extension Route {
 }
 
 extension Route {
-    public static func find(fromWithID originId: String, toWithID destinationId: String, time: Date = Date(), dateIsArrival: Bool = false, allowShortTermChanges: Bool = true, mobilityRestriction: MobilityRestriction = .none, session: URLSession = .shared, completion: @escaping (Result<RoutesResponse>) -> Void) {
+    public static func find(fromWithID originId: String,
+                            toWithID destinationId: String,
+                            time: Date = Date(),
+                            dateIsArrival: Bool = false,
+                            allowShortTermChanges: Bool = true,
+                            mobilityRestriction: MobilityRestriction = .none,
+                            session: URLSession = .shared,
+                            completion: @escaping (Result<RoutesResponse>) -> Void) {
         let data: [String: Any] = [
             "origin": originId,
             "destination": destinationId,
@@ -201,7 +201,14 @@ extension Route {
     }
 
     /// Convenience function taking to stop names instead of IDs. Sends of two find requests first.
-    public static func find(from origin: String, to destination: String, time: Date = Date(), dateIsArrival: Bool = false, allowShortTermChanges: Bool = true, mobilityRestriction: MobilityRestriction = .none, session: URLSession = .shared, completion: @escaping (Result<RoutesResponse>) -> Void) {
+    public static func find(from origin: String,
+                            to destination: String,
+                            time: Date = Date(),
+                            dateIsArrival: Bool = false,
+                            allowShortTermChanges: Bool = true,
+                            mobilityRestriction: MobilityRestriction = .none,
+                            session: URLSession = .shared,
+                            completion: @escaping (Result<RoutesResponse>) -> Void) {
         Stop.find(origin, session: session) { result in
             switch result {
             case let .failure(error): completion(Result(failure: error))
