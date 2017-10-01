@@ -100,16 +100,8 @@ extension Route {
 
         public init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
-            let rawArrivalTime = try container.decode(String.self, forKey: .arrivalTime)
-            guard let arrivalTime = Date(fromSAPPattern: rawArrivalTime) else {
-                throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [CodingKeys.arrivalTime], debugDescription: "Failed to read arrival time."))
-            }
-            self.arrivalTime = arrivalTime
-            let rawDepartureTime = try container.decode(String.self, forKey: .departureTime)
-            guard let departureTime = Date(fromSAPPattern: rawDepartureTime) else {
-                throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [CodingKeys.departureTime], debugDescription: "Failed to read departure time."))
-            }
-            self.departureTime = departureTime
+            self.arrivalTime = try container.decode(Date.self, forKey: .arrivalTime)
+            self.departureTime = try container.decode(Date.self, forKey: .departureTime)
             self.place = try container.decode(String.self, forKey: .place)
             self.name = try container.decode(String.self, forKey: .name)
             self.type = try container.decode(String.self, forKey: .type)
@@ -118,7 +110,7 @@ extension Route {
             let lat = try container.decode(Double.self, forKey: .latitude)
             let lng = try container.decode(Double.self, forKey: .longitude)
             self.coordinate = GKCoordinate(x: lat, y: lng).asWGS
-            self.mapPdfId = try container.decode(String.self, forKey: .mapPdfId)
+            self.mapPdfId = try container.decodeIfPresent(String.self, forKey: .mapPdfId)
         }
     }
 
