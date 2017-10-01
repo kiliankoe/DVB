@@ -32,6 +32,8 @@ public struct Mode: Decodable {
     }
 
     public var iconURL: URL? {
+        // Only icons for the modes listed above exist
+        guard Mode.all.contains(where: { $0.identifier == self.identifier }) else { return nil }
         guard let identifier = self.identifier.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return nil }
         return URL(string: "https://www.dvb.de/assets/trans-icon/transport-\(identifier).svg")
     }
