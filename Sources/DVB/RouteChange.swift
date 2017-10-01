@@ -1,32 +1,16 @@
 import Foundation
 
-public struct RouteChangeResponse {
+public struct RouteChangeResponse: Decodable {
     public let lines: [RouteChange.Line]
     public let changes: [RouteChange]
+
+    private enum CodingKeys: String, CodingKey {
+        case lines = "Lines"
+        case changes = "Changes"
+    }
 }
 
-public struct RouteChange {
-    public struct ValidityPeriod {
-        public let begin: Date
-        public let end: Date?
-    }
-
-    public enum Kind {
-        case scheduled
-        case amplifyingTransport
-        case shortTerm
-        case other(String)
-
-        init(_ string: String) {
-            switch string {
-            case "Scheduled": self = .scheduled
-            case "AmplifyingTransport": self = .amplifyingTransport
-            case "ShortTerm": self = .shortTerm
-            default: self = .other(string)
-            }
-        }
-    }
-
+public struct RouteChange: Decodable {
     public let id: String
     public let kind: Kind
     public let tripRequestInclude: Bool?
@@ -35,65 +19,68 @@ public struct RouteChange {
     public let validityPeriods: [ValidityPeriod]
     public let lineIds: [String]
     public let publishDate: Date
+
+    private enum CodingKeys: String, CodingKey {
+        case id = "Id"
+        case kind = "Type"
+        case tripRequestInclude = "TripRequestInclude"
+        case title = "Title"
+        case htmlDescription = "Description"
+        case validityPeriods = "ValidityPeriods"
+        case lineIds = "LineIds"
+        case publishDate = "PublishDate"
+    }
 }
 
 extension RouteChange {
-    public struct Line {
+    public struct Line: Decodable {
         public let id: String
         public let name: String
         public let transportationCompany: String
         public let mode: Mode
         public let divas: [Diva]
         public let changes: [String]
-    }
-}
 
-// MARK: - JSON
-
-extension RouteChangeResponse: Unmarshaling {
-    public init(object: MarshaledObject) throws {
-        lines = try object <| "Lines"
-        changes = try object <| "Changes"
-    }
-}
-
-extension RouteChange: Unmarshaling {
-    public init(object: MarshaledObject) throws {
-        id = try object <| "Id"
-        kind = try object <| "Type"
-        tripRequestInclude = try object <| "TripRequestInclude"
-        title = try object <| "Title"
-        htmlDescription = try object <| "Description"
-        validityPeriods = try object <| "ValidityPeriods"
-        lineIds = try object <| "LineIds"
-        publishDate = try object <| "PublishDate"
-    }
-}
-
-extension RouteChange.Kind: ValueType {
-    public static func value(from object: Any) throws -> RouteChange.Kind {
-        guard let kindStr = object as? String else {
-            throw MarshalError.typeMismatch(expected: String.self, actual: type(of: object))
+        private enum CodingKeys: String, CodingKey {
+            case id = "Id"
+            case name = "Name"
+            case transportationCompany = "TransportationCompany"
+            case mode = "Mot"
+            case divas = "Divas"
+            case changes = "Changes"
         }
-        return self.init(kindStr)
     }
-}
 
-extension RouteChange.Line: Unmarshaling {
-    public init(object: MarshaledObject) throws {
-        id = try object <| "Id"
-        name = try object <| "Name"
-        transportationCompany = try object <| "TransportationCompany"
-        mode = try object <| "Mot"
-        divas = try object <| "Divas"
-        changes = try object <| "Changes"
+    public struct ValidityPeriod: Decodable {
+        public let begin: Date
+        public let end: Date?
+
+        private enum CodingKeys: String, CodingKey {
+            case begin = "Begin"
+            case end = "End"
+        }
+
+        public init(from decoder: Decoder) throws {
+            let container = try decoder.container(keyedBy: CodingKeys.self)
+            let rawBegin = try container.decode(String.self, forKey: .begin)
+            guard let begin = Date(fromSAPPattern: rawBegin) else {
+                throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [CodingKeys.begin], debugDescription: "Failed to read begin date."))
+            }
+            self.begin = begin
+            if let rawEnd = try container.decodeIfPresent(String.self, forKey: .end) {
+                self.end = Date(fromSAPPattern: rawEnd)
+            } else {
+                self.end = nil
+            }
+        }
     }
-}
 
-extension RouteChange.ValidityPeriod: Unmarshaling {
-    public init(object: MarshaledObject) throws {
-        begin = try object <| "Begin"
-        end = try object <| "End"
+    public struct Kind {
+        public let rawValue: String
+
+        public let Scheduled = Kind(rawValue: "Scheduled")
+        public let AmplifyingTransport = Kind(rawValue: "AmplifyingTransport")
+        public let ShortTerm = Kind(rawValue: "ShortTerm")
     }
 }
 
@@ -125,15 +112,5 @@ public func == (lhs: RouteChange, rhs: RouteChange) -> Bool {
 extension RouteChange: Hashable {
     public var hashValue: Int {
         return self.id.hashValue
-    }
-}
-
-extension RouteChange.Kind: Equatable {}
-public func == (lhs: RouteChange.Kind, rhs: RouteChange.Kind) -> Bool {
-    switch (lhs, rhs) {
-    case (.scheduled, .scheduled): return true
-    case (.amplifyingTransport, .amplifyingTransport): return true
-    case let (.other(x), .other(y)): return x == y
-    default: return false
     }
 }
