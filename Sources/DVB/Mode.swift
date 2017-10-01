@@ -3,14 +3,14 @@ import Foundation
 public struct Mode: Decodable {
     public let identifier: String
 
-    public static let Tram = Mode(value: "tram")
-    public static let CityBus = Mode(value: "citybus")
-    public static let IntercityBus = Mode(value: "bus")
-    public static let SuburbanRailway = Mode(value: "metropolitan")
-    public static let Train = Mode(value: "train")
-    public static let Cableway = Mode(value: "lift")
-    public static let Ferry = Mode(value: "Ferry")
-    public static let HailedSharedTaxi = Mode(value: "alita")
+    public static let Tram = Mode(rawValue: "tram")
+    public static let CityBus = Mode(rawValue: "citybus")
+    public static let IntercityBus = Mode(rawValue: "bus")
+    public static let SuburbanRailway = Mode(rawValue: "metropolitan")
+    public static let Train = Mode(rawValue: "train")
+    public static let Cableway = Mode(rawValue: "lift")
+    public static let Ferry = Mode(rawValue: "Ferry")
+    public static let HailedSharedTaxi = Mode(rawValue: "alita")
 
     init(value: String) {
         switch value.lowercased() {
@@ -25,6 +25,10 @@ public struct Mode: Decodable {
         default:
             self.identifier = value
         }
+    }
+
+    init(rawValue: String) {
+        self.identifier = rawValue
     }
 
     public static var all: [Mode] {

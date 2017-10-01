@@ -99,8 +99,8 @@ extension Departure {
     public struct State: Decodable {
         public let rawValue: String
 
-        public static let onTime = State(value: "InTime")
-        public static let delayed = State(value: "Delayed")
+        public static let onTime = State(rawValue: "InTime")
+        public static let delayed = State(rawValue: "Delayed")
 
         init(value: String) {
             switch value {
@@ -109,6 +109,10 @@ extension Departure {
             default:
                 self.rawValue = value
             }
+        }
+
+        init(rawValue: String) {
+            self.rawValue = rawValue
         }
 
         public init(from decoder: Decoder) throws {
