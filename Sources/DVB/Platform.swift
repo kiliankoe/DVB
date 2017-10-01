@@ -1,13 +1,11 @@
 import Foundation
 
-public struct Platform {
+public struct Platform: Decodable {
     public let name: String
     public let type: String
-}
 
-extension Platform: Unmarshaling {
-    public init(object: MarshaledObject) throws {
-        name = try object <| "Name"
-        type = try object <| "Type"
+    private enum CodingKeys: String, CodingKey {
+        case name = "Name"
+        case type = "Type"
     }
 }
