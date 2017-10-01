@@ -26,20 +26,6 @@ public struct TripStop: Decodable {
         case platform = "Platform"
         case time = "Time"
     }
-
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.id = try container.decode(String.self, forKey: .id)
-        self.place = try container.decode(String.self, forKey: .place)
-        self.name = try container.decode(String.self, forKey: .name)
-        self.position = try container.decode(Position.self, forKey: .position)
-        self.platform = try container.decodeIfPresent(Platform.self, forKey: .platform)
-        let rawTime = try container.decode(String.self, forKey: .time)
-        guard let time = Date(fromSAPPattern: rawTime) else {
-            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [CodingKeys.time], debugDescription: "Failed to read time."))
-        }
-        self.time = time
-    }
 }
 
 extension TripStop {

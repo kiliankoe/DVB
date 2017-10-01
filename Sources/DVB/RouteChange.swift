@@ -59,20 +59,6 @@ extension RouteChange {
             case begin = "Begin"
             case end = "End"
         }
-
-        public init(from decoder: Decoder) throws {
-            let container = try decoder.container(keyedBy: CodingKeys.self)
-            let rawBegin = try container.decode(String.self, forKey: .begin)
-            guard let begin = Date(fromSAPPattern: rawBegin) else {
-                throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [CodingKeys.begin], debugDescription: "Failed to read begin date."))
-            }
-            self.begin = begin
-            if let rawEnd = try container.decodeIfPresent(String.self, forKey: .end) {
-                self.end = Date(fromSAPPattern: rawEnd)
-            } else {
-                self.end = nil
-            }
-        }
     }
 
     public struct Kind: Decodable {
