@@ -9,7 +9,7 @@ public struct Mode: Decodable {
     public static let SuburbanRailway = Mode(rawValue: "metropolitan")
     public static let Train = Mode(rawValue: "train")
     public static let Cableway = Mode(rawValue: "lift")
-    public static let Ferry = Mode(rawValue: "Ferry")
+    public static let Ferry = Mode(rawValue: "ferry")
     public static let HailedSharedTaxi = Mode(rawValue: "alita")
 
     init(value: String) {
@@ -39,7 +39,7 @@ public struct Mode: Decodable {
         // Only icons for the modes listed above exist
         guard Mode.all.contains(where: { $0.identifier == self.identifier }) else { return nil }
         guard let identifier = self.identifier.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return nil }
-        return URL(string: "https://www.dvb.de/assets/trans-icon/transport-\(identifier).svg")
+        return URL(string: "https://www.dvb.de/assets/img/trans-icon/transport-\(identifier).svg")
     }
 
     public init(from decoder: Decoder) throws {
