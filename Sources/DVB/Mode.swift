@@ -1,5 +1,4 @@
 import Foundation
-import Marshal
 
 public enum Mode: String {
     // swiftlint:disable:next identifier_name

@@ -1,5 +1,4 @@
 import Foundation
-import Marshal
 
 public struct RouteChangeResponse {
     public let lines: [RouteChange.Line]

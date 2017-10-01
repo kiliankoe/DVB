@@ -1,5 +1,4 @@
 import Foundation
-import Marshal
 
 typealias JSON = [String: Any]
 

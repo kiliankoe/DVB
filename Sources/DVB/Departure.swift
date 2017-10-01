@@ -1,5 +1,4 @@
 import Foundation
-import Marshal
 
 public struct MonitorResponse: Codable {
     public let stopName: String

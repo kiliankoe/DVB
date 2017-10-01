@@ -1,5 +1,4 @@
 import Foundation
-import Marshal
 
 public struct Diva {
     public let number: String

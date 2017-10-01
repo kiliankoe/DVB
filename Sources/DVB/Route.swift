@@ -1,6 +1,5 @@
 import Foundation
-import Marshal
-import gausskrueger
+import GaussKrueger
 
 public struct RoutesResponse {
     public let routes: [Route]

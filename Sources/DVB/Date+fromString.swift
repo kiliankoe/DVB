@@ -1,5 +1,4 @@
 import Foundation
-import Marshal
 
 internal extension Date {
     /// Generate a date of the format `/Date(1487458060455+0100)/`

@@ -1,5 +1,4 @@
 import Foundation
-import Marshal
 
 public struct LinesResponse {
     public let lines: [Line]

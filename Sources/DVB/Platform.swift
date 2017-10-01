@@ -1,5 +1,4 @@
 import Foundation
-import Marshal
 
 public struct Platform {
     public let name: String

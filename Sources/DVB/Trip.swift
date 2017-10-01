@@ -1,5 +1,4 @@
 import Foundation
-import Marshal
 
 public struct TripsResponse {
     public let stops: [TripStop]

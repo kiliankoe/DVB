@@ -1,6 +1,5 @@
 import Foundation
-import Marshal
-import gausskrueger
+import GaussKrueger
 
 public struct POIResponse {
     public let pins: [POI]
