@@ -38,7 +38,7 @@
 		OBJ_74 /* DVB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "DVB::DVB::Product" /* DVB.framework */; };
 		OBJ_75 /* GaussKrueger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "GaussKrueger::GaussKrueger::Product" /* GaussKrueger.framework */; };
 		OBJ_84 /* DVBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* DVBError.swift */; };
-		OBJ_85 /* Date+fromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Date+fromString.swift */; };
+		OBJ_85 /* Date+SAP.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Date+SAP.swift */; };
 		OBJ_86 /* Departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Departure.swift */; };
 		OBJ_87 /* Diva.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Diva.swift */; };
 		OBJ_88 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Endpoint.swift */; };
@@ -89,7 +89,7 @@
 		"DVB::DVB::Product" /* DVB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"DVB::DVBTests::Product" /* DVBTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = DVBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		"GaussKrueger::GaussKrueger::Product" /* GaussKrueger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GaussKrueger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		OBJ_10 /* Date+fromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+fromString.swift"; sourceTree = "<group>"; };
+		OBJ_10 /* Date+SAP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+SAP.swift"; sourceTree = "<group>"; };
 		OBJ_11 /* Departure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
 		OBJ_12 /* Diva.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diva.swift; sourceTree = "<group>"; };
 		OBJ_13 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_9 /* DVBError.swift */,
-				OBJ_10 /* Date+fromString.swift */,
+				OBJ_10 /* Date+SAP.swift */,
 				OBJ_11 /* Departure.swift */,
 				OBJ_12 /* Diva.swift */,
 				OBJ_13 /* Endpoint.swift */,
@@ -407,7 +407,7 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_84 /* DVBError.swift in Sources */,
-				OBJ_85 /* Date+fromString.swift in Sources */,
+				OBJ_85 /* Date+SAP.swift in Sources */,
 				OBJ_86 /* Departure.swift in Sources */,
 				OBJ_87 /* Diva.swift in Sources */,
 				OBJ_88 /* Endpoint.swift in Sources */,
