@@ -86,7 +86,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		"DVB::DVB::Product" /* DVB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"DVB::DVB::Product" /* DVB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"DVB::DVBTests::Product" /* DVBTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = DVBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		"GaussKrueger::GaussKrueger::Product" /* GaussKrueger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GaussKrueger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* Date+fromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+fromString.swift"; sourceTree = "<group>"; };
