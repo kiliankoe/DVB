@@ -23,7 +23,7 @@ public struct Departure: Decodable {
     public let mode: Mode
     public let realTime: Date?
     public let scheduledTime: Date
-    public let state: State
+    public let state: State?
     public let routeChanges: [String]?
     public let diva: Diva?
 
