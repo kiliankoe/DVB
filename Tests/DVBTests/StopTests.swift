@@ -51,9 +51,8 @@ class StopTests: XCTestCase {
     func testFindStopHelmholtz() {
         let e = expectation(description: "Find correct stop")
 
-        let session = Session(cassetteName: #function)
 
-        Stop.find("Helmholtz", session: session) { result in
+        Stop.find("Helmholtz") { result in
             switch result {
             case let .failure(error):
                 XCTFail("Failed with error: \(error)")
@@ -73,10 +72,8 @@ class StopTests: XCTestCase {
     func testFindNearAntonstrasse() {
         let e = expectation(description: "Find stops near coordinate")
 
-        let session = Session(cassetteName: #function)
-
         let antonstrasseCoord = GKCoordinate(x: 4_622_550, y: 5_660_140)
-        Stop.findNear(coord: antonstrasseCoord, session: session) { result in
+        Stop.findNear(coord: antonstrasseCoord) { result in
             switch result {
             case let .failure(error):
                 XCTFail("Failed with error: \(error)")
@@ -90,5 +87,19 @@ class StopTests: XCTestCase {
         }
 
         waitForExpectations(timeout: 5)
+    }
+}
+
+private extension Stop {
+    init(id: String, name: String, region: String?, location: WGSCoordinate?) {
+        self.id = id
+        self.name = name
+        self.region = region
+        self.location = location
+    }
+
+    init(string: String) throws {
+        let data = string.data(using: .utf8)!
+        self = try JSONDecoder().decode(Stop.self, from: data)
     }
 }

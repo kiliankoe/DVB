@@ -7,9 +7,7 @@ class RouteChangeTests: XCTestCase {
     func testGetRouteChanges() {
         let e = expectation(description: "Get route changes")
 
-        let session = Session(cassetteName: #function)
-
-        RouteChange.get(session: session) { result in
+        RouteChange.get { result in
             switch result {
             case let .failure(error):
                 XCTFail("Failed with error: \(error)")
