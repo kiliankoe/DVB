@@ -1,6 +1,6 @@
 import Foundation
 
-public struct MonitorResponse: Codable {
+public struct MonitorResponse: Decodable {
     public let stopName: String
     public let place: String
     public let expirationTime: Date
@@ -15,7 +15,7 @@ public struct MonitorResponse: Codable {
 }
 
 /// A bus, tram or whatever leaving a specific stop at a specific time
-public struct Departure: Codable {
+public struct Departure: Decodable {
     public let id: String
     public let line: String
     public let direction: String
@@ -26,17 +26,6 @@ public struct Departure: Codable {
     public let state: State
     public let routeChanges: [String]?
     public let diva: Diva?
-
-    private var rawState: String? {
-        set {
-            guard let stateStr = newValue else {
-                self.state = .unknown
-                return
-            }
-            self.state = Departure.State(stateStr)
-        }
-        get {}
-    }
 
     private enum CodingKeys: String, CodingKey {
         case id = "Id"
@@ -107,18 +96,24 @@ public struct Departure: Codable {
 
 // Namespacing some sub-types
 extension Departure {
-    public enum State {
-        case onTime
-        case delayed
-        case other(String) // TODO: Figure out what these are. "Cancelled" maybe? And others?
-        case unknown
+    public struct State: Decodable {
+        public let rawValue: String
 
-        init(_ string: String) {
-            switch string {
-            case "InTime": self = .onTime
-            case "Delayed": self = .delayed
-            default: self = .other(string)
+        public static let onTime = State(value: "InTime")
+        public static let delayed = State(value: "Delayed")
+
+        init(value: String) {
+            switch value {
+            case "InTime": self = State.onTime
+            case "Delayed": self = State.delayed
+            default:
+                self.rawValue = value
             }
+        }
+
+        public init(from decoder: Decoder) throws {
+            let container = try decoder.singleValueContainer()
+            self.init(value: try container.decode(String.self))
         }
     }
 
@@ -132,52 +127,16 @@ extension Departure {
     }
 }
 
-// MARK: - JSON
-
-extension MonitorResponse: Unmarshaling {
-    public init(object: MarshaledObject) throws {
-        stopName = try object <| "Name"
-        place = try object <| "Place"
-        expirationTime = try object <| "ExpirationTime"
-        departures = try object <| "Departures"
-    }
-}
-
-extension Departure: Unmarshaling {
-    public init(object: MarshaledObject) throws {
-        id = try object <| "Id"
-        line = try object <| "LineName"
-        direction = try object <| "Direction"
-        mode = try object <| "Mot"
-
-        scheduledTime = try object <| "ScheduledTime"
-        routeChanges = try object <| "RouteChanges"
-        platform = try object <| "Platform"
-        diva = try object <| "Diva"
-        realTime = try object <| "RealTime"
-
-        let rawState: String? = try object <| "State"
-        if let stateString = rawState {
-            state = try Departure.State.value(from: stateString)
-        } else {
-            state = .unknown
-        }
-    }
-}
-
-extension Departure.State: ValueType {
-    public static func value(from object: Any) throws -> Departure.State {
-        guard let stateStr = object as? String else {
-            throw MarshalError.typeMismatch(expected: String.self, actual: type(of: object))
-        }
-        return self.init(stateStr)
-    }
-}
-
 // MARK: - API
 
 extension Departure {
-    public static func monitor(stopWithId id: String, date: Date = Date(), dateType: DateType = .arrival, allowedModes modes: [Mode] = Mode.all, allowShorttermChanges: Bool = true, session: URLSession = .shared, completion: @escaping (Result<MonitorResponse>) -> Void) {
+    public static func monitor(stopWithId id: String,
+                               date: Date = Date(),
+                               dateType: DateType = .arrival,
+                               allowedModes modes: [Mode] = Mode.all,
+                               allowShorttermChanges: Bool = true,
+                               session: URLSession = .shared,
+                               completion: @escaping (Result<MonitorResponse>) -> Void) {
         let data: [String: Any] = [
             "stopid": id,
             "time": date.iso8601,
@@ -191,7 +150,13 @@ extension Departure {
     }
 
     /// Convenience function taking a stop name. Sends of a find request first and uses the first result's `id` as an argument for the monitor request.
-    public static func monitor(stopWithName name: String, date: Date = Date(), dateType: DateType = .arrival, allowedModes modes: [Mode] = Mode.all, allowShorttermChanges: Bool = true, session: URLSession = .shared, completion: @escaping (Result<MonitorResponse>) -> Void) {
+    public static func monitor(stopWithName name: String,
+                               date: Date = Date(),
+                               dateType: DateType = .arrival,
+                               allowedModes modes: [Mode] = Mode.all,
+                               allowShorttermChanges: Bool = true,
+                               session: URLSession = .shared,
+                               completion: @escaping (Result<MonitorResponse>) -> Void) {
         Stop.find(name, session: session) { result in
             switch result {
             case let .failure(error): completion(Result(failure: error))
@@ -219,16 +184,5 @@ public func == (lhs: Departure, rhs: Departure) -> Bool {
 extension Departure: Hashable {
     public var hashValue: Int {
         return self.id.hashValue
-    }
-}
-
-extension Departure.State: Equatable {}
-public func == (lhs: Departure.State, rhs: Departure.State) -> Bool {
-    switch (lhs, rhs) {
-    case (.onTime, .onTime): return true
-    case (.delayed, .delayed): return true
-    case let (.other(x), .other(y)): return x == y
-    case (.unknown, .unknown): return true
-    default: return false
     }
 }
