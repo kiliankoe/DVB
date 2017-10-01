@@ -74,16 +74,14 @@ class DepartureTests: XCTestCase {
         let e = expectation(description: "Find correct departures")
 
         let postplatz = "33000037"
-        let date = Date(timeIntervalSince1970: 1490480797) // 2017-03-25 23:26:37
-        Departure.monitor(stopWithId: postplatz, date: date) { result in
+        let now = Date()
+        Departure.monitor(stopWithId: postplatz, date: now) { result in
             switch result {
             case let .failure(error):
                 XCTFail("Failed with error: \(error)")
+                e.fulfill()
             case let .success(response):
-                guard response.departures.count > 0 else {
-                    XCTFail("Response contains no departures")
-                    return
-                }
+                XCTAssertGreaterThan(response.departures.count, 0)
                 e.fulfill()
             }
         }
@@ -94,17 +92,14 @@ class DepartureTests: XCTestCase {
     func testDepartureMonitorAtHauptbahnhofWithName() {
         let e = expectation(description: "Find correct departures")
 
-
-        let date = Date(timeIntervalSince1970: 1490480797) // 2017-03-25 23:26:37
-        Departure.monitor(stopWithName: "Hauptbahnhof", date: date) { result in
+        let now = Date()
+        Departure.monitor(stopWithName: "Hauptbahnhof", date: now) { result in
             switch result {
             case let .failure(error):
                 XCTFail("Failed with error: \(error)")
+                e.fulfill()
             case let .success(response):
-                guard response.departures.count > 0 else {
-                    XCTFail("Response contains no departures")
-                    return
-                }
+                XCTAssertGreaterThan(response.departures.count, 0)
                 e.fulfill()
             }
         }
