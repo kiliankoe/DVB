@@ -12,12 +12,8 @@ class RouteChangeTests: XCTestCase {
             case let .failure(error):
                 XCTFail("Failed with error: \(error)")
             case let .success(response):
-                guard response.lines.count > 0,
-                    response.changes.count > 0 else {
-                    XCTFail("Response contains no lines or changes")
-                    return
-                }
-
+                XCTAssertGreaterThan(response.lines.count, 0)
+                XCTAssertGreaterThan(response.changes.count, 0)
                 e.fulfill()
             }
         }
