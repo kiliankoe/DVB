@@ -1,74 +1,55 @@
 import Foundation
 import GaussKrueger
 
-public struct FindResponse {
+public struct FindResponse: Decodable {
     public let stops: [Stop]
     public let expirationTime: Date?
+
+    private enum CodingKeys: String, CodingKey {
+        case stops = "Points"
+        case expirationTime = "ExpirationTime"
+    }
 }
 
 /// A place where a bus, tram or whatever can stop.
-public struct Stop {
+public struct Stop: Decodable {
     public let id: String
     public let name: String
     public let region: String?
     public let location: WGSCoordinate?
-}
 
-// MARK: - JSON
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let string = container.decode(String.self)
 
-extension FindResponse: Unmarshaling {
-    public init(object: MarshaledObject) throws {
-        stops = try object <| "Points"
-        expirationTime = try object <| "ExpirationTime"
-    }
-}
-
-extension Stop {
-    init(string: String) throws {
         let components = string.components(separatedBy: "|")
-        guard components.count == 9 else { throw DVBError.decode }
-        id = components[0]
-        region = components[2].isEmpty ? nil : components[2]
-        name = components[3]
+        guard components.count == 9 else {
+            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [], debugDescription: "Illegal number of parameters for a Stop."))
+        }
+        self.id = components[0]
+        self.region = components[2].isEmpty ? nil : components[2]
+        self.name = components[3]
 
-        guard let x = Double(components[5]),
-            let y = Double(components[4]) else {
-            throw DVBError.decode
+        guard
+            let x = Double(components[5]),
+            let y = Double(components[4])
+        else {
+            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [], debugDescription: "Stop coordinates should be numeric values."))
         }
         if x != 0, y != 0 {
-            location = GKCoordinate(x: x, y: y).asWGS
+            self.location = GKCoordinate(x: x, y: y).asWGS
         } else {
-            location = nil
+            self.location = nil
         }
-    }
-}
-
-extension Stop: ValueType {
-    public static func value(from object: Any) throws -> Stop {
-        guard let str = object as? String else {
-            throw MarshalError.typeMismatch(expected: String.self, actual: type(of: object))
-        }
-
-        let components = str.components(separatedBy: "|")
-
-        guard components.count == 9 else {
-            throw MarshalError.typeMismatch(expected: "Stop string should have 9 different values", actual: components.count)
-        }
-        guard let x = Double(components[5]), let y = Double(components[4]) else {
-            throw MarshalError.typeMismatch(expected: "X and Y should be number values", actual: (type(of: components[4]), type(of: components[5])))
-        }
-
-        let region: String? = components[2].isEmpty ? nil : components[2]
-        let location = x != 0 && y != 0 ? GKCoordinate(x: x, y: y).asWGS : nil
-
-        return Stop(id: components[0], name: components[3], region: region, location: location)
     }
 }
 
 // MARK: - API
 
 extension Stop {
-    public static func find(_ query: String, session: URLSession = .shared, completion: @escaping (Result<FindResponse>) -> Void) {
+    public static func find(_ query: String,
+                            session: URLSession = .shared,
+                            completion: @escaping (Result<FindResponse>) -> Void) {
         let data: [String: Any] = [
             "limit": 0,
             "query": query,
@@ -78,12 +59,17 @@ extension Stop {
         post(Endpoint.pointfinder, data: data, session: session, completion: completion)
     }
 
-    public static func findNear(lat: Double, lng: Double, session: URLSession = .shared, completion: @escaping (Result<FindResponse>) -> Void) {
+    public static func findNear(lat: Double,
+                                lng: Double,
+                                session: URLSession = .shared,
+                                completion: @escaping (Result<FindResponse>) -> Void) {
         let coord = WGSCoordinate(latitude: lat, longitude: lng)
         findNear(coord: coord, session: session, completion: completion)
     }
 
-    public static func findNear(coord: Coordinate, session: URLSession = .shared, completion: @escaping (Result<FindResponse>) -> Void) {
+    public static func findNear(coord: Coordinate,
+                                session: URLSession = .shared,
+                                completion: @escaping (Result<FindResponse>) -> Void) {
         guard let gk = coord.asGK else {
             completion(Result(failure: DVBError.coordinate))
             return
@@ -98,7 +84,12 @@ extension Stop {
 }
 
 extension Stop {
-    public func monitor(date: Date = Date(), dateType: Departure.DateType = .arrival, allowedModes modes: [Mode] = Mode.all, allowShorttermChanges: Bool = true, session: URLSession = .shared, completion: @escaping (Result<MonitorResponse>) -> Void) {
+    public func monitor(date: Date = Date(),
+                        dateType: Departure.DateType = .arrival,
+                        allowedModes modes: [Mode] = Mode.all,
+                        allowShorttermChanges: Bool = true,
+                        session: URLSession = .shared,
+                        completion: @escaping (Result<MonitorResponse>) -> Void) {
         Departure.monitor(stopWithId: self.id, date: date, dateType: dateType, allowedModes: modes, allowShorttermChanges: allowShorttermChanges, session: session, completion: completion)
     }
 }
