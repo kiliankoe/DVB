@@ -1,7 +1,6 @@
 import Foundation
 import XCTest
-import gausskrueger
-import DVR
+import GaussKrueger
 @testable import DVB
 
 class POITests: XCTestCase {

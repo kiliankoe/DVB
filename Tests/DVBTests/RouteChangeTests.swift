@@ -1,6 +1,5 @@
 import Foundation
 import XCTest
-import DVR
 @testable import DVB
 
 class RouteChangeTests: XCTestCase {
