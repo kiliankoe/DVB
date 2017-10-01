@@ -37,7 +37,7 @@ public struct Departure: Decodable {
         case platform = "Platform"
         case diva = "Diva"
         case realTime = "RealTime"
-        case rawState = "State"
+        case state = "State"
     }
 
     /// The actual ETA. Should only be different from the scheduled ETA if not on time.
