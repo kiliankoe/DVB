@@ -104,8 +104,8 @@ extension Departure {
 
         init(value: String) {
             switch value {
-            case "InTime": self = State.onTime
-            case "Delayed": self = State.delayed
+            case State.onTime.rawValue: self = State.onTime
+            case State.delayed.rawValue: self = State.delayed
             default:
                 self.rawValue = value
             }
