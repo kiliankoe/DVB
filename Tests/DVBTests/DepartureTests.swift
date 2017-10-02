@@ -74,8 +74,7 @@ class DepartureTests: XCTestCase {
         let e = expectation(description: "Find correct departures")
 
         let postplatz = "33000037"
-        let now = Date()
-        Departure.monitor(stopWithId: postplatz, date: now) { result in
+        Departure.monitor(stopWithId: postplatz, date: Date()) { result in
             switch result {
             case let .failure(error):
                 XCTFail("Failed with error: \(error)")
@@ -92,8 +91,7 @@ class DepartureTests: XCTestCase {
     func testDepartureMonitorAtHauptbahnhofWithName() {
         let e = expectation(description: "Find correct departures")
 
-        let now = Date()
-        Departure.monitor(stopWithName: "Hauptbahnhof", date: now) { result in
+        Departure.monitor(stopWithName: "Hauptbahnhof", date: Date()) { result in
             switch result {
             case let .failure(error):
                 XCTFail("Failed with error: \(error)")
@@ -110,8 +108,7 @@ class DepartureTests: XCTestCase {
     func testDepartureMonitorWithNonExistantStopId() {
         let e = expectation(description: "Get ServiceError")
 
-        let date = Date(timeIntervalSince1970: 1490480797) // 2017-03-25 23:26:37
-        Departure.monitor(stopWithId: "1337", date: date) { result in
+        Departure.monitor(stopWithId: "1337", date: Date()) { result in
             switch result {
             case let .failure(error):
                 guard let error = error as? DVBError,
