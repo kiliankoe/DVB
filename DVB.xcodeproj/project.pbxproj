@@ -115,8 +115,6 @@
 		OBJ_33 /* RouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTests.swift; sourceTree = "<group>"; };
 		OBJ_34 /* StopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopTests.swift; sourceTree = "<group>"; };
 		OBJ_35 /* TripTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTests.swift; sourceTree = "<group>"; };
-		OBJ_36 /* Carthage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Carthage; sourceTree = SOURCE_ROOT; };
-		OBJ_37 /* Configs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Configs; sourceTree = SOURCE_ROOT; };
 		OBJ_40 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/kilian/dev/dvb/DVB/.build/checkouts/gausskrueger--4851931655673069520/Package.swift"; sourceTree = "<group>"; };
 		OBJ_41 /* gausskrueger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gausskrueger.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -230,8 +228,6 @@
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_24 /* Tests */,
-				OBJ_36 /* Carthage */,
-				OBJ_37 /* Configs */,
 				OBJ_38 /* Dependencies */,
 				OBJ_42 /* Products */,
 			);
