@@ -1,9 +1,5 @@
-# references:
-# * http://www.objc.io/issue-6/travis-ci.html
-# * https://github.com/supermarin/xcpretty#usage
-
-osx_image: xcode8.3
 language: objective-c
+osx_image: xcode9
 
 before_install:
   - gem install xcpretty
@@ -11,10 +7,9 @@ before_install:
   - carthage update --platform OSX,iOS
 
 script:
-- xcodebuild test -scheme DVB-macOS | xcpretty
-- xcodebuild test -scheme DVB-iOS -destination 'platform=iOS Simulator,name=iPhone 7,OS=10.3' | xcpretty
-# - swift test # Disabled since SPM can no longer build the tests as of d9de55db7b8f7428e9fb86c78bc1f533d1351325 :/
-# - pod lib lint # Disabled since Travis has outdated cocoapods specs :/
+  - swift test
+  - xcodebuild test -scheme DVB-Package | xcpretty
+  - xcodebuild test -scheme DVB-Package -destination 'platform=iOS Simulator,name=iPhone 7,OS=11.0' | xcpretty
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
