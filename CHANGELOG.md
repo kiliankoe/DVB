@@ -2,7 +2,9 @@
 
 ## [Unreleased]
 
+### Updated
 
+- Swift 4 compatibilty including migration to Swift 4's Codable.
 
 ## [2.3.0] - 2017-05-30
 
