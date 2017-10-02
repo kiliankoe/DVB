@@ -9,11 +9,11 @@
 /* Begin PBXAggregateTarget section */
 		"DVB::DVBPackageTests::ProductTarget" /* DVBPackageTests */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_109 /* Build configuration list for PBXAggregateTarget "DVBPackageTests" */;
+			buildConfigurationList = OBJ_90 /* Build configuration list for PBXAggregateTarget "DVBPackageTests" */;
 			buildPhases = (
 			);
 			dependencies = (
-				OBJ_112 /* PBXTargetDependency */,
+				OBJ_93 /* PBXTargetDependency */,
 			);
 			name = DVBPackageTests;
 			productName = DVBPackageTests;
@@ -21,64 +21,46 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		39291FA01F81AFF40063E485 /* SAPDateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39291F9F1F81AFF40063E485 /* SAPDateDecoder.swift */; };
-		39CE38001F82B88600E42C4D /* GaussKrueger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CE37FF1F82B88600E42C4D /* GaussKrueger.swift */; };
-		OBJ_100 /* GaussKrueger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "GaussKrueger::GaussKrueger::Product" /* GaussKrueger.framework */; };
-		OBJ_106 /* gausskrueger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* gausskrueger.swift */; };
-		OBJ_51 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
-		OBJ_57 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* Package.swift */; };
-		OBJ_63 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* DateTests.swift */; };
-		OBJ_64 /* DepartureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* DepartureTests.swift */; };
-		OBJ_65 /* LineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* LineTests.swift */; };
-		OBJ_66 /* ModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* ModeTests.swift */; };
-		OBJ_67 /* POITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* POITests.swift */; };
-		OBJ_68 /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* ResultTests.swift */; };
-		OBJ_69 /* RouteChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* RouteChangeTests.swift */; };
-		OBJ_70 /* RouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* RouteTests.swift */; };
-		OBJ_71 /* StopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* StopTests.swift */; };
-		OBJ_72 /* TripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* TripTests.swift */; };
-		OBJ_74 /* DVB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "DVB::DVB::Product" /* DVB.framework */; };
-		OBJ_75 /* GaussKrueger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "GaussKrueger::GaussKrueger::Product" /* GaussKrueger.framework */; };
-		OBJ_84 /* DVBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* DVBError.swift */; };
-		OBJ_85 /* Date+SAP.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Date+SAP.swift */; };
-		OBJ_86 /* Departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Departure.swift */; };
-		OBJ_87 /* Diva.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* Diva.swift */; };
-		OBJ_88 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Endpoint.swift */; };
-		OBJ_89 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Line.swift */; };
-		OBJ_90 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Mode.swift */; };
-		OBJ_91 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Network.swift */; };
-		OBJ_92 /* POI.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* POI.swift */; };
-		OBJ_93 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* Platform.swift */; };
-		OBJ_94 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* Result.swift */; };
-		OBJ_95 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* Route.swift */; };
-		OBJ_96 /* RouteChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* RouteChange.swift */; };
-		OBJ_97 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* Stop.swift */; };
-		OBJ_98 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* Trip.swift */; };
+		OBJ_47 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_53 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* DateTests.swift */; };
+		OBJ_54 /* DepartureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* DepartureTests.swift */; };
+		OBJ_55 /* LineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* LineTests.swift */; };
+		OBJ_56 /* ModeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* ModeTests.swift */; };
+		OBJ_57 /* POITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* POITests.swift */; };
+		OBJ_58 /* ResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* ResultTests.swift */; };
+		OBJ_59 /* RouteChangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* RouteChangeTests.swift */; };
+		OBJ_60 /* RouteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* RouteTests.swift */; };
+		OBJ_61 /* StopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* StopTests.swift */; };
+		OBJ_62 /* TripTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* TripTests.swift */; };
+		OBJ_64 /* DVB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "DVB::DVB::Product" /* DVB.framework */; };
+		OBJ_71 /* DVBError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* DVBError.swift */; };
+		OBJ_72 /* Date+SAP.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Date+SAP.swift */; };
+		OBJ_73 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Endpoint.swift */; };
+		OBJ_74 /* GaussKrueger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* GaussKrueger.swift */; };
+		OBJ_75 /* Departure.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Departure.swift */; };
+		OBJ_76 /* Diva.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* Diva.swift */; };
+		OBJ_77 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Line.swift */; };
+		OBJ_78 /* Mode.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* Mode.swift */; };
+		OBJ_79 /* POI.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* POI.swift */; };
+		OBJ_80 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* Platform.swift */; };
+		OBJ_81 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* Route.swift */; };
+		OBJ_82 /* RouteChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* RouteChange.swift */; };
+		OBJ_83 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* Stop.swift */; };
+		OBJ_84 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* Trip.swift */; };
+		OBJ_85 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* Network.swift */; };
+		OBJ_86 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* Result.swift */; };
+		OBJ_87 /* SAPDateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* SAPDateDecoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		39C5EE2D1F81426B004E3111 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "GaussKrueger::GaussKrueger";
-			remoteInfo = GaussKrueger;
-		};
-		39C5EE2E1F81426B004E3111 /* PBXContainerItemProxy */ = {
+		39CE38011F82BABF00E42C4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "DVB::DVB";
 			remoteInfo = DVB;
 		};
-		39C5EE2F1F81426B004E3111 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = OBJ_1 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = "GaussKrueger::GaussKrueger";
-			remoteInfo = GaussKrueger;
-		};
-		39C5EE301F81426B004E3111 /* PBXContainerItemProxy */ = {
+		39CE38021F82BABF00E42C4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -88,150 +70,118 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		39291F9F1F81AFF40063E485 /* SAPDateDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAPDateDecoder.swift; sourceTree = "<group>"; };
-		39CE37FF1F82B88600E42C4D /* GaussKrueger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussKrueger.swift; sourceTree = "<group>"; };
-		"DVB::DVB::Product" /* DVB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"DVB::DVB::Product" /* DVB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"DVB::DVBTests::Product" /* DVBTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = DVBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		"GaussKrueger::GaussKrueger::Product" /* GaussKrueger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GaussKrueger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* Date+SAP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+SAP.swift"; sourceTree = "<group>"; };
-		OBJ_11 /* Departure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
-		OBJ_12 /* Diva.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diva.swift; sourceTree = "<group>"; };
-		OBJ_13 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		OBJ_14 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
-		OBJ_15 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
-		OBJ_16 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		OBJ_17 /* POI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POI.swift; sourceTree = "<group>"; };
-		OBJ_18 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
-		OBJ_19 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		OBJ_11 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		OBJ_12 /* GaussKrueger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussKrueger.swift; sourceTree = "<group>"; };
+		OBJ_14 /* Departure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Departure.swift; sourceTree = "<group>"; };
+		OBJ_15 /* Diva.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diva.swift; sourceTree = "<group>"; };
+		OBJ_16 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		OBJ_17 /* Mode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mode.swift; sourceTree = "<group>"; };
+		OBJ_18 /* POI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POI.swift; sourceTree = "<group>"; };
+		OBJ_19 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		OBJ_20 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		OBJ_21 /* RouteChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteChange.swift; sourceTree = "<group>"; };
 		OBJ_22 /* Stop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		OBJ_23 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		OBJ_26 /* DateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
-		OBJ_27 /* DepartureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureTests.swift; sourceTree = "<group>"; };
-		OBJ_28 /* LineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTests.swift; sourceTree = "<group>"; };
-		OBJ_29 /* ModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeTests.swift; sourceTree = "<group>"; };
-		OBJ_30 /* POITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POITests.swift; sourceTree = "<group>"; };
-		OBJ_31 /* ResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
-		OBJ_32 /* RouteChangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteChangeTests.swift; sourceTree = "<group>"; };
-		OBJ_33 /* RouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTests.swift; sourceTree = "<group>"; };
-		OBJ_34 /* StopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopTests.swift; sourceTree = "<group>"; };
-		OBJ_35 /* TripTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTests.swift; sourceTree = "<group>"; };
-		OBJ_40 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/kilian/dev/dvb/DVB/.build/checkouts/gausskrueger--4851931655673069520/Package.swift"; sourceTree = "<group>"; };
-		OBJ_41 /* gausskrueger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gausskrueger.swift; sourceTree = "<group>"; };
+		OBJ_24 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		OBJ_25 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		OBJ_26 /* SAPDateDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAPDateDecoder.swift; sourceTree = "<group>"; };
+		OBJ_29 /* DateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTests.swift; sourceTree = "<group>"; };
+		OBJ_30 /* DepartureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureTests.swift; sourceTree = "<group>"; };
+		OBJ_31 /* LineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTests.swift; sourceTree = "<group>"; };
+		OBJ_32 /* ModeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeTests.swift; sourceTree = "<group>"; };
+		OBJ_33 /* POITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POITests.swift; sourceTree = "<group>"; };
+		OBJ_34 /* ResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTests.swift; sourceTree = "<group>"; };
+		OBJ_35 /* RouteChangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteChangeTests.swift; sourceTree = "<group>"; };
+		OBJ_36 /* RouteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteTests.swift; sourceTree = "<group>"; };
+		OBJ_37 /* StopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopTests.swift; sourceTree = "<group>"; };
+		OBJ_38 /* TripTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTests.swift; sourceTree = "<group>"; };
 		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		OBJ_9 /* DVBError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DVBError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_107 /* Frameworks */ = {
+		OBJ_63 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
+				OBJ_64 /* DVB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_73 /* Frameworks */ = {
+		OBJ_88 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_74 /* DVB.framework in Frameworks */,
-				OBJ_75 /* GaussKrueger.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_99 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_100 /* GaussKrueger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		39291FA11F81B93D0063E485 /* Models */ = {
+		OBJ_13 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_11 /* Departure.swift */,
-				OBJ_12 /* Diva.swift */,
-				OBJ_14 /* Line.swift */,
-				OBJ_15 /* Mode.swift */,
-				OBJ_17 /* POI.swift */,
-				OBJ_18 /* Platform.swift */,
+				OBJ_14 /* Departure.swift */,
+				OBJ_15 /* Diva.swift */,
+				OBJ_16 /* Line.swift */,
+				OBJ_17 /* Mode.swift */,
+				OBJ_18 /* POI.swift */,
+				OBJ_19 /* Platform.swift */,
 				OBJ_20 /* Route.swift */,
 				OBJ_21 /* RouteChange.swift */,
 				OBJ_22 /* Stop.swift */,
 				OBJ_23 /* Trip.swift */,
 			);
-			name = Models;
-			path = Sources/DVB/Models;
-			sourceTree = SOURCE_ROOT;
+			path = Models;
+			sourceTree = "<group>";
 		};
-		OBJ_24 /* Tests */ = {
+		OBJ_27 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_25 /* DVBTests */,
+				OBJ_28 /* DVBTests */,
 			);
 			name = Tests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_25 /* DVBTests */ = {
+		OBJ_28 /* DVBTests */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_26 /* DateTests.swift */,
-				OBJ_27 /* DepartureTests.swift */,
-				OBJ_28 /* LineTests.swift */,
-				OBJ_29 /* ModeTests.swift */,
-				OBJ_30 /* POITests.swift */,
-				OBJ_31 /* ResultTests.swift */,
-				OBJ_32 /* RouteChangeTests.swift */,
-				OBJ_33 /* RouteTests.swift */,
-				OBJ_34 /* StopTests.swift */,
-				OBJ_35 /* TripTests.swift */,
+				OBJ_29 /* DateTests.swift */,
+				OBJ_30 /* DepartureTests.swift */,
+				OBJ_31 /* LineTests.swift */,
+				OBJ_32 /* ModeTests.swift */,
+				OBJ_33 /* POITests.swift */,
+				OBJ_34 /* ResultTests.swift */,
+				OBJ_35 /* RouteChangeTests.swift */,
+				OBJ_36 /* RouteTests.swift */,
+				OBJ_37 /* StopTests.swift */,
+				OBJ_38 /* TripTests.swift */,
 			);
 			name = DVBTests;
 			path = Tests/DVBTests;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_38 /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_39 /* GaussKrueger 0.4.0 */,
-			);
-			name = Dependencies;
-			sourceTree = "<group>";
-		};
-		OBJ_39 /* GaussKrueger 0.4.0 */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_40 /* Package.swift */,
-				OBJ_41 /* gausskrueger.swift */,
-			);
-			name = "GaussKrueger 0.4.0";
-			path = ".build/checkouts/gausskrueger--4851931655673069520/Sources";
-			sourceTree = SOURCE_ROOT;
-		};
-		OBJ_42 /* Products */ = {
+		OBJ_39 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				"DVB::DVBTests::Product" /* DVBTests.xctest */,
 				"DVB::DVB::Product" /* DVB.framework */,
-				"GaussKrueger::GaussKrueger::Product" /* GaussKrueger.framework */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 = {
+		OBJ_5 /*  */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
-				OBJ_24 /* Tests */,
-				OBJ_38 /* Dependencies */,
-				OBJ_42 /* Products */,
+				OBJ_27 /* Tests */,
+				OBJ_39 /* Products */,
 			);
+			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -245,14 +195,14 @@
 		OBJ_8 /* DVB */ = {
 			isa = PBXGroup;
 			children = (
-				39291FA11F81B93D0063E485 /* Models */,
-				OBJ_13 /* Endpoint.swift */,
+				OBJ_13 /* Models */,
 				OBJ_9 /* DVBError.swift */,
 				OBJ_10 /* Date+SAP.swift */,
-				39291F9F1F81AFF40063E485 /* SAPDateDecoder.swift */,
-				OBJ_16 /* Network.swift */,
-				OBJ_19 /* Result.swift */,
-				39CE37FF1F82B88600E42C4D /* GaussKrueger.swift */,
+				OBJ_11 /* Endpoint.swift */,
+				OBJ_12 /* GaussKrueger.swift */,
+				OBJ_24 /* Network.swift */,
+				OBJ_25 /* Result.swift */,
+				OBJ_26 /* SAPDateDecoder.swift */,
 			);
 			name = DVB;
 			path = Sources/DVB;
@@ -263,17 +213,16 @@
 /* Begin PBXNativeTarget section */
 		"DVB::DVB" /* DVB */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_80 /* Build configuration list for PBXNativeTarget "DVB" */;
+			buildConfigurationList = OBJ_67 /* Build configuration list for PBXNativeTarget "DVB" */;
 			buildPhases = (
-				39AD589F1F81BF460002D1E7 /* Swiftlint */,
-				39AD58A01F81BFAE0002D1E7 /* TODO/FIXME */,
-				OBJ_83 /* Sources */,
-				OBJ_99 /* Frameworks */,
+				39CE38041F82BAF500E42C4D /* TODO/FIXME */,
+				39CE38031F82BAE400E42C4D /* SwiftLint */,
+				OBJ_70 /* Sources */,
+				OBJ_88 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_101 /* PBXTargetDependency */,
 			);
 			name = DVB;
 			productName = DVB;
@@ -282,16 +231,15 @@
 		};
 		"DVB::DVBTests" /* DVBTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_59 /* Build configuration list for PBXNativeTarget "DVBTests" */;
+			buildConfigurationList = OBJ_49 /* Build configuration list for PBXNativeTarget "DVBTests" */;
 			buildPhases = (
-				OBJ_62 /* Sources */,
-				OBJ_73 /* Frameworks */,
+				OBJ_52 /* Sources */,
+				OBJ_63 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_76 /* PBXTargetDependency */,
-				OBJ_78 /* PBXTargetDependency */,
+				OBJ_65 /* PBXTargetDependency */,
 			);
 			name = DVBTests;
 			productName = DVBTests;
@@ -300,9 +248,9 @@
 		};
 		"DVB::SwiftPMPackageDescription" /* DVBPackageDescription */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_47 /* Build configuration list for PBXNativeTarget "DVBPackageDescription" */;
+			buildConfigurationList = OBJ_43 /* Build configuration list for PBXNativeTarget "DVBPackageDescription" */;
 			buildPhases = (
-				OBJ_50 /* Sources */,
+				OBJ_46 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -310,36 +258,6 @@
 			);
 			name = DVBPackageDescription;
 			productName = DVBPackageDescription;
-			productType = "com.apple.product-type.framework";
-		};
-		"GaussKrueger::GaussKrueger" /* GaussKrueger */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_102 /* Build configuration list for PBXNativeTarget "GaussKrueger" */;
-			buildPhases = (
-				OBJ_105 /* Sources */,
-				OBJ_107 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = GaussKrueger;
-			productName = GaussKrueger;
-			productReference = "GaussKrueger::GaussKrueger::Product" /* GaussKrueger.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		"GaussKrueger::SwiftPMPackageDescription" /* GaussKruegerPackageDescription */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_53 /* Build configuration list for PBXNativeTarget "GaussKruegerPackageDescription" */;
-			buildPhases = (
-				OBJ_56 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = GaussKruegerPackageDescription;
-			productName = GaussKruegerPackageDescription;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -357,37 +275,35 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5;
-			productRefGroup = OBJ_42 /* Products */;
+			mainGroup = OBJ_5 /*  */;
+			productRefGroup = OBJ_39 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				"DVB::SwiftPMPackageDescription" /* DVBPackageDescription */,
-				"GaussKrueger::SwiftPMPackageDescription" /* GaussKruegerPackageDescription */,
 				"DVB::DVBTests" /* DVBTests */,
 				"DVB::DVB" /* DVB */,
-				"GaussKrueger::GaussKrueger" /* GaussKrueger */,
 				"DVB::DVBPackageTests::ProductTarget" /* DVBPackageTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		39AD589F1F81BF460002D1E7 /* Swiftlint */ = {
+		39CE38031F82BAE400E42C4D /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = Swiftlint;
+			name = SwiftLint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
-		39AD58A01F81BFAE0002D1E7 /* TODO/FIXME */ = {
+		39CE38041F82BAF500E42C4D /* TODO/FIXME */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -404,153 +320,71 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_105 /* Sources */ = {
+		OBJ_46 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_106 /* gausskrueger.swift in Sources */,
+				OBJ_47 /* Package.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_50 /* Sources */ = {
+		OBJ_52 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_51 /* Package.swift in Sources */,
+				OBJ_53 /* DateTests.swift in Sources */,
+				OBJ_54 /* DepartureTests.swift in Sources */,
+				OBJ_55 /* LineTests.swift in Sources */,
+				OBJ_56 /* ModeTests.swift in Sources */,
+				OBJ_57 /* POITests.swift in Sources */,
+				OBJ_58 /* ResultTests.swift in Sources */,
+				OBJ_59 /* RouteChangeTests.swift in Sources */,
+				OBJ_60 /* RouteTests.swift in Sources */,
+				OBJ_61 /* StopTests.swift in Sources */,
+				OBJ_62 /* TripTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_56 /* Sources */ = {
+		OBJ_70 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_57 /* Package.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_62 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_63 /* DateTests.swift in Sources */,
-				OBJ_64 /* DepartureTests.swift in Sources */,
-				OBJ_65 /* LineTests.swift in Sources */,
-				OBJ_66 /* ModeTests.swift in Sources */,
-				OBJ_67 /* POITests.swift in Sources */,
-				OBJ_68 /* ResultTests.swift in Sources */,
-				OBJ_69 /* RouteChangeTests.swift in Sources */,
-				OBJ_70 /* RouteTests.swift in Sources */,
-				OBJ_71 /* StopTests.swift in Sources */,
-				OBJ_72 /* TripTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		OBJ_83 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 0;
-			files = (
-				OBJ_84 /* DVBError.swift in Sources */,
-				OBJ_85 /* Date+SAP.swift in Sources */,
-				OBJ_86 /* Departure.swift in Sources */,
-				OBJ_87 /* Diva.swift in Sources */,
-				OBJ_88 /* Endpoint.swift in Sources */,
-				OBJ_89 /* Line.swift in Sources */,
-				OBJ_90 /* Mode.swift in Sources */,
-				39291FA01F81AFF40063E485 /* SAPDateDecoder.swift in Sources */,
-				OBJ_91 /* Network.swift in Sources */,
-				OBJ_92 /* POI.swift in Sources */,
-				OBJ_93 /* Platform.swift in Sources */,
-				OBJ_94 /* Result.swift in Sources */,
-				OBJ_95 /* Route.swift in Sources */,
-				OBJ_96 /* RouteChange.swift in Sources */,
-				OBJ_97 /* Stop.swift in Sources */,
-				39CE38001F82B88600E42C4D /* GaussKrueger.swift in Sources */,
-				OBJ_98 /* Trip.swift in Sources */,
+				OBJ_71 /* DVBError.swift in Sources */,
+				OBJ_72 /* Date+SAP.swift in Sources */,
+				OBJ_73 /* Endpoint.swift in Sources */,
+				OBJ_74 /* GaussKrueger.swift in Sources */,
+				OBJ_75 /* Departure.swift in Sources */,
+				OBJ_76 /* Diva.swift in Sources */,
+				OBJ_77 /* Line.swift in Sources */,
+				OBJ_78 /* Mode.swift in Sources */,
+				OBJ_79 /* POI.swift in Sources */,
+				OBJ_80 /* Platform.swift in Sources */,
+				OBJ_81 /* Route.swift in Sources */,
+				OBJ_82 /* RouteChange.swift in Sources */,
+				OBJ_83 /* Stop.swift in Sources */,
+				OBJ_84 /* Trip.swift in Sources */,
+				OBJ_85 /* Network.swift in Sources */,
+				OBJ_86 /* Result.swift in Sources */,
+				OBJ_87 /* SAPDateDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_101 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "GaussKrueger::GaussKrueger" /* GaussKrueger */;
-			targetProxy = 39C5EE2D1F81426B004E3111 /* PBXContainerItemProxy */;
-		};
-		OBJ_112 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = "DVB::DVBTests" /* DVBTests */;
-			targetProxy = 39C5EE301F81426B004E3111 /* PBXContainerItemProxy */;
-		};
-		OBJ_76 /* PBXTargetDependency */ = {
+		OBJ_65 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "DVB::DVB" /* DVB */;
-			targetProxy = 39C5EE2E1F81426B004E3111 /* PBXContainerItemProxy */;
+			targetProxy = 39CE38011F82BABF00E42C4D /* PBXContainerItemProxy */;
 		};
-		OBJ_78 /* PBXTargetDependency */ = {
+		OBJ_93 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = "GaussKrueger::GaussKrueger" /* GaussKrueger */;
-			targetProxy = 39C5EE2F1F81426B004E3111 /* PBXContainerItemProxy */;
+			target = "DVB::DVBTests" /* DVBTests */;
+			targetProxy = 39CE38021F82BABF00E42C4D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_103 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = DVB.xcodeproj/GaussKrueger_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = GaussKrueger;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGET_NAME = GaussKrueger;
-			};
-			name = Debug;
-		};
-		OBJ_104 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
-				);
-				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = DVB.xcodeproj/GaussKrueger_Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
-				OTHER_LDFLAGS = "$(inherited)";
-				OTHER_SWIFT_FLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = GaussKrueger;
-				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGET_NAME = GaussKrueger;
-			};
-			name = Release;
-		};
-		OBJ_110 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		OBJ_111 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
 		OBJ_3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -593,7 +427,7 @@
 			};
 			name = Release;
 		};
-		OBJ_48 /* Debug */ = {
+		OBJ_44 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
@@ -602,7 +436,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_49 /* Release */ = {
+		OBJ_45 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				LD = /usr/bin/true;
@@ -611,25 +445,7 @@
 			};
 			name = Release;
 		};
-		OBJ_54 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		OBJ_55 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				LD = /usr/bin/true;
-				OTHER_SWIFT_FLAGS = "-swift-version 4 -I /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
-				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
-		OBJ_60 /* Debug */ = {
+		OBJ_50 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -647,7 +463,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_61 /* Release */ = {
+		OBJ_51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -665,7 +481,7 @@
 			};
 			name = Release;
 		};
-		OBJ_81 /* Debug */ = {
+		OBJ_68 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -687,7 +503,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_82 /* Release */ = {
+		OBJ_69 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -706,30 +522,24 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGET_NAME = DVB;
+			};
+			name = Release;
+		};
+		OBJ_91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		OBJ_102 /* Build configuration list for PBXNativeTarget "GaussKrueger" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_103 /* Debug */,
-				OBJ_104 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
-		OBJ_109 /* Build configuration list for PBXAggregateTarget "DVBPackageTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				OBJ_110 /* Debug */,
-				OBJ_111 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
-		};
 		OBJ_2 /* Build configuration list for PBXProject "DVB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -739,38 +549,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_47 /* Build configuration list for PBXNativeTarget "DVBPackageDescription" */ = {
+		OBJ_43 /* Build configuration list for PBXNativeTarget "DVBPackageDescription" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_48 /* Debug */,
-				OBJ_49 /* Release */,
+				OBJ_44 /* Debug */,
+				OBJ_45 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_53 /* Build configuration list for PBXNativeTarget "GaussKruegerPackageDescription" */ = {
+		OBJ_49 /* Build configuration list for PBXNativeTarget "DVBTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_54 /* Debug */,
-				OBJ_55 /* Release */,
+				OBJ_50 /* Debug */,
+				OBJ_51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_59 /* Build configuration list for PBXNativeTarget "DVBTests" */ = {
+		OBJ_67 /* Build configuration list for PBXNativeTarget "DVB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_60 /* Debug */,
-				OBJ_61 /* Release */,
+				OBJ_68 /* Debug */,
+				OBJ_69 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_80 /* Build configuration list for PBXNativeTarget "DVB" */ = {
+		OBJ_90 /* Build configuration list for PBXAggregateTarget "DVBPackageTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_81 /* Debug */,
-				OBJ_82 /* Release */,
+				OBJ_91 /* Debug */,
+				OBJ_92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

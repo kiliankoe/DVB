@@ -20,20 +20,6 @@
                ReferencedContainer = "container:DVB.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "GaussKrueger::GaussKrueger"
-               BuildableName = "GaussKrueger.framework"
-               BlueprintName = "GaussKrueger"
-               ReferencedContainer = "container:DVB.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
