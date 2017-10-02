@@ -154,7 +154,6 @@
 			children = (
 				OBJ_11 /* Departure.swift */,
 				OBJ_12 /* Diva.swift */,
-				OBJ_13 /* Endpoint.swift */,
 				OBJ_14 /* Line.swift */,
 				OBJ_15 /* Mode.swift */,
 				OBJ_17 /* POI.swift */,
@@ -245,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				39291FA11F81B93D0063E485 /* Models */,
+				OBJ_13 /* Endpoint.swift */,
 				OBJ_9 /* DVBError.swift */,
 				OBJ_10 /* Date+SAP.swift */,
 				39291F9F1F81AFF40063E485 /* SAPDateDecoder.swift */,
