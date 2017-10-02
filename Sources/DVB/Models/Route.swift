@@ -161,9 +161,15 @@ extension Route {
 // MARK: - API
 
 extension Route {
-    public enum MobilityRestriction: String {
-        case none = "None"
+    public struct MobilityRestriction {
+        let rawValue: String
+
+        public static let None = MobilityRestriction(rawValue: "None")
         // TODO: Pull the other cases for this from the app
+
+        public init(rawValue: String) {
+            self.rawValue = rawValue
+        }
     }
 }
 
@@ -173,7 +179,7 @@ extension Route {
                             time: Date = Date(),
                             dateIsArrival: Bool = false,
                             allowShortTermChanges: Bool = true,
-                            mobilityRestriction: MobilityRestriction = .none,
+                            mobilityRestriction: MobilityRestriction = .None,
                             session: URLSession = .shared,
                             completion: @escaping (Result<RoutesResponse>) -> Void) {
         let data: [String: Any] = [
@@ -201,7 +207,7 @@ extension Route {
                             time: Date = Date(),
                             dateIsArrival: Bool = false,
                             allowShortTermChanges: Bool = true,
-                            mobilityRestriction: MobilityRestriction = .none,
+                            mobilityRestriction: MobilityRestriction = .None,
                             session: URLSession = .shared,
                             completion: @escaping (Result<RoutesResponse>) -> Void) {
         Stop.find(origin, session: session) { result in
