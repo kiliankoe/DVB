@@ -166,7 +166,8 @@
 				OBJ_22 /* Stop.swift */,
 				OBJ_23 /* Trip.swift */,
 			);
-			path = Models;
+			name = Models;
+			path = Sources/DVB/Models;
 			sourceTree = SOURCE_ROOT;
 		};
 		OBJ_24 /* Tests */ = {
