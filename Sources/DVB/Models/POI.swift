@@ -1,5 +1,4 @@
 import Foundation
-import GaussKrueger
 
 public struct POIResponse: Decodable {
     public let pins: [POI]

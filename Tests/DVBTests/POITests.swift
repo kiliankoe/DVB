@@ -1,6 +1,5 @@
 import Foundation
 import XCTest
-import GaussKrueger
 @testable import DVB
 
 class POITests: XCTestCase {

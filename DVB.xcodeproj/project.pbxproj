@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		39291FA01F81AFF40063E485 /* SAPDateDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39291F9F1F81AFF40063E485 /* SAPDateDecoder.swift */; };
+		39CE38001F82B88600E42C4D /* GaussKrueger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CE37FF1F82B88600E42C4D /* GaussKrueger.swift */; };
 		OBJ_100 /* GaussKrueger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "GaussKrueger::GaussKrueger::Product" /* GaussKrueger.framework */; };
 		OBJ_106 /* gausskrueger.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* gausskrueger.swift */; };
 		OBJ_51 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
@@ -88,6 +89,7 @@
 
 /* Begin PBXFileReference section */
 		39291F9F1F81AFF40063E485 /* SAPDateDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAPDateDecoder.swift; sourceTree = "<group>"; };
+		39CE37FF1F82B88600E42C4D /* GaussKrueger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussKrueger.swift; sourceTree = "<group>"; };
 		"DVB::DVB::Product" /* DVB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"DVB::DVBTests::Product" /* DVBTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = DVBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		"GaussKrueger::GaussKrueger::Product" /* GaussKrueger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GaussKrueger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,6 +252,7 @@
 				39291F9F1F81AFF40063E485 /* SAPDateDecoder.swift */,
 				OBJ_16 /* Network.swift */,
 				OBJ_19 /* Result.swift */,
+				39CE37FF1F82B88600E42C4D /* GaussKrueger.swift */,
 			);
 			name = DVB;
 			path = Sources/DVB;
@@ -461,6 +464,7 @@
 				OBJ_95 /* Route.swift in Sources */,
 				OBJ_96 /* RouteChange.swift in Sources */,
 				OBJ_97 /* Stop.swift in Sources */,
+				39CE38001F82B88600E42C4D /* GaussKrueger.swift in Sources */,
 				OBJ_98 /* Trip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

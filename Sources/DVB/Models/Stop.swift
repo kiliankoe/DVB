@@ -1,5 +1,4 @@
 import Foundation
-import GaussKrueger
 
 public struct FindResponse: Decodable {
     public let stops: [Stop]

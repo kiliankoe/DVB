@@ -1,5 +1,4 @@
 import Foundation
-import GaussKrueger
 
 public struct RoutesResponse: Decodable {
     public let routes: [Route]

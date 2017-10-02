@@ -9,13 +9,11 @@ let package = Package(
             name: "DVB",
             targets: ["DVB"]),
     ],
-    dependencies: [
-        .package(url: "https://github.com/kiliankoe/gausskrueger", from: "0.4.0"),
-    ],
+    dependencies: [],
     targets: [
         .target(
             name: "DVB",
-            dependencies: ["GaussKrueger"]),
+            dependencies: []),
         .testTarget(
             name: "DVBTests",
             dependencies: ["DVB"]),
