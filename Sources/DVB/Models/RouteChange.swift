@@ -41,6 +41,7 @@ extension RouteChange {
         public let divas: [Diva]
         public let changes: [String]
 
+        //swiftlint:disable:next nesting
         private enum CodingKeys: String, CodingKey {
             case id = "Id"
             case name = "Name"
@@ -55,6 +56,7 @@ extension RouteChange {
         public let begin: Date
         public let end: Date?
 
+        //swiftlint:disable:next nesting
         private enum CodingKeys: String, CodingKey {
             case begin = "Begin"
             case end = "End"

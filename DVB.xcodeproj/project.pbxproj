@@ -262,6 +262,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = OBJ_80 /* Build configuration list for PBXNativeTarget "DVB" */;
 			buildPhases = (
+				39AD589F1F81BF460002D1E7 /* Swiftlint */,
 				OBJ_83 /* Sources */,
 				OBJ_99 /* Frameworks */,
 			);
@@ -366,6 +367,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39AD589F1F81BF460002D1E7 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		OBJ_105 /* Sources */ = {

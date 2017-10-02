@@ -31,6 +31,7 @@ extension Line {
         public let name: String
         public let timetables: [TimeTable]
 
+        //swiftlint:disable:next nesting
         private enum CodingKeys: String, CodingKey {
             case name = "Name"
             case timetables = "TimeTables"
@@ -41,6 +42,7 @@ extension Line {
         public let id: String
         public let name: String
 
+        //swiftlint:disable:next nesting
         private enum CodingKeys: String, CodingKey {
             case id = "Id"
             case name = "Name"

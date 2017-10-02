@@ -45,7 +45,6 @@ class StopTests: XCTestCase {
     func testFindStopHelmholtz() {
         let e = expectation(description: "Find correct stop")
 
-
         Stop.find("Helmholtz") { result in
             switch result {
             case let .failure(error):

@@ -47,6 +47,7 @@ extension Route {
         public let changes: [String]?
         public let diva: Diva?
 
+        //swiftlint:disable:next nesting
         private enum CodingKeys: String, CodingKey {
             case name = "Name"
             case mode = "Type"
@@ -64,6 +65,7 @@ extension Route {
         public let shift: String
         public let regularStops: [RouteStop]?
 
+        //swiftlint:disable:next nesting
         private enum CodingKeys: String, CodingKey {
             case partialRouteId = "PartialRouteId"
             case duration = "Duration"
@@ -85,6 +87,7 @@ extension Route {
         public let coordinate: WGSCoordinate?
         public let mapPdfId: String?
 
+        //swiftlint:disable:next nesting
         private enum CodingKeys: String, CodingKey {
             case arrivalTime = "ArrivalTime"
             case departureTime = "DepartureTime"
