@@ -263,6 +263,7 @@
 			buildConfigurationList = OBJ_80 /* Build configuration list for PBXNativeTarget "DVB" */;
 			buildPhases = (
 				39AD589F1F81BF460002D1E7 /* Swiftlint */,
+				39AD58A01F81BFAE0002D1E7 /* TODO/FIXME */,
 				OBJ_83 /* Sources */,
 				OBJ_99 /* Frameworks */,
 			);
@@ -382,6 +383,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		39AD58A01F81BFAE0002D1E7 /* TODO/FIXME */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = TODO/FIXME;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which XcodeIssueGenerator >/dev/null; then\n    XcodeIssueGenerator -b DEBUG -w \"TODO, FIXME\"\nelse\n    echo \"warning: XcodeIssueGenerator is not installed.\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
