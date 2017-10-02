@@ -127,11 +127,11 @@ extension Route {
 
             let components = string.components(separatedBy: "|")
             guard components.count % 2 == 0 else {
-                throw DVBError.decode // FIXME: Use better error type
+                throw DecodingError.dataCorruptedError(in: container, debugDescription: "MapData expects an even number of coordinates incl. a mode at the beginning and an empty value at the end.")
             }
 
             guard let mode = components.first else {
-                throw DVBError.decode // FIXME: Use better error type
+                throw DecodingError.dataCorruptedError(in: container, debugDescription: "Expected to find mode identifier as the first value.")
             }
 
             let gkCoords = components
