@@ -1,28 +1,32 @@
 import Foundation
 import XCTest
-import DVR
 @testable import DVB
 
 class TripTests: XCTestCase {
-    func testTripLocation3FromAlpAtHbf() {
+    func testTripLocation() {
         let e = expectation(description: "Find a trip")
 
-        let session = Session(cassetteName: #function)
+        let walpurgisstr = "33000029"
+        let hbfnord = "33000032"
 
-        let tripId = "66230687" // This was chosen manually :/ For reference: It's an upcoming 3 departure at Albertplatz headed towards Coschütz
-        let hauptbahnhof = "33000028"
-        let date = Date(timeIntervalSince1970: 1490561874) // 2016-03-26 22:57:54
-
-        TripStop.get(forTripID: tripId, stopID: hauptbahnhof, atTime: date, session: session) { result in
-            switch result {
-            case .failure(let error):
-                XCTFail("Failed with error: \(error)")
-            case .success(let response):
-                guard response.stops.count > 0 else {
-                    XCTFail("Found no trip stops")
-                    return
-                }
+        Departure.monitor(stopWithId: walpurgisstr) { result in
+            guard let departures = result.success else {
+                XCTFail("Couldn't fetch departures")
                 e.fulfill()
+                return
+            }
+
+            let tripID = departures.departures[0].id
+
+            TripStop.get(forTripID: tripID, stopID: hbfnord, atTime: Date()) { result in
+                switch result {
+                case .failure(let error):
+                    XCTFail("Failed with error: \(error)")
+                    e.fulfill()
+                case .success(let response):
+                    XCTAssertGreaterThan(response.stops.count, 0)
+                    e.fulfill()
+                }
             }
         }
 

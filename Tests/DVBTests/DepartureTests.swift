@@ -1,6 +1,5 @@
 import Foundation
 import XCTest
-import DVR
 @testable import DVB
 
 class DepartureTests: XCTestCase {
@@ -74,19 +73,14 @@ class DepartureTests: XCTestCase {
     func testDepartureMonitorAtPostplatz() {
         let e = expectation(description: "Find correct departures")
 
-        let session = Session(cassetteName: #function)
-
         let postplatz = "33000037"
-        let date = Date(timeIntervalSince1970: 1490480797) // 2017-03-25 23:26:37
-        Departure.monitor(stopWithId: postplatz, date: date, session: session) { result in
+        Departure.monitor(stopWithId: postplatz, date: Date()) { result in
             switch result {
             case let .failure(error):
                 XCTFail("Failed with error: \(error)")
+                e.fulfill()
             case let .success(response):
-                guard response.departures.count > 0 else {
-                    XCTFail("Response contains no departures")
-                    return
-                }
+                XCTAssertGreaterThan(response.departures.count, 0)
                 e.fulfill()
             }
         }
@@ -97,22 +91,13 @@ class DepartureTests: XCTestCase {
     func testDepartureMonitorAtHauptbahnhofWithName() {
         let e = expectation(description: "Find correct departures")
 
-        let session = Session(cassetteName: #function)
-
-        session.beginRecording()
-
-        let date = Date(timeIntervalSince1970: 1490480797) // 2017-03-25 23:26:37
-        Departure.monitor(stopWithName: "Hauptbahnhof", date: date, session: session) { result in
-            session.endRecording()
-
+        Departure.monitor(stopWithName: "Hauptbahnhof", date: Date()) { result in
             switch result {
             case let .failure(error):
                 XCTFail("Failed with error: \(error)")
+                e.fulfill()
             case let .success(response):
-                guard response.departures.count > 0 else {
-                    XCTFail("Response contains no departures")
-                    return
-                }
+                XCTAssertGreaterThan(response.departures.count, 0)
                 e.fulfill()
             }
         }
@@ -123,10 +108,7 @@ class DepartureTests: XCTestCase {
     func testDepartureMonitorWithNonExistantStopId() {
         let e = expectation(description: "Get ServiceError")
 
-        let session = Session(cassetteName: #function)
-
-        let date = Date(timeIntervalSince1970: 1490480797) // 2017-03-25 23:26:37
-        Departure.monitor(stopWithId: "1337", date: date, session: session) { result in
+        Departure.monitor(stopWithId: "1337", date: Date()) { result in
             switch result {
             case let .failure(error):
                 guard let error = error as? DVBError,

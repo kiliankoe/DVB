@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "GaussKrueger",
+        "repositoryURL": "https://github.com/kiliankoe/gausskrueger",
+        "state": {
+          "branch": null,
+          "revision": "f92095913134aea712c3f86633c3e51448a5ef96",
+          "version": "0.4.0"
+        }
+      },
+      {
+        "package": "Marshal",
+        "repositoryURL": "https://github.com/utahiosmac/Marshal",
+        "state": {
+          "branch": null,
+          "revision": "6981eaacf4c217eb6172d438ac0121d2ffb79f4f",
+          "version": "1.2.4"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

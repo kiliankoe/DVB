@@ -20,6 +20,5 @@ Pod::Spec.new do |s|
   s.source_files = "Sources/**/*"
   s.frameworks   = "Foundation"
 
-  s.dependency 'Marshal', '~> 1.2.4'
-  s.dependency 'gausskrueger', '~> 0.3'
+  s.dependency 'gausskrueger', '~> 0.4'
 end

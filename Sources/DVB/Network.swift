@@ -1,15 +1,14 @@
 import Foundation
-import Marshal
 
 typealias JSON = [String: Any]
 
-func get<T: Unmarshaling>(_ url: URL, session: URLSession = .shared, completion: @escaping (Result<T>) -> Void) {
+func get<T: Decodable>(_ url: URL, session: URLSession = .shared, completion: @escaping (Result<T>) -> Void) {
     var request = URLRequest(url: url)
     request.httpMethod = HTTPMethod.GET.rawValue
     dataTask(request: request, session: session, completion: completion)
 }
 
-func post<T: Unmarshaling>(_ url: URL, data: [String: Any], session: URLSession = .shared, completion: @escaping (Result<T>) -> Void) {
+func post<T: Decodable>(_ url: URL, data: [String: Any], session: URLSession = .shared, completion: @escaping (Result<T>) -> Void) {
     var request = URLRequest(url: url)
     request.httpMethod = HTTPMethod.POST.rawValue
     do {
@@ -28,18 +27,17 @@ private enum HTTPMethod: String {
     case POST
 }
 
-private func dataTask<T: Unmarshaling>(request: URLRequest, session: URLSession = .shared, completion: @escaping (Result<T>) -> Void) {
-    session.dataTask(with: request) { data, response, error in
-        guard error == nil else {
+private func dataTask<T: Decodable>(request: URLRequest, session: URLSession = .shared, completion: @escaping (Result<T>) -> Void) {
+    let task = session.dataTask(with: request) { data, response, error in
+        guard
+            error == nil,
+            let data = data,
+            let response = response as? HTTPURLResponse
+        else {
             completion(Result(failure: DVBError.network))
             return
         }
 
-        guard let data = data,
-            let response = response as? HTTPURLResponse else {
-            completion(Result(failure: DVBError.network))
-            return
-        }
         guard response.statusCode / 100 == 2 else {
             completion(Result(failure: DVBError.server(statusCode: response.statusCode)))
             return
@@ -50,13 +48,16 @@ private func dataTask<T: Unmarshaling>(request: URLRequest, session: URLSession 
                 completion(Result(failure: DVBError.decode))
                 return
             }
-            guard let status = json["Status"] as? JSON,
-                let statusCode = status["Code"] as? String else {
+
+            guard
+                let status = json["Status"] as? JSON,
+                let statusCode = status["Code"] as? String
+            else {
                 completion(Result(failure: DVBError.response))
                 return
             }
 
-            if statusCode != "Ok" {
+            guard statusCode == "Ok" else {
                 var message = ""
                 if let messageTxt = status["Message"] as? String {
                     message = messageTxt
@@ -65,14 +66,14 @@ private func dataTask<T: Unmarshaling>(request: URLRequest, session: URLSession 
                 return
             }
 
-            do {
-                let resp = try T(object: json)
-                completion(Result(success: resp))
-            } catch let error {
-                completion(Result(failure: error))
-            }
+            let jsonDecoder = JSONDecoder()
+            jsonDecoder.dateDecodingStrategy = .custom(SAPDateDecoder.strategy)
+            let decoded = try jsonDecoder.decode(T.self, from: data)
+            completion(Result(success: decoded))
+
         } catch let e {
             completion(Result(failure: e))
         }
-    }.resume()
+    }
+    task.resume()
 }

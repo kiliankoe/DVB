@@ -1,66 +1,61 @@
 import Foundation
-import Marshal
 
-public struct LinesResponse {
+public struct LinesResponse: Decodable {
     public let lines: [Line]
     public let expirationTime: Date
+
+    private enum CodingKeys: String, CodingKey {
+        case lines = "Lines"
+        case expirationTime = "ExpirationTime"
+    }
 }
 
-public struct Line {
-    public struct Direction {
-        public let name: String
-        public let timetables: [TimeTable]
-    }
-
-    public struct TimeTable {
-        public let id: String
-        public let name: String
-    }
-
+public struct Line: Decodable {
     public let name: String
     public let mode: Mode
     public let changes: [String]?
     public let directions: [Direction]
     public let diva: Diva?
-}
 
-// MARK: - JSON
-
-extension LinesResponse: Unmarshaling {
-    public init(object: MarshaledObject) throws {
-        lines = try object <| "Lines"
-        expirationTime = try object <| "ExpirationTime"
+    private enum CodingKeys: String, CodingKey {
+        case name = "Name"
+        case mode = "Mot"
+        case changes = "Changes"
+        case directions = "Directions"
+        case diva = "Diva"
     }
 }
 
-extension Line: Unmarshaling {
-    public init(object: MarshaledObject) throws {
-        name = try object <| "Name"
-        mode = try object <| "Mot"
-        directions = try object <| "Directions"
-        changes = try object <| "Changes"
-        diva = try object <| "Diva"
-    }
-}
+extension Line {
+    public struct Direction: Decodable {
+        public let name: String
+        public let timetables: [TimeTable]
 
-extension Line.Direction: Unmarshaling {
-    public init(object: MarshaledObject) throws {
-        name = try object <| "Name"
-        timetables = try object <| "TimeTables"
+        //swiftlint:disable:next nesting
+        private enum CodingKeys: String, CodingKey {
+            case name = "Name"
+            case timetables = "TimeTables"
+        }
     }
-}
 
-extension Line.TimeTable: Unmarshaling {
-    public init(object: MarshaledObject) throws {
-        name = try object <| "Name"
-        id = try object <| "Id"
+    public struct TimeTable: Decodable {
+        public let id: String
+        public let name: String
+
+        //swiftlint:disable:next nesting
+        private enum CodingKeys: String, CodingKey {
+            case id = "Id"
+            case name = "Name"
+        }
     }
 }
 
 // MARK: - API
 
 extension Line {
-    public static func get(forStopId id: String, session: URLSession = .shared, completion: @escaping (Result<LinesResponse>) -> Void) {
+    public static func get(forStopId id: String,
+                           session: URLSession = .shared,
+                           completion: @escaping (Result<LinesResponse>) -> Void) {
         let data = [
             "stopid": id,
         ]
@@ -68,7 +63,9 @@ extension Line {
     }
 
     /// Convenience function taking a stop name. Sends of a find request first and uses the first result's `id` as an argument for the lines request.
-    public static func get(forStopName name: String, session: URLSession = .shared, completion: @escaping (Result<LinesResponse>) -> Void) {
+    public static func get(forStopName name: String,
+                           session: URLSession = .shared,
+                           completion: @escaping (Result<LinesResponse>) -> Void) {
         Stop.find(name, session: session) { result in
             switch result {
             case let .failure(error): completion(Result(failure: error))

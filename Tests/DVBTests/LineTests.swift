@@ -1,6 +1,5 @@
 import Foundation
 import XCTest
-import DVR
 @testable import DVB
 
 class LineTests: XCTestCase {
@@ -28,10 +27,8 @@ class LineTests: XCTestCase {
     func testGetLinesAtGoerlitzer() {
         let e = expectation(description: "Find correct lines")
 
-        let session = Session(cassetteName: #function)
-
         let goerlitzerStraße = "33000264"
-        Line.get(forStopId: goerlitzerStraße, session: session) { result in
+        Line.get(forStopId: goerlitzerStraße) { result in
             switch result {
             case .failure(let error):
                 XCTFail("Failed with error: \(error)")
@@ -50,13 +47,7 @@ class LineTests: XCTestCase {
     func testGetLinesAtPostplatzWithName() {
         let e = expectation(description: "Find correct lines")
 
-        let session = Session(cassetteName: #function)
-
-        session.beginRecording()
-
-        Line.get(forStopName: "Postplatz", session: session) { result in
-            session.endRecording()
-
+        Line.get(forStopName: "Postplatz") { result in
             switch result {
             case .failure(let error):
                 XCTFail("Failed with error: \(error)")
