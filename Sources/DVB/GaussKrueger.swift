@@ -144,7 +144,7 @@ func gk2pot(gk: GKCoordinate) -> GKCoordinate? {
     let lp = lh + (180/pi) * (l1*dy  + l3*dy3 + l5*dy5)
 
     if (lp < 5 || lp > 16 || bp < 46 || bp > 56) {
-        print("RW und/oder HW ungültig für das deutsche Gauss-Krüger-System")
+//        print("RW und/oder HW ungültig für das deutsche Gauss-Krüger-System")
         return nil
     }
 
@@ -298,7 +298,7 @@ func pot2gk(pot: GKCoordinate) -> GKCoordinate? {
     let bp = pot.y
 
     if bp < 46 || bp > 56 || lp < 5 || lp > 16 {
-        print("Werte außerhalb des für Deutschland definierten Gauss-Krüger-Systems\n 5° E < LP < 16° E, 46° N < BP < 55° N")
+//        print("Werte außerhalb des für Deutschland definierten Gauss-Krüger-Systems\n 5° E < LP < 16° E, 46° N < BP < 55° N")
         return nil
     }
 
