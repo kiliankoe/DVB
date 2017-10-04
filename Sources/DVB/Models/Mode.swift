@@ -47,3 +47,9 @@ public struct Mode: Decodable {
         self.init(value: try container.decode(String.self))
     }
 }
+
+extension Mode: Equatable {
+    public static func == (lhs: Mode, rhs: Mode) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
+}

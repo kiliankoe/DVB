@@ -15,4 +15,9 @@ class ModeTests: XCTestCase {
 
         XCTAssertEqual(Mode.Tram.iconURL?.absoluteString, "https://www.dvb.de/assets/img/trans-icon/transport-tram.svg")
     }
+
+    func testEquatable() {
+        XCTAssertEqual(Mode.Tram, Mode.Tram)
+        XCTAssertNotEqual(Mode.CityBus, Mode.Ferry)
+    }
 }
