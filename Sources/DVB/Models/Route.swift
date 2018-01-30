@@ -144,6 +144,7 @@ extension Route {
 
             // I'd love an implementation of `chunk` in the stdlib...
             var coordTuples = [(Double, Double)]()
+            // swiftlint:disable:next identifier_name
             for i in 0 ..< gkCoords.count - 1 {
                 coordTuples.append((gkCoords[i], gkCoords[i + 1]))
             }

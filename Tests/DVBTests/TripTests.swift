@@ -2,6 +2,8 @@ import Foundation
 import XCTest
 @testable import DVB
 
+// swiftlint:disable identifier_name
+
 class TripTests: XCTestCase {
     func testTripLocation() {
         let e = expectation(description: "Find a trip")

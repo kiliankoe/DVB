@@ -9,6 +9,7 @@ internal extension Date {
     }
 
     private static let iso8601Formatter: DateFormatter = {
+        // swiftlint:disable:next identifier_name
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
         df.timeZone = TimeZone(identifier: "UTC")

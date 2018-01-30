@@ -2,6 +2,8 @@ import Foundation
 import XCTest
 @testable import DVB
 
+// swiftlint:disable identifier_name
+
 enum TestError: Error {
     case error
 }

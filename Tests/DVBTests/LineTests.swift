@@ -2,6 +2,8 @@ import Foundation
 import XCTest
 @testable import DVB
 
+// swiftlint:disable identifier_name
+
 class LineTests: XCTestCase {
     func testDescription() {
         let direction1 = Line.Direction(name: "Direction1", timetables: [])

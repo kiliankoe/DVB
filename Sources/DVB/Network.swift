@@ -13,8 +13,8 @@ func post<T: Decodable>(_ url: URL, data: [String: Any], session: URLSession = .
     request.httpMethod = HTTPMethod.POST.rawValue
     do {
         request.httpBody = try JSONSerialization.data(withJSONObject: data)
-    } catch let e {
-        completion(Result(failure: e))
+    } catch let error {
+        completion(Result(failure: error))
         return
     }
     request.addValue("application/json;charset=UTF-8", forHTTPHeaderField: "Content-Type")
@@ -71,8 +71,8 @@ private func dataTask<T: Decodable>(request: URLRequest, session: URLSession = .
             let decoded = try jsonDecoder.decode(T.self, from: data)
             completion(Result(success: decoded))
 
-        } catch let e {
-            completion(Result(failure: e))
+        } catch let error {
+            completion(Result(failure: error))
         }
     }
     task.resume()

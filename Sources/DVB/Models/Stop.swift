@@ -30,8 +30,8 @@ public struct Stop: Decodable {
         self.name = components[3]
 
         guard
-            let x = Double(components[5]),
-            let y = Double(components[4])
+            let x = Double(components[5]), // swiftlint:disable:this identifier_name
+            let y = Double(components[4]) // swiftlint:disable:this identifier_name
         else {
             throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [], debugDescription: "Stop coordinates should be numeric values."))
         }
@@ -69,6 +69,7 @@ extension Stop {
     public static func findNear(coord: Coordinate,
                                 session: URLSession = .shared,
                                 completion: @escaping (Result<FindResponse>) -> Void) {
+        // swiftlint:disable:next identifier_name
         guard let gk = coord.asGK else {
             completion(Result(failure: DVBError.coordinate))
             return

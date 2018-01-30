@@ -2,6 +2,8 @@ import Foundation
 import XCTest
 @testable import DVB
 
+// swiftlint:disable identifier_name
+
 class StopTests: XCTestCase {
     func testDescription() {
         let stop1 = Stop(id: "", name: "Stop", region: nil, location: nil)

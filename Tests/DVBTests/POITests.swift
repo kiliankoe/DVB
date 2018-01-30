@@ -2,6 +2,8 @@ import Foundation
 import XCTest
 @testable import DVB
 
+// swiftlint:disable identifier_name
+
 class POITests: XCTestCase {
     func testPOISearchAltstadt() {
         let e = expectation(description: "Find some POIs")
