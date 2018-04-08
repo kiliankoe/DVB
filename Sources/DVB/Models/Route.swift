@@ -136,7 +136,7 @@ extension Route {
             let gkCoords = components
                 .dropFirst() // transportmode
                 .dropLast() // empty value
-                .flatMap { Double($0) }
+                .compactMap { Double($0) }
 
             guard gkCoords.count % 2 == 0 else {
                 throw DVBError.decode
@@ -150,7 +150,7 @@ extension Route {
             }
 
             let coords = coordTuples
-                .flatMap { GKCoordinate(x: $0.0, y: $0.1).asWGS }
+                .compactMap { GKCoordinate(x: $0.0, y: $0.1).asWGS }
 
             self.mode = mode
             self.points = coords
