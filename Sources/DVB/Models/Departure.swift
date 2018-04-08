@@ -70,7 +70,7 @@ public struct Departure: Decodable, Equatable {
     ///
     /// - Parameter locale: locale to use for localization, defaults to `Locale.current`
     /// - Returns: localized string
-    public func localizedETA(for locale: Locale = Locale.current) -> String {
+    public func localizedETA(for locale: Locale = .current) -> String {
         switch locale.languageCode?.lowercased() {
         case .some("de"):
             switch self.ETA {
