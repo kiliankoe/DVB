@@ -23,7 +23,8 @@ public struct Stop: Decodable {
 
         let components = string.components(separatedBy: "|")
         guard components.count == 9 else {
-            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [], debugDescription: "Illegal number of parameters for a Stop."))
+            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [],
+                                                                    debugDescription: "Illegal number of parameters for a Stop."))
         }
         self.id = components[0]
         self.region = components[2].isEmpty ? nil : components[2]
@@ -33,7 +34,8 @@ public struct Stop: Decodable {
             let x = Double(components[5]), // swiftlint:disable:this identifier_name
             let y = Double(components[4]) // swiftlint:disable:this identifier_name
         else {
-            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [], debugDescription: "Stop coordinates should be numeric values."))
+            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [],
+                                                                    debugDescription: "Stop coordinates should be numeric values."))
         }
         if x != 0, y != 0 {
             self.location = GKCoordinate(x: x, y: y).asWGS
@@ -90,7 +92,13 @@ extension Stop {
                         allowShorttermChanges: Bool = true,
                         session: URLSession = .shared,
                         completion: @escaping (Result<MonitorResponse>) -> Void) {
-        Departure.monitor(stopWithId: self.id, date: date, dateType: dateType, allowedModes: modes, allowShorttermChanges: allowShorttermChanges, session: session, completion: completion)
+        Departure.monitor(stopWithId: self.id,
+                          date: date,
+                          dateType: dateType,
+                          allowedModes: modes,
+                          allowShorttermChanges: allowShorttermChanges,
+                          session: session,
+                          completion: completion)
     }
 }
 
