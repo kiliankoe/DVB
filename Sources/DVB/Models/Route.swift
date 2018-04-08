@@ -158,6 +158,12 @@ extension Route {
     }
 }
 
+extension Route.RouteStop: Hashable {
+    public var hashValue: Int {
+        return self.name.hashValue ^ self.place.hashValue ^ self.arrivalTime.hashValue ^ self.departureTime.hashValue ^ self.dataId.hashValue
+    }
+}
+
 // MARK: - API
 
 extension Route {
