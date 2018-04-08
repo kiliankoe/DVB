@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Platform: Decodable {
+public struct Platform: Decodable, Equatable, Hashable {
     public let name: String
     public let type: String
 

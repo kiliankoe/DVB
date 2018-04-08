@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Mode: Decodable {
+public struct Mode: Codable, Equatable {
     public let identifier: String
 
     public static let Tram = Mode(rawValue: "tram")
@@ -45,11 +45,5 @@ public struct Mode: Decodable {
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
         self.init(value: try container.decode(String.self))
-    }
-}
-
-extension Mode: Equatable {
-    public static func == (lhs: Mode, rhs: Mode) -> Bool {
-        return lhs.identifier == rhs.identifier
     }
 }

@@ -10,7 +10,7 @@ public struct TripsResponse: Decodable {
     }
 }
 
-public struct TripStop: Decodable {
+public struct TripStop: Decodable, Equatable {
     public let id: String
     public let place: String
     public let name: String

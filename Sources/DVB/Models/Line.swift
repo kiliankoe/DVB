@@ -10,7 +10,7 @@ public struct LinesResponse: Decodable {
     }
 }
 
-public struct Line: Decodable {
+public struct Line: Decodable, Equatable {
     public let name: String
     public let mode: Mode
     public let changes: [String]?
@@ -27,7 +27,7 @@ public struct Line: Decodable {
 }
 
 extension Line {
-    public struct Direction: Decodable {
+    public struct Direction: Decodable, Equatable {
         public let name: String
         public let timetables: [TimeTable]
 
@@ -38,7 +38,7 @@ extension Line {
         }
     }
 
-    public struct TimeTable: Decodable {
+    public struct TimeTable: Decodable, Equatable, Hashable {
         public let id: String
         public let name: String
 
@@ -87,19 +87,4 @@ extension Line: CustomStringConvertible {
         let dirs = directions.map { $0.name }.joined(separator: ", ")
         return "\(name): \(dirs)"
     }
-}
-
-extension Line: Equatable {}
-public func == (lhs: Line, rhs: Line) -> Bool {
-    return lhs.name == rhs.name && lhs.directions == rhs.directions
-}
-
-extension Line.Direction: Equatable {}
-public func == (lhs: Line.Direction, rhs: Line.Direction) -> Bool {
-    return lhs.name == rhs.name && lhs.timetables == rhs.timetables
-}
-
-extension Line.TimeTable: Equatable {}
-public func == (lhs: Line.TimeTable, rhs: Line.TimeTable) -> Bool {
-    return lhs.id == rhs.id
 }

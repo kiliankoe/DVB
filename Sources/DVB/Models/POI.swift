@@ -10,7 +10,7 @@ public struct POIResponse: Decodable {
     }
 }
 
-public struct POI: Decodable {
+public struct POI: Decodable, Equatable, Hashable {
     public let descriptionString: String // FIXME: ‼️
 
     public init(from decoder: Decoder) throws {

@@ -15,7 +15,7 @@ public struct MonitorResponse: Decodable {
 }
 
 /// A bus, tram or whatever leaving a specific stop at a specific time
-public struct Departure: Decodable {
+public struct Departure: Decodable, Equatable {
     public let id: String
     public let line: String
     public let direction: String
@@ -96,7 +96,7 @@ public struct Departure: Decodable {
 
 // Namespacing some sub-types
 extension Departure {
-    public struct State: Decodable {
+    public struct State: Decodable, Equatable, Hashable {
         public let rawValue: String
 
         public static let onTime = State(rawValue: "InTime")
@@ -177,16 +177,5 @@ extension Departure {
 extension Departure: CustomStringConvertible {
     public var description: String {
         return "\(line) \(direction) departing in \(fancyETA) minutes."
-    }
-}
-
-extension Departure: Equatable {}
-public func == (lhs: Departure, rhs: Departure) -> Bool {
-    return lhs.id == rhs.id
-}
-
-extension Departure: Hashable {
-    public var hashValue: Int {
-        return self.id.hashValue
     }
 }
