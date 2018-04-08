@@ -10,7 +10,7 @@ public struct RouteChangeResponse: Decodable {
     }
 }
 
-public struct RouteChange: Decodable {
+public struct RouteChange: Decodable, Equatable {
     public let id: String
     public let kind: Kind
     public let tripRequestInclude: Bool?
@@ -33,7 +33,7 @@ public struct RouteChange: Decodable {
 }
 
 extension RouteChange {
-    public struct Line: Decodable {
+    public struct Line: Decodable, Equatable {
         public let id: String
         public let name: String
         public let transportationCompany: String
@@ -52,7 +52,7 @@ extension RouteChange {
         }
     }
 
-    public struct ValidityPeriod: Decodable {
+    public struct ValidityPeriod: Decodable, Equatable {
         public let begin: Date
         public let end: Date?
 
@@ -63,7 +63,7 @@ extension RouteChange {
         }
     }
 
-    public struct Kind: Decodable {
+    public struct Kind: Decodable, Equatable {
         public let rawValue: String
 
         public static let Scheduled = Kind(rawValue: "Scheduled")
@@ -99,11 +99,6 @@ extension RouteChange: CustomStringConvertible {
     public var description: String {
         return self.title
     }
-}
-
-extension RouteChange: Equatable {}
-public func == (lhs: RouteChange, rhs: RouteChange) -> Bool {
-    return lhs.id == rhs.id
 }
 
 extension RouteChange: Hashable {

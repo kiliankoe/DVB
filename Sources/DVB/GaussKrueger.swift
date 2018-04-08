@@ -7,7 +7,7 @@ public protocol Coordinate {
     var asWGS: WGSCoordinate? { get }
 }
 
-public struct GKCoordinate: Coordinate {
+public struct GKCoordinate: Coordinate, Equatable, Hashable {
     public let x: Double
     public let y: Double
 
@@ -25,7 +25,7 @@ public struct GKCoordinate: Coordinate {
     }
 }
 
-public struct WGSCoordinate: Coordinate {
+public struct WGSCoordinate: Coordinate, Equatable, Hashable {
     public let latitude: Double
     public let longitude: Double
 
