@@ -161,14 +161,124 @@ extension Route {
 // MARK: - API
 
 extension Route {
-    public struct MobilityRestriction {
-        let rawValue: String
+    public enum MobilitySettings: Encodable {
+        //swiftlint:disable:next nesting
+        public enum PreconfiguredMobilitySettings: String, Encodable {
+            case none = "None"
+            case medium = "Medium"
+            case high = "High"
+        }
 
-        public static let None = MobilityRestriction(rawValue: "None")
-        // TODO: Pull the other cases for this from the app
+        //swiftlint:disable:next nesting
+        public struct IndividualMobilitySettings: Encodable {
+            //swiftlint:disable:next nesting
+            public enum EntranceOption: String, Encodable {
+                case any = "Any"
+                case small = "Small"
+                case noStep = "NoStep"
+            }
 
-        public init(rawValue: String) {
-            self.rawValue = rawValue
+            public let noSolidStairs: Bool
+            public let noEscalators: Bool
+            public let minimumInterchangeCount: Bool
+            public let entranceOption: EntranceOption
+
+            //swiftlint:disable:next nesting
+            private enum CodingKeys: String, CodingKey {
+                case noSolidStairs = "solidStairs"
+                case noEscalators = "escalators"
+                case minimumInterchangeCount = "leastChange"
+                case entranceOption = "entrance"
+            }
+        }
+
+        public func encode(to encoder: Encoder) throws {
+            var container = encoder.singleValueContainer()
+            switch self {
+            case ._preconfigured(let preconfiguredRestriction):
+                try container.encode(preconfiguredRestriction)
+            case ._individual(let individualRestriction):
+                try container.encode(individualRestriction)
+            }
+        }
+
+        /// Please use `.none`, `.medium` or `.high` instead of this.
+        case _preconfigured(PreconfiguredMobilitySettings) // swiftlint:disable:this identifier_name
+        /// Please use `.individual(...:)` instead of this.
+        case _individual(IndividualMobilitySettings) // swiftlint:disable:this identifier_name
+
+        /// "Ohne Einschränkungen"
+        public static let none = MobilitySettings._preconfigured(.none)
+        /// "Rollator, Kinderwagen"
+        public static let medium = MobilitySettings._preconfigured(.medium)
+        /// "Rollstuhlfahrer ohne Hilfe"
+        public static let high = MobilitySettings._preconfigured(.high)
+
+        public static func individual(noSolidStairs: Bool,
+                                      noEscalators: Bool,
+                                      minimumInterchangeCount: Bool,
+                                      entranceOption: IndividualMobilitySettings.EntranceOption) -> MobilitySettings {
+                let settings = IndividualMobilitySettings(noSolidStairs: noSolidStairs,
+                                                             noEscalators: noEscalators,
+                                                             minimumInterchangeCount: minimumInterchangeCount,
+                                                             entranceOption: entranceOption)
+                return ._individual(settings)
+        }
+    }
+
+    public struct StandardSettings: Encodable {
+        //swiftlint:disable:next nesting
+        public enum MaxChangeCount: String, Encodable {
+            /// "Nur Direktverbindungen"
+            case none = "None"
+            case one = "One"
+            case two = "Two"
+            case unlimited = "Unlimited"
+        }
+
+        let maximumInterchangeCount: MaxChangeCount
+
+        //swiftlint:disable:next nesting
+        public enum WalkingSpeed: String, Encodable {
+            case verySlow = "VerySlow"
+            case slow = "Slow"
+            case normal = "Normal"
+            case fast = "Fast"
+            case veryFast = "VeryFast"
+        }
+
+        let walkingSpeed: WalkingSpeed
+
+        //swiftlint:disable:next nesting
+        public enum FootpathDistance: Int, Encodable {
+            case five = 5
+            case ten = 10
+            case fifteen = 15
+            case twenty = 20
+            case thirty = 30
+        }
+
+        let footpathDistanceToStop: FootpathDistance
+
+        let modes: [Mode]
+        /// "Nahegelegene Alternativhaltestellen einschließen"
+        let includeAlternativeStops: Bool
+
+        public static var `default`: StandardSettings {
+            return StandardSettings(maximumInterchangeCount: .unlimited,
+                                            walkingSpeed: .normal,
+                                            footpathDistanceToStop: .five,
+                                            modes: Mode.all, // TODO: Should the identifiers be used instead? And what about illegal values? See dvbpy's MotType.all_request()
+                                            includeAlternativeStops: true)
+        }
+
+        //swiftlint:disable:next nesting
+        private enum CodingKeys: String, CodingKey {
+            case maximumInterchangeCount = "maxChanges"
+            case walkingSpeed
+            case footpathDistanceToStop = "footpathToStop"
+            case modes = "mot"
+            case includeAlternativeStops
         }
     }
 }
@@ -179,24 +289,30 @@ extension Route {
                             time: Date = Date(),
                             dateIsArrival: Bool = false,
                             allowShortTermChanges: Bool = true,
-                            mobilityRestriction: MobilityRestriction = .None,
+                            mobilitySettings: MobilitySettings = .none,
+                            standardSettings: StandardSettings = .default,
                             session: URLSession = .shared,
                             completion: @escaping (Result<RoutesResponse>) -> Void) {
-        let data: [String: Any] = [
-            "origin": originId,
-            "destination": destinationId,
-            "time": time.iso8601,
-            "isarrivaltime": dateIsArrival,
-            "shorttermchanges": allowShortTermChanges,
-            "mobilitySettings": mobilityRestriction.rawValue,
-            "includeAlternativeStops": true,
-            "standardSettings": [
-                "maxChanges": "Unlimited",
-                "walkingSpeed": "Normal",
-                "footpathToStop": 5,
-                "mot": Mode.all.map { $0.identifier },
-            ],
-        ]
+
+        //swiftlint:disable:next nesting
+        struct RouteData: Encodable {
+            let origin: String
+            let destination: String
+            let time: Date
+            let isarrivaltime: Bool
+            let shorttermchanges: Bool
+            let mobilitySettings: MobilitySettings
+            let includeAlternativeStops: Bool = true
+            let standardSettings: StandardSettings
+        }
+
+        let data = RouteData(origin: originId,
+                             destination: destinationId,
+                             time: time,
+                             isarrivaltime: dateIsArrival,
+                             shorttermchanges: allowShortTermChanges,
+                             mobilitySettings: mobilitySettings,
+                             standardSettings: standardSettings)
 
         post(Endpoint.route, data: data, session: session, completion: completion)
     }
@@ -207,9 +323,11 @@ extension Route {
                             time: Date = Date(),
                             dateIsArrival: Bool = false,
                             allowShortTermChanges: Bool = true,
-                            mobilityRestriction: MobilityRestriction = .None,
+                            mobilitySettings: MobilitySettings = .none,
+                            standardSettings: StandardSettings = .default,
                             session: URLSession = .shared,
                             completion: @escaping (Result<RoutesResponse>) -> Void) {
+        // FIXME: fire off these two requests in parallel, this implementation is just lazy
         Stop.find(origin, session: session) { result in
             switch result {
             case let .failure(error): completion(Result(failure: error))
@@ -220,7 +338,15 @@ extension Route {
                     case let .failure(error): completion(Result(failure: error))
                     case let .success(response):
                         guard let destinationStop = response.stops.first else { completion(Result(failure: DVBError.response)); return }
-                        Route.find(fromWithID: originStop.id, toWithID: destinationStop.id, time: time, dateIsArrival: dateIsArrival, allowShortTermChanges: allowShortTermChanges, mobilityRestriction: mobilityRestriction, session: session, completion: completion)
+                        Route.find(fromWithID: originStop.id,
+                                   toWithID: destinationStop.id,
+                                   time: time,
+                                   dateIsArrival: dateIsArrival,
+                                   allowShortTermChanges: allowShortTermChanges,
+                                   mobilitySettings: mobilitySettings,
+                                   standardSettings: standardSettings,
+                                   session: session,
+                                   completion: completion)
                     }
                 }
             }
