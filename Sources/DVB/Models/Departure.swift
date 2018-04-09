@@ -1,6 +1,6 @@
 import Foundation
 
-public struct MonitorResponse: Decodable {
+public struct MonitorResponse: Decodable, Equatable {
     public let stopName: String
     public let place: String
     public let expirationTime: Date
@@ -94,30 +94,33 @@ public struct Departure: Decodable, Equatable {
     }
 }
 
-// Namespacing some sub-types
 extension Departure {
-    public struct State: Decodable, Equatable, Hashable {
-        public let rawValue: String
+    public enum State: Decodable, Equatable, Hashable {
+        case onTime
+        case delayed
+        case unknown(String)
 
-        public static let onTime = State(rawValue: "InTime")
-        public static let delayed = State(rawValue: "Delayed")
-
-        init(value: String) {
-            switch value {
-            case State.onTime.rawValue: self = State.onTime
-            case State.delayed.rawValue: self = State.delayed
-            default:
-                self.rawValue = value
+        public var rawValue: String {
+            switch self {
+            case .onTime: return "InTime"
+            case .delayed: return "Delayed"
+            case .unknown(let value): return value
             }
         }
 
-        init(rawValue: String) {
-            self.rawValue = rawValue
+        static var all: [State] {
+            return [.onTime, .delayed]
         }
 
         public init(from decoder: Decoder) throws {
             let container = try decoder.singleValueContainer()
-            self.init(value: try container.decode(String.self))
+            let value = try container.decode(String.self)
+            if let state = State.all.first(where: { $0.rawValue == value }) {
+                self = state
+            } else {
+                print("Unknown departure state '\(value)', please open an issue on https://github.com/kiliankoe/DVB for this, thanks!")
+                self = .unknown(value)
+            }
         }
     }
 
@@ -137,7 +140,7 @@ extension Departure {
     public static func monitor(stopWithId id: String,
                                date: Date = Date(),
                                dateType: DateType = .arrival,
-                               allowedModes modes: [Mode] = Mode.all,
+                               allowedModes modes: [Mode] = Mode.allRequest,
                                allowShorttermChanges: Bool = true,
                                session: URLSession = .shared,
                                completion: @escaping (Result<MonitorResponse>) -> Void) {
@@ -147,7 +150,7 @@ extension Departure {
             "isarrival": dateType.requestVal,
             "limit": 0,
             "shorttermchanges": allowShorttermChanges,
-            "mot": modes.map { $0.identifier },
+            "mot": modes.map { $0.rawValue },
         ]
 
         post(Endpoint.departureMonitor, data: data, session: session, completion: completion)
@@ -157,7 +160,7 @@ extension Departure {
     public static func monitor(stopWithName name: String,
                                date: Date = Date(),
                                dateType: DateType = .arrival,
-                               allowedModes modes: [Mode] = Mode.all,
+                               allowedModes modes: [Mode] = Mode.allRequest,
                                allowShorttermChanges: Bool = true,
                                session: URLSession = .shared,
                                completion: @escaping (Result<MonitorResponse>) -> Void) {
@@ -177,5 +180,11 @@ extension Departure {
 extension Departure: CustomStringConvertible {
     public var description: String {
         return "\(line) \(direction) departing in \(fancyETA) minutes."
+    }
+}
+
+extension Departure: Hashable {
+    public var hashValue: Int {
+        return self.id.hashValue
     }
 }

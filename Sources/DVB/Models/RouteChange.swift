@@ -1,6 +1,6 @@
 import Foundation
 
-public struct RouteChangeResponse: Decodable {
+public struct RouteChangeResponse: Decodable, Equatable {
     public let lines: [RouteChange.Line]
     public let changes: [RouteChange]
 
@@ -63,20 +63,34 @@ extension RouteChange {
         }
     }
 
-    public struct Kind: Decodable, Equatable {
-        public let rawValue: String
+    public enum Kind: Decodable, Equatable, Hashable {
+        case scheduled
+        case amplifyingTransport
+        case shortTerm
+        case unknown(String)
 
-        public static let Scheduled = Kind(rawValue: "Scheduled")
-        public static let AmplifyingTransport = Kind(rawValue: "AmplifyingTransport")
-        public static let ShortTerm = Kind(rawValue: "ShortTerm")
+        public var rawValue: String {
+            switch self {
+            case .scheduled: return "Scheduled"
+            case .amplifyingTransport: return "AmplifyingTransport"
+            case .shortTerm: return "ShortTerm"
+            case .unknown(let value): return value
+            }
+        }
 
-        public init(rawValue value: String) {
-            self.rawValue = value
+        static var all: [Kind] {
+            return [.scheduled, .amplifyingTransport, .shortTerm]
         }
 
         public init(from decoder: Decoder) throws {
             let container = try decoder.singleValueContainer()
-            self.rawValue = try container.decode(String.self)
+            let value = try container.decode(String.self)
+            if let kind = Kind.all.first(where: { $0.rawValue == value }) {
+                self = kind
+            } else {
+                print("Unknown routechange kind '\(value)', please open an issue on https://github.com/kiliankoe/DVB for this, thanks!")
+                self = .unknown(value)
+            }
         }
     }
 }
@@ -102,6 +116,12 @@ extension RouteChange: CustomStringConvertible {
 }
 
 extension RouteChange: Hashable {
+    public var hashValue: Int {
+        return self.id.hashValue
+    }
+}
+
+extension RouteChange.Line: Hashable {
     public var hashValue: Int {
         return self.id.hashValue
     }

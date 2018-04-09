@@ -1,6 +1,6 @@
 import Foundation
 
-public struct LinesResponse: Decodable {
+public struct LinesResponse: Decodable, Equatable {
     public let lines: [Line]
     public let expirationTime: Date
 
@@ -86,5 +86,17 @@ extension Line: CustomStringConvertible {
     public var description: String {
         let dirs = directions.map { $0.name }.joined(separator: ", ")
         return "\(name): \(dirs)"
+    }
+}
+
+extension Line: Hashable {
+    public var hashValue: Int {
+        return self.name.hashValue ^ self.mode.hashValue
+    }
+}
+
+extension Line.Direction: Hashable {
+    public var hashValue: Int {
+        return self.name.hashValue
     }
 }

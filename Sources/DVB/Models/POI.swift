@@ -1,6 +1,6 @@
 import Foundation
 
-public struct POIResponse: Decodable {
+public struct POIResponse: Decodable, Equatable {
     public let pins: [POI]
     public let expirationTime: Date
 
@@ -20,19 +20,17 @@ public struct POI: Decodable, Equatable, Hashable {
 }
 
 extension POI {
-    public struct Kind {
-        public let rawValue: String
-
-        public static let RentABike = Kind(rawValue: "RentABike")
-        public static let Stop = Kind(rawValue: "Stop")
-        public static let Poi = Kind(rawValue: "Poi")
-        public static let CarSharing = Kind(rawValue: "CarSharing")
-        public static let TicketMachine = Kind(rawValue: "TicketMachine")
-        public static let Platform = Kind(rawValue: "Platform")
-        public static let ParkAndRide = Kind(rawValue: "ParkAndRide")
+    public enum Kind: String, Equatable, Hashable {
+        case rentABike = "RentABike"
+        case stop = "Stop"
+        case poi = "Poi"
+        case carSharing = "CarSharing"
+        case ticketMachine = "TicketMachine"
+        case platform = "Platform"
+        case parkAndRide = "ParkAndRide"
 
         public static var all: [Kind] {
-            return [.RentABike, .Stop, .Poi, .CarSharing, .TicketMachine, .Platform, .ParkAndRide]
+            return [.rentABike, .stop, .poi, .carSharing, .ticketMachine, .platform, .parkAndRide]
         }
     }
 }

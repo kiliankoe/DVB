@@ -1,6 +1,6 @@
 import Foundation
 
-public struct FindResponse: Decodable {
+public struct FindResponse: Decodable, Equatable {
     public let stops: [Stop]
     public let expirationTime: Date?
 
@@ -11,7 +11,7 @@ public struct FindResponse: Decodable {
 }
 
 /// A place where a bus, tram or whatever can stop.
-public struct Stop: Decodable {
+public struct Stop: Decodable, Equatable {
     public let id: String
     public let name: String
     public let region: String?
@@ -88,7 +88,7 @@ extension Stop {
 extension Stop {
     public func monitor(date: Date = Date(),
                         dateType: Departure.DateType = .arrival,
-                        allowedModes modes: [Mode] = Mode.all,
+                        allowedModes modes: [Mode] = Mode.allRequest,
                         allowShorttermChanges: Bool = true,
                         session: URLSession = .shared,
                         completion: @escaping (Result<MonitorResponse>) -> Void) {
@@ -111,11 +111,6 @@ extension Stop: CustomStringConvertible {
         }
         return name
     }
-}
-
-extension Stop: Equatable {}
-public func == (lhs: Stop, rhs: Stop) -> Bool {
-    return lhs.hashValue == rhs.hashValue
 }
 
 extension Stop: Hashable {

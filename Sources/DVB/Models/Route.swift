@@ -1,6 +1,6 @@
 import Foundation
 
-public struct RoutesResponse: Decodable {
+public struct RoutesResponse: Decodable, Equatable {
     public let routes: [Route]
     public let sessionId: String
 
@@ -158,6 +158,12 @@ extension Route {
     }
 }
 
+extension Route: Hashable {
+    public var hashValue: Int {
+        return self.routeId.hashValue
+    }
+}
+
 extension Route.RouteStop: Hashable {
     public var hashValue: Int {
         return self.name.hashValue ^ self.place.hashValue ^ self.arrivalTime.hashValue ^ self.departureTime.hashValue ^ self.dataId.hashValue
@@ -272,10 +278,10 @@ extension Route {
 
         public static var `default`: StandardSettings {
             return StandardSettings(maximumInterchangeCount: .unlimited,
-                                            walkingSpeed: .normal,
-                                            footpathDistanceToStop: .five,
-                                            modes: Mode.all, // TODO: Should the identifiers be used instead? And what about illegal values? See dvbpy's MotType.all_request()
-                                            includeAlternativeStops: true)
+                                    walkingSpeed: .normal,
+                                    footpathDistanceToStop: .five,
+                                    modes: Mode.allRequest,
+                                    includeAlternativeStops: true)
         }
 
         //swiftlint:disable:next nesting

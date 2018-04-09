@@ -1,6 +1,6 @@
 import Foundation
 
-public struct TripsResponse: Decodable {
+public struct TripsResponse: Decodable, Equatable {
     public let stops: [TripStop]
     public let expirationTime: Date
 
@@ -30,8 +30,9 @@ public struct TripStop: Decodable, Equatable {
 
 extension TripStop {
     public enum Position: String, Decodable {
-        // swiftlint:disable:next identifier_name
-        case Previous, Current, Next
+        case previous = "Previous"
+        case current = "Current"
+        case next = "Next"
     }
 }
 
@@ -50,5 +51,13 @@ extension TripStop {
         ]
 
         post(Endpoint.trip, data: data, session: session, completion: completion)
+    }
+}
+
+// MARK: - Utility
+
+extension TripStop: Hashable {
+    public var hashValue: Int {
+        return self.id.hashValue
     }
 }

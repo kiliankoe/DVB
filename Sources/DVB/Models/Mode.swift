@@ -1,49 +1,66 @@
 import Foundation
 
-public struct Mode: Codable, Equatable {
-    public let identifier: String
+public enum Mode: Codable, Equatable, Hashable {
+    case tram
+    case cityBus
+    case intercityBus
+    case suburbanRailway
+    case train
+    case cableway
+    case ferry
+    case hailedSharedTaxi
 
-    public static let Tram = Mode(rawValue: "tram")
-    public static let CityBus = Mode(rawValue: "citybus")
-    public static let IntercityBus = Mode(rawValue: "bus")
-    public static let SuburbanRailway = Mode(rawValue: "metropolitan")
-    public static let Train = Mode(rawValue: "train")
-    public static let Cableway = Mode(rawValue: "lift")
-    public static let Ferry = Mode(rawValue: "ferry")
-    public static let HailedSharedTaxi = Mode(rawValue: "alita")
+    case footpath
+    case rapidTransit
 
-    init(value: String) {
-        switch value.lowercased() {
-        case Mode.Tram.identifier: self = Mode.Tram
-        case Mode.CityBus.identifier: self = Mode.CityBus
-        case Mode.IntercityBus.identifier, "intercitybus": self = Mode.IntercityBus
-        case Mode.SuburbanRailway.identifier, "suburbanrailway": self = Mode.SuburbanRailway
-        case Mode.Train.identifier: self = Mode.Train
-        case Mode.Cableway.identifier, "cableway": self = Mode.Cableway
-        case Mode.Ferry.identifier: self = Mode.Ferry
-        case Mode.HailedSharedTaxi.identifier, "hailedsharedtaxi": self = Mode.HailedSharedTaxi
-        default:
-            self.identifier = value
+    case unknown(String)
+
+    public var rawValue: String {
+        switch self {
+        case .tram: return "tram"
+        case .cityBus: return "citybus"
+        case .intercityBus: return "intercitybus"
+        case .suburbanRailway: return "metropolitan"
+        case .train: return "train"
+        case .cableway: return "lift"
+        case .ferry: return "ferry"
+        case .hailedSharedTaxi: return "alita"
+        case .footpath: return "footpath"
+        case .rapidTransit: return "rapidtransit"
+        case .unknown(let value): return value
         }
-    }
-
-    init(rawValue: String) {
-        self.identifier = rawValue
-    }
-
-    public static var all: [Mode] {
-        return [.Tram, .CityBus, .IntercityBus, .SuburbanRailway, .Train, .Cableway, .Ferry, .HailedSharedTaxi]
-    }
-
-    public var iconURL: URL? {
-        // Only icons for the modes listed above exist
-        guard Mode.all.contains(where: { $0.identifier == self.identifier }) else { return nil }
-        guard let identifier = self.identifier.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return nil }
-        return URL(string: "https://www.dvb.de/assets/img/trans-icon/transport-\(identifier).svg")
     }
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
-        self.init(value: try container.decode(String.self))
+        var value = try container.decode(String.self)
+        value = value.lowercased()
+        if let mode = Mode.allRequest.first(where: { $0.rawValue == value }) {
+            self = mode
+        } else {
+            print("Unknown mode of transport '\(value)', please open an issue on https://github.com/kiliankoe/DVB for this, thanks!")
+            self = .unknown(value)
+        }
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(self.rawValue)
+    }
+
+    /// All modes of transport relevant for requests to the VVO WebAPI.
+    public static var allRequest: [Mode] {
+        return [.tram, .cityBus, .intercityBus, .suburbanRailway, .train, .cableway, .ferry, .hailedSharedTaxi]
+    }
+
+    public var iconURL: URL? {
+        // Only icons for the modes listed above exist
+        guard Mode.allRequest.contains(self) else { return nil }
+        guard var identifier = self.rawValue.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return nil }
+        if identifier == "citybus" || identifier == "intercitybus" {
+            // no clue why this appears to be necessary...
+            identifier = "bus"
+        }
+        return URL(string: "https://www.dvb.de/assets/img/trans-icon/transport-\(identifier).svg")
     }
 }
