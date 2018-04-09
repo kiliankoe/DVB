@@ -4,7 +4,20 @@
 
 ### Updated
 
-- Swift 4 compatibilty including migration to Swift 4's Codable.
+- Swift 4.1 compatibilty including migration to Swift 4's Codable.
+
+### Added
+
+- Additional mobilty settings and further so called "standard settings" are now supported for Route requests.
+
+### Changed
+
+- Types now conform to Equatable and Hashable where applicable.
+- GaussKrueger library was inlined and no longer has to be linked separately when building w/ using Carthage.
+
+### Fixed
+
+- A few leftover properties that weren't optional but should be now are.
 
 ## [2.3.0] - 2017-05-30
 
