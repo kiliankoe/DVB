@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/DVB.svg?style=flat-square)](http://cocoapods.org/pods/DVB)
 [![License](https://img.shields.io/cocoapods/l/DVB.svg?style=flat-square)](http://cocoapods.org/pods/DVB)
 [![Platform](https://img.shields.io/cocoapods/p/DVB.svg?style=flat-square)](http://cocoapods.org/pods/DVB)
-[![Docs](https://img.shields.io/cocoapods/metrics/doc-percent/DVB.svg?style=flat-square)](http://cocoadocs.org/docsets/DVB)
+[![Docs](https://img.shields.io/badge/documentation-here-brightgreen.svg?style=flat-square)](https://kiliankoe.github.io/DVB)
 [![Codecov](https://img.shields.io/codecov/c/github/kiliankoe/DVB.svg?style=flat-square)](https://codecov.io/gh/kiliankoe/DVB)
 
 This is an unofficial Swift package giving you a few options to query Dresden's public transport system for current bus- and tramstop data.
@@ -17,7 +17,7 @@ Have a look at the [example iOS app](https://github.com/kiliankoe/DVBExample).
 
 ## Installation
 
-DVB is available through Cocoapods, Carthage/Punic and Swift Package Manager, take your pick.
+DVB is available through Cocoapods, Carthage/Punic and Swift Package Manager, whatever floats your boat.
 
 ```swift
 // Cocoapods
@@ -27,7 +27,7 @@ pod 'DVB'
 github "kiliankoe/DVB"
 
 // Swift Package Manager
-.Package(url: "https://github.com/kiliankoe/DVB", majorVersion: 2)
+.package(url: "https://github.com/kiliankoe/DVB", from: "latest_version")
 ```
 
 
@@ -108,4 +108,4 @@ DVB is available under the MIT license. See the LICENSE file for more info.
 
 ## Terms of Service
 
-Please refer to the [VVO Terms of Service](https://www.vvo-online.de/de/service/widgets/nutzungsbedingungen-1671.cshtml) regarding their widget. Take particular care not to use this library to send off to many requests to their graciously-provided API.
+Please refer to the [VVO Terms of Service](https://www.vvo-online.de/de/service/widgets/nutzungsbedingungen-1671.cshtml) regarding their widget. Take particular care not to use this library to hammer their servers through too many requests to their graciously-provided API.
