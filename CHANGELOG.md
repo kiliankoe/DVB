@@ -8,7 +8,8 @@
 
 ### Added
 
-- Additional mobilty settings and further so called "standard settings" are now supported for Route requests.
+- Additional mobility restriction settings and further so called "standard settings" are now supported for Route requests.
+- Missing values for `Mode` were added (`footpath` and `rapidtransit`).
 
 ### Changed
 
