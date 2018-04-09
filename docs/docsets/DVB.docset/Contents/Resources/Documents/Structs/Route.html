@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Route Struct Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Struct/Route" class="dashAnchor"></a>
+
+    <a title="Route Struct Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          DVB Docs
+        </a>
+         (15% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">DVB Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      Route Struct Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/DVBError.html">DVBError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/Mode.html">Mode</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/Result.html">Result</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3DVB2qqoixAA6ResultOyxG_xyXKtlF">??(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3DVB6gk2wgsAA13WGSCoordinateVSgAA12GKCoordinateV2gk_tF">gk2wgs(gk:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Functions.html#/s:3DVB6wgs2gkAA12GKCoordinateVSgAA13WGSCoordinateV3wgs_tF">wgs2gk(wgs:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/Coordinate.html">Coordinate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Departure.html">Departure</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Departure/State.html">– State</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Departure/DateType.html">– DateType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Diva.html">Diva</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/FindResponse.html">FindResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/GKCoordinate.html">GKCoordinate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Line.html">Line</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Line/Direction.html">– Direction</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Line/TimeTable.html">– TimeTable</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/LinesResponse.html">LinesResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/MonitorResponse.html">MonitorResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/POI.html">POI</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/POI/Kind.html">– Kind</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/POI/CoordRect.html">– CoordRect</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/POIResponse.html">POIResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Platform.html">Platform</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Route.html">Route</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Route/ModeElement.html">– ModeElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Route/RoutePartial.html">– RoutePartial</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Route/RouteStop.html">– RouteStop</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Route/MapData.html">– MapData</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Route/MobilitySettings.html">– MobilitySettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Route/StandardSettings.html">– StandardSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RouteChange.html">RouteChange</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RouteChange/Line.html">– Line</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RouteChange/ValidityPeriod.html">– ValidityPeriod</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RouteChange/Kind.html">– Kind</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RouteChangeResponse.html">RouteChangeResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/RoutesResponse.html">RoutesResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/Stop.html">Stop</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TripStop.html">TripStop</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TripStop/Position.html">– Position</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/TripsResponse.html">TripsResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/WGSCoordinate.html">WGSCoordinate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>Route</h1>
+            <p>Undocumented</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV10priceLevelSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/priceLevel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV10priceLevelSiSgvp">priceLevel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV5priceSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/price" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV5priceSSSgvp">price</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV8durationSivp"></a>
+                    <a name="//apple_ref/swift/Property/duration" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV8durationSivp">duration</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV12interchangesSivp"></a>
+                    <a name="//apple_ref/swift/Property/interchanges" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV12interchangesSivp">interchanges</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV9modeChainSayAC11ModeElementVGvp"></a>
+                    <a name="//apple_ref/swift/Property/modeChain" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV9modeChainSayAC11ModeElementVGvp">modeChain</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV14fareZoneOriginSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/fareZoneOrigin" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV14fareZoneOriginSiSgvp">fareZoneOrigin</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV19fareZoneDestinationSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/fareZoneDestination" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV19fareZoneDestinationSiSgvp">fareZoneDestination</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV8mapPdfIdSSvp"></a>
+                    <a name="//apple_ref/swift/Property/mapPdfId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV8mapPdfIdSSvp">mapPdfId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV7routeIdSivp"></a>
+                    <a name="//apple_ref/swift/Property/routeId" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV7routeIdSivp">routeId</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV13partialRoutesSayAC0B7PartialVGvp"></a>
+                    <a name="//apple_ref/swift/Property/partialRoutes" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV13partialRoutesSayAC0B7PartialVGvp">partialRoutes</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV7mapDataSayAC03MapD0VGvp"></a>
+                    <a name="//apple_ref/swift/Property/mapData" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV7mapDataSayAC03MapD0VGvp">mapData</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV11ModeElementV"></a>
+                    <a name="//apple_ref/swift/Struct/ModeElement" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV11ModeElementV">ModeElement</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="../Structs/Route/ModeElement.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV0B7PartialV"></a>
+                    <a name="//apple_ref/swift/Struct/RoutePartial" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV0B7PartialV">RoutePartial</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="../Structs/Route/RoutePartial.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV0B4StopV"></a>
+                    <a name="//apple_ref/swift/Struct/RouteStop" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV0B4StopV">RouteStop</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="../Structs/Route/RouteStop.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV7MapDataV"></a>
+                    <a name="//apple_ref/swift/Struct/MapData" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV7MapDataV">MapData</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="../Structs/Route/MapData.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:s8HashableP9hashValueSivp"></a>
+                    <a name="//apple_ref/swift/Property/hashValue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s8HashableP9hashValueSivp">hashValue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hashValue</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV16MobilitySettingsO"></a>
+                    <a name="//apple_ref/swift/Enum/MobilitySettings" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV16MobilitySettingsO">MobilitySettings</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="../Structs/Route/MobilitySettings.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV16StandardSettingsV"></a>
+                    <a name="//apple_ref/swift/Struct/StandardSettings" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV16StandardSettingsV">StandardSettings</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="../Structs/Route/StandardSettings.html" class="slightly-smaller">See more</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV4findySS10fromWithID_SS02toeF010Foundation4DateV4timeSb13dateIsArrivalSb21allowShortTermChangesAC16MobilitySettingsO08mobilityS0AC08StandardS0V08standardS0So10URLSessionC7sessionyAA6ResultOyAA14RoutesResponseVGc10completiontFZ"></a>
+                    <a name="//apple_ref/swift/Method/find(fromWithID:toWithID:time:dateIsArrival:allowShortTermChanges:mobilitySettings:standardSettings:session:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV4findySS10fromWithID_SS02toeF010Foundation4DateV4timeSb13dateIsArrivalSb21allowShortTermChangesAC16MobilitySettingsO08mobilityS0AC08StandardS0V08standardS0So10URLSessionC7sessionyAA6ResultOyAA14RoutesResponseVGc10completiontFZ">find(fromWithID:toWithID:time:dateIsArrival:allowShortTermChanges:mobilitySettings:standardSettings:session:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3DVB5RouteV4findySS4from_SS2to10Foundation4DateV4timeSb13dateIsArrivalSb21allowShortTermChangesAC16MobilitySettingsO08mobilityQ0AC08StandardQ0V08standardQ0So10URLSessionC7sessionyAA6ResultOyAA14RoutesResponseVGc10completiontFZ"></a>
+                    <a name="//apple_ref/swift/Method/find(from:to:time:dateIsArrival:allowShortTermChanges:mobilitySettings:standardSettings:session:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3DVB5RouteV4findySS4from_SS2to10Foundation4DateV4timeSb13dateIsArrivalSb21allowShortTermChangesAC16MobilitySettingsO08mobilityQ0AC08StandardQ0V08standardQ0So10URLSessionC7sessionyAA6ResultOyAA14RoutesResponseVGc10completiontFZ">find(from:to:time:dateIsArrival:allowShortTermChanges:mobilitySettings:standardSettings:session:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convenience function taking to stop names instead of IDs. Sends of two find requests first.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">find</span><span class="p">(</span><span class="n">from</span> <span class="nv">origin</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                            <span class="n">to</span> <span class="nv">destination</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+                            <span class="nv">time</span><span class="p">:</span> <span class="kt">Date</span> <span class="o">=</span> <span class="kt">Date</span><span class="p">(),</span>
+                            <span class="nv">dateIsArrival</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+                            <span class="nv">allowShortTermChanges</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+                            <span class="nv">mobilitySettings</span><span class="p">:</span> <span class="kt"><a href="../Structs/Route/MobilitySettings.html">MobilitySettings</a></span> <span class="o">=</span> <span class="o">.</span><span class="k">none</span><span class="p">,</span>
+                            <span class="nv">standardSettings</span><span class="p">:</span> <span class="kt"><a href="../Structs/Route/StandardSettings.html">StandardSettings</a></span> <span class="o">=</span> <span class="o">.</span><span class="k">default</span><span class="p">,</span>
+                            <span class="nv">session</span><span class="p">:</span> <span class="kt">URLSession</span> <span class="o">=</span> <span class="o">.</span><span class="n">shared</span><span class="p">,</span>
+                            <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Enums/Result.html">Result</a></span><span class="o">&lt;</span><span class="kt"><a href="../Structs/RoutesResponse.html">RoutesResponse</a></span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2018 <a class="link" href="https://github.com/kiliankoe/DVB" target="_blank" rel="external">Kilian Koeltzsch</a>. All rights reserved. (Last updated: 2018-04-09)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

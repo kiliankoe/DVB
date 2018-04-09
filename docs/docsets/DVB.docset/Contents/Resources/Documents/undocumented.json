@@ -1,0 +1,1811 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/DVBError.swift",
+      "line": 12,
+      "symbol": "DVBError.network",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/DVBError.swift",
+      "line": 13,
+      "symbol": "DVBError.server",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/DVBError.swift",
+      "line": 14,
+      "symbol": "DVBError.response",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/DVBError.swift",
+      "line": 15,
+      "symbol": "DVBError.request",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/DVBError.swift",
+      "line": 16,
+      "symbol": "DVBError.decode",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/DVBError.swift",
+      "line": 17,
+      "symbol": "DVBError.coordinate",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/GaussKrueger.swift",
+      "line": 5,
+      "symbol": "Coordinate",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/GaussKrueger.swift",
+      "line": 6,
+      "symbol": "Coordinate.asGK",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/GaussKrueger.swift",
+      "line": 7,
+      "symbol": "Coordinate.asWGS",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/GaussKrueger.swift",
+      "line": 10,
+      "symbol": "GKCoordinate",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/GaussKrueger.swift",
+      "line": 11,
+      "symbol": "GKCoordinate.x",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/GaussKrueger.swift",
+      "line": 12,
+      "symbol": "GKCoordinate.y",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/GaussKrueger.swift",
+      "line": 14,
+      "symbol": "GKCoordinate.init(x:y:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/GaussKrueger.swift",
+      "line": 19,
+      "symbol": "GKCoordinate.asWGS",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/GaussKrueger.swift",
+      "line": 23,
+      "symbol": "GKCoordinate.asGK",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/GaussKrueger.swift",
+      "line": 28,
+      "symbol": "WGSCoordinate",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/GaussKrueger.swift",
+      "line": 29,
+      "symbol": "WGSCoordinate.latitude",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/GaussKrueger.swift",
+      "line": 30,
+      "symbol": "WGSCoordinate.longitude",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/GaussKrueger.swift",
+      "line": 32,
+      "symbol": "WGSCoordinate.init(latitude:longitude:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/GaussKrueger.swift",
+      "line": 37,
+      "symbol": "WGSCoordinate.asGK",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/GaussKrueger.swift",
+      "line": 41,
+      "symbol": "WGSCoordinate.asWGS",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/GaussKrueger.swift",
+      "line": 61,
+      "symbol": "gk2wgs(gk:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/GaussKrueger.swift",
+      "line": 66,
+      "symbol": "wgs2gk(wgs:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 3,
+      "symbol": "MonitorResponse",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 4,
+      "symbol": "MonitorResponse.stopName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 5,
+      "symbol": "MonitorResponse.place",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 6,
+      "symbol": "MonitorResponse.expirationTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 7,
+      "symbol": "MonitorResponse.departures",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 19,
+      "symbol": "Departure.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 20,
+      "symbol": "Departure.line",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 21,
+      "symbol": "Departure.direction",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 22,
+      "symbol": "Departure.platform",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 23,
+      "symbol": "Departure.mode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 24,
+      "symbol": "Departure.realTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 25,
+      "symbol": "Departure.scheduledTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 26,
+      "symbol": "Departure.state",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 27,
+      "symbol": "Departure.routeChanges",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 28,
+      "symbol": "Departure.diva",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 98,
+      "symbol": "Departure.State",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 99,
+      "symbol": "Departure.State.onTime",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 100,
+      "symbol": "Departure.State.delayed",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 101,
+      "symbol": "Departure.State.unknown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 103,
+      "symbol": "Departure.State.rawValue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 127,
+      "symbol": "Departure.DateType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 128,
+      "symbol": "Departure.DateType.arrival",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 129,
+      "symbol": "Departure.DateType.departure",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Departure.swift",
+      "line": 140,
+      "symbol": "Departure.monitor(stopWithId:date:dateType:allowedModes:allowShorttermChanges:session:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Diva.swift",
+      "line": 3,
+      "symbol": "Diva",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Diva.swift",
+      "line": 4,
+      "symbol": "Diva.number",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Diva.swift",
+      "line": 5,
+      "symbol": "Diva.network",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": null,
+      "symbol": "Line",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": null,
+      "symbol": "Line",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": null,
+      "symbol": "Line",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": null,
+      "symbol": "Line",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": null,
+      "symbol": "Line.Direction",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": 3,
+      "symbol": "LinesResponse",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": 4,
+      "symbol": "LinesResponse.lines",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": 5,
+      "symbol": "LinesResponse.expirationTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": 13,
+      "symbol": "Line",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": 14,
+      "symbol": "Line.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": 15,
+      "symbol": "Line.mode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": 16,
+      "symbol": "Line.changes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": 17,
+      "symbol": "Line.directions",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": 18,
+      "symbol": "Line.diva",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": 30,
+      "symbol": "Line.Direction",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": 31,
+      "symbol": "Line.Direction.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": 32,
+      "symbol": "Line.Direction.timetables",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": 41,
+      "symbol": "Line.TimeTable",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": 42,
+      "symbol": "Line.TimeTable.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": 43,
+      "symbol": "Line.TimeTable.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Line.swift",
+      "line": 56,
+      "symbol": "Line.get(forStopId:session:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Mode.swift",
+      "line": 3,
+      "symbol": "Mode",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Mode.swift",
+      "line": 4,
+      "symbol": "Mode.tram",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Mode.swift",
+      "line": 5,
+      "symbol": "Mode.cityBus",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Mode.swift",
+      "line": 6,
+      "symbol": "Mode.intercityBus",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Mode.swift",
+      "line": 7,
+      "symbol": "Mode.suburbanRailway",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Mode.swift",
+      "line": 8,
+      "symbol": "Mode.train",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Mode.swift",
+      "line": 9,
+      "symbol": "Mode.cableway",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Mode.swift",
+      "line": 10,
+      "symbol": "Mode.ferry",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Mode.swift",
+      "line": 11,
+      "symbol": "Mode.hailedSharedTaxi",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Mode.swift",
+      "line": 13,
+      "symbol": "Mode.footpath",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Mode.swift",
+      "line": 14,
+      "symbol": "Mode.rapidTransit",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Mode.swift",
+      "line": 16,
+      "symbol": "Mode.unknown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Mode.swift",
+      "line": 18,
+      "symbol": "Mode.rawValue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Mode.swift",
+      "line": 56,
+      "symbol": "Mode.iconURL",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": null,
+      "symbol": "POI",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": null,
+      "symbol": "POI",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": 3,
+      "symbol": "POIResponse",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": 4,
+      "symbol": "POIResponse.pins",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": 5,
+      "symbol": "POIResponse.expirationTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": 13,
+      "symbol": "POI",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": 14,
+      "symbol": "POI.descriptionString",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": 23,
+      "symbol": "POI.Kind",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": 24,
+      "symbol": "POI.Kind.rentABike",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": 25,
+      "symbol": "POI.Kind.stop",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": 26,
+      "symbol": "POI.Kind.poi",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": 27,
+      "symbol": "POI.Kind.carSharing",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": 28,
+      "symbol": "POI.Kind.ticketMachine",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": 29,
+      "symbol": "POI.Kind.platform",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": 30,
+      "symbol": "POI.Kind.parkAndRide",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": 32,
+      "symbol": "POI.Kind.all",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": 41,
+      "symbol": "POI.CoordRect",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": 42,
+      "symbol": "POI.CoordRect.northeast",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": 43,
+      "symbol": "POI.CoordRect.southwest",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/POI.swift",
+      "line": 46,
+      "symbol": "POI.find(types:in:session:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Platform.swift",
+      "line": 3,
+      "symbol": "Platform",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Platform.swift",
+      "line": 4,
+      "symbol": "Platform.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Platform.swift",
+      "line": 5,
+      "symbol": "Platform.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": null,
+      "symbol": "Route",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": null,
+      "symbol": "Route",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": null,
+      "symbol": "Route",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": null,
+      "symbol": "Route",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": null,
+      "symbol": "Route.RouteStop",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 3,
+      "symbol": "RoutesResponse",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 4,
+      "symbol": "RoutesResponse.routes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 5,
+      "symbol": "RoutesResponse.sessionId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 13,
+      "symbol": "Route",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 14,
+      "symbol": "Route.priceLevel",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 15,
+      "symbol": "Route.price",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 16,
+      "symbol": "Route.duration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 17,
+      "symbol": "Route.interchanges",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 18,
+      "symbol": "Route.modeChain",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 19,
+      "symbol": "Route.fareZoneOrigin",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 20,
+      "symbol": "Route.fareZoneDestination",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 21,
+      "symbol": "Route.mapPdfId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 22,
+      "symbol": "Route.routeId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 23,
+      "symbol": "Route.partialRoutes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 24,
+      "symbol": "Route.mapData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 42,
+      "symbol": "Route.ModeElement",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 43,
+      "symbol": "Route.ModeElement.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 44,
+      "symbol": "Route.ModeElement.mode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 45,
+      "symbol": "Route.ModeElement.direction",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 46,
+      "symbol": "Route.ModeElement.changes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 47,
+      "symbol": "Route.ModeElement.diva",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 59,
+      "symbol": "Route.RoutePartial",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 60,
+      "symbol": "Route.RoutePartial.partialRouteId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 61,
+      "symbol": "Route.RoutePartial.duration",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 62,
+      "symbol": "Route.RoutePartial.mode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 63,
+      "symbol": "Route.RoutePartial.mapDataIndex",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 64,
+      "symbol": "Route.RoutePartial.shift",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 65,
+      "symbol": "Route.RoutePartial.regularStops",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 78,
+      "symbol": "Route.RouteStop",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 79,
+      "symbol": "Route.RouteStop.arrivalTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 80,
+      "symbol": "Route.RouteStop.departureTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 81,
+      "symbol": "Route.RouteStop.place",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 82,
+      "symbol": "Route.RouteStop.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 83,
+      "symbol": "Route.RouteStop.type",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 84,
+      "symbol": "Route.RouteStop.dataId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 85,
+      "symbol": "Route.RouteStop.platform",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 86,
+      "symbol": "Route.RouteStop.coordinate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 87,
+      "symbol": "Route.RouteStop.mapPdfId",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 119,
+      "symbol": "Route.MapData",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 120,
+      "symbol": "Route.MapData.mode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 121,
+      "symbol": "Route.MapData.points",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 176,
+      "symbol": "Route.MobilitySettings",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 178,
+      "symbol": "Route.MobilitySettings.PreconfiguredMobilitySettings",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 179,
+      "symbol": "Route.MobilitySettings.PreconfiguredMobilitySettings.none",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 180,
+      "symbol": "Route.MobilitySettings.PreconfiguredMobilitySettings.medium",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 181,
+      "symbol": "Route.MobilitySettings.PreconfiguredMobilitySettings.high",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 185,
+      "symbol": "Route.MobilitySettings.IndividualMobilitySettings",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 187,
+      "symbol": "Route.MobilitySettings.IndividualMobilitySettings.EntranceOption",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 188,
+      "symbol": "Route.MobilitySettings.IndividualMobilitySettings.EntranceOption.any",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 189,
+      "symbol": "Route.MobilitySettings.IndividualMobilitySettings.EntranceOption.small",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 190,
+      "symbol": "Route.MobilitySettings.IndividualMobilitySettings.EntranceOption.noStep",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 193,
+      "symbol": "Route.MobilitySettings.IndividualMobilitySettings.noSolidStairs",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 194,
+      "symbol": "Route.MobilitySettings.IndividualMobilitySettings.noEscalators",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 195,
+      "symbol": "Route.MobilitySettings.IndividualMobilitySettings.minimumInterchangeCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 196,
+      "symbol": "Route.MobilitySettings.IndividualMobilitySettings.entranceOption",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 229,
+      "symbol": "Route.MobilitySettings.individual(noSolidStairs:noEscalators:minimumInterchangeCount:entranceOption:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 241,
+      "symbol": "Route.StandardSettings",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 243,
+      "symbol": "Route.StandardSettings.MaxChangeCount",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 246,
+      "symbol": "Route.StandardSettings.MaxChangeCount.one",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 247,
+      "symbol": "Route.StandardSettings.MaxChangeCount.two",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 248,
+      "symbol": "Route.StandardSettings.MaxChangeCount.unlimited",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 254,
+      "symbol": "Route.StandardSettings.WalkingSpeed",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 255,
+      "symbol": "Route.StandardSettings.WalkingSpeed.verySlow",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 256,
+      "symbol": "Route.StandardSettings.WalkingSpeed.slow",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 257,
+      "symbol": "Route.StandardSettings.WalkingSpeed.normal",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 258,
+      "symbol": "Route.StandardSettings.WalkingSpeed.fast",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 259,
+      "symbol": "Route.StandardSettings.WalkingSpeed.veryFast",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 265,
+      "symbol": "Route.StandardSettings.FootpathDistance",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 266,
+      "symbol": "Route.StandardSettings.FootpathDistance.five",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 267,
+      "symbol": "Route.StandardSettings.FootpathDistance.ten",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 268,
+      "symbol": "Route.StandardSettings.FootpathDistance.fifteen",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 269,
+      "symbol": "Route.StandardSettings.FootpathDistance.twenty",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 270,
+      "symbol": "Route.StandardSettings.FootpathDistance.thirty",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 279,
+      "symbol": "Route.StandardSettings.default",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Route.swift",
+      "line": 299,
+      "symbol": "Route.find(fromWithID:toWithID:time:dateIsArrival:allowShortTermChanges:mobilitySettings:standardSettings:session:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": null,
+      "symbol": "RouteChange",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": null,
+      "symbol": "RouteChange",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": null,
+      "symbol": "RouteChange",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": null,
+      "symbol": "RouteChange",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": null,
+      "symbol": "RouteChange.Line",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 3,
+      "symbol": "RouteChangeResponse",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 4,
+      "symbol": "RouteChangeResponse.lines",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 5,
+      "symbol": "RouteChangeResponse.changes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 13,
+      "symbol": "RouteChange",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 14,
+      "symbol": "RouteChange.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 15,
+      "symbol": "RouteChange.kind",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 16,
+      "symbol": "RouteChange.tripRequestInclude",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 17,
+      "symbol": "RouteChange.title",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 18,
+      "symbol": "RouteChange.htmlDescription",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 19,
+      "symbol": "RouteChange.validityPeriods",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 20,
+      "symbol": "RouteChange.lineIds",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 21,
+      "symbol": "RouteChange.publishDate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 36,
+      "symbol": "RouteChange.Line",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 37,
+      "symbol": "RouteChange.Line.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 38,
+      "symbol": "RouteChange.Line.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 39,
+      "symbol": "RouteChange.Line.transportationCompany",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 40,
+      "symbol": "RouteChange.Line.mode",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 41,
+      "symbol": "RouteChange.Line.divas",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 42,
+      "symbol": "RouteChange.Line.changes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 55,
+      "symbol": "RouteChange.ValidityPeriod",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 56,
+      "symbol": "RouteChange.ValidityPeriod.begin",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 57,
+      "symbol": "RouteChange.ValidityPeriod.end",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 66,
+      "symbol": "RouteChange.Kind",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 67,
+      "symbol": "RouteChange.Kind.scheduled",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 68,
+      "symbol": "RouteChange.Kind.amplifyingTransport",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 69,
+      "symbol": "RouteChange.Kind.shortTerm",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 70,
+      "symbol": "RouteChange.Kind.unknown",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 72,
+      "symbol": "RouteChange.Kind.rawValue",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/RouteChange.swift",
+      "line": 101,
+      "symbol": "RouteChange.get(shortTerm:session:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Stop.swift",
+      "line": 3,
+      "symbol": "FindResponse",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Stop.swift",
+      "line": 4,
+      "symbol": "FindResponse.stops",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Stop.swift",
+      "line": 5,
+      "symbol": "FindResponse.expirationTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Stop.swift",
+      "line": 15,
+      "symbol": "Stop.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Stop.swift",
+      "line": 16,
+      "symbol": "Stop.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Stop.swift",
+      "line": 17,
+      "symbol": "Stop.region",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Stop.swift",
+      "line": 18,
+      "symbol": "Stop.location",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Stop.swift",
+      "line": 51,
+      "symbol": "Stop.find(_:session:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Stop.swift",
+      "line": 63,
+      "symbol": "Stop.findNear(lat:lng:session:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Stop.swift",
+      "line": 71,
+      "symbol": "Stop.findNear(coord:session:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Stop.swift",
+      "line": 89,
+      "symbol": "Stop.monitor(date:dateType:allowedModes:allowShorttermChanges:session:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Trip.swift",
+      "line": null,
+      "symbol": "TripStop",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Trip.swift",
+      "line": null,
+      "symbol": "TripStop",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Trip.swift",
+      "line": null,
+      "symbol": "TripStop",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Trip.swift",
+      "line": 3,
+      "symbol": "TripsResponse",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Trip.swift",
+      "line": 4,
+      "symbol": "TripsResponse.stops",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Trip.swift",
+      "line": 5,
+      "symbol": "TripsResponse.expirationTime",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Trip.swift",
+      "line": 13,
+      "symbol": "TripStop",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Trip.swift",
+      "line": 14,
+      "symbol": "TripStop.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Trip.swift",
+      "line": 15,
+      "symbol": "TripStop.place",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Trip.swift",
+      "line": 16,
+      "symbol": "TripStop.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Trip.swift",
+      "line": 17,
+      "symbol": "TripStop.position",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Trip.swift",
+      "line": 18,
+      "symbol": "TripStop.platform",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Trip.swift",
+      "line": 19,
+      "symbol": "TripStop.time",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Trip.swift",
+      "line": 32,
+      "symbol": "TripStop.Position",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Trip.swift",
+      "line": 33,
+      "symbol": "TripStop.Position.previous",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Trip.swift",
+      "line": 34,
+      "symbol": "TripStop.Position.current",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Trip.swift",
+      "line": 35,
+      "symbol": "TripStop.Position.next",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Models/Trip.swift",
+      "line": 42,
+      "symbol": "TripStop.get(forTripID:stopID:atTime:session:completion:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Result.swift",
+      "line": 3,
+      "symbol": "Result",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Result.swift",
+      "line": 4,
+      "symbol": "Result.success",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Result.swift",
+      "line": 5,
+      "symbol": "Result.failure",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Result.swift",
+      "line": 15,
+      "symbol": "Result.get()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Result.swift",
+      "line": 22,
+      "symbol": "Result.success",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Result.swift",
+      "line": 29,
+      "symbol": "Result.failure",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/kilian/dev/dvb/DVB/Sources/DVB/Result.swift",
+      "line": 37,
+      "symbol": "??(_:_:)",
+      "symbol_kind": "source.lang.swift.decl.function.free",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/kilian/dev/dvb/DVB"
+}
