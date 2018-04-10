@@ -20,7 +20,7 @@ public enum Mode: Codable, Equatable, Hashable {
         case .tram: return "tram"
         case .cityBus: return "citybus"
         case .intercityBus: return "intercitybus"
-        case .suburbanRailway: return "metropolitan"
+        case .suburbanRailway: return "suburbanrailway"
         case .train: return "train"
         case .cableway: return "lift"
         case .ferry: return "ferry"
