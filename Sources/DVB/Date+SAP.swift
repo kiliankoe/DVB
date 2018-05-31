@@ -3,7 +3,7 @@ import Foundation
 internal extension Date {
     /// Generate a date of the format `/Date(1487458060455+0100)/`
     var sapPattern: String {
-        let millis = Int(self.timeIntervalSince1970 * 1000)
+        let millis = Int64(self.timeIntervalSince1970 * 1000)
         let timezone = TimeZone.current.secondsFromGMT() / 3600 * 100
         return String(format: "/Date(\(millis)+%04d)/", timezone)
     }
