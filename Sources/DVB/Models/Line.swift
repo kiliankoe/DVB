@@ -10,7 +10,7 @@ public struct LinesResponse: Decodable, Equatable {
     }
 }
 
-public struct Line: Decodable, Equatable {
+public struct Line: Decodable, Equatable, Hashable {
     public let name: String
     public let mode: Mode
     public let changes: [String]?
@@ -27,7 +27,7 @@ public struct Line: Decodable, Equatable {
 }
 
 extension Line {
-    public struct Direction: Decodable, Equatable {
+    public struct Direction: Decodable, Equatable, Hashable {
         public let name: String
         public let timetables: [TimeTable]
 
@@ -87,17 +87,5 @@ extension Line: CustomStringConvertible {
     public var description: String {
         let dirs = directions.map { $0.name }.joined(separator: ", ")
         return "\(name): \(dirs)"
-    }
-}
-
-extension Line: Hashable {
-    public var hashValue: Int {
-        return self.name.hashValue ^ self.mode.hashValue
-    }
-}
-
-extension Line.Direction: Hashable {
-    public var hashValue: Int {
-        return self.name.hashValue
     }
 }

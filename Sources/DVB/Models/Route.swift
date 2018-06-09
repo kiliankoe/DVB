@@ -10,7 +10,7 @@ public struct RoutesResponse: Decodable, Equatable {
     }
 }
 
-public struct Route: Decodable, Equatable {
+public struct Route: Decodable, Equatable, Hashable {
     public let priceLevel: Int?
     public let price: String?
     public let duration: Int
@@ -39,7 +39,7 @@ public struct Route: Decodable, Equatable {
 }
 
 extension Route {
-    public struct ModeElement: Decodable, Equatable {
+    public struct ModeElement: Decodable, Equatable, Hashable {
         public let name: String?
         public let mode: Mode?
         public let direction: String?
@@ -56,7 +56,7 @@ extension Route {
         }
     }
 
-    public struct RoutePartial: Decodable, Equatable {
+    public struct RoutePartial: Decodable, Equatable, Hashable {
         public let partialRouteId: Int?
         public let duration: Int?
         public let mode: ModeElement
@@ -75,7 +75,7 @@ extension Route {
         }
     }
 
-    public struct RouteStop: Decodable, Equatable {
+    public struct RouteStop: Decodable, Equatable, Hashable {
         public let arrivalTime: Date
         public let departureTime: Date
         public let place: String
@@ -116,7 +116,7 @@ extension Route {
         }
     }
 
-    public struct MapData: Decodable, Equatable {
+    public struct MapData: Decodable, Equatable, Hashable {
         public let mode: String
         public let points: [WGSCoordinate]
 
@@ -157,18 +157,6 @@ extension Route {
             self.mode = mode
             self.points = coords
         }
-    }
-}
-
-extension Route: Hashable {
-    public var hashValue: Int {
-        return self.routeId.hashValue
-    }
-}
-
-extension Route.RouteStop: Hashable {
-    public var hashValue: Int {
-        return self.name.hashValue ^ self.place.hashValue ^ self.arrivalTime.hashValue ^ self.departureTime.hashValue ^ self.dataId.hashValue
     }
 }
 
