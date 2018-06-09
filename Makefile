@@ -1,7 +1,8 @@
 SWIFTCMD=swift
 
 test:
-	$(SWIFTCMD) test --parallel
+	# $(SWIFTCMD) test --parallel
+	xcodebuild test -scheme DVB-Package | xcpretty
 
 docs:
 	jazzy --xcodebuild-arguments -target,DVB --theme fullwidth
