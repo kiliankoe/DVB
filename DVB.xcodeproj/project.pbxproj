@@ -73,7 +73,7 @@
 /* Begin PBXFileReference section */
 		39054B9A1F83CC1500DD01AA /* GaussKruegerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussKruegerTests.swift; sourceTree = "<group>"; };
 		"DVB::DVB::Product" /* DVB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		"DVB::DVBTests::Product" /* DVBTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = DVBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		"DVB::DVBTests::Product" /* DVBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = DVBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* Date+SAP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+SAP.swift"; sourceTree = "<group>"; };
 		OBJ_11 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		OBJ_12 /* GaussKrueger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussKrueger.swift; sourceTree = "<group>"; };
@@ -269,6 +269,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					"DVB::DVB" = {
+						LastSwiftMigration = 1000;
+					};
+					"DVB::DVBTests" = {
+						LastSwiftMigration = 1000;
+					};
+				};
 			};
 			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "DVB" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -461,7 +469,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = DVBTests;
 			};
 			name = Debug;
@@ -479,7 +487,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = "$(inherited)";
 				OTHER_SWIFT_FLAGS = "$(inherited)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = DVBTests;
 			};
 			name = Release;
@@ -503,7 +511,7 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = DVB;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
@@ -529,7 +537,7 @@
 				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGET_NAME = DVB;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
