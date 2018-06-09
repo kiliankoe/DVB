@@ -126,11 +126,13 @@ extension Route {
 
             let components = string.components(separatedBy: "|")
             guard components.count % 2 == 0 else {
-                throw DecodingError.dataCorruptedError(in: container, debugDescription: "MapData expects an even number of coordinates incl. a mode at the beginning and an empty value at the end.")
+                throw DecodingError.dataCorruptedError(in: container,
+                                                       debugDescription: "MapData expects an even number of coordinates incl. a mode at the beginning and an empty value at the end.")
             }
 
             guard let mode = components.first else {
-                throw DecodingError.dataCorruptedError(in: container, debugDescription: "Expected to find mode identifier as the first value.")
+                throw DecodingError.dataCorruptedError(in: container,
+                                                       debugDescription: "Expected to find mode identifier as the first value.")
             }
 
             let gkCoords = components
@@ -229,12 +231,13 @@ extension Route {
         public static func individual(noSolidStairs: Bool,
                                       noEscalators: Bool,
                                       minimumInterchangeCount: Bool,
-                                      entranceOption: IndividualMobilitySettings.EntranceOption) -> MobilitySettings {
-                let settings = IndividualMobilitySettings(noSolidStairs: noSolidStairs,
-                                                             noEscalators: noEscalators,
-                                                             minimumInterchangeCount: minimumInterchangeCount,
-                                                             entranceOption: entranceOption)
-                return ._individual(settings)
+                                      entranceOption: IndividualMobilitySettings.EntranceOption)
+            -> MobilitySettings {
+            let settings = IndividualMobilitySettings(noSolidStairs: noSolidStairs,
+                                                      noEscalators: noEscalators,
+                                                      minimumInterchangeCount: minimumInterchangeCount,
+                                                      entranceOption: entranceOption)
+            return ._individual(settings)
         }
     }
 
@@ -344,12 +347,18 @@ extension Route {
             switch result {
             case let .failure(error): completion(Result(failure: error))
             case let .success(response):
-                guard let originStop = response.stops.first else { completion(Result(failure: DVBError.response)); return }
+                guard let originStop = response.stops.first else {
+                    completion(Result(failure: DVBError.response))
+                    return
+                }
                 Stop.find(destination, session: session) { result in
                     switch result {
                     case let .failure(error): completion(Result(failure: error))
                     case let .success(response):
-                        guard let destinationStop = response.stops.first else { completion(Result(failure: DVBError.response)); return }
+                        guard let destinationStop = response.stops.first else {
+                            completion(Result(failure: DVBError.response))
+                            return
+                        }
                         Route.find(fromWithID: originStop.id,
                                    toWithID: destinationStop.id,
                                    time: time,

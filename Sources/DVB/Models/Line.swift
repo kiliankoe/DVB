@@ -62,7 +62,8 @@ extension Line {
         post(Endpoint.lines, data: data, session: session, completion: completion)
     }
 
-    /// Convenience function taking a stop name. Sends of a find request first and uses the first result's `id` as an argument for the lines request.
+    /// Convenience function taking a stop name. Sends of a find request first and uses the first
+    /// result's `id` as an argument for the lines request.
     public static func get(forStopName name: String,
                            session: URLSession = .shared,
                            completion: @escaping (Result<LinesResponse>) -> Void) {

@@ -98,7 +98,9 @@ extension RouteChange {
 // MARK: - API
 
 extension RouteChange {
-    public static func get(shortTerm: Bool = true, session: URLSession = .shared, completion: @escaping (Result<RouteChangeResponse>) -> Void) {
+    public static func get(shortTerm: Bool = true,
+                           session: URLSession = .shared,
+                           completion: @escaping (Result<RouteChangeResponse>) -> Void) {
         let data = [
             "shortterm": shortTerm,
         ]

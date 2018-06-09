@@ -50,13 +50,23 @@ public enum Mode: Codable, Equatable, Hashable {
 
     /// All modes of transport relevant for requests to the VVO WebAPI.
     public static var allRequest: [Mode] {
-        return [.tram, .cityBus, .intercityBus, .suburbanRailway, .train, .cableway, .ferry, .hailedSharedTaxi]
+        return [
+            .tram,
+            .cityBus,
+            .intercityBus,
+            .suburbanRailway,
+            .train,
+            .cableway,
+            .ferry,
+            .hailedSharedTaxi
+        ]
     }
 
     public var iconURL: URL? {
         // Only icons for the modes listed above exist
         guard Mode.allRequest.contains(self) else { return nil }
-        guard var identifier = self.rawValue.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return nil }
+        guard var identifier = self.rawValue
+            .addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return nil }
         if identifier == "citybus" || identifier == "intercitybus" {
             // no clue why this appears to be necessary...
             identifier = "bus"

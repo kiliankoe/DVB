@@ -5,7 +5,8 @@ enum SAPDateDecoder {
         let container = try decoder.singleValueContainer()
         let dateStr = try container.decode(String.self)
         guard let date = Date(fromSAPPattern: dateStr) else {
-            throw DecodingError.dataCorruptedError(in: container, debugDescription: "Illegal date value: \(dateStr)")
+            throw DecodingError.dataCorruptedError(in: container,
+                                                   debugDescription: "Illegal date value: \(dateStr)")
         }
         return date
     }

@@ -2,13 +2,18 @@ import Foundation
 
 typealias JSON = [String: Any]
 
-func get<T: Decodable>(_ url: URL, session: URLSession = .shared, completion: @escaping (Result<T>) -> Void) {
+func get<T: Decodable>(_ url: URL,
+                       session: URLSession = .shared,
+                       completion: @escaping (Result<T>) -> Void) {
     var request = URLRequest(url: url)
     request.httpMethod = HTTPMethod.GET.rawValue
     dataTask(request: request, session: session, completion: completion)
 }
 
-func post<T: Decodable, U: Encodable>(_ url: URL, data: U, session: URLSession = .shared, completion: @escaping (Result<T>) -> Void) {
+func post<T: Decodable, U: Encodable>(_ url: URL,
+                                      data: U,
+                                      session: URLSession = .shared,
+                                      completion: @escaping (Result<T>) -> Void) {
     do {
         let encoder = JSONEncoder()
         //        encoder.dateEncodingStrategy = .custom(SAPDateEncoder.strategy) // TODO:
@@ -20,7 +25,10 @@ func post<T: Decodable, U: Encodable>(_ url: URL, data: U, session: URLSession =
     }
 }
 
-func post<T: Decodable>(_ url: URL, data: [String: Any], session: URLSession = .shared, completion: @escaping (Result<T>) -> Void) {
+func post<T: Decodable>(_ url: URL,
+                        data: [String: Any],
+                        session: URLSession = .shared,
+                        completion: @escaping (Result<T>) -> Void) {
     do {
         let data = try JSONSerialization.data(withJSONObject: data)
         _post(url, data: data, session: session, completion: completion)
@@ -31,7 +39,10 @@ func post<T: Decodable>(_ url: URL, data: [String: Any], session: URLSession = .
 }
 
 //swiftlint:disable:next identifier_name
-func _post<T: Decodable>(_ url: URL, data: Data, session: URLSession, completion: @escaping (Result<T>) -> Void) {
+func _post<T: Decodable>(_ url: URL,
+                         data: Data,
+                         session: URLSession,
+                         completion: @escaping (Result<T>) -> Void) {
     var request = URLRequest(url: url)
     request.httpMethod = HTTPMethod.POST.rawValue
     request.addValue("application/json;charset=UTF-8", forHTTPHeaderField: "Content-Type")
