@@ -7,7 +7,7 @@ class ModeTests: XCTestCase {
         XCTAssertEqual(Mode.tram.rawValue, "tram")
         XCTAssertEqual(Mode.cityBus.rawValue, "citybus")
         XCTAssertEqual(Mode.intercityBus.rawValue, "intercitybus")
-        XCTAssertEqual(Mode.suburbanRailway.rawValue, "metropolitan")
+        XCTAssertEqual(Mode.suburbanRailway.rawValue, "suburbanrailway")
         XCTAssertEqual(Mode.train.rawValue, "train")
         XCTAssertEqual(Mode.cableway.rawValue, "lift")
         XCTAssertEqual(Mode.ferry.rawValue, "ferry")
