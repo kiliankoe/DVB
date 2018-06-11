@@ -1,5 +1,3 @@
-import Foundation
-
 public struct Platform {
     public let name: String
     public let type: String
