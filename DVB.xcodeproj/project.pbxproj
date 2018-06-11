@@ -240,14 +240,14 @@
 			isa = PBXGroup;
 			children = (
 				3999A00820CEC1FD009B899A /* Departure */,
-				OBJ_15 /* Diva.swift */,
 				39076E2620CEDECE00441052 /* Line */,
-				OBJ_17 /* Mode.swift */,
 				39076E2D20CF080500441052 /* POI */,
-				OBJ_19 /* Platform.swift */,
 				39076E3220CF0EA600441052 /* Route */,
 				39076E4420CF144D00441052 /* RouteChange */,
 				3999A00B20CEC338009B899A /* Stop */,
+				OBJ_17 /* Mode.swift */,
+				OBJ_19 /* Platform.swift */,
+				OBJ_15 /* Diva.swift */,
 				OBJ_23 /* Trip.swift */,
 			);
 			path = Models;
