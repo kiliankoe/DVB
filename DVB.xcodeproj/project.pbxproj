@@ -24,6 +24,7 @@
 		39054B9B1F83CC1500DD01AA /* GaussKruegerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39054B9A1F83CC1500DD01AA /* GaussKruegerTests.swift */; };
 		3999A00720CEBC1A009B899A /* Departure+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3999A00620CEBC1A009B899A /* Departure+State.swift */; };
 		3999A00A20CEC216009B899A /* MonitorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3999A00920CEC216009B899A /* MonitorResponse.swift */; };
+		3999A00D20CEC34C009B899A /* FindResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3999A00C20CEC34C009B899A /* FindResponse.swift */; };
 		OBJ_47 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_53 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* DateTests.swift */; };
 		OBJ_54 /* DepartureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* DepartureTests.swift */; };
@@ -76,6 +77,7 @@
 		39054B9A1F83CC1500DD01AA /* GaussKruegerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussKruegerTests.swift; sourceTree = "<group>"; };
 		3999A00620CEBC1A009B899A /* Departure+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Departure+State.swift"; sourceTree = "<group>"; };
 		3999A00920CEC216009B899A /* MonitorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorResponse.swift; sourceTree = "<group>"; };
+		3999A00C20CEC34C009B899A /* FindResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindResponse.swift; sourceTree = "<group>"; };
 		"DVB::DVB::Product" /* DVB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"DVB::DVBTests::Product" /* DVBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = DVBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* Date+SAP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+SAP.swift"; sourceTree = "<group>"; };
@@ -137,6 +139,15 @@
 			path = Departure;
 			sourceTree = "<group>";
 		};
+		3999A00B20CEC338009B899A /* Stop */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_22 /* Stop.swift */,
+				3999A00C20CEC34C009B899A /* FindResponse.swift */,
+			);
+			path = Stop;
+			sourceTree = "<group>";
+		};
 		OBJ_13 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,7 +159,7 @@
 				OBJ_19 /* Platform.swift */,
 				OBJ_20 /* Route.swift */,
 				OBJ_21 /* RouteChange.swift */,
-				OBJ_22 /* Stop.swift */,
+				3999A00B20CEC338009B899A /* Stop */,
 				OBJ_23 /* Trip.swift */,
 			);
 			path = Models;
@@ -387,6 +398,7 @@
 				OBJ_79 /* POI.swift in Sources */,
 				OBJ_80 /* Platform.swift in Sources */,
 				OBJ_81 /* Route.swift in Sources */,
+				3999A00D20CEC34C009B899A /* FindResponse.swift in Sources */,
 				OBJ_82 /* RouteChange.swift in Sources */,
 				OBJ_83 /* Stop.swift in Sources */,
 				OBJ_84 /* Trip.swift in Sources */,

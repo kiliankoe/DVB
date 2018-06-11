@@ -1,47 +1,58 @@
 import Foundation
 
-public struct FindResponse: Decodable, Equatable {
-    public let stops: [Stop]
-    public let expirationTime: Date?
-
-    private enum CodingKeys: String, CodingKey {
-        case stops = "Points"
-        case expirationTime = "ExpirationTime"
-    }
-}
-
 /// A place where a bus, tram or whatever can stop.
-public struct Stop: Decodable, Equatable {
+public struct Stop {
     public let id: String
     public let name: String
     public let region: String?
     public let location: WGSCoordinate?
 
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        let string = try container.decode(String.self)
+    public init(id: String, name: String, region: String?, location: Coordinate?) {
+        self.id = id
+        self.name = name
+        self.region = region
+        self.location = location?.asWGS
+    }
+}
 
-        let components = string.components(separatedBy: "|")
+extension Stop: Equatable {}
+
+extension Stop: Hashable {}
+
+extension Stop: Decodable {
+    public init(from responseString: String) throws {
+        let components = responseString.components(separatedBy: "|")
         guard components.count == 9 else {
-            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [],
-                                                                    debugDescription: "Illegal number of parameters for a Stop."))
+            throw DecodingError.dataCorrupted(
+                DecodingError.Context(codingPath: [],
+                                      debugDescription: "Illegal number of parameters for a Stop."))
         }
         self.id = components[0]
         self.region = components[2].isEmpty ? nil : components[2]
         self.name = components[3]
 
+        // swiftlint:disable identifier_name
         guard
-            let x = Double(components[5]), // swiftlint:disable:this identifier_name
-            let y = Double(components[4]) // swiftlint:disable:this identifier_name
+            let x = Double(components[5]),
+            let y = Double(components[4])
         else {
-            throw DecodingError.dataCorrupted(DecodingError.Context(codingPath: [],
-                                                                    debugDescription: "Stop coordinates should be numeric values."))
+            throw DecodingError.dataCorrupted(
+                DecodingError.Context(codingPath: [],
+                                      debugDescription: "Stop coordinates should be numeric values."))
         }
+        // swiftlint:enable identifier_name
+
         if x != 0, y != 0 {
             self.location = GKCoordinate(x: x, y: y).asWGS
         } else {
             self.location = nil
         }
+    }
+
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let string = try container.decode(String.self)
+        self = try Stop(from: string)
     }
 }
 
@@ -110,11 +121,5 @@ extension Stop: CustomStringConvertible {
             return "\(name), \(region)"
         }
         return name
-    }
-}
-
-extension Stop: Hashable {
-    public var hashValue: Int {
-        return self.id.hashValue
     }
 }

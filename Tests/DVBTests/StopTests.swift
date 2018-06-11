@@ -1,6 +1,6 @@
 import Foundation
 import XCTest
-@testable import DVB
+import DVB
 
 // swiftlint:disable identifier_name
 
@@ -19,7 +19,7 @@ class StopTests: XCTestCase {
     func testFromString() {
         let string = "33000742|||Helmholtzstraße|5655904|4621157|0||"
         // swiftlint:disable:next force_try
-        let stop = try! Stop(string: string)
+        let stop = try! Stop(from: string)
 
         XCTAssertEqual(stop.id, "33000742")
         XCTAssertEqual(stop.name, "Helmholtzstraße")
@@ -31,7 +31,7 @@ class StopTests: XCTestCase {
     func testFromInvalidString() {
         let string = "33000742|||Helmholtzstraße|5655904|4621157|0|"
         do {
-            _ = try Stop(string: string)
+            _ = try Stop(from: string)
             XCTFail("Invalid string should not initialize Stop value")
         } catch { }
     }
@@ -81,21 +81,5 @@ class StopTests: XCTestCase {
         }
 
         waitForExpectations(timeout: 5)
-    }
-}
-
-private extension Stop {
-    init(id: String, name: String, region: String?, location: WGSCoordinate?) {
-        self.id = id
-        self.name = name
-        self.region = region
-        self.location = location
-    }
-
-    init(string: String) throws {
-        let data = """
-        ["\(string)"]
-        """.data(using: .utf8)!
-        self = try JSONDecoder().decode([Stop].self, from: data)[0]
     }
 }
