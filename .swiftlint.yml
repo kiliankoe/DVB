@@ -2,6 +2,7 @@ disabled_rules:
   - todo
   - line_length
   - trailing_comma
+  - identifier_name
 
 variable_name:
   excluded:

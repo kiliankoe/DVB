@@ -25,6 +25,8 @@
 		39076E2820CEDEE500441052 /* LinesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39076E2720CEDEE500441052 /* LinesResponse.swift */; };
 		39076E2A20CEDF0300441052 /* Line+Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39076E2920CEDF0300441052 /* Line+Direction.swift */; };
 		39076E2C20CEDF5200441052 /* Line+TimeTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39076E2B20CEDF5200441052 /* Line+TimeTable.swift */; };
+		39076E2F20CF082300441052 /* POIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39076E2E20CF082300441052 /* POIResponse.swift */; };
+		39076E3120CF0C4800441052 /* POI+Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39076E3020CF0C4800441052 /* POI+Kind.swift */; };
 		3999A00720CEBC1A009B899A /* Departure+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3999A00620CEBC1A009B899A /* Departure+State.swift */; };
 		3999A00A20CEC216009B899A /* MonitorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3999A00920CEC216009B899A /* MonitorResponse.swift */; };
 		3999A00D20CEC34C009B899A /* FindResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3999A00C20CEC34C009B899A /* FindResponse.swift */; };
@@ -81,6 +83,8 @@
 		39076E2720CEDEE500441052 /* LinesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinesResponse.swift; sourceTree = "<group>"; };
 		39076E2920CEDF0300441052 /* Line+Direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Line+Direction.swift"; sourceTree = "<group>"; };
 		39076E2B20CEDF5200441052 /* Line+TimeTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Line+TimeTable.swift"; sourceTree = "<group>"; };
+		39076E2E20CF082300441052 /* POIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIResponse.swift; sourceTree = "<group>"; };
+		39076E3020CF0C4800441052 /* POI+Kind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "POI+Kind.swift"; sourceTree = "<group>"; };
 		3999A00620CEBC1A009B899A /* Departure+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Departure+State.swift"; sourceTree = "<group>"; };
 		3999A00920CEC216009B899A /* MonitorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorResponse.swift; sourceTree = "<group>"; };
 		3999A00C20CEC34C009B899A /* FindResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindResponse.swift; sourceTree = "<group>"; };
@@ -146,6 +150,16 @@
 			path = Line;
 			sourceTree = "<group>";
 		};
+		39076E2D20CF080500441052 /* POI */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_18 /* POI.swift */,
+				39076E2E20CF082300441052 /* POIResponse.swift */,
+				39076E3020CF0C4800441052 /* POI+Kind.swift */,
+			);
+			path = POI;
+			sourceTree = "<group>";
+		};
 		3999A00820CEC1FD009B899A /* Departure */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,7 +186,7 @@
 				OBJ_15 /* Diva.swift */,
 				39076E2620CEDECE00441052 /* Line */,
 				OBJ_17 /* Mode.swift */,
-				OBJ_18 /* POI.swift */,
+				39076E2D20CF080500441052 /* POI */,
 				OBJ_19 /* Platform.swift */,
 				OBJ_20 /* Route.swift */,
 				OBJ_21 /* RouteChange.swift */,
@@ -405,6 +419,7 @@
 				3999A00720CEBC1A009B899A /* Departure+State.swift in Sources */,
 				39076E2A20CEDF0300441052 /* Line+Direction.swift in Sources */,
 				OBJ_71 /* DVBError.swift in Sources */,
+				39076E2F20CF082300441052 /* POIResponse.swift in Sources */,
 				OBJ_72 /* Date+SAP.swift in Sources */,
 				OBJ_73 /* Endpoint.swift in Sources */,
 				OBJ_74 /* GaussKrueger.swift in Sources */,
@@ -420,6 +435,7 @@
 				3999A00D20CEC34C009B899A /* FindResponse.swift in Sources */,
 				OBJ_82 /* RouteChange.swift in Sources */,
 				OBJ_83 /* Stop.swift in Sources */,
+				39076E3120CF0C4800441052 /* POI+Kind.swift in Sources */,
 				OBJ_84 /* Trip.swift in Sources */,
 				OBJ_85 /* Network.swift in Sources */,
 				OBJ_86 /* Result.swift in Sources */,
