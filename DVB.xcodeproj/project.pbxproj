@@ -107,6 +107,8 @@
 		39076E4720CF149D00441052 /* RouteChange+Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RouteChange+Line.swift"; sourceTree = "<group>"; };
 		39076E4920CF14DE00441052 /* RouteChange+ValidityPeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RouteChange+ValidityPeriod.swift"; sourceTree = "<group>"; };
 		39076E4B20CF151500441052 /* RouteChange+Kind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RouteChange+Kind.swift"; sourceTree = "<group>"; };
+		39076E4D20CF221300441052 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		39076E4E20CF221900441052 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		3999A00620CEBC1A009B899A /* Departure+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Departure+State.swift"; sourceTree = "<group>"; };
 		3999A00920CEC216009B899A /* MonitorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorResponse.swift; sourceTree = "<group>"; };
 		3999A00C20CEC34C009B899A /* FindResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindResponse.swift; sourceTree = "<group>"; };
@@ -292,6 +294,8 @@
 		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
+				39076E4D20CF221300441052 /* README.md */,
+				39076E4E20CF221900441052 /* CHANGELOG.md */,
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_27 /* Tests */,
