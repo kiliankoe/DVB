@@ -5,11 +5,13 @@
 ### Updated
 
 - Swift 4.1 compatibilty including migration to Swift 4's Codable.
+- Swift 4.2 compatibilty (has it been so long since a release? o.O)
 
 ### Added
 
 - Additional mobility restriction settings and further so called "standard settings" are now supported for Route requests.
 - Missing values for `Mode` were added (`footpath` and `rapidtransit`).
+- Missing initializer for `POI.CoordRect`.
 
 ### Changed
 
