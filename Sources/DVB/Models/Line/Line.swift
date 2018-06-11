@@ -1,22 +1,14 @@
 import Foundation
 
-public struct LinesResponse: Decodable, Equatable {
-    public let lines: [Line]
-    public let expirationTime: Date
-
-    private enum CodingKeys: String, CodingKey {
-        case lines = "Lines"
-        case expirationTime = "ExpirationTime"
-    }
-}
-
-public struct Line: Decodable, Equatable, Hashable {
+public struct Line {
     public let name: String
     public let mode: Mode
     public let changes: [String]?
     public let directions: [Direction]
     public let diva: Diva?
+}
 
+extension Line: Decodable {
     private enum CodingKeys: String, CodingKey {
         case name = "Name"
         case mode = "Mot"
@@ -26,29 +18,9 @@ public struct Line: Decodable, Equatable, Hashable {
     }
 }
 
-extension Line {
-    public struct Direction: Decodable, Equatable, Hashable {
-        public let name: String
-        public let timetables: [TimeTable]
+extension Line: Equatable {}
 
-        //swiftlint:disable:next nesting
-        private enum CodingKeys: String, CodingKey {
-            case name = "Name"
-            case timetables = "TimeTables"
-        }
-    }
-
-    public struct TimeTable: Decodable, Equatable, Hashable {
-        public let id: String
-        public let name: String
-
-        //swiftlint:disable:next nesting
-        private enum CodingKeys: String, CodingKey {
-            case id = "Id"
-            case name = "Name"
-        }
-    }
-}
+extension Line: Hashable {}
 
 // MARK: - API
 
