@@ -2,10 +2,8 @@
 
 [![Travis](https://img.shields.io/travis/kiliankoe/DVB.svg)](https://travis-ci.org/kiliankoe/DVB)
 [![Version](https://img.shields.io/cocoapods/v/DVB.svg)](http://cocoapods.org/pods/DVB)
-[![License](https://img.shields.io/cocoapods/l/DVB.svg)](http://cocoapods.org/pods/DVB)
 [![Platform](https://img.shields.io/cocoapods/p/DVB.svg)](http://cocoapods.org/pods/DVB)
 [![Docs](./docs/badge.svg)](https://kiliankoe.github.io/DVB)
-[![Codecov](https://img.shields.io/codecov/c/github/kiliankoe/DVB.svg)](https://codecov.io/gh/kiliankoe/DVB)
 
 This is an unofficial Swift package giving you a few options to query Dresden's public transport system for current bus- and tramstop data.
 
