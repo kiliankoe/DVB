@@ -1,6 +1,6 @@
 import Foundation
 
-public enum Mode: Codable, Equatable, Hashable {
+public enum Mode {
     case tram
     case cityBus
     case intercityBus
@@ -13,6 +13,7 @@ public enum Mode: Codable, Equatable, Hashable {
     case footpath
     case rapidTransit
 
+    /// A placeholder value for future additions.
     case unknown(String)
 
     public var rawValue: String {
@@ -29,23 +30,6 @@ public enum Mode: Codable, Equatable, Hashable {
         case .rapidTransit: return "rapidtransit"
         case .unknown(let value): return value
         }
-    }
-
-    public init(from decoder: Decoder) throws {
-        let container = try decoder.singleValueContainer()
-        var value = try container.decode(String.self)
-        value = value.lowercased()
-        if let mode = Mode.allRequest.first(where: { $0.rawValue == value }) {
-            self = mode
-        } else {
-            print("Unknown mode of transport '\(value)', please open an issue on https://github.com/kiliankoe/DVB for this, thanks!")
-            self = .unknown(value)
-        }
-    }
-
-    public func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        try container.encode(self.rawValue)
     }
 
     /// All modes of transport relevant for requests to the VVO WebAPI.
@@ -74,3 +58,26 @@ public enum Mode: Codable, Equatable, Hashable {
         return URL(string: "https://www.dvb.de/assets/img/trans-icon/transport-\(identifier).svg")
     }
 }
+
+extension Mode: Codable {
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        var value = try container.decode(String.self)
+        value = value.lowercased()
+        if let mode = Mode.allRequest.first(where: { $0.rawValue == value }) {
+            self = mode
+        } else {
+            print("Unknown mode of transport '\(value)', please open an issue on https://github.com/kiliankoe/DVB for this, thanks!")
+            self = .unknown(value)
+        }
+    }
+
+    public func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(self.rawValue)
+    }
+}
+
+extension Mode: Equatable {}
+
+extension Mode: Hashable {}
