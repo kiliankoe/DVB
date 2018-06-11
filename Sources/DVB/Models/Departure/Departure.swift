@@ -1,21 +1,7 @@
 import Foundation
 
-public struct MonitorResponse: Decodable, Equatable {
-    public let stopName: String
-    public let place: String
-    public let expirationTime: Date
-    public let departures: [Departure]
-
-    private enum CodingKeys: String, CodingKey {
-        case stopName = "Name"
-        case place = "Place"
-        case expirationTime = "ExpirationTime"
-        case departures = "Departures"
-    }
-}
-
 /// A bus, tram or whatever leaving a specific stop at a specific time
-public struct Departure: Decodable, Equatable {
+public struct Departure {
     public let id: String
     public let line: String
     public let direction: String
@@ -26,19 +12,6 @@ public struct Departure: Decodable, Equatable {
     public let state: State?
     public let routeChanges: [String]?
     public let diva: Diva?
-
-    private enum CodingKeys: String, CodingKey {
-        case id = "Id"
-        case line = "LineName"
-        case direction = "Direction"
-        case mode = "Mot"
-        case scheduledTime = "ScheduledTime"
-        case routeChanges = "RouteChanges"
-        case platform = "Platform"
-        case diva = "Diva"
-        case realTime = "RealTime"
-        case state = "State"
-    }
 
     /// The actual ETA. Should only be different from the scheduled ETA if not on time.
     public var ETA: Int {
@@ -94,36 +67,28 @@ public struct Departure: Decodable, Equatable {
     }
 }
 
-extension Departure {
-    public enum State: Decodable, Equatable, Hashable {
-        case onTime
-        case delayed
-        case unknown(String)
-
-        public var rawValue: String {
-            switch self {
-            case .onTime: return "InTime"
-            case .delayed: return "Delayed"
-            case .unknown(let value): return value
-            }
-        }
-
-        static var all: [State] {
-            return [.onTime, .delayed]
-        }
-
-        public init(from decoder: Decoder) throws {
-            let container = try decoder.singleValueContainer()
-            let value = try container.decode(String.self)
-            if let state = State.all.first(where: { $0.rawValue == value }) {
-                self = state
-            } else {
-                print("Unknown departure state '\(value)', please open an issue on https://github.com/kiliankoe/DVB for this, thanks!")
-                self = .unknown(value)
-            }
-        }
+extension Departure: Decodable {
+    private enum CodingKeys: String, CodingKey {
+        case id = "Id"
+        case line = "LineName"
+        case direction = "Direction"
+        case mode = "Mot"
+        case scheduledTime = "ScheduledTime"
+        case routeChanges = "RouteChanges"
+        case platform = "Platform"
+        case diva = "Diva"
+        case realTime = "RealTime"
+        case state = "State"
     }
+}
 
+extension Departure: Equatable {}
+
+extension Departure: Hashable {}
+
+// MARK: - API
+
+extension Departure {
     public enum DateType {
         case arrival
         case departure
@@ -132,11 +97,7 @@ extension Departure {
             return self == .arrival
         }
     }
-}
 
-// MARK: - API
-
-extension Departure {
     public static func monitor(stopWithId id: String,
                                date: Date = Date(),
                                dateType: DateType = .arrival,
@@ -190,11 +151,5 @@ extension Departure {
 extension Departure: CustomStringConvertible {
     public var description: String {
         return "\(line) \(direction) departing in \(fancyETA) minutes."
-    }
-}
-
-extension Departure: Hashable {
-    public var hashValue: Int {
-        return self.id.hashValue
     }
 }

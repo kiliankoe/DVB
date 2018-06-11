@@ -22,6 +22,8 @@
 
 /* Begin PBXBuildFile section */
 		39054B9B1F83CC1500DD01AA /* GaussKruegerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39054B9A1F83CC1500DD01AA /* GaussKruegerTests.swift */; };
+		3999A00720CEBC1A009B899A /* Departure+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3999A00620CEBC1A009B899A /* Departure+State.swift */; };
+		3999A00A20CEC216009B899A /* MonitorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3999A00920CEC216009B899A /* MonitorResponse.swift */; };
 		OBJ_47 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
 		OBJ_53 /* DateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* DateTests.swift */; };
 		OBJ_54 /* DepartureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* DepartureTests.swift */; };
@@ -72,6 +74,8 @@
 
 /* Begin PBXFileReference section */
 		39054B9A1F83CC1500DD01AA /* GaussKruegerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaussKruegerTests.swift; sourceTree = "<group>"; };
+		3999A00620CEBC1A009B899A /* Departure+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Departure+State.swift"; sourceTree = "<group>"; };
+		3999A00920CEC216009B899A /* MonitorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorResponse.swift; sourceTree = "<group>"; };
 		"DVB::DVB::Product" /* DVB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DVB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"DVB::DVBTests::Product" /* DVBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = DVBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* Date+SAP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+SAP.swift"; sourceTree = "<group>"; };
@@ -123,10 +127,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		OBJ_13 /* Models */ = {
+		3999A00820CEC1FD009B899A /* Departure */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_14 /* Departure.swift */,
+				3999A00620CEBC1A009B899A /* Departure+State.swift */,
+				3999A00920CEC216009B899A /* MonitorResponse.swift */,
+			);
+			path = Departure;
+			sourceTree = "<group>";
+		};
+		OBJ_13 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3999A00820CEC1FD009B899A /* Departure */,
 				OBJ_15 /* Diva.swift */,
 				OBJ_16 /* Line.swift */,
 				OBJ_17 /* Mode.swift */,
@@ -360,10 +374,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				3999A00720CEBC1A009B899A /* Departure+State.swift in Sources */,
 				OBJ_71 /* DVBError.swift in Sources */,
 				OBJ_72 /* Date+SAP.swift in Sources */,
 				OBJ_73 /* Endpoint.swift in Sources */,
 				OBJ_74 /* GaussKrueger.swift in Sources */,
+				3999A00A20CEC216009B899A /* MonitorResponse.swift in Sources */,
 				OBJ_75 /* Departure.swift in Sources */,
 				OBJ_76 /* Diva.swift in Sources */,
 				OBJ_77 /* Line.swift in Sources */,
