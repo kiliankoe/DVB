@@ -59,6 +59,12 @@ extension Stop: Decodable {
 // MARK: - API
 
 extension Stop {
+    /// Get a list of stops matching a given query.
+    ///
+    /// - Parameters:
+    ///   - query: search query
+    ///   - session: URL session, defaults to `.shared`
+    ///   - completion: handler
     public static func find(_ query: String,
                             session: URLSession = .shared,
                             completion: @escaping (Result<FindResponse>) -> Void) {
@@ -79,6 +85,14 @@ extension Stop {
         findNear(coord: coord, session: session, completion: completion)
     }
 
+    /// Get a list of stops near a given coordinate.
+    ///
+    /// - Warning: The first result is a reverse-geocoded address and not a stop.
+    ///
+    /// - Parameters:
+    ///   - coord: coordinate
+    ///   - session: URL session, defaults to `.shared`
+    ///   - completion: handler
     public static func findNear(coord: Coordinate,
                                 session: URLSession = .shared,
                                 completion: @escaping (Result<FindResponse>) -> Void) {
