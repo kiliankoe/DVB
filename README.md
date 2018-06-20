@@ -58,6 +58,16 @@ Stop.find("Helmholtzstraße") { result in
 }
 ```
 
+You can also get a list of stops around a given coordinate.
+
+```swift
+let coordinate = CLLocationCoordinate2D(latitude: 51.063080, longitude: 13.736835)
+Stop.findNear(coordinate) { result in
+    guard let response = result.success else { return }
+    print(response.stops)
+}
+```
+
 ### Find a route from A to B
 
 Want to go somewhere?
