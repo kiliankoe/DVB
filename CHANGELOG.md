@@ -21,6 +21,7 @@
 ### Fixed
 
 - A few leftover properties that weren't optional but should be now are.
+- `Stop.findNear()` now works again \o/ The implementation is far from ideal, but it's *ok* for now.
 
 ## [2.3.0] - 2017-05-30
 
