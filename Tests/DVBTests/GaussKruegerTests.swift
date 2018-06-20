@@ -16,7 +16,7 @@ class GaussKruegerTests: XCTestCase {
         // swiftlint:disable:next identifier_name
         guard let gk = wgs.asGK else { XCTFail("failed to convert wgs to gk coordinate"); return }
 
-        XCTAssertEqual(gk.x, 4591270)
-        XCTAssertEqual(gk.y, 5819620)
+        XCTAssertEqual(gk.x, 3801570)
+        XCTAssertEqual(gk.y, 5820370)
     }
 }

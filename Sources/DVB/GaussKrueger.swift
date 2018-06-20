@@ -8,8 +8,8 @@ public protocol Coordinate {
 }
 
 public struct GKCoordinate: Coordinate, Equatable, Hashable {
-    public let x: Double
-    public let y: Double
+    public var x: Double
+    public var y: Double
 
     public init(x: Double, y: Double) {
         self.x = x
@@ -26,8 +26,8 @@ public struct GKCoordinate: Coordinate, Equatable, Hashable {
 }
 
 public struct WGSCoordinate: Coordinate, Equatable, Hashable {
-    public let latitude: Double
-    public let longitude: Double
+    public var latitude: Double
+    public var longitude: Double
 
     public init(latitude: Double, longitude: Double) {
         self.latitude = latitude
@@ -35,7 +35,15 @@ public struct WGSCoordinate: Coordinate, Equatable, Hashable {
     }
 
     public var asGK: GKCoordinate? {
-        return wgs2gk(wgs: self)
+        var gk = wgs2gk(wgs: self)
+        // These values are an approximation that seems to work *ok*. They're definitely not perfect and shouldn't
+        // be necessary, but apparently they are to push the calculated GK5 coordinates into Zone 4, which the VVO
+        // expects. Even though Dresden is in Zone 5, which is ridiculous. Yeah.
+        // The much better way of handling this would be to pull in proj4 as a dependency and let that do its magic.
+        // Please someone do that in the future 🤞
+        gk?.x += -789700
+        gk?.y += 750
+        return gk
     }
 
     public var asWGS: WGSCoordinate? {

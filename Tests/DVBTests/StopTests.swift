@@ -66,7 +66,7 @@ class StopTests: XCTestCase {
     func testFindNearAntonstrasse() {
         let e = expectation(description: "Find stops near coordinate")
 
-        let antonstrasseCoord = GKCoordinate(x: 4_622_550, y: 5_660_140)
+        let antonstrasseCoord = WGSCoordinate(latitude: 51.063080, longitude: 13.736835)
         Stop.findNear(coord: antonstrasseCoord) { result in
             switch result {
             case let .failure(error):
@@ -76,6 +76,7 @@ class StopTests: XCTestCase {
                     XCTFail("Response contains no stops")
                     return
                 }
+                XCTAssertEqual(response.stops[1].name, "Anton-/Leipziger Straße")
                 e.fulfill()
             }
         }
