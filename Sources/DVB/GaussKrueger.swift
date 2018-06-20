@@ -40,7 +40,7 @@ public struct WGSCoordinate: Coordinate, Equatable, Hashable {
         // be necessary, but apparently they are to push the calculated GK5 coordinates into Zone 4, which the VVO
         // expects. Even though Dresden is in Zone 5, which is ridiculous. Yeah.
         // The much better way of handling this would be to pull in proj4 as a dependency and let that do its magic.
-        // Please someone do that in the future 🤞
+        // Someone please do that in the future 🤞
         gk?.x += -789700
         gk?.y += 750
         return gk
@@ -50,6 +50,21 @@ public struct WGSCoordinate: Coordinate, Equatable, Hashable {
         return self
     }
 }
+
+#if canImport(CoreLocation)
+import CoreLocation
+
+extension CLLocationCoordinate2D: Coordinate {
+    public var asGK: GKCoordinate? {
+        let wgs = WGSCoordinate(latitude: self.latitude, longitude: self.longitude)
+        return wgs.asGK
+    }
+
+    public var asWGS: WGSCoordinate? {
+        return WGSCoordinate(latitude: self.latitude, longitude: self.longitude)
+    }
+}
+#endif
 
 // This code is copied directly from https://github.com/juliuste/gauss-krueger
 // Only minimal changes were made to ensure type-safety and usage of correct math APIs from Swift
