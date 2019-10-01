@@ -4,6 +4,7 @@ public enum Mode {
     case tram
     case cityBus
     case intercityBus
+    case plusBus
     case suburbanRailway
     case train
     case cableway
@@ -21,6 +22,7 @@ public enum Mode {
         case .tram: return "tram"
         case .cityBus: return "citybus"
         case .intercityBus: return "intercitybus"
+        case .plusBus: return "plusbus"
         case .suburbanRailway: return "suburbanrailway"
         case .train: return "train"
         case .cableway: return "lift"
@@ -38,6 +40,7 @@ public enum Mode {
             .tram,
             .cityBus,
             .intercityBus,
+            .plusBus,
             .suburbanRailway,
             .train,
             .cableway,
